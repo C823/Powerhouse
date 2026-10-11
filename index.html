@@ -11,7 +11,7 @@
     <!-- The Worker may inject a GitHub <base>. Keep browser navigation on this Worker origin. -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
-        /* Powerhouse palette v2.15.0 — sampled from supplied reference:
+        /* Powerhouse palette v2.17.0 — sampled from supplied reference:
            black #000000, charcoal #1c1c1c, white #ffffff. */
         :root {
             --accent: #444444;
@@ -43,7 +43,7 @@
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         body { margin: 0; font-family: 'Outfit', sans-serif; background-color: var(--bg-main); color: var(--text); min-height: 100vh; overflow-x: hidden; display: flex; transition: background 0.3s ease; }
 
-        /* --- AUTH PAGE — website v2.15.0 --- */
+        /* --- AUTH PAGE — website v2.17.0 --- */
         #landing-page { position:fixed; inset:0; z-index:5000; display:none; align-items:center; justify-content:center; overflow:auto; padding:32px 22px; color:#eee; background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.6)),url('https://files.enderman.ch/wallpapers/Moonlight.png') center center / cover no-repeat fixed #090b12; }
         #landing-page::before { content:''; position:fixed; inset:0; pointer-events:none; background:rgba(0,0,0,.10); }
         #landing-page::after { content:none; }
@@ -126,7 +126,7 @@
         .nav-item:hover { background: var(--accent-light); color: var(--text); }
         .nav-item.active { background: var(--accent); color: white; }
         .nav-item svg { width: 20px; height: 20px; flex: 0 0 20px; display: block; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; fill: none; }
-        /* v2.15.0: solid filled sidebar navigation icons */
+        /* v2.17.0: solid filled sidebar navigation icons */
         #sidebar .nav-item svg.sidebar-solid-icon { fill: currentColor; stroke: none; stroke-width: 0; }
         .badge { position: absolute; right: 12px; background: var(--accent2); padding: 2px 8px; border-radius: 20px; font-size: 10px; color: white; font-weight: 800; }
 
@@ -207,7 +207,7 @@
         .profile-action:hover { transform:translateY(-2px); border-color:var(--accent); }
         .profile-divider { height:1px;background:var(--border);margin:28px 0; }
 
-        /* v2.15.0 — public profile Favorites */
+        /* v2.17.0 — public profile Favorites */
         .profile-favorites-card { margin-top:20px; padding:22px; border:1px solid var(--border); background:var(--surface); border-radius:16px; }
         .profile-favorites-heading { display:flex; justify-content:space-between; gap:12px; align-items:baseline; margin-bottom:17px; }
         .profile-favorites-heading h2 { margin:0; font-size:18px; }
@@ -329,7 +329,7 @@
         .social-card img { width:54px; height:54px; object-fit:cover; flex-shrink:0; background:var(--surface); }
         .social-card-name { font-size:13px; font-weight:700; margin:0 8px 0 12px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; flex:1; }
 
-        /* v2.15.0: banned/deleted accounts retain removable friend entries, never a profile link. */
+        /* v2.17.0: banned/deleted accounts retain removable friend entries, never a profile link. */
         .social-deleted-profile {display:flex;align-items:center;flex:1;min-width:0;pointer-events:none;color:var(--text-muted);}
         .social-deleted-profile img {filter:grayscale(1);opacity:.55;}
         .social-deleted-text {display:flex;flex-direction:column;gap:2px;min-width:0;margin-left:12px;}
@@ -745,7 +745,7 @@
         .account-userid-row button:disabled { opacity:.45; cursor:default; }
         .account-userid-hint, #account-userid-feedback { color:#aaa; font-size:12px; margin:7px 0 0; }
 
-/* v2.15.0 — Messaging */
+/* v2.17.0 — Messaging */
 #messages-view [hidden], #side-messages .message-nav-count[hidden], #profile-message-action[hidden] { display:none !important; }
 #side-messages { position:relative; }
 .message-nav-count { margin-left:auto; min-width:19px; padding:2px 6px; border-radius:30px; background:#393939; color:#fff; font-size:11px; font-weight:700; text-align:center; }
@@ -790,7 +790,7 @@
 .messages-back { border:0; background:#343434; color:white; border-radius:7px; padding:6px 10px; cursor:pointer; }
 
 
-/* v2.15.0 — Friends / Requests */
+/* v2.17.0 — Friends / Requests */
 .requests-count {display:inline-flex;min-width:19px;height:19px;padding:0 5px;align-items:center;justify-content:center;border-radius:9px;background:#383838;color:#fff;font-size:11px;margin-left:5px;}
 .requests-count[hidden] {display:none!important;}
 .social-request-card {height:auto;min-height:78px;padding-right:12px;gap:12px;}
@@ -809,7 +809,7 @@
 #friends-view:has(.social-request-card) .social-grid {grid-template-columns:repeat(auto-fill,minmax(min(100%,470px),470px));}
 @media(max-width:540px){.social-request-card{flex-wrap:wrap;padding:8px;}.social-request-actions{width:100%;justify-content:flex-end}.social-request-card .social-profile-link{width:100%;}}
 
-/* v2.15.0 — Not found page */
+/* v2.17.0 — Not found page */
 #not-found-view .error-layout { min-height:calc(100vh - 190px); display:flex; align-items:center; justify-content:center; text-align:center; padding:64px 16px; }
 #not-found-view .error-content {max-width:520px; width:100%; }
 #not-found-view .error-kicker {color:#9b9b9b; font-weight:700; letter-spacing:.18em; font-size:12px; text-transform:uppercase; margin-bottom:16px;}
@@ -821,7 +821,7 @@
 #not-found-view .error-home-link:focus-visible {outline:2px solid white;outline-offset:3px;}
 
 
-/* v2.15.0 — Game details: image-safe, responsive editorial layout. */
+/* v2.17.0 — Game details: image-safe, responsive editorial layout. */
 #game-view { width:100%; }
 #game-view .game-detail { width:min(1120px,100%); margin:0 auto; min-width:0; }
 #game-view .game-breadcrumb { display:flex; align-items:center; flex-wrap:wrap; gap:10px; margin:4px 0 21px; color:#999; font-size:13px; }
@@ -865,7 +865,7 @@
 @media(prefers-reduced-motion:reduce){#game-detail-content .game-play-button{transition:none;}}
 
 
-        /* Home section layout editor - v2.15.0 */
+        /* Home section layout editor - v2.17.0 */
         .layout-editor{margin-top:30px;padding-top:24px;border-top:1px solid var(--border,#333)}
         .layout-editor-header h3{margin:0 0 7px;font-size:18px}
         .layout-editor-header p{margin:0 0 17px;color:var(--text-muted,#aaa);font-size:13px;line-height:1.5}
@@ -881,6 +881,20 @@
         #home-layout-feedback{color:var(--text-muted,#aaa);font-size:12px}
         [data-home-section][data-layout-hidden="true"]{display:none!important}
         @media(max-width:560px){.layout-editor-row{padding:10px;gap:8px}.layout-editor-move button{padding:5px 8px}}
+
+
+/* v2.17.0 — Game dates and dual launch choices */
+.game-date-setting{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:21px 0 3px;border-top:1px solid #333;margin-top:24px}
+.game-date-setting strong{font-size:15px;color:#f4f4f4}
+.game-date-setting p{margin:6px 0 0;font-size:12px;line-height:1.55;color:#aaa;max-width:480px}
+#game-detail-content .game-launch-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:10px;align-items:center;flex:0 1 auto}
+#game-detail-content .game-blank-button{background:#303030;border-color:#494949;color:#f4f4f4}
+#game-detail-content .game-blank-button:hover:not([aria-disabled]){background:#3a3a3a;border-color:#666}
+@media(max-width:700px){#game-detail-content .game-launch-actions{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}#game-detail-content .game-launch-actions .game-play-button{min-width:0;padding:12px 9px;font-size:12px;white-space:normal;text-align:center}}
+@media(max-width:390px){#game-detail-content .game-launch-actions{grid-template-columns:1fr}}
+
+/* Powerhouse v2.17.0 — Blog */
+.blog-shell{max-width:1050px;margin:auto}.blog-heading{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:24px;flex-wrap:wrap}.blog-heading h1{font-size:clamp(1.7rem,3vw,2.2rem);margin:0}.blog-heading p{color:#999;margin:6px 0 0}.blog-toolbar{display:flex;gap:10px;flex-wrap:wrap}.blog-action{background:#292929;color:#fff;border:1px solid #444;border-radius:9px;padding:10px 15px;cursor:pointer;font:inherit}.blog-action:hover{background:#383838}.blog-action.primary{background:#ededed;color:#161616;border-color:#ededed;font-weight:700}.blog-action.primary:hover{background:#cfcfcf}.blog-action.danger{color:#ffb9b9;border-color:#724444}.blog-card-list{display:grid;gap:13px}.blog-feed-card{display:block;text-align:left;width:100%;border:1px solid #363636;background:#202020;color:inherit;border-radius:14px;padding:22px;cursor:pointer;transition:border-color .15s,transform .15s}.blog-feed-card:hover{border-color:#888;transform:translateY(-2px)}.blog-feed-card h2{font-size:1.25rem;margin:8px 0}.blog-feed-card p{color:#adadad;margin:6px 0 0;line-height:1.55;overflow-wrap:anywhere}.blog-meta{color:#949494;font-size:.8rem}.blog-tag{font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#dedede;background:#363636;border:1px solid #4a4a4a;border-radius:5px;padding:4px 7px;display:inline-block}.blog-panel-box{background:#1f1f1f;border:1px solid #353535;padding:clamp(18px,3vw,32px);border-radius:15px}.blog-article-title{font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.15;margin:15px 0}.blog-article-body{line-height:1.8;overflow-wrap:anywhere;font-size:1rem;white-space:normal}.blog-article-body p{margin:0 0 1em}.blog-article-body h1,.blog-article-body h2,.blog-article-body h3{margin:1.5em 0 .5em}.blog-article-body a{color:#ddd;text-decoration:underline}.blog-article-body img{max-width:100%;height:auto}.blog-article-body pre{white-space:pre-wrap;background:#111;padding:12px;border-radius:8px}.blog-article-body blockquote{border-left:3px solid #888;margin:12px 0;padding-left:16px;color:#bbb}.blog-form{display:grid;gap:16px}.blog-form label{display:grid;gap:7px;font-size:.9rem;font-weight:600}.blog-form input,.blog-form textarea,.blog-form select{background:#111;color:#fff;border:1px solid #454545;border-radius:8px;padding:12px;font:inherit;width:100%;box-sizing:border-box}.blog-form textarea{min-height:220px;resize:vertical}.blog-form :is(input,textarea,select):focus{outline:2px solid #aaa;outline-offset:1px}.blog-manage-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 0;border-bottom:1px solid #383838}.blog-manage-row>div:first-child{min-width:0;overflow-wrap:anywhere}.blog-empty{padding:50px 20px;text-align:center;color:#999;border:1px dashed #444;border-radius:12px}.blog-feedback{font-size:.9rem;color:#ccc;min-height:1.2em}.blog-feedback.error{color:#ff9e9e}.blog-hidden{display:none!important}@media(max-width:660px){.blog-manage-row{align-items:flex-start;flex-direction:column}.blog-feed-card{padding:17px}}
 </style>
 </head>
 <body>
@@ -1654,7 +1668,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
 
 
 
-    <!-- AUTH PAGE | Powerhouse website v2.15.0 -->
+    <!-- AUTH PAGE | Powerhouse website v2.17.0 -->
     <div id="landing-page">
         <div class="auth-shell">
             <section class="auth-promo" aria-label="Welcome to Powerhouse">
@@ -1690,7 +1704,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                     </form>
                     <p class="auth-bottom">Already have an account? <button type="button" class="auth-switch-link" onclick="switchAuthMode('login')">Sign in</button></p>
                 </div>
-                <span class="auth-release">POWERHOUSE v2.15.0</span>
+                <span class="auth-release">POWERHOUSE v2.17.0</span>
             </section>
         </div>
     </div>
@@ -1711,6 +1725,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             <a href="/messages" class="nav-item" id="side-messages">
                 <svg class="sidebar-solid-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H9l-6 4v-4a2 2 0 0 1-1-2V5a2 2 0 0 1 2-2Z"/></svg> Messages <span id="messages-nav-count" class="message-nav-count" hidden></span>
             </a>
+            <a href="/blog" class="nav-item" id="side-blog"><svg class="sidebar-solid-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2h11l5 5v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm10 1.7V8h4.3L15 3.7ZM7 12h10v-2H7v2Zm0 4h10v-2H7v2Zm0 4h7v-2H7v2Z"/></svg> Blog <span id="blog-nav-count" class="message-nav-count" hidden></span></a>
             <a href="/settings" class="nav-item" id="side-settings">
                 <svg class="sidebar-solid-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M10.6 1.8h2.8l.5 2.4c.6.2 1.1.4 1.7.7l2.1-1.3 2 2-1.3 2.1c.3.5.5 1.1.7 1.7l2.4.5v2.8l-2.4.5c-.2.6-.4 1.2-.7 1.7l1.3 2.1-2 2-2.1-1.3c-.6.3-1.1.5-1.7.7l-.5 2.4h-2.8l-.5-2.4a8.2 8.2 0 0 1-1.7-.7l-2.1 1.3-2-2 1.3-2.1a8.2 8.2 0 0 1-.7-1.7l-2.4-.5V9.9l2.4-.5c.2-.6.4-1.2.7-1.7L4.3 5.6l2-2 2.1 1.3c.6-.3 1.1-.5 1.7-.7l.5-2.4ZM12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z" clip-rule="evenodd" transform="translate(0 0.8)"/></svg> Settings
             </a>
@@ -1726,7 +1741,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             <a class="c823-footer-link" href="https://home.c823.workers.dev" aria-label="Open C823 Hub" title="C823 Hub">
                 <img class="c823-footer-icon" src="https://raw.githubusercontent.com/C823/Powerhouse/main/icons/C823%20logo.png" alt="C823" loading="lazy">
             </a>
-            <div class="sidebar-release" aria-label="Powerhouse version">POWERHOUSE <span>v2.15.0</span></div>
+            <div class="sidebar-release" aria-label="Powerhouse version">POWERHOUSE <span>v2.17.0</span></div>
         </div>
     </aside>
 
@@ -1763,6 +1778,19 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                 <p>That page doesn’t exist, or the link might be incorrect.</p>
                 <a href="/home" class="error-home-link" onclick="event.preventDefault();navigateTo('home')">Back to Home <span aria-hidden="true">→</span></a>
             </div></div>
+        </section>
+
+
+        <!-- BLOG VIEW -->
+        <section id="blog-view" class="view-section" aria-label="Powerhouse blog">
+          <div class="blog-shell">
+            <div class="blog-heading"><div><h1>Blog</h1><p>News, updates, and announcements from Powerhouse.</p></div><div class="blog-toolbar"><button class="blog-action" type="button" onclick="blogOpenList()">All posts</button><button class="blog-action blog-hidden" id="blog-manage-btn" type="button" onclick="blogOpenManage()">Manage posts</button></div></div>
+            <div id="blog-status" class="blog-feedback" role="status" aria-live="polite"></div>
+            <div id="blog-list" class="blog-card-list"></div>
+            <article id="blog-article" class="blog-panel-box blog-hidden"><button class="blog-action" onclick="blogOpenList()">← All posts</button><div id="blog-article-content"></div></article>
+            <div id="blog-manage" class="blog-hidden"><div class="blog-panel-box"><div class="blog-heading"><h2>Manage posts</h2><button class="blog-action primary" onclick="blogOpenEditor()">New post</button></div><div id="blog-manage-list"></div></div></div>
+            <div id="blog-editor" class="blog-panel-box blog-hidden"><div class="blog-heading"><h2 id="blog-editor-title">New post</h2><button class="blog-action" onclick="blogOpenManage()">Cancel</button></div><form id="blog-post-form" class="blog-form" onsubmit="blogSavePost(event)"><label>Title<input id="blog-title" required maxlength="180" autocomplete="off"></label><label>Tag<input id="blog-tag" maxlength="40" placeholder="Update, News, Announcement..."></label><label>Content<textarea id="blog-body" required placeholder="Write a post... Supports basic HTML and plain text."></textarea></label><label>Visibility<select id="blog-visibility"><option value="published">Published</option><option value="draft">Draft</option></select></label><div class="blog-toolbar"><button id="blog-save" class="blog-action primary" type="submit">Publish post</button><button type="button" class="blog-action" onclick="blogOpenManage()">Cancel</button></div></form></div>
+          </div>
         </section>
 
         <!-- HOME VIEW -->
@@ -1918,6 +1946,10 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                     <div style="display:flex;justify-content:space-between;align-items:center;">
                         <span>Light Mode</span>
                         <label class="switch"><input type="checkbox" id="themeToggle" onchange="toggleTheme()"><span class="slider"></span></label>
+                    </div>
+                    <div class="game-date-setting">
+                        <div><strong>Long game dates</strong><p>Display game dates as “February 23rd, 2026” instead of “02/23/2026”. Off by default. Dates marked N/A always show Unknown.</p></div>
+                        <label class="switch" aria-label="Display long game dates"><input type="checkbox" id="game-date-long-toggle" onchange="setLongGameDates(this.checked)"><span class="slider"></span></label>
                     </div>
                     <div class="layout-editor">
                         <div class="layout-editor-header"><h3>Home Layout</h3><p>Choose which game sections appear on your Home page and change their order.</p></div>
@@ -2298,6 +2330,12 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                     const { data } = await r.json();
                     if (!data || !user.token) return;
                     accountSavedData = data;
+                    restoreLongGameDates();
+                    if(typeof data.settings?.longGameDates==='boolean' && localStorage.getItem(longGameDatesKey())===null){
+                        longGameDates=data.settings.longGameDates;
+                        localStorage.setItem(longGameDatesKey(),String(longGameDates));
+                        restoreLongGameDates();
+                    }
                     restoreHomeLayout();
                     // Prefer cloud preferences unless this device already has pending customizations.
                     if (data.settings?.homeLayout && !localStorage.getItem(homeLayoutStorageKey())) {
@@ -2523,19 +2561,13 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             }
             return window.powerhouseGamesPending;
         }
-        // v2.15.0 — original games.txt useBlank launch semantics.
-        // true: blank wrapper; false: direct tab; omitted: blank unless verified.
-        function gameUsesBlank(game) {
-            if (game.useBlank === true) return true;
-            if (game.useBlank === false) return false;
-            return !isVerifiedGame(game);
-        }
-        function launchPowerhouseGame(game, event) {
+        // Both launch modes are always available, regardless of useBlank or verified.
+        function launchPowerhouseGame(game, event, mode = 'direct') {
             if (event) event.preventDefault();
             const url = String(game?.link || '').trim();
             if (!/^https?:\/\//i.test(url)) return;
             recordRecentlyPlayed(game);
-            if (!gameUsesBlank(game) || /(?:youtube\.com|youtu\.be)/i.test(new URL(url).hostname)) {
+            if (mode !== 'blank') {
                 window.open(url, '_blank', 'noopener,noreferrer');
                 return;
             }
@@ -2564,8 +2596,36 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                 frame.onerror=()=>{frame.style.display='none';blocked.style.display='flex'};
             } catch (error) { tab.location.replace(url); }
         }
+        // date_added is MM/DD/YYYY or N/A. Validate strictly rather than relying on Date.parse.
+        function formatGameAddedDate(value){
+            if(typeof value!=='string'||!value.trim()||value.trim().toUpperCase()==='N/A')return 'Unknown';
+            const match=/^(\d{2})\/(\d{2})\/(\d{4})$/.exec(value.trim());
+            if(!match)return 'Unknown';
+            const month=Number(match[1]),day=Number(match[2]),year=Number(match[3]);
+            const d=new Date(Date.UTC(year,month-1,day));
+            if(d.getUTCFullYear()!==year||d.getUTCMonth()!==month-1||d.getUTCDate()!==day)return 'Unknown';
+            if(!longGameDates)return value.trim();
+            const suffix=(day%100>=11&&day%100<=13)?'th':({1:'st',2:'nd',3:'rd'}[day%10]||'th');
+            return d.toLocaleString('en-US',{month:'long',timeZone:'UTC'})+' '+day+suffix+', '+year;
+        }
+        let longGameDates=false;
+        let longGameDatesAccount='';
+        function longGameDatesKey(){return 'powerhouse:longGameDates:'+(user.username||'guest').toLowerCase();}
+        function restoreLongGameDates(){
+            const name=(user.username||'guest').toLowerCase();
+            if(longGameDatesAccount!==name){longGameDatesAccount=name;longGameDates=localStorage.getItem(longGameDatesKey())==='true';}
+            const el=document.getElementById('game-date-long-toggle');if(el)el.checked=longGameDates;
+        }
+        function setLongGameDates(enabled){
+            longGameDates=enabled===true;
+            localStorage.setItem(longGameDatesKey(),String(longGameDates));
+            const el=document.getElementById('game-date-long-toggle');if(el)el.checked=longGameDates;
+            if(user.token)saveHomeLayoutKV();
+            const route=parseRoute();if(route.page==='game')renderGameDetail(route.slug);
+        }
         let gameDetailRequest=0;
         async function renderGameDetail(slug) {
+            restoreLongGameDates();
             const seq=++gameDetailRequest, host=document.getElementById('game-detail-content');
             host.replaceChildren();
             const state=document.createElement('div');state.className='game-detail-message';state.textContent='Loading game…';host.append(state);
@@ -2595,17 +2655,26 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                 makePill('Category: '+category);makePill(isVerifiedGame(game)?'Verified Unblocked':'Not verified');
                 if (isNewGame(game)) {makePill('NEW');pills.lastElementChild.classList.add('new-game-pill');}
                 left.append(heading,pills);
-                const play=document.createElement('a');play.className='game-play-button';play.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg><span>Play game</span>';
+                const actions=document.createElement('div');actions.className='game-launch-actions';
                 const launch=String(game.link||'').trim();
-                if(launch && /^https?:\/\//i.test(launch)) {play.href=launch;play.target='_blank';play.rel='noopener noreferrer';play.addEventListener('click',event=>launchPowerhouseGame(game,event));}
-                else{play.href='#';play.setAttribute('aria-disabled','true');play.title='No playable link available';}
-                top.append(left,play);
+                const canLaunch=/^https?:\/\//i.test(launch);
+                const makeLaunchButton=(text,mode,secondary=false)=>{
+                    const button=document.createElement('a');button.className='game-play-button'+(secondary?' game-blank-button':'');
+                    const label=document.createElement('span');label.textContent=text;
+                    if(!secondary){button.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg>';}
+                    button.append(label);
+                    if(canLaunch){button.href=launch;button.target='_blank';button.rel='noopener noreferrer';button.addEventListener('click',event=>launchPowerhouseGame(game,event,mode));}
+                    else{button.href='#';button.setAttribute('aria-disabled','true');button.addEventListener('click',event=>event.preventDefault());button.title='No playable link available';}
+                    return button;
+                };
+                actions.append(makeLaunchButton('Play','direct'),makeLaunchButton('Open in About:Blank','blank',true));
+                top.append(left,actions);
                 const panel=document.createElement('section');panel.className='game-content-panel';
                 const about=document.createElement('h2');about.textContent='About';
                 const description=document.createElement('p');description.className='game-description';description.textContent=String(game.desc||game.description||'No description available.');
                 const details=document.createElement('div');details.className='game-details-grid';
                 const addField=(label,value)=>{const field=document.createElement('div');field.className='game-detail-field';const small=document.createElement('small');small.textContent=label;const strong=document.createElement('strong');strong.textContent=value;field.append(small,strong);details.append(field);};
-                addField('Category',category);addField('Unblocked status',isVerifiedGame(game)?'Verified':'Not verified');
+                addField('Category',category);addField('Unblocked status',isVerifiedGame(game)?'Verified':'Not verified');addField('Date added',formatGameAddedDate(game.date_added));
                 panel.append(about,description,details);
                 host.replaceChildren(cover,top,panel);
             }catch(error){if(seq!==gameDetailRequest)return;host.replaceChildren();const fail=document.createElement('div');fail.className='game-detail-message';fail.textContent='Could not load this game. Please try again later.';host.append(fail);}
@@ -3276,7 +3345,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
         }
 
 
-        // v2.15.0 - KV-backed direct messages (existing /social/* API)
+        // v2.17.0 - KV-backed direct messages (existing /social/* API)
         let messageConversations = [];
         let activeMessagePeer = '';
         let messagesLoadSequence = 0;
@@ -3402,8 +3471,31 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();document.getElementById('messages-composer')?.requestSubmit();}
         });
 
+
+        // Blog v2.17.0 — uses the original /blog/* KV-backed API.
+        let blogPosts=[], blogAdminPosts=[], blogCanManage=false, blogEditingId=null, blogRequest=0;
+        const blogEscape = value => String(value??'').replace(/[&<>"']/g, x=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[x]));
+        const blogDate = value => {const d=new Date(value);return Number.isNaN(d.getTime())?'':d.toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'});};
+        function blogShow(which){for(const id of ['blog-list','blog-article','blog-manage','blog-editor'])document.getElementById(id)?.classList.toggle('blog-hidden',id!=='blog-'+which);}
+        function blogMessage(message, error=false){const el=document.getElementById('blog-status');if(el){el.textContent=message;el.classList.toggle('error',error);}}
+        async function blogFetch(path,options={}){const response=await fetch(API_BASE+path,{...options,headers:{...(options.body?{'Content-Type':'application/json'}:{}),...(user.token?{Authorization:'Bearer '+user.token}:{}),...(options.headers||{})}});let data={};try{data=await response.json();}catch{}if(!response.ok)throw new Error(data.error||'Request failed ('+response.status+')');return data;}
+        async function blogEnter(){const serial=++blogRequest;blogShow('list');blogMessage('');document.getElementById('blog-list').innerHTML='<div class="blog-empty">Loading posts…</div>';blogCanManage=false;document.getElementById('blog-manage-btn').classList.add('blog-hidden');
+            const check=user.token?blogFetch('/blog/admin/check').catch(()=>({isAdmin:false})):Promise.resolve({isAdmin:false});
+            try{const [publicData,rights]=await Promise.all([blogFetch('/blog/posts'),check]);if(serial!==blogRequest||parseRoute().page!=='blog')return;blogCanManage=rights.isAdmin===true;document.getElementById('blog-manage-btn').classList.toggle('blog-hidden',!blogCanManage);blogPosts=(publicData.posts||[]).filter(p=>p.status==='published').sort((a,b)=>new Date(b.createdAt)-new Date(a.createdAt));blogRenderList();}
+            catch(error){if(serial!==blogRequest)return;blogMessage(error.message,true);document.getElementById('blog-list').innerHTML='<div class="blog-empty">Could not load the blog.</div>';}}
+        function blogRenderList(){const el=document.getElementById('blog-list');if(!blogPosts.length){el.innerHTML='<div class="blog-empty">No blog posts yet.</div>';return;}el.innerHTML=blogPosts.map((post,index)=>`<button class="blog-feed-card" type="button" onclick="blogOpenArticle(${index})">${post.tag?`<span class="blog-tag">${blogEscape(post.tag)}</span>`:''}<h2>${blogEscape(post.title)}</h2><div class="blog-meta">${blogEscape(blogDate(post.createdAt))} · ${blogEscape(post.author||'Powerhouse')}</div><p>${blogEscape(String(post.body||'').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').slice(0,230))}</p></button>`).join('');}
+        // Strictly sanitize the old blog HTML before rendering it.
+        function blogSafeBody(raw){const parser=new DOMParser();const doc=parser.parseFromString('<div>'+String(raw||'')+'</div>','text/html');const allowed=new Set(['DIV','P','BR','H1','H2','H3','H4','STRONG','B','EM','I','U','S','UL','OL','LI','BLOCKQUOTE','CODE','PRE','A','HR']);
+            const clean=node=>{for(const child of [...node.childNodes]){if(child.nodeType===8){child.remove();continue;}if(child.nodeType!==1)continue;if(!allowed.has(child.tagName)){const text=doc.createTextNode(child.textContent||'');child.replaceWith(text);continue;}const link=child.tagName==='A'?child.getAttribute('href'):null;for(const attr of [...child.attributes])child.removeAttribute(attr.name);if(link){try{const uri=new URL(link,location.origin);if(['https:','http:'].includes(uri.protocol)){child.setAttribute('href',uri.href);child.setAttribute('target','_blank');child.setAttribute('rel','noopener noreferrer');}}catch{}}clean(child);}};clean(doc.body);return doc.body.innerHTML;}
+        function blogOpenArticle(index){const post=blogPosts[index];if(!post)return;blogMessage('');blogShow('article');document.getElementById('blog-article-content').innerHTML=`${post.tag?`<p><span class="blog-tag">${blogEscape(post.tag)}</span></p>`:''}<h1 class="blog-article-title">${blogEscape(post.title)}</h1><p class="blog-meta">${blogEscape(blogDate(post.createdAt))} · by ${blogEscape(post.author||'Powerhouse')}</p><div class="blog-article-body">${blogSafeBody(post.body)}</div>`;}
+        function blogOpenList(){blogMessage('');blogShow('list');}
+        async function blogOpenManage(){if(!blogCanManage)return;blogMessage('');blogShow('manage');const list=document.getElementById('blog-manage-list');list.textContent='Loading…';try{const data=await blogFetch('/blog/admin/posts');blogAdminPosts=data.posts||[];list.innerHTML=blogAdminPosts.length?blogAdminPosts.map((p,i)=>`<div class="blog-manage-row"><div><strong>${blogEscape(p.title)}</strong><div class="blog-meta">${blogEscape(p.status)} · ${blogEscape(blogDate(p.createdAt))}</div></div><div class="blog-toolbar"><button class="blog-action" onclick="blogOpenEditor(${i})">Edit</button><button class="blog-action danger" onclick="blogDeletePost(${i})">Delete</button></div></div>`).join(''):'No posts yet.';}catch(e){blogMessage(e.message,true);list.textContent='Could not load posts.';}}
+        function blogOpenEditor(index=-1){if(!blogCanManage)return;const p=blogAdminPosts[index];blogEditingId=p?.id??null;document.getElementById('blog-editor-title').textContent=p?'Edit post':'New post';document.getElementById('blog-title').value=p?.title||'';document.getElementById('blog-tag').value=p?.tag||'';document.getElementById('blog-body').value=p?.body||'';document.getElementById('blog-visibility').value=p?.status==='draft'?'draft':'published';document.getElementById('blog-save').textContent=p?'Save changes':'Publish post';blogMessage('');blogShow('editor');}
+        async function blogSavePost(event){event.preventDefault();if(!blogCanManage)return;const body={title:document.getElementById('blog-title').value.trim(),tag:document.getElementById('blog-tag').value.trim(),body:document.getElementById('blog-body').value.trim(),status:document.getElementById('blog-visibility').value};if(!body.title||!body.body){blogMessage('Title and content are required.',true);return;}const btn=document.getElementById('blog-save');btn.disabled=true;try{await blogFetch(blogEditingId?'/blog/admin/posts/'+encodeURIComponent(blogEditingId):'/blog/admin/posts',{method:blogEditingId?'PUT':'POST',body:JSON.stringify(body)});await blogEnter();blogMessage('Post saved.');}catch(e){blogMessage(e.message,true);}finally{btn.disabled=false;}}
+        async function blogDeletePost(index){if(!blogCanManage)return;const p=blogAdminPosts[index];if(!p||!confirm('Delete "'+p.title+'" permanently?'))return;try{await blogFetch('/blog/admin/posts/'+encodeURIComponent(p.id),{method:'DELETE'});await blogOpenManage();blogMessage('Post deleted.');}catch(e){blogMessage(e.message,true);}}
+
         // Profile URLs use a username and do not need authentication to display.
-        const ROUTE_PAGES = new Set(['home','profile','friends','requests','settings','admin','moderation','search','messages']);
+        const ROUTE_PAGES = new Set(['home','profile','friends','requests','settings','admin','moderation','search','messages','blog']);
         const SOCIAL_ROUTES = new Set(['friends','requests']);
         const knownProfiles = new Map();
         const profileIds = new Map();
@@ -3541,7 +3633,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                 }
             }
         }
-        // v2.15.0: Public favorites come from the profile API; never read the viewer's
+        // v2.17.0: Public favorites come from the profile API; never read the viewer's
         // local Favorites when displaying another account's profile.
         let profileFavoritesSequence = 0;
         async function renderProfileFavorites(profileName, titles) {
@@ -3681,6 +3773,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             if (page === 'game') renderGameDetail(route.slug);
             if (page === 'search') renderSearchPage();
             if (page === 'messages') openMessagesPage();
+            if (page === 'blog') blogEnter();
             if (page !== 'messages' && messagesPoller) {clearInterval(messagesPoller);messagesPoller=null;}
             if (page !== 'messages' && user.token) messageAPI('/social/conversations').then(data=>updateMessagesCount(data.conversations||[])).catch(()=>{});
             if (social && user.token) switchSocialTab(page, false).catch(console.error);
@@ -3696,7 +3789,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                 else route.username = user.username;
                 if (route.page === 'profile' && route.username) { navigateProfile(route.username); return; }
             }
-            if (!user.token && !['sign-in','profile','not-found','invalid-profile','game'].includes(route.page)) {
+            if (!user.token && !['sign-in','profile','not-found','invalid-profile','game','blog'].includes(route.page)) {
                 try { sessionStorage.setItem('ph_return_to',location.pathname + location.search); } catch(e) {}
                 history.replaceState({},'', '/sign-in'); route = {page:'sign-in'};
             }
@@ -3753,7 +3846,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
         window.addEventListener('popstate', routeFromURL);
 
 
-        // v2.15.0 — Per-user Home section order and visibility.
+        // v2.17.0 — Per-user Home section order and visibility.
         const HOME_LAYOUT_DEFAULT = ['favorites','recent','games'];
         const HOME_LAYOUT_LABELS = {favorites:'Favorites',recent:'Recently Played',games:'All Games'};
         let homeLayout = {order:[...HOME_LAYOUT_DEFAULT], visible:{favorites:true,recent:true,games:true}};
@@ -3844,10 +3937,10 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                     const result=await loaded.json();
                     if(user.token!==token || user.username!==username)return;
                     const current=result.data && typeof result.data==='object'?result.data:{};
-                    const merged={...current,settings:{...(current.settings||{}),homeLayout:snapshot},history:current.history||[],favorites:current.favorites||[]};
+                    const merged={...current,settings:{...(current.settings||{}),homeLayout:snapshot,longGameDates},history:current.history||[],favorites:current.favorites||[]};
                     const response=await fetch(API_BASE+'/auth/save',{method:'POST',headers,body:JSON.stringify(merged)});
                     if(!response.ok)throw new Error('Could not sync layout settings.');
-                    accountSavedData={...(accountSavedData||{}),settings:{...(accountSavedData?.settings||{}),homeLayout:snapshot}};
+                    accountSavedData={...(accountSavedData||{}),settings:{...(accountSavedData?.settings||{}),homeLayout:snapshot,longGameDates}};
                 } while(homeLayoutSaveQueued && user.token===token && user.username===username);
                 const msg=document.getElementById('home-layout-feedback');if(msg)msg.textContent='Layout saved.';
             }catch(err){const msg=document.getElementById('home-layout-feedback');if(msg)msg.textContent='Saved locally; account sync failed.';console.warn('Layout sync:',err);}
@@ -3860,7 +3953,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             document.querySelectorAll('.s-nav-btn').forEach(b => b.classList.remove('active'));
             const map = { account: 'btn-acc', security: 'btn-sec', customization: 'btn-cust' };
             document.getElementById(map[p]).classList.add('active');
-            if(p==='customization') {restoreHomeLayout();renderHomeLayoutEditor();}
+            if(p==='customization') {restoreHomeLayout();restoreLongGameDates();renderHomeLayoutEditor();}
             if(p==='account' && user.username) {
                 const savedId=accountSavedData?.userId || profileIds.get(user.username.toLowerCase());
                 if(savedId) setAccountUserId(savedId);
@@ -3898,7 +3991,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             localStorage.removeItem('ph_pfp');
             user = { token: null, username: null, pfp: null };
             accountSavedData = null;
-            homeLayoutAccount=''; homeLayout=normalHomeLayout(null);applyHomeLayout();
+            homeLayoutAccount=''; homeLayout=normalHomeLayout(null);applyHomeLayout();longGameDatesAccount='';longGameDates=false;
             favoriteGames = [];
             recentGames = [];
             renderGames();
