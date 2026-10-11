@@ -828,11 +828,20 @@
     "useBlank": false
   },
   {
-    "title": "Grand Theft Auto 5",
+    "title": "Grand Theft Auto V",
     "category": "Arcade",
     "desc": "Named Game of the Year by over 50 publications, Valve's debut title blends action and adventure with award-winning technology to create a frighteningly realistic world where players must think to survive. Also includes an exciting multiplayer mode that allows you to play against friends and enemies around the world.",
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapers.com%2Fimages%2Ffeatured%2Fgrand-theft-auto-v-naej4yiap4gnxh2o.jpg&f=1&nofb=1&ipt=d83c1216d7a325c21a9e27e2853aebaa29ea80e9a384eb3012513d6f3cfc08ff&ipo=images",
     "link": "https://web.archive.org/web/20261005232456/https://playgta5.com/",
+    "verified": false,
+    "useBlank": false
+  },
+  {
+    "title": "Grand Theft Auto: Vice City",
+    "category": "Arcade",
+    "desc": "Grand Theft Auto: Vice City is a 2002 action-adventure game developed by Rockstar North and published by Rockstar Games.",
+    "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic0.gamerantimages.com%2Fwordpress%2Fwp-content%2Fuploads%2F2022%2F10%2FGrand-Theft-Auto-Vice-City-Open-World-Aesthetics.jpg&f=1&nofb=1&ipt=2fb78640bd0bac4c871775ac2a822b3fc7a55ee30fad1b9c582e3164c437cd20&ipo=images",
+    "link": "https://joncodeofficial.github.io/gta-vice-city-wasm/",
     "verified": false,
     "useBlank": false
   },
