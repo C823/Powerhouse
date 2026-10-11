@@ -2308,13 +2308,13 @@ function adminSetBanner(){return staffLegacySaveBanner();}
         const STANDARD_PICTURES = Array.from({length:25},(_,i)=>`${i+1}.jpg`);
         const ADMIN_PICTURES = ['pwr.jpg','https://avatars.githubusercontent.com/u/225702018?v=4','dog.jpg','hockey.jpg','productions.jpg','tux.jpg','glowing.jpg','wheatley.jpg'];
         let pictureSavePending = false;
-        function pictureURL(filename) { if (filename === 'guest.svg') return GUEST_PFP_URL; if (!filename) return DEFAULT_PFP; if (filename === 'ski.jpg') return SKI_PFP_URL; return filename === SKI_PFP_URL ? SKI_PFP_URL : PFP_BASE + encodeURIComponent(filename); }
+        function pictureURL(filename) { if (filename === 'guest.jpg') return GUEST_PFP_URL; if (!filename) return DEFAULT_PFP; if (filename === 'ski.jpg') return SKI_PFP_URL; return filename === SKI_PFP_URL ? SKI_PFP_URL : PFP_BASE + encodeURIComponent(filename); }
         const SKI_PFP_URL = 'https://avatars.githubusercontent.com/u/225702018?v=4';
         const PICTURE_NAMES = {
             'pwr.jpg':'Powerhouse', 'dog.jpg':'Dog', 'hockey.jpg':'Hockey',
             'productions.jpg':'Productions', 'tux.jpg':'Tux', 'glowing.jpg':'Glowing',
             'wheatley.jpg':'Wheatley', 'ski.jpg':'Ski', [SKI_PFP_URL]:'Ski',
-            'classof26.jpg':'Class of 2026', 'guest.svg':'Guest'
+            'classof26.jpg':'Class of 2026', 'guest.jpg':'Guest'
         };
         function pictureName(filename) {
             if (!filename) return 'Default';
