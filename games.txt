@@ -789,7 +789,7 @@
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fportpowered.fun%2Fassets%2Fbo1-zombies-xsGi-bOr.jpg&f=1&nofb=1&ipt=83f0f3ddea65c17f7479c2838fb41508581f9117ee73c55e903ce83551e1e403&ipo=images",
     "link": "https://vel.gg/bo1z",
     "verified": false,
-    "useBlank": false
+    "useBlank": true
   },
   {
     "title": "Call of Duty: Modern Warfare 2",
@@ -798,7 +798,7 @@
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpaperaccess.com%2Ffull%2F2204595.jpg&f=1&nofb=1&ipt=8a2319a9cde3ecf3d100acb821c5750172ed0ceae3a51cc5a262890a145e526c&ipo=images",
     "link": "https://ovz-game-production.up.railway.app/",
     "verified": false,
-    "useBlank": false
+    "useBlank": true
   },
   {
     "title": "Skate 3",
@@ -807,7 +807,7 @@
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.altarofgaming.com%2Fwp-content%2Fuploads%2F2022%2F04%2Fskate-3-game-cover-altar-of-gaming.jpg&f=1&nofb=1&ipt=11db6660cad70895069310599f98c31cc1b7466e25947c7bca7aa29baa2fe8d0&ipo=images",
     "link": "https://skate.aaddpp.lol/",
     "verified": false,
-    "useBlank": false
+    "useBlank": true
   },
   {
     "title": "CS Surf",
@@ -816,7 +816,7 @@
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2F8B-Dyw8wep0%2Fhqdefault.jpg&f=1&nofb=1&ipt=756e35b66cdd3ce30d23adf51e9172271e63032de35057252ff678bcb436862a&ipo=images",
     "link": "https://surfd.net/",
     "verified": false,
-    "useBlank": false
+    "useBlank": true
   },
   {
     "title": "Half Life",
@@ -825,7 +825,7 @@
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.cloudflare.steamstatic.com%2Fhalf-life.com%2Fimages%2Fhalflife25%2FHLwallpaper01_16x9.jpg&f=1&nofb=1&ipt=937206752d005f5c8299ea50fe3bd82d25fef15d34b89280a4a609761805e0ed&ipo=images",
     "link": "https://pixelsuft.github.io/hl/xash.html#150",
     "verified": false,
-    "useBlank": false
+    "useBlank": true
   },
   {
     "title": "Grand Theft Auto V",
@@ -834,7 +834,7 @@
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapers.com%2Fimages%2Ffeatured%2Fgrand-theft-auto-v-naej4yiap4gnxh2o.jpg&f=1&nofb=1&ipt=d83c1216d7a325c21a9e27e2853aebaa29ea80e9a384eb3012513d6f3cfc08ff&ipo=images",
     "link": "https://web.archive.org/web/20261005232456/https://playgta5.com/",
     "verified": false,
-    "useBlank": false
+    "useBlank": true
   },
   {
     "title": "Grand Theft Auto: Vice City",
@@ -843,7 +843,7 @@
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic0.gamerantimages.com%2Fwordpress%2Fwp-content%2Fuploads%2F2022%2F10%2FGrand-Theft-Auto-Vice-City-Open-World-Aesthetics.jpg&f=1&nofb=1&ipt=2fb78640bd0bac4c871775ac2a822b3fc7a55ee30fad1b9c582e3164c437cd20&ipo=images",
     "link": "https://joncodeofficial.github.io/gta-vice-city-wasm/",
     "verified": false,
-    "useBlank": false
+    "useBlank": true
   },
   {
     "title": "The Simpsons: Hit & Run",
@@ -852,7 +852,7 @@
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.megavisions.net%2Fwp-content%2Fuploads%2F2021%2F08%2FSimpsons-Hit-Run-Cover-902x507-1280x720-1.jpg&f=1&nofb=1&ipt=1f0a91539d3e7b3922cf8d17fc21ac03f3ce6699d39bc462b4e4eea4c99ea4a2&ipo=images",
     "link": "https://shar-wasm.cjoseph.workers.dev/?skipmovie",
     "verified": false,
-    "useBlank": false
+    "useBlank": true
   },
   {
     "title": "Halo: Combat Evolved",
@@ -861,7 +861,7 @@
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp4163717.jpg&f=1&nofb=1&ipt=368eb9bad06746690da20f02cb61b14e4beb2eb6876251bdb261b61be0f928f9&ipo=images",
     "link": "https://mitchellhynes.com/halo/halo.html",
     "verified": false,
-    "useBlank": false
+    "useBlank": true
   },
   {
     "title": "Diablo",
@@ -870,7 +870,7 @@
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.wccftech.com%2Fwp-content%2Fuploads%2F2023%2F06%2Fdiablo-iv-lilith-HD-scaled.jpeg&f=1&nofb=1&ipt=a1ea19f07f429982cec5c472999b9ab9fe1ac1b882b70c6e35be22edde7a6b2f&ipo=images",
     "link": "https://johnimril.github.io/diablo_web/",
     "verified": false,
-    "useBlank": false
+    "useBlank": true
   },
   {
     "title": "Quake 1",
@@ -879,6 +879,6 @@
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.api.playstation.com%2Fvulcan%2Fap%2Frnd%2F202108%2F0523%2FjzJhJ0OlUd8lqLJKfaF5hioZ.jpg&f=1&nofb=1&ipt=3483ec26f17b2d81f884310770ab362c218fe1e59c640505b8850ca37cf2a274&ipo=images",
     "link": "https://q1.pieter.com/",
     "verified": false,
-    "useBlank": false
+    "useBlank": true
   }
 ]
