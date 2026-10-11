@@ -6,7 +6,8 @@
     "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQetoevXJFXRoM1Z2hAes9LxTtJNqbp_b8RvQ&s",
     "link": "https://scratch.mit.edu/projects/1290209730/fullscreen/",
     "verified": true,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Brgr Duty",
@@ -15,7 +16,8 @@
     "thumb": "https://cdn2.scratch.mit.edu/get_image/project/1215838682_282x210.png",
     "link": "https://scratch.mit.edu/projects/1215838682/fullscreen/",
     "verified": true,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "VENDS",
@@ -24,7 +26,8 @@
     "thumb": "https://cdn2.scratch.mit.edu/get_image/project/1296814899_282x210.png",
     "link": "https://scratch.mit.edu/projects/1296814899/fullscreen/",
     "verified": true,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "CrazyGames",
@@ -33,7 +36,8 @@
     "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcnX447YDT0ztZ4GMlUiXKoaj3E68j3hnCxg&s",
     "link": "https://crazygamesunblocked.net/",
     "verified": true,
-    "useBlank": true
+    "useBlank": true,
+    "new": false
   },
   {
     "title": "Thorns & Balloons",
@@ -42,7 +46,8 @@
     "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSir1FUeE9ing_c6KHg3n7SMIj3OdTdfbAjQ&s",
     "link": "https://learn-duck.firebaseapp.com/class/thorns-and-ballons",
     "verified": true,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Neal.Fun",
@@ -51,7 +56,8 @@
     "thumb": "https://res.cloudinary.com/ybmedia/image/upload/c_crop,e_improve,h_649,w_1154,x_23,y_0/c_fill,f_auto,h_1215,q_auto,w_2160/v1/m/e/e/eeb8778cf3826ffb64f9e8d77fa84512062a437c/image-86-1-scaled-e1744380714382.jpg",
     "link": "https://neal.fun",
     "verified": true,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Space Waves",
@@ -60,7 +66,8 @@
     "thumb": "https://i.ytimg.com/vi/0L885f9nUI8/maxresdefault.jpg",
     "link": "https://space-waves.co/",
     "verified": true,
-    "useBlank": true
+    "useBlank": true,
+    "new": false
   },
   {
     "title": "Golf Orbit",
@@ -69,7 +76,8 @@
     "thumb": "https://i.ytimg.com/vi/RS43Yz9sSC0/maxresdefault.jpg",
     "link": "https://gamesnacks.com/games/7e0r297sgk0j0",
     "verified": true,
-    "useBlank": true
+    "useBlank": true,
+    "new": false
   },
   {
     "title": "Watch Documentaries Games",
@@ -78,7 +86,8 @@
     "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR9BysHlwclKDEoaCcJcLJ6rxjx-MxWQaQ8A&s",
     "link": "https://watchdocumentaries.com/games/",
     "verified": true,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Lake Boys Productions",
@@ -87,7 +96,8 @@
     "thumb": "https://yt3.googleusercontent.com/a1qglvAjzdFooHEfqEZ0c9WYGr-T1KYVCLxFcskwoLtdQwb199sJw9fH4b-qcQxAjml8zJfBrA=s900-c-k-c0x00ffffff-no-rj",
     "link": "https://www.youtube.com/@TheLakeBoysProductions",
     "verified": false,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Tiny Fishing",
@@ -96,7 +106,8 @@
     "thumb": "https://www.coolmathgames.com/sites/default/files/TinyFishing_OG-logo.jpg",
     "link": "https://tinyfishingame.com/",
     "verified": true,
-    "useBlank": true
+    "useBlank": true,
+    "new": false
   },
   {
     "title": "The Survival",
@@ -105,7 +116,8 @@
     "thumb": "https://yt3.googleusercontent.com/jBm6Zb6THFWnfdM2Ih0GfzivYF9mJBj4gJHeE-LsnOoJl3rvVwoZc1asIxIusHRbPl8-ihWPbw=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj",
     "link": "https://www.youtube.com/@TheSurvival",
     "verified": false,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Teqiyokid",
@@ -114,7 +126,8 @@
     "thumb": "https://i.ytimg.com/vi/TlMVYZao84A/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA9-GkyikXq7RmzTXKptRjSZvu90w",
     "link": "https://www.youtube.com/@Teqiyokid",
     "verified": false,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "ChatGPT",
@@ -123,7 +136,8 @@
     "thumb": "https://www.internetmatters.org/wp-content/uploads/2025/06/Chat-GPT-logo.webp",
     "link": "https://chatgpt.com/",
     "verified": false,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Gemini",
@@ -132,7 +146,8 @@
     "thumb": "https://cdn.mos.cms.futurecdn.net/v2/t:0,l:260,cw:1576,ch:1182,q:80,w:1576/gHfBJ6FBHKnLbW36hEDvgV.png",
     "link": "https://gemini.google.com/",
     "verified": true,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Super Lemon Basket",
@@ -141,7 +156,8 @@
     "thumb": "https://www.coolmathgames.com/sites/default/files/super-lemon-basket.png",
     "link": "https://www.coolmathgames.com/0-super-lemon-basket",
     "verified": true,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Eaglercraft",
@@ -150,7 +166,8 @@
     "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUJrDtymSXQF87It_b6EzIm1njr9MYmJPxmQ&s",
     "link": "https://duckmath.freetls.fastly.net/class/eagle-craft",
     "verified": true,
-    "useBlank": true
+    "useBlank": true,
+    "new": false
   },
   {
     "title": "Ai or Not?",
@@ -159,7 +176,8 @@
     "thumb": "https://equivant-court.com/wp-content/uploads/2024/10/what-ai-is-or-isnt-blog-image.png",
     "link": "https://sightengine.com/ai-or-not?version=2024Q3",
     "verified": true,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "What Beats Rock",
@@ -168,7 +186,8 @@
     "thumb": "https://www.whatbeatsrock.com/_next/image?url=%2Fprofile%2Frock-default.png&w=1920&q=75",
     "link": "https://www.whatbeatsrock.com/",
     "verified": false,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Bringus Studios",
@@ -177,7 +196,8 @@
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.wikia.nocookie.net%2Fyoutube%2Fimages%2F2%2F29%2FBringus_Studios.jpg%2Frevision%2Flatest%2Fscale-to-width-down%2F350%3Fcb%3D20240601040622&f=1&nofb=1&ipt=6002b51b6e36361122623f86213376691df849c60c19a6cbc3dbf48ef80c751c&ipo=images",
     "link": "https://www.youtube.com/@BringusStudios/featured",
     "verified": false,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "M&Jmetal",
@@ -186,7 +206,8 @@
     "thumb": "https://yt3.googleusercontent.com/HbSiwNm1OwCPTcsMHegI1eVM_PYFmqmWiOSDOohtgbQ6LpxW8GS4J8dhZD6keyfKKI29jSpKCas=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj",
     "link": "https://www.youtube.com/@martyandjamie",
     "verified": false,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Google Space",
@@ -195,7 +216,8 @@
     "thumb": "https://lh6.ggpht.com/qMSDMY5_zyRjerhq4AIrSn5R4Ar5Rq4nV-zN5HrJP3bEgH5C228FlbkyViBTTPwSWQPFKRthxiWX8YCOtymNihualOObLBxI9n3N",
     "link": "https://mrdoob.com/projects/chromeexperiments/google-space/",
     "verified": false,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "MS Paint",
@@ -204,7 +226,8 @@
     "thumb": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/MSFT-Colorful-flower-in-the-Paint-app:VP1-539x349",
     "link": "https://jspaint.app/",
     "verified": true,
-    "useBlank": true
+    "useBlank": true,
+    "new": false
   },
   {
     "title": "Cookie Clicker",
@@ -213,7 +236,8 @@
     "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe0MEhmA4C4wPGi_KTGQjMMF0cyqZ346K7xQ&s",
     "link": "https://orteil.dashnet.org/cookieclicker/",
     "verified": false,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Sound Buttons",
@@ -222,7 +246,8 @@
     "thumb": "https://play-lh.googleusercontent.com/6BSIx2y6WflHgfJoR63nxCNpKe22dmh5sutzai2B-5V0p91z08EA_RYnK6Eak7S_ow=w3840-h2160-rw",
     "link": "https://soundbuttonsworld.com/",
     "verified": true,
-    "useBlank": true
+    "useBlank": true,
+    "new": false
   },
   {
     "title": "Google Doodle Games",
@@ -231,7 +256,8 @@
     "thumb": "https://images.netcomlearning.com/cms/images/google-baseball-doodle.jpg",
     "link": "https://www.google.com/search?q=google+doodle+games",
     "verified": true,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Sandboxels",
@@ -240,7 +266,8 @@
     "thumb": "https://neal.fun/link-images/sandboxels.svg",
     "link": "https://neal.fun/sandboxels/",
     "verified": true,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "I'm Not a Robot",
@@ -249,7 +276,8 @@
     "thumb": "https://neal.fun/link-images/not-a-robot.svg",
     "link": "https://neal.fun/not-a-robot/",
     "verified": true,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Stimulation Clicker",
@@ -258,7 +286,8 @@
     "thumb": "https://neal.fun/link-images/stimulation-clicker.svg",
     "link": "https://neal.fun/stimulation-clicker/",
     "verified": true,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Infinite Craft",
@@ -267,7 +296,8 @@
     "thumb": "https://neal.fun/link-images/infinite-craft.svg",
     "link": "https://neal.fun/infinite-craft/",
     "verified": false,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "The Password Game",
@@ -276,7 +306,8 @@
     "thumb": "https://neal.fun/link-images/password-game.svg",
     "link": "https://neal.fun/password-game/",
     "verified": true,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Draw a Perfect Circle",
@@ -285,7 +316,8 @@
     "thumb": "https://neal.fun/link-images/perfect-circle.svg",
     "link": "https://neal.fun/perfect-circle/",
     "verified": true,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Absurd Trolley Problems",
@@ -294,7 +326,8 @@
     "thumb": "https://neal.fun/link-images/absurd-trolley-problems.svg",
     "link": "https://neal.fun/absurd-trolley-problems/",
     "verified": true,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Design the Next iPhone",
@@ -303,7 +336,8 @@
     "thumb": "https://neal.fun/link-images/design-the-next-iphone.svg",
     "link": "https://neal.fun/design-the-next-iphone/",
     "verified": true,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Let's Settle This",
@@ -312,7 +346,8 @@
     "thumb": "https://neal.fun/link-images/lets-settle-this.svg",
     "link": "https://neal.fun/lets-settle-this/",
     "verified": true,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "The Auction Game",
@@ -321,7 +356,8 @@
     "thumb": "https://neal.fun/link-images/auction-game.svg",
     "link": "https://neal.fun/auction-game/",
     "verified": true,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Draw Logos from Memory",
@@ -330,7 +366,8 @@
     "thumb": "https://neal.fun/link-images/logos-from-memory.svg",
     "link": "https://neal.fun/logos-from-memory/",
     "verified": true,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Asteroid Launcher",
@@ -339,7 +376,8 @@
     "thumb": "https://neal.fun/link-images/asteroid-launcher.svg",
     "link": "https://neal.fun/asteroid-launcher/",
     "verified": true,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Survival Race",
@@ -348,7 +386,8 @@
     "thumb": "https://watchdocumentaries.com/wp-content/uploads/survival-race-game-360x203.jpg",
     "link": "https://watchdocumentaries.com/survival-race-game/",
     "verified": true,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Snow Rider 3D",
@@ -357,7 +396,8 @@
     "thumb": "https://watchdocumentaries.com/wp-content/uploads/snow-rider-3d-game-360x203.jpg",
     "link": "https://watchdocumentaries.com/snow-rider-3d-game/",
     "verified": true,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "PolyTrack",
@@ -366,7 +406,8 @@
     "thumb": "https://watchdocumentaries.com/wp-content/uploads/polytrack-game-360x203.jpg",
     "link": "https://watchdocumentaries.com/polytrack-game/?p=0",
     "verified": true,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "DriveMad",
@@ -375,7 +416,8 @@
     "thumb": "https://watchdocumentaries.com/wp-content/uploads/drive-mad-game-360x203.jpg",
     "link": "https://drivinggames.io/mad-driving",
     "verified": true,
-    "useBlank": true
+    "useBlank": true,
+    "new": false
   },
   {
     "title": "Slope",
@@ -384,7 +426,8 @@
     "thumb": "https://watchdocumentaries.com/wp-content/uploads/slope-game-360x203.jpg",
     "link": "https://watchdocumentaries.com/slope-game/",
     "verified": true,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Slope 2",
@@ -393,7 +436,8 @@
     "thumb": "https://watchdocumentaries.com/wp-content/uploads/slope-2-game-360x203.jpg",
     "link": "https://watchdocumentaries.com/slope-2-game/",
     "verified": true,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Slope 3",
@@ -402,7 +446,8 @@
     "thumb": "https://watchdocumentaries.com/wp-content/uploads/slope-3-game-360x203.jpg",
     "link": "https://watchdocumentaries.com/slope-3-game/",
     "verified": true,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Moto X3M",
@@ -411,7 +456,8 @@
     "thumb": "https://watchdocumentaries.com/wp-content/uploads/moto-x3m-game-360x203.jpg",
     "link": "https://watchdocumentaries.com/moto-x3m-game/",
     "verified": true,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Highway Traffic",
@@ -420,7 +466,8 @@
     "thumb": "https://watchdocumentaries.com/wp-content/uploads/highway-traffic-game-360x203.jpg",
     "link": "https://watchdocumentaries.com/highway-traffic-game/",
     "verified": true,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "GeoFS",
@@ -429,7 +476,8 @@
     "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy2rCMHiXjK2vD4e6XL-uDV2bpWaYSfZLZiw&s",
     "link": "https://www.geo-fs.com/geofs.php",
     "verified": false,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Dune",
@@ -438,7 +486,8 @@
     "thumb": "https://cdn.jsdelivr.net/gh/mathlesson/mathlesson.github.io/img/dune.jpg",
     "link": "https://learn-duck.firebaseapp.com/class/dune",
     "verified": true,
-    "useBlank": true
+    "useBlank": true,
+    "new": false
   },
   {
     "title": "Retro Rush",
@@ -447,7 +496,8 @@
     "thumb": "https://store-images.s-microsoft.com/image/apps.52831.13894313373290055.755c0d8b-3d2e-4002-92cb-11aff86c00d1.0df3019c-4752-4778-88ba-d1d7470765df?q=90&w=480&h=270",
     "link": "https://azgames.io/retro-rush",
     "verified": true,
-    "useBlank": true
+    "useBlank": true,
+    "new": false
   },
   {
     "title": "Ratatoing",
@@ -456,7 +506,8 @@
     "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXIlEts_keifKOIFYwrVtS8_6SmvBNfMgdrQ&s",
     "link": "https://www.youtube.com/watch?v=JC2dQaqRuBY",
     "verified": false,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "The Little Panda Fighter",
@@ -465,7 +516,8 @@
     "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcnrXzKvin0l5zRzzKASbnMjnDEHHnRVVNeg&s",
     "link": "https://www.youtube.com/watch?v=mlSV-EeQy9M",
     "verified": false,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Lifes a Jungle: Africas Most Wanted",
@@ -474,7 +526,8 @@
     "thumb": "https://m.media-amazon.com/images/M/MV5BNGNmZjJmNGEtOTliNS00ZGY5LThlYTItYzE0NjcyYWI5MWNhXkEyXkFqcGc@._V1_.jpg",
     "link": "https://www.youtube.com/watch?v=Zeo5JwLv6Js",
     "verified": false,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Finding Jesus",
@@ -483,7 +536,8 @@
     "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWsIN8P9_JXAFtvBiVjkf8Ge5RnQ3OOQUJYA&s",
     "link": "https://www.youtube.com/watch?v=P2zZEbiDnxQ",
     "verified": false,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Tetris",
@@ -492,7 +546,8 @@
     "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKQW-AK-RBkoEJ6rhyMkZi0cEJU93LNZdbUg&s",
     "link": "https://www.freetetris.org/",
     "verified": false,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Coolmath Games",
@@ -501,7 +556,8 @@
     "thumb": "https://www.coolmathgames.com/themes/custom/coolmath/logo-stacked.svg",
     "link": "https://www.coolmathgames.com",
     "verified": true,
-    "useBlank": true
+    "useBlank": true,
+    "new": false
   },
   {
     "title": "Jelly Mario",
@@ -510,7 +566,8 @@
     "thumb": "https://i.ytimg.com/vi/m5nhNLva3D8/maxresdefault.jpg",
     "link": "https://jellymar.io/",
     "verified": false,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Deer Adventure",
@@ -519,7 +576,8 @@
     "thumb": "https://deeradventure.io/data/image/options/deer-adventure-banner.jpg",
     "link": "https://zapgames.io/deer-adventure",
     "verified": true,
-    "useBlank": true
+    "useBlank": true,
+    "new": false
   },
   {
     "title": "BoredFlix",
@@ -528,7 +586,8 @@
     "thumb": "https://play-lh.googleusercontent.com/fZNXd1jZWAkZMx10JPYBNnHWVx1eccx66QyU99NWc07LBWR9B6lq1ISnbNxKsEXd030-I1Sh4Tag7TbbeySu=w240-h480-rw",
     "link": "https://boredflix.tv/",
     "verified": false,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Fmovies",
@@ -537,7 +596,8 @@
     "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw0Km-r9xoHAhu2fT0eY32d7h3Pb0fkQozfg&s",
     "link": "https://ww4.fmovies.co/26/",
     "verified": false,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Spotify",
@@ -546,7 +606,8 @@
     "thumb": "https://storage.googleapis.com/pr-newsroom-wp/1/2023/05/2024-spotify-brand-assets-media-kit.jpg",
     "link": "https://open.spotify.com/",
     "verified": true,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Apple Music",
@@ -555,7 +616,8 @@
     "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQSbl1bLb2mQjx4gAIasxURGuTvURgC4t5sw&s",
     "link": "https://music.apple.com/",
     "verified": true,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Pandora",
@@ -564,7 +626,8 @@
     "thumb": "https://musicconsultant.com/site/uploads/2019/06/PandoraRebrand1-1260x840.png",
     "link": "https://www.pandora.com/",
     "verified": true,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Claude",
@@ -573,7 +636,8 @@
     "thumb": "https://cdn.sanity.io/images/9u514z6s/production/d1ab6e8aba08df9961ad9b46eddd00b9b48663b4-2624x1440.png",
     "link": "https://claude.ai/",
     "verified": false,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "DeepSeek",
@@ -582,7 +646,8 @@
     "thumb": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/25848982/STKB320_DEEPSEEK_AI_CVIRGINIA_A.jpg?quality=90&strip=all&crop=0,0,100,100",
     "link": "https://chat.deepseek.com/",
     "verified": true,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Geometry Dash",
@@ -591,7 +656,8 @@
     "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCd8DHW4zOb9QqjJ59t9FpV8LnEeKwIttiaw&s",
     "link": "https://crazygamesunblocked.net/geometry-dash",
     "verified": true,
-    "useBlank": true
+    "useBlank": true,
+    "new": false
   },
   {
     "title": "Retro Bowl",
@@ -600,7 +666,8 @@
     "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtsZZ_dJjUPe7Id2lKsCRqFT_AlAOvb3DZag&s",
     "link": "https://retrobowl76.io/",
     "verified": false,
-    "useBlank": true
+    "useBlank": true,
+    "new": false
   },
   {
     "title": "FunVideoTV",
@@ -609,7 +676,8 @@
     "thumb": "https://yt3.googleusercontent.com/qru8manzk9XSf_AHPAxEEsF5ky94GoMj17KkLgWQTSJUfAi5zTYr44W8zI1XSpnFUfXDtTLyXaU=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj",
     "link": "https://www.youtube.com/user/FunVideoTV",
     "verified": false,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "GeoDuels",
@@ -618,7 +686,8 @@
     "thumb": "https://igebeprgtgspizprnkoz.supabase.co/storage/v1/object/public/vibe-assets/url-intake/9e213d86-8245-4581-b7e2-a3640c80a8d5/screenshots/1773777984205-0-e691340ec26d.webp",
     "link": "https://geoduels.io/",
     "verified": false,
-    "useBlank": true
+    "useBlank": true,
+    "new": false
   },
   {
     "title": "Ultrakill",
@@ -627,7 +696,8 @@
     "thumb": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1229490/capsule_616x353.jpg?t=1774188523",
     "link": "https://duckmath.org/class/ultrakill",
     "verified": true,
-    "useBlank": true
+    "useBlank": true,
+    "new": false
   },
   {
     "title": "Cursor Camp",
@@ -636,7 +706,8 @@
     "thumb": "https://neal.fun/link-images/cursor-camp.svg",
     "link": "https://neal.fun/cursor-camp",
     "verified": true,
-    "useBlank": true
+    "useBlank": true,
+    "new": false
   },
   {
     "title": "TuneIn",
@@ -645,7 +716,8 @@
     "thumb": "https://store-images.s-microsoft.com/image/apps.44829.9007199266246398.fab84bd6-dd10-4a80-9137-0a0428d5234f.75f86c00-f9c7-4097-a291-20a532f66d90?h=210",
     "link": "https://tunein.com",
     "verified": false,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "FrontWars",
@@ -654,7 +726,8 @@
     "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvng2WwNwI-ua_aN-8MrLWhrB1qzUBTgEIXQ&s",
     "link": "https://frontwars.io/",
     "verified": false,
-    "useBlank": true
+    "useBlank": true,
+    "new": false
   },
   {
     "title": "Snek.io",
@@ -663,7 +736,8 @@
     "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmMaiThJHROSKgRaj4GGQdeZ92WB3bLWx3cA&s",
     "link": "https://snek-io.netlify.app/",
     "verified": false,
-    "useBlank": true
+    "useBlank": true,
+    "new": false
   },
   {
     "title": "Gun Spin",
@@ -672,7 +746,8 @@
     "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdS20YMopMPcV7xgRlO_4aq33o6XUMavO5Hg&s",
     "link": "https://learn-duck.firebaseapp.com/class/gun-spin",
     "verified": true,
-    "useBlank": true
+    "useBlank": true,
+    "new": false
   },
   {
     "title": "Jackbox.TV",
@@ -681,7 +756,8 @@
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.insidehook.com%2Fwp-content%2Fuploads%2F2020%2F05%2FJackbox-Games-Logo.jpg%3Ffit%3D1500%252C1000&f=1&nofb=1&ipt=3d6df4f2d5b8d6156654ef0e4e6242174407a9eaf52fde43d69e20c0c179579b&ipo=images",
     "link": "https://jackbox.tv",
     "verified": true,
-    "useBlank": true
+    "useBlank": true,
+    "new": false
   },
   {
     "title": "GrammaCrackers",
@@ -690,7 +766,8 @@
     "thumb": "https://d.ibtimes.co.uk/en/full/1784070/gramma-crackers.png?w=736&f=824727b308ecc4ad6d3bd1ab40e0f01e",
     "link": "https://youtube.com/@grammacrackers",
     "verified": true,
-    "useBlank": true
+    "useBlank": true,
+    "new": false
   },
   {
     "title": "Cobb Can Move",
@@ -699,7 +776,8 @@
     "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe1TlwohdhK6CnjHBDtfe6pMdhhWxzZ57ySg&s",
     "link": "http://cobb-can-move.com/",
     "verified": true,
-    "useBlank": true
+    "useBlank": true,
+    "new": false
   },
   {
     "title": "White Lake Bets",
@@ -708,7 +786,8 @@
     "thumb": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/6a/40/75/white-lake-state-park.jpg?w=900&h=500&s=1",
     "link": "https://wlbets.lovable.app/",
     "verified": true,
-    "useBlank": true
+    "useBlank": true,
+    "new": false
   },
   {
     "title": "Uncle's AI",
@@ -717,7 +796,8 @@
     "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Artificial_Intelligence_%26_AI_%26_Machine_Learning_-_30212411048.jpg/1280px-Artificial_Intelligence_%26_AI_%26_Machine_Learning_-_30212411048.jpg?utm_source=en.wikiversity.org&utm_campaign=index&utm_content=thumbnail",
     "link": "https://unclesai.lovable.app/",
     "verified": true,
-    "useBlank": true
+    "useBlank": true,
+    "new": false
   },
   {
     "title": "VirusTotal",
@@ -726,7 +806,8 @@
     "thumb": "https://images.contentstack.io/v3/assets/blt38f1f401b66100ad/bltad293621115db1a4/690b50abdfd10011073354da/vt-1200.png",
     "link": "https://virustotal.com/",
     "verified": true,
-    "useBlank": true
+    "useBlank": true,
+    "new": false
   },
   {
     "title": "Fishbrain",
@@ -735,7 +816,8 @@
     "thumb": "https://fishbrain.com/_next/static/media/og_image_homepage.17dqb6i1ii3es.png",
     "link": "http://fishbrain.com/",
     "verified": true,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "Granny",
@@ -744,7 +826,8 @@
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%2Fid%2FOIP.YAaTxHm6aymfanh02qsv3QHaEK%3Fr%3D0%26pid%3DApi&f=1&ipt=2211bdec874b4688727aed72992c689b0e93e4fc315b16b6b4d659d9155902b3&ipo=images",
     "link": "https://learn-duck.firebaseapp.com/class/granny",
     "verified": true,
-    "useBlank": true
+    "useBlank": true,
+    "new": false
   },
   {
     "title": "LarpTube",
@@ -753,7 +836,8 @@
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flarptube.lovable.app%2F__l5e%2Fassets-v1%2F867607e1-c93c-429a-afed-8594154b77c9%2Flarptube-logo.png&f=1&nofb=1&ipt=18e3c76968c03b41c9937bbb4486d1e3605c742e3bd3230f73a557db007c04d5&ipo=images",
     "link": "https://larptube.com/",
     "verified": false,
-    "useBlank": true
+    "useBlank": true,
+    "new": false
   },
   {
     "title": "Sword Fights on the Heights IV",
@@ -762,7 +846,8 @@
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.sftcdn.net%2Fimages%2Ft_app-cover-l%2Cf_auto%2Fp%2F5cbced38-e912-4cc9-998f-86e3df009972%2F653554917%2Fsword-fights-on-the-heights-iv-screenshot.png&f=1&nofb=1&ipt=9f3d9feaf7b2ae223e9be659c3d2b4cccbeb12fda080ac956fcb26166cfa3503&ipo=images",
     "link": "https://shedletsky.com/SFOTH/",
     "verified": false,
-    "useBlank": true
+    "useBlank": true,
+    "new": false
   },
   {
     "title": "Fortnite OG",
@@ -771,7 +856,8 @@
     "thumb": "https://fortniteog.lol/assets/logo.png",
     "link": "https://fortniteog.lol/fortnite",
     "verified": false,
-    "useBlank": true
+    "useBlank": true,
+    "new": false
   },
   {
     "title": "SmartPass",
@@ -780,7 +866,8 @@
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fedovatecapital.com%2Fwp-content%2Fuploads%2F2024%2F04%2FSmartPass-6x4-1.jpg&f=1&nofb=1&ipt=94b026a19267603ecb1bdf4e36b401f75ed6bbca8df49e0d5b5964773e17d458&ipo=images",
     "link": "https://mysmartpass.garnerj826.workers.dev",
     "verified": true,
-    "useBlank": false
+    "useBlank": false,
+    "new": false
   },
   {
     "title": "BO1 Zombies",
@@ -789,7 +876,8 @@
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fportpowered.fun%2Fassets%2Fbo1-zombies-xsGi-bOr.jpg&f=1&nofb=1&ipt=83f0f3ddea65c17f7479c2838fb41508581f9117ee73c55e903ce83551e1e403&ipo=images",
     "link": "https://vel.gg/bo1z",
     "verified": false,
-    "useBlank": true
+    "useBlank": true,
+    "new": true
   },
   {
     "title": "Call of Duty: Modern Warfare 2",
@@ -798,7 +886,8 @@
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpaperaccess.com%2Ffull%2F2204595.jpg&f=1&nofb=1&ipt=8a2319a9cde3ecf3d100acb821c5750172ed0ceae3a51cc5a262890a145e526c&ipo=images",
     "link": "https://ovz-game-production.up.railway.app/",
     "verified": false,
-    "useBlank": true
+    "useBlank": true,
+    "new": true
   },
   {
     "title": "Skate 3",
@@ -807,7 +896,8 @@
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.altarofgaming.com%2Fwp-content%2Fuploads%2F2022%2F04%2Fskate-3-game-cover-altar-of-gaming.jpg&f=1&nofb=1&ipt=11db6660cad70895069310599f98c31cc1b7466e25947c7bca7aa29baa2fe8d0&ipo=images",
     "link": "https://skate.aaddpp.lol/",
     "verified": false,
-    "useBlank": true
+    "useBlank": true,
+    "new": true
   },
   {
     "title": "CS Surf",
@@ -816,7 +906,8 @@
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2F8B-Dyw8wep0%2Fhqdefault.jpg&f=1&nofb=1&ipt=756e35b66cdd3ce30d23adf51e9172271e63032de35057252ff678bcb436862a&ipo=images",
     "link": "https://surfd.net/",
     "verified": false,
-    "useBlank": true
+    "useBlank": true,
+    "new": true
   },
   {
     "title": "Half Life",
@@ -825,7 +916,8 @@
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.cloudflare.steamstatic.com%2Fhalf-life.com%2Fimages%2Fhalflife25%2FHLwallpaper01_16x9.jpg&f=1&nofb=1&ipt=937206752d005f5c8299ea50fe3bd82d25fef15d34b89280a4a609761805e0ed&ipo=images",
     "link": "https://pixelsuft.github.io/hl/xash.html#150",
     "verified": false,
-    "useBlank": true
+    "useBlank": true,
+    "new": true
   },
   {
     "title": "Grand Theft Auto V",
@@ -834,7 +926,8 @@
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapers.com%2Fimages%2Ffeatured%2Fgrand-theft-auto-v-naej4yiap4gnxh2o.jpg&f=1&nofb=1&ipt=d83c1216d7a325c21a9e27e2853aebaa29ea80e9a384eb3012513d6f3cfc08ff&ipo=images",
     "link": "https://web.archive.org/web/20261005232456/https://playgta5.com/",
     "verified": false,
-    "useBlank": true
+    "useBlank": true,
+    "new": true
   },
   {
     "title": "Grand Theft Auto: Vice City",
@@ -843,7 +936,8 @@
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic0.gamerantimages.com%2Fwordpress%2Fwp-content%2Fuploads%2F2022%2F10%2FGrand-Theft-Auto-Vice-City-Open-World-Aesthetics.jpg&f=1&nofb=1&ipt=2fb78640bd0bac4c871775ac2a822b3fc7a55ee30fad1b9c582e3164c437cd20&ipo=images",
     "link": "https://joncodeofficial.github.io/gta-vice-city-wasm/",
     "verified": false,
-    "useBlank": true
+    "useBlank": true,
+    "new": true
   },
   {
     "title": "The Simpsons: Hit & Run",
@@ -852,7 +946,8 @@
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.megavisions.net%2Fwp-content%2Fuploads%2F2021%2F08%2FSimpsons-Hit-Run-Cover-902x507-1280x720-1.jpg&f=1&nofb=1&ipt=1f0a91539d3e7b3922cf8d17fc21ac03f3ce6699d39bc462b4e4eea4c99ea4a2&ipo=images",
     "link": "https://shar-wasm.cjoseph.workers.dev/?skipmovie",
     "verified": false,
-    "useBlank": true
+    "useBlank": true,
+    "new": true
   },
   {
     "title": "Halo: Combat Evolved",
@@ -861,7 +956,8 @@
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp4163717.jpg&f=1&nofb=1&ipt=368eb9bad06746690da20f02cb61b14e4beb2eb6876251bdb261b61be0f928f9&ipo=images",
     "link": "https://mitchellhynes.com/halo/halo.html",
     "verified": false,
-    "useBlank": true
+    "useBlank": true,
+    "new": true
   },
   {
     "title": "Diablo",
@@ -870,7 +966,8 @@
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.wccftech.com%2Fwp-content%2Fuploads%2F2023%2F06%2Fdiablo-iv-lilith-HD-scaled.jpeg&f=1&nofb=1&ipt=a1ea19f07f429982cec5c472999b9ab9fe1ac1b882b70c6e35be22edde7a6b2f&ipo=images",
     "link": "https://johnimril.github.io/diablo_web/",
     "verified": false,
-    "useBlank": true
+    "useBlank": true,
+    "new": true
   },
   {
     "title": "Quake 1",
@@ -879,6 +976,7 @@
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.api.playstation.com%2Fvulcan%2Fap%2Frnd%2F202108%2F0523%2FjzJhJ0OlUd8lqLJKfaF5hioZ.jpg&f=1&nofb=1&ipt=3483ec26f17b2d81f884310770ab362c218fe1e59c640505b8850ca37cf2a274&ipo=images",
     "link": "https://q1.pieter.com/",
     "verified": false,
-    "useBlank": true
+    "useBlank": true,
+    "new": true
   }
 ]
