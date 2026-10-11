@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Powerhouse</title>
-    <meta name="powerhouse-site-version" content="2.12.0">
+    <meta name="powerhouse-site-version" content="2.12.1">
     <link rel="icon" id="faviconEl" type="image/png" sizes="any" href="https://cdn.jsdelivr.net/gh/C823/powerhouse@main/icons/POWERHOUSE-icon.png?v=20261009">
     <link rel="shortcut icon" type="image/png" href="https://cdn.jsdelivr.net/gh/C823/powerhouse@main/icons/POWERHOUSE-icon.png?v=20261009">
     <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/C823/powerhouse@main/icons/POWERHOUSE-icon.png?v=20261009">
     <!-- The Worker may inject a GitHub <base>. Keep browser navigation on this Worker origin. -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
-        /* Powerhouse palette v2.12.0 — sampled from supplied reference:
+        /* Powerhouse palette v2.12.1 — sampled from supplied reference:
            black #000000, charcoal #1c1c1c, white #ffffff. */
         :root {
             --accent: #444444;
@@ -43,7 +43,7 @@
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         body { margin: 0; font-family: 'Outfit', sans-serif; background-color: var(--bg-main); color: var(--text); min-height: 100vh; overflow-x: hidden; display: flex; transition: background 0.3s ease; }
 
-        /* --- AUTH PAGE — website v2.12.0 --- */
+        /* --- AUTH PAGE — website v2.12.1 --- */
         #landing-page { position:fixed; inset:0; z-index:5000; display:none; align-items:center; justify-content:center; overflow:auto; padding:32px 22px; color:#eee; background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.6)),url('https://files.enderman.ch/wallpapers/Moonlight.png') center center / cover no-repeat fixed #090b12; }
         #landing-page::before { content:''; position:fixed; inset:0; pointer-events:none; background:rgba(0,0,0,.10); }
         #landing-page::after { content:none; }
@@ -126,7 +126,7 @@
         .nav-item:hover { background: var(--accent-light); color: var(--text); }
         .nav-item.active { background: var(--accent); color: white; }
         .nav-item svg { width: 20px; height: 20px; flex: 0 0 20px; display: block; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; fill: none; }
-        /* v2.12.0: solid filled sidebar navigation icons */
+        /* v2.12.1: solid filled sidebar navigation icons */
         #sidebar .nav-item svg.sidebar-solid-icon { fill: currentColor; stroke: none; stroke-width: 0; }
         .badge { position: absolute; right: 12px; background: var(--accent2); padding: 2px 8px; border-radius: 20px; font-size: 10px; color: white; font-weight: 800; }
 
@@ -311,7 +311,7 @@
         .social-card img { width:54px; height:54px; object-fit:cover; flex-shrink:0; background:var(--surface); }
         .social-card-name { font-size:13px; font-weight:700; margin:0 8px 0 12px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; flex:1; }
 
-        /* v2.12.0: banned/deleted accounts retain removable friend entries, never a profile link. */
+        /* v2.12.1: banned/deleted accounts retain removable friend entries, never a profile link. */
         .social-deleted-profile {display:flex;align-items:center;flex:1;min-width:0;pointer-events:none;color:var(--text-muted);}
         .social-deleted-profile img {filter:grayscale(1);opacity:.55;}
         .social-deleted-text {display:flex;flex-direction:column;gap:2px;min-width:0;margin-left:12px;}
@@ -727,7 +727,7 @@
         .account-userid-row button:disabled { opacity:.45; cursor:default; }
         .account-userid-hint, #account-userid-feedback { color:#aaa; font-size:12px; margin:7px 0 0; }
 
-/* v2.12.0 — Messaging */
+/* v2.12.1 — Messaging */
 #messages-view [hidden], #side-messages .message-nav-count[hidden], #profile-message-action[hidden] { display:none !important; }
 #side-messages { position:relative; }
 .message-nav-count { margin-left:auto; min-width:19px; padding:2px 6px; border-radius:30px; background:#393939; color:#fff; font-size:11px; font-weight:700; text-align:center; }
@@ -772,7 +772,7 @@
 .messages-back { border:0; background:#343434; color:white; border-radius:7px; padding:6px 10px; cursor:pointer; }
 
 
-/* v2.12.0 — Friends / Requests */
+/* v2.12.1 — Friends / Requests */
 .requests-count {display:inline-flex;min-width:19px;height:19px;padding:0 5px;align-items:center;justify-content:center;border-radius:9px;background:#383838;color:#fff;font-size:11px;margin-left:5px;}
 .requests-count[hidden] {display:none!important;}
 .social-request-card {height:auto;min-height:78px;padding-right:12px;gap:12px;}
@@ -791,7 +791,7 @@
 #friends-view:has(.social-request-card) .social-grid {grid-template-columns:repeat(auto-fill,minmax(min(100%,470px),470px));}
 @media(max-width:540px){.social-request-card{flex-wrap:wrap;padding:8px;}.social-request-actions{width:100%;justify-content:flex-end}.social-request-card .social-profile-link{width:100%;}}
 
-/* v2.12.0 — Not found page */
+/* v2.12.1 — Not found page */
 #not-found-view .error-layout { min-height:calc(100vh - 190px); display:flex; align-items:center; justify-content:center; text-align:center; padding:64px 16px; }
 #not-found-view .error-content {max-width:520px; width:100%; }
 #not-found-view .error-kicker {color:#9b9b9b; font-weight:700; letter-spacing:.18em; font-size:12px; text-transform:uppercase; margin-bottom:16px;}
@@ -1575,7 +1575,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
 
 
 
-    <!-- AUTH PAGE | Powerhouse website v2.12.0 -->
+    <!-- AUTH PAGE | Powerhouse website v2.12.1 -->
     <div id="landing-page">
         <div class="auth-shell">
             <section class="auth-promo" aria-label="Welcome to Powerhouse">
@@ -1611,7 +1611,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                     </form>
                     <p class="auth-bottom">Already have an account? <button type="button" class="auth-switch-link" onclick="switchAuthMode('login')">Sign in</button></p>
                 </div>
-                <span class="auth-release">POWERHOUSE v2.12.0</span>
+                <span class="auth-release">POWERHOUSE v2.12.1</span>
             </section>
         </div>
     </div>
@@ -1647,7 +1647,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             <a class="c823-footer-link" href="https://home.c823.workers.dev" aria-label="Open C823 Hub" title="C823 Hub">
                 <img class="c823-footer-icon" src="https://raw.githubusercontent.com/C823/Powerhouse/main/icons/C823%20logo.png" alt="C823" loading="lazy">
             </a>
-            <div class="sidebar-release" aria-label="Powerhouse version">POWERHOUSE <span>v2.12.0</span></div>
+            <div class="sidebar-release" aria-label="Powerhouse version">POWERHOUSE <span>v2.12.1</span></div>
         </div>
     </aside>
 
@@ -2418,6 +2418,46 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             }
             return window.powerhouseGamesPending;
         }
+        // v2.12.1 — original games.txt useBlank launch semantics.
+        // true: blank wrapper; false: direct tab; omitted: blank unless verified.
+        function gameUsesBlank(game) {
+            if (game.useBlank === true) return true;
+            if (game.useBlank === false) return false;
+            return !isVerifiedGame(game);
+        }
+        function launchPowerhouseGame(game, event) {
+            if (event) event.preventDefault();
+            const url = String(game?.link || '').trim();
+            if (!/^https?:\/\//i.test(url)) return;
+            if (!gameUsesBlank(game) || /(?:youtube\.com|youtu\.be)/i.test(new URL(url).hostname)) {
+                window.open(url, '_blank', 'noopener,noreferrer');
+                return;
+            }
+            // Open synchronously during the click to avoid popup blockers.
+            const tab = window.open('about:blank', '_blank');
+            if (!tab) { window.open(url, '_blank', 'noopener,noreferrer'); return; }
+            try {
+                const doc = tab.document;
+                doc.title = (game.title || 'Game') + ' — Powerhouse';
+                const meta = doc.createElement('meta'); meta.name='viewport';meta.content='width=device-width,initial-scale=1';doc.head.append(meta);
+                const favicon=doc.createElement('link');favicon.rel='icon';favicon.href='https://raw.githubusercontent.com/C823/Powerhouse/main/icons/POWERHOUSE-icon-dark.png';doc.head.append(favicon);
+                const style=doc.createElement('style');style.textContent=`*{box-sizing:border-box}html,body{margin:0;height:100%;background:#101010;color:white;font:14px system-ui,Arial,sans-serif}header{height:54px;background:#1c1c1c;border-bottom:1px solid #383838;display:flex;align-items:center;padding:0 16px;gap:12px}header img{width:30px;height:30px;border-radius:6px;object-fit:cover}header strong{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}header a,header button,#blocked a{color:#fff;text-decoration:none;background:#383838;padding:9px 13px;border:0;border-radius:8px;cursor:pointer;font:inherit}main{height:calc(100% - 54px);position:relative}iframe{width:100%;height:100%;border:0;background:white}#blocked{display:none;position:absolute;inset:0;align-items:center;justify-content:center;flex-direction:column;gap:15px;text-align:center;background:#101010;padding:24px}#blocked p{color:#aaa;max-width:420px}`;doc.head.append(style);
+                const bar=doc.createElement('header');
+                const image=doc.createElement('img');image.src=String(game.thumb||'');image.alt='';image.onerror=()=>{image.style.display='none'};
+                const label=doc.createElement('strong');label.textContent=game.title||'Game';
+                const direct=doc.createElement('a');direct.href=url;direct.target='_blank';direct.rel='noopener noreferrer';direct.textContent='Open Direct';
+                const close=doc.createElement('button');close.textContent='Close';close.onclick=()=>tab.close();
+                bar.append(image,label,direct,close);
+                const main=doc.createElement('main');
+                const frame=doc.createElement('iframe');frame.src=url;frame.allowFullscreen=true;frame.title=game.title||'Game';
+                const blocked=doc.createElement('div');blocked.id='blocked';
+                const h=doc.createElement('h2');h.textContent='Unable to embed this game';
+                const notice=doc.createElement('p');notice.textContent='Some websites prevent loading inside another page. Try opening the game directly.';
+                const fallback=doc.createElement('a');fallback.href=url;fallback.target='_blank';fallback.rel='noopener noreferrer';fallback.textContent='Open Direct';
+                blocked.append(h,notice,fallback);main.append(frame,blocked);doc.body.append(bar,main);
+                frame.onerror=()=>{frame.style.display='none';blocked.style.display='flex'};
+            } catch (error) { tab.location.replace(url); }
+        }
         let gameDetailRequest=0;
         async function renderGameDetail(slug) {
             const seq=++gameDetailRequest, host=document.getElementById('game-detail-content');
@@ -2447,7 +2487,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                 left.append(heading,pills);
                 const play=document.createElement('a');play.className='game-play-button';play.textContent='▶  Play';
                 const launch=String(game.link||'').trim();
-                if(launch && launch!=='#') {play.href=launch;play.target='_blank';play.rel='noopener noreferrer';}
+                if(launch && /^https?:\/\//i.test(launch)) {play.href=launch;play.target='_blank';play.rel='noopener noreferrer';play.addEventListener('click',event=>launchPowerhouseGame(game,event));}
                 else{play.href='#';play.setAttribute('aria-disabled','true');play.title='No playable link available';}
                 top.append(left,play);
                 const panel=document.createElement('section');panel.className='game-content-panel';
@@ -3053,7 +3093,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
         }
 
 
-        // v2.12.0 - KV-backed direct messages (existing /social/* API)
+        // v2.12.1 - KV-backed direct messages (existing /social/* API)
         let messageConversations = [];
         let activeMessagePeer = '';
         let messagesLoadSequence = 0;
