@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Powerhouse</title>
-    <meta name="powerhouse-site-version" content="2.12.2">
+    <meta name="powerhouse-site-version" content="2.12.4">
     <link rel="icon" id="faviconEl" type="image/png" sizes="any" href="https://cdn.jsdelivr.net/gh/C823/powerhouse@main/icons/POWERHOUSE-icon.png?v=20261009">
     <link rel="shortcut icon" type="image/png" href="https://cdn.jsdelivr.net/gh/C823/powerhouse@main/icons/POWERHOUSE-icon.png?v=20261009">
     <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/C823/powerhouse@main/icons/POWERHOUSE-icon.png?v=20261009">
     <!-- The Worker may inject a GitHub <base>. Keep browser navigation on this Worker origin. -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
-        /* Powerhouse palette v2.12.2 — sampled from supplied reference:
+        /* Powerhouse palette v2.12.4 — sampled from supplied reference:
            black #000000, charcoal #1c1c1c, white #ffffff. */
         :root {
             --accent: #444444;
@@ -43,7 +43,7 @@
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         body { margin: 0; font-family: 'Outfit', sans-serif; background-color: var(--bg-main); color: var(--text); min-height: 100vh; overflow-x: hidden; display: flex; transition: background 0.3s ease; }
 
-        /* --- AUTH PAGE — website v2.12.2 --- */
+        /* --- AUTH PAGE — website v2.12.4 --- */
         #landing-page { position:fixed; inset:0; z-index:5000; display:none; align-items:center; justify-content:center; overflow:auto; padding:32px 22px; color:#eee; background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.6)),url('https://files.enderman.ch/wallpapers/Moonlight.png') center center / cover no-repeat fixed #090b12; }
         #landing-page::before { content:''; position:fixed; inset:0; pointer-events:none; background:rgba(0,0,0,.10); }
         #landing-page::after { content:none; }
@@ -126,7 +126,7 @@
         .nav-item:hover { background: var(--accent-light); color: var(--text); }
         .nav-item.active { background: var(--accent); color: white; }
         .nav-item svg { width: 20px; height: 20px; flex: 0 0 20px; display: block; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; fill: none; }
-        /* v2.12.2: solid filled sidebar navigation icons */
+        /* v2.12.4: solid filled sidebar navigation icons */
         #sidebar .nav-item svg.sidebar-solid-icon { fill: currentColor; stroke: none; stroke-width: 0; }
         .badge { position: absolute; right: 12px; background: var(--accent2); padding: 2px 8px; border-radius: 20px; font-size: 10px; color: white; font-weight: 800; }
 
@@ -259,12 +259,20 @@
         .game-card { text-decoration: none; color: inherit; }
         /* Favorites — compact shelf and per-game save control */
         .favorites-section { margin:0 0 30px; }
+        .recent-section { margin:0 0 30px; }
+        .recent-section[hidden] { display:none !important; }
+        .recent-section .game-card-wrap .favorite-toggle {display:none;}
         .favorites-heading { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:15px; }
         .favorites-heading h2 {font-size:21px; font-weight:750; margin:0; letter-spacing:-.3px;}
         .favorites-heading span { font-size:12px; color:var(--text-muted); }
         .favorites-grid {display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr)); gap:18px;}
         .game-card-wrap {position:relative; min-width:0;}
         .game-card-wrap .game-card {display:block;}
+        /* NEW flag from games.txt: unobtrusive, pinned opposite the Favorites star. */
+        .game-new-tag { position:absolute; z-index:2; top:11px; left:11px; display:inline-flex; align-items:center; justify-content:center; padding:5px 8px; border-radius:6px; background:#f0f0f0; color:#141414; font-size:10px; font-weight:800; line-height:1.1; font-family:inherit; letter-spacing:.065em; pointer-events:none; box-shadow:0 1px 5px rgba(0,0,0,.18); }
+        .search-game-item {position:relative;}
+        .search-game-item .game-new-tag {top:10px;left:10px;}
+        .game-info-pill.new-game-pill {background:#ededed !important;color:#111 !important;border-color:#ededed !important;font-weight:800 !important;letter-spacing:.045em;}
         .favorite-button {position:absolute; z-index:2; right:10px; top:10px; width:36px; height:36px; display:flex; align-items:center; justify-content:center; background:rgba(13,13,13,.83); border:1px solid rgba(255,255,255,.18); border-radius:10px; color:#d1d1d1; cursor:pointer; transition:background .15s, transform .15s;}
         .favorite-button:hover {background:#333; transform:scale(1.07);}
         .favorite-button[aria-pressed="true"] {color:#fff; background:#454545;}
@@ -311,7 +319,7 @@
         .social-card img { width:54px; height:54px; object-fit:cover; flex-shrink:0; background:var(--surface); }
         .social-card-name { font-size:13px; font-weight:700; margin:0 8px 0 12px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; flex:1; }
 
-        /* v2.12.2: banned/deleted accounts retain removable friend entries, never a profile link. */
+        /* v2.12.4: banned/deleted accounts retain removable friend entries, never a profile link. */
         .social-deleted-profile {display:flex;align-items:center;flex:1;min-width:0;pointer-events:none;color:var(--text-muted);}
         .social-deleted-profile img {filter:grayscale(1);opacity:.55;}
         .social-deleted-text {display:flex;flex-direction:column;gap:2px;min-width:0;margin-left:12px;}
@@ -727,7 +735,7 @@
         .account-userid-row button:disabled { opacity:.45; cursor:default; }
         .account-userid-hint, #account-userid-feedback { color:#aaa; font-size:12px; margin:7px 0 0; }
 
-/* v2.12.2 — Messaging */
+/* v2.12.4 — Messaging */
 #messages-view [hidden], #side-messages .message-nav-count[hidden], #profile-message-action[hidden] { display:none !important; }
 #side-messages { position:relative; }
 .message-nav-count { margin-left:auto; min-width:19px; padding:2px 6px; border-radius:30px; background:#393939; color:#fff; font-size:11px; font-weight:700; text-align:center; }
@@ -772,7 +780,7 @@
 .messages-back { border:0; background:#343434; color:white; border-radius:7px; padding:6px 10px; cursor:pointer; }
 
 
-/* v2.12.2 — Friends / Requests */
+/* v2.12.4 — Friends / Requests */
 .requests-count {display:inline-flex;min-width:19px;height:19px;padding:0 5px;align-items:center;justify-content:center;border-radius:9px;background:#383838;color:#fff;font-size:11px;margin-left:5px;}
 .requests-count[hidden] {display:none!important;}
 .social-request-card {height:auto;min-height:78px;padding-right:12px;gap:12px;}
@@ -791,7 +799,7 @@
 #friends-view:has(.social-request-card) .social-grid {grid-template-columns:repeat(auto-fill,minmax(min(100%,470px),470px));}
 @media(max-width:540px){.social-request-card{flex-wrap:wrap;padding:8px;}.social-request-actions{width:100%;justify-content:flex-end}.social-request-card .social-profile-link{width:100%;}}
 
-/* v2.12.2 — Not found page */
+/* v2.12.4 — Not found page */
 #not-found-view .error-layout { min-height:calc(100vh - 190px); display:flex; align-items:center; justify-content:center; text-align:center; padding:64px 16px; }
 #not-found-view .error-content {max-width:520px; width:100%; }
 #not-found-view .error-kicker {color:#9b9b9b; font-weight:700; letter-spacing:.18em; font-size:12px; text-transform:uppercase; margin-bottom:16px;}
@@ -803,7 +811,7 @@
 #not-found-view .error-home-link:focus-visible {outline:2px solid white;outline-offset:3px;}
 
 
-/* v2.12.2 — Game details: image-safe, responsive editorial layout. */
+/* v2.12.4 — Game details: image-safe, responsive editorial layout. */
 #game-view { width:100%; }
 #game-view .game-detail { width:min(1120px,100%); margin:0 auto; min-width:0; }
 #game-view .game-breadcrumb { display:flex; align-items:center; flex-wrap:wrap; gap:10px; margin:4px 0 21px; color:#999; font-size:13px; }
@@ -1619,7 +1627,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
 
 
 
-    <!-- AUTH PAGE | Powerhouse website v2.12.2 -->
+    <!-- AUTH PAGE | Powerhouse website v2.12.4 -->
     <div id="landing-page">
         <div class="auth-shell">
             <section class="auth-promo" aria-label="Welcome to Powerhouse">
@@ -1655,7 +1663,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                     </form>
                     <p class="auth-bottom">Already have an account? <button type="button" class="auth-switch-link" onclick="switchAuthMode('login')">Sign in</button></p>
                 </div>
-                <span class="auth-release">POWERHOUSE v2.12.2</span>
+                <span class="auth-release">POWERHOUSE v2.12.4</span>
             </section>
         </div>
     </div>
@@ -1691,7 +1699,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             <a class="c823-footer-link" href="https://home.c823.workers.dev" aria-label="Open C823 Hub" title="C823 Hub">
                 <img class="c823-footer-icon" src="https://raw.githubusercontent.com/C823/Powerhouse/main/icons/C823%20logo.png" alt="C823" loading="lazy">
             </a>
-            <div class="sidebar-release" aria-label="Powerhouse version">POWERHOUSE <span>v2.12.2</span></div>
+            <div class="sidebar-release" aria-label="Powerhouse version">POWERHOUSE <span>v2.12.4</span></div>
         </div>
     </aside>
 
@@ -1747,6 +1755,10 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             <section class="favorites-section" aria-label="Favorite games">
                 <div class="favorites-heading"><h2>Favorites</h2><span id="favorites-count"></span></div>
                 <div class="favorites-grid" id="favorites-grid" aria-live="polite"></div>
+            </section>
+            <section class="recent-section" id="recently-played-section" aria-label="Recently played games" hidden>
+                <div class="favorites-heading"><h2>Recently Played</h2><span id="recently-played-count"></span></div>
+                <div class="favorites-grid" id="recently-played-grid" aria-live="polite"></div>
             </section>
             <div class="game-filter-toolbar" aria-label="Game filters">
                 <span class="filter-title">Games</span>
@@ -2252,8 +2264,13 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                     if (Array.isArray(data.favorites)) {
                         favoriteGames = normalizeFavorites(data.favorites);
                         persistFavoriteCache();
-                        renderGames();
                     }
+                    if (Array.isArray(data.history)) {
+                        // Keep any games launched before KV completed its first load.
+                        recentGames = normalizeRecentGames([...recentGames, ...data.history]);
+                        persistRecentCache();
+                    }
+                    renderGames();
                     setAccountUserId(data.userId);
                     renderPicturePicker();
                     setAccountAbout(typeof data.settings?.about === 'string' ? data.settings.about : '');
@@ -2389,7 +2406,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                     try { nextPage = (sessionStorage.getItem('ph_return_to') || '/home').slice(1); sessionStorage.removeItem('ph_return_to'); } catch(e) {}
                     if (nextPage.startsWith('user/')) { history.replaceState({},'', '/' + nextPage); routeFromURL(); }
                     else navigateTo(ROUTE_PAGES.has(nextPage) ? nextPage : 'home', true);
-                    loadFavoriteCache(); renderGames();
+                    loadFavoriteCache(); loadRecentCache(); renderGames();
                     fetchUserData(); fetchHomeFriends(); loadStaffPermissions().catch(console.warn);
                 } else authLoginFeedback(data.error || 'Incorrect username or password.');
             } catch(e) { authLoginFeedback('Unable to connect. Please try again.'); }
@@ -2462,7 +2479,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             }
             return window.powerhouseGamesPending;
         }
-        // v2.12.2 — original games.txt useBlank launch semantics.
+        // v2.12.4 — original games.txt useBlank launch semantics.
         // true: blank wrapper; false: direct tab; omitted: blank unless verified.
         function gameUsesBlank(game) {
             if (game.useBlank === true) return true;
@@ -2473,6 +2490,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             if (event) event.preventDefault();
             const url = String(game?.link || '').trim();
             if (!/^https?:\/\//i.test(url)) return;
+            recordRecentlyPlayed(game);
             if (!gameUsesBlank(game) || /(?:youtube\.com|youtu\.be)/i.test(new URL(url).hostname)) {
                 window.open(url, '_blank', 'noopener,noreferrer');
                 return;
@@ -2531,6 +2549,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                 const category=Array.isArray(game.category)?game.category.join(', '):(game.category||game.genre||'Uncategorized');
                 const makePill=(value)=>{const span=document.createElement('span');span.className='game-info-pill';span.textContent=value;pills.append(span);};
                 makePill('Category: '+category);makePill(isVerifiedGame(game)?'Verified Unblocked':'Not verified');
+                if (isNewGame(game)) {makePill('NEW');pills.lastElementChild.classList.add('new-game-pill');}
                 left.append(heading,pills);
                 const play=document.createElement('a');play.className='game-play-button';play.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg><span>Play game</span>';
                 const launch=String(game.link||'').trim();
@@ -2566,7 +2585,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                 gamesBox.replaceChildren();
                 document.getElementById('search-game-count').textContent = `${games.length} found`;
                 if (!games.length) return searchStatus(gamesBox,'No matching games.');
-                games.forEach(g => {
+                newestGamesFirst(games).forEach(g => {
                     const link = document.createElement('a');
                     link.className = 'search-game-item';
                     link.href = gamePath(g);
@@ -2579,7 +2598,9 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                         badge.src = 'https://raw.githubusercontent.com/C823/Powerhouse/main/icons/verified.svg';
                         badge.alt = 'Verified'; badge.title = 'Unblocked'; label.append(badge);
                     }
-                    link.append(thumb,label); gamesBox.append(link);
+                    link.append(thumb,label);
+                    if (isNewGame(g)) link.append(createNewGameTag());
+                    gamesBox.append(link);
                 });
             };
             if (Array.isArray(window.allGames)) {
@@ -2683,6 +2704,72 @@ function adminSetBanner(){return staffLegacySaveBanner();}
         function persistFavoriteCache() {
             try { localStorage.setItem(favoriteStorageKey(),JSON.stringify(favoriteGames)); } catch {}
         }
+        // Recently Played: an ordered, per-account list recorded only when Play is pressed.
+        // Legacy entries can be game objects or title strings. Titles resolve against games.txt.
+        const MAX_RECENT_GAMES = 30;
+        let recentGames = [];
+        function recentStorageKey() {
+            return user.username ? `power_history:${user.username.toLowerCase()}` : 'power_history';
+        }
+        function normalizeRecentGames(entries) {
+            if (!Array.isArray(entries)) return [];
+            const seen = new Set(), result = [];
+            for (const entry of entries) {
+                const title = typeof entry === 'string' ? entry : entry?.title || entry?.name;
+                if (!title) continue;
+                const key = String(title).trim().toLowerCase();
+                if (!key || seen.has(key)) continue;
+                seen.add(key);
+                result.push(typeof entry === 'object' && entry !== null ? {...entry,title:String(title)} : {title:String(title)});
+                if (result.length >= MAX_RECENT_GAMES) break;
+            }
+            return result;
+        }
+        function loadRecentCache() {
+            try {
+                const scoped = localStorage.getItem(recentStorageKey());
+                const legacy = localStorage.getItem('power_history');
+                recentGames = normalizeRecentGames(JSON.parse(scoped || legacy || '[]'));
+            } catch { recentGames = []; }
+        }
+        function persistRecentCache() {
+            try { localStorage.setItem(recentStorageKey(), JSON.stringify(recentGames)); } catch {}
+        }
+        let recentSaveChain = Promise.resolve();
+        async function syncRecentToKV(tokenAtLaunch, usernameAtLaunch, snapshot) {
+            if (!tokenAtLaunch || !usernameAtLaunch) return;
+            const headers = { Authorization:`Bearer ${tokenAtLaunch}`, 'Content-Type':'application/json' };
+            // Re-read the server record to avoid replacing About, PFP and Favorites.
+            const loaded = await fetch(`${API_BASE}/auth/load`, {headers,cache:'no-store'});
+            if (!loaded.ok) throw new Error('Unable to load play history');
+            const {data} = await loaded.json();
+            const current = data && typeof data === 'object' ? data : {};
+            const merged = normalizeRecentGames([...snapshot, ...(current.history || [])]);
+            const payload = {...current, settings:current.settings||{},
+                history:merged, favorites:current.favorites||[]};
+            const response = await fetch(`${API_BASE}/auth/save`, {
+                method:'POST', headers, body:JSON.stringify(payload)
+            });
+            if (!response.ok) throw new Error('Unable to save play history');
+            if (user.token === tokenAtLaunch && user.username?.toLowerCase() === usernameAtLaunch.toLowerCase()) {
+                recentGames = normalizeRecentGames([...recentGames, ...merged]);
+                persistRecentCache();
+            }
+        }
+        function recordRecentlyPlayed(game) {
+            if (!game?.title) return;
+            const title = String(game.title).toLowerCase();
+            recentGames = normalizeRecentGames([game, ...recentGames.filter(g=>String(g.title||'').toLowerCase()!==title)]);
+            persistRecentCache();
+            renderGames();
+            const tokenAtLaunch=user.token, usernameAtLaunch=user.username;
+            const snapshot=recentGames.map(g=>({...g}));
+            if (tokenAtLaunch && usernameAtLaunch) {
+                recentSaveChain = recentSaveChain.catch(()=>{}).then(()=>syncRecentToKV(tokenAtLaunch,usernameAtLaunch,snapshot));
+                recentSaveChain.catch(error=>console.warn('Play history saved locally; KV sync failed:',error));
+            }
+        }
+        loadRecentCache();
         let favoriteSaveChain = Promise.resolve();
         async function saveFavoritesToKV(accountToken, username, games) {
             if (!accountToken || !username) return;
@@ -2713,6 +2800,16 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                 favoriteSaveChain.catch(e=>console.warn('Favorites sync failed; saved locally:',e));
             }
         }
+        // Only the explicit boolean true marks a newly added game.
+        function isNewGame(game) { return game?.new === true; }
+        function newestGamesFirst(games) {
+            return [...games].sort((a,b) => Number(isNewGame(b)) - Number(isNewGame(a)));
+        }
+        function createNewGameTag() {
+            const tag=document.createElement('span');
+            tag.className='game-new-tag';tag.textContent='NEW';tag.setAttribute('aria-label','New game');
+            return tag;
+        }
         function renderFavoriteGameCard(game) {
             const wrapper=document.createElement('div'); wrapper.className='game-card-wrap';
             const link=document.createElement('a'); link.className='game-card';
@@ -2732,7 +2829,9 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             button.title=active?'Remove from Favorites':'Add to Favorites';
             button.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.7 2.88 5.83 6.43.94-4.66 4.54 1.1 6.41L12 17.4l-5.75 3.02 1.1-6.41L2.69 9.47l6.43-.94Z"/></svg>';
             button.addEventListener('click',()=>toggleGameFavorite(game));
-            wrapper.append(link,button);return wrapper;
+            wrapper.append(link,button);
+            if (isNewGame(game)) wrapper.append(createNewGameTag());
+            return wrapper;
         }
         loadFavoriteCache();
 
@@ -2755,15 +2854,24 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             const favoritesGrid=document.getElementById('favorites-grid');
             if (!grid || !favoritesGrid) return;
             const available=Array.isArray(window.allGames)?window.allGames:[];
-            const games=available.filter(g=>activeGameFilter!=='verified'||isVerifiedGame(g));
+            const games=newestGamesFirst(available.filter(g=>activeGameFilter!=='verified'||isVerifiedGame(g)));
             document.getElementById('game-filter-count').textContent=`${games.length} game${games.length===1?'':'s'}`;
             grid.replaceChildren(...games.map(renderFavoriteGameCard));
             if (!games.length) {const empty=document.createElement('p');empty.className='favorites-empty';empty.textContent='No games found.';grid.append(empty);}
             // Use current catalog data where available so old saved entries still launch correctly.
             const saved=favoriteGames.map(f=>available.find(g=>String(g.title||'').toLowerCase()===String(f.title||'').toLowerCase())||f);
-            favoritesGrid.replaceChildren(...saved.map(renderFavoriteGameCard));
+            favoritesGrid.replaceChildren(...newestGamesFirst(saved).map(renderFavoriteGameCard));
             document.getElementById('favorites-count').textContent=saved.length?`${saved.length} saved`:'';
             if (!saved.length) {const empty=document.createElement('p');empty.className='favorites-empty';empty.textContent='No favorites yet. Select the star on a game to save it here.';favoritesGrid.append(empty);}
+            const recentSection=document.getElementById('recently-played-section');
+            const recentGrid=document.getElementById('recently-played-grid');
+            if (recentSection && recentGrid) {
+                const recent=recentGames.map(entry=>available.find(g=>String(g.title||'').toLowerCase()===String(entry.title||'').toLowerCase())||entry)
+                    .filter(g=>g.title && (g.thumb || g.link)).slice(0,8);
+                recentSection.hidden=recent.length===0;
+                recentGrid.replaceChildren(...recent.map(renderFavoriteGameCard));
+                document.getElementById('recently-played-count').textContent=recent.length?`${recent.length} recent`:'';
+            }
         }
 
         let activeSocialTab = 'friends';
@@ -3140,7 +3248,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
         }
 
 
-        // v2.12.2 - KV-backed direct messages (existing /social/* API)
+        // v2.12.4 - KV-backed direct messages (existing /social/* API)
         let messageConversations = [];
         let activeMessagePeer = '';
         let messagesLoadSequence = 0;
@@ -3625,6 +3733,8 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             user = { token: null, username: null, pfp: null };
             accountSavedData = null;
             favoriteGames = [];
+            recentGames = [];
+            renderGames();
             currentAbout = '';
             renderPicturePicker();
             resetStaffUI(); // Hide staff links and clear role badges immediately.
