@@ -7,7 +7,8 @@
     "link": "https://scratch.mit.edu/projects/1290209730/fullscreen/",
     "verified": true,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Brgr Duty",
@@ -17,7 +18,8 @@
     "link": "https://scratch.mit.edu/projects/1215838682/fullscreen/",
     "verified": true,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "VENDS",
@@ -27,7 +29,8 @@
     "link": "https://scratch.mit.edu/projects/1296814899/fullscreen/",
     "verified": true,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "CrazyGames",
@@ -37,7 +40,8 @@
     "link": "https://crazygamesunblocked.net/",
     "verified": true,
     "useBlank": true,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Thorns & Balloons",
@@ -47,7 +51,8 @@
     "link": "https://learn-duck.firebaseapp.com/class/thorns-and-ballons",
     "verified": true,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Neal.Fun",
@@ -57,7 +62,8 @@
     "link": "https://neal.fun",
     "verified": true,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Space Waves",
@@ -67,7 +73,8 @@
     "link": "https://space-waves.co/",
     "verified": true,
     "useBlank": true,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Golf Orbit",
@@ -77,7 +84,8 @@
     "link": "https://gamesnacks.com/games/7e0r297sgk0j0",
     "verified": true,
     "useBlank": true,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Watch Documentaries Games",
@@ -87,7 +95,8 @@
     "link": "https://watchdocumentaries.com/games/",
     "verified": true,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Lake Boys Productions",
@@ -97,7 +106,8 @@
     "link": "https://www.youtube.com/@TheLakeBoysProductions",
     "verified": false,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Tiny Fishing",
@@ -107,7 +117,8 @@
     "link": "https://tinyfishingame.com/",
     "verified": true,
     "useBlank": true,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "The Survival",
@@ -117,7 +128,8 @@
     "link": "https://www.youtube.com/@TheSurvival",
     "verified": false,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Teqiyokid",
@@ -127,7 +139,8 @@
     "link": "https://www.youtube.com/@Teqiyokid",
     "verified": false,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "ChatGPT",
@@ -137,7 +150,8 @@
     "link": "https://chatgpt.com/",
     "verified": false,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Gemini",
@@ -147,7 +161,8 @@
     "link": "https://gemini.google.com/",
     "verified": true,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Super Lemon Basket",
@@ -157,7 +172,8 @@
     "link": "https://www.coolmathgames.com/0-super-lemon-basket",
     "verified": true,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Eaglercraft",
@@ -167,7 +183,8 @@
     "link": "https://duckmath.freetls.fastly.net/class/eagle-craft",
     "verified": true,
     "useBlank": true,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Ai or Not?",
@@ -177,7 +194,8 @@
     "link": "https://sightengine.com/ai-or-not?version=2024Q3",
     "verified": true,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "What Beats Rock",
@@ -187,7 +205,8 @@
     "link": "https://www.whatbeatsrock.com/",
     "verified": false,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Bringus Studios",
@@ -197,7 +216,8 @@
     "link": "https://www.youtube.com/@BringusStudios/featured",
     "verified": false,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "M&Jmetal",
@@ -207,7 +227,8 @@
     "link": "https://www.youtube.com/@martyandjamie",
     "verified": false,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Google Space",
@@ -217,7 +238,8 @@
     "link": "https://mrdoob.com/projects/chromeexperiments/google-space/",
     "verified": false,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "MS Paint",
@@ -227,7 +249,8 @@
     "link": "https://jspaint.app/",
     "verified": true,
     "useBlank": true,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Cookie Clicker",
@@ -237,7 +260,8 @@
     "link": "https://orteil.dashnet.org/cookieclicker/",
     "verified": false,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Sound Buttons",
@@ -247,7 +271,8 @@
     "link": "https://soundbuttonsworld.com/",
     "verified": true,
     "useBlank": true,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Google Doodle Games",
@@ -257,7 +282,8 @@
     "link": "https://www.google.com/search?q=google+doodle+games",
     "verified": true,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Sandboxels",
@@ -267,7 +293,8 @@
     "link": "https://neal.fun/sandboxels/",
     "verified": true,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "I'm Not a Robot",
@@ -277,7 +304,8 @@
     "link": "https://neal.fun/not-a-robot/",
     "verified": true,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Stimulation Clicker",
@@ -287,7 +315,8 @@
     "link": "https://neal.fun/stimulation-clicker/",
     "verified": true,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Infinite Craft",
@@ -297,7 +326,8 @@
     "link": "https://neal.fun/infinite-craft/",
     "verified": false,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "The Password Game",
@@ -307,7 +337,8 @@
     "link": "https://neal.fun/password-game/",
     "verified": true,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Draw a Perfect Circle",
@@ -317,7 +348,8 @@
     "link": "https://neal.fun/perfect-circle/",
     "verified": true,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Absurd Trolley Problems",
@@ -327,7 +359,8 @@
     "link": "https://neal.fun/absurd-trolley-problems/",
     "verified": true,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Design the Next iPhone",
@@ -337,7 +370,8 @@
     "link": "https://neal.fun/design-the-next-iphone/",
     "verified": true,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Let's Settle This",
@@ -347,7 +381,8 @@
     "link": "https://neal.fun/lets-settle-this/",
     "verified": true,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "The Auction Game",
@@ -357,7 +392,8 @@
     "link": "https://neal.fun/auction-game/",
     "verified": true,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Draw Logos from Memory",
@@ -367,7 +403,8 @@
     "link": "https://neal.fun/logos-from-memory/",
     "verified": true,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Asteroid Launcher",
@@ -377,7 +414,8 @@
     "link": "https://neal.fun/asteroid-launcher/",
     "verified": true,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Survival Race",
@@ -387,7 +425,8 @@
     "link": "https://watchdocumentaries.com/survival-race-game/",
     "verified": true,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Snow Rider 3D",
@@ -397,7 +436,8 @@
     "link": "https://watchdocumentaries.com/snow-rider-3d-game/",
     "verified": true,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "PolyTrack",
@@ -407,7 +447,8 @@
     "link": "https://watchdocumentaries.com/polytrack-game/?p=0",
     "verified": true,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "DriveMad",
@@ -417,7 +458,8 @@
     "link": "https://drivinggames.io/mad-driving",
     "verified": true,
     "useBlank": true,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Slope",
@@ -427,7 +469,8 @@
     "link": "https://watchdocumentaries.com/slope-game/",
     "verified": true,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Slope 2",
@@ -437,7 +480,8 @@
     "link": "https://watchdocumentaries.com/slope-2-game/",
     "verified": true,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Slope 3",
@@ -447,7 +491,8 @@
     "link": "https://watchdocumentaries.com/slope-3-game/",
     "verified": true,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Moto X3M",
@@ -457,7 +502,8 @@
     "link": "https://watchdocumentaries.com/moto-x3m-game/",
     "verified": true,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Highway Traffic",
@@ -467,7 +513,8 @@
     "link": "https://watchdocumentaries.com/highway-traffic-game/",
     "verified": true,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "GeoFS",
@@ -477,7 +524,8 @@
     "link": "https://www.geo-fs.com/geofs.php",
     "verified": false,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Dune",
@@ -487,7 +535,8 @@
     "link": "https://learn-duck.firebaseapp.com/class/dune",
     "verified": true,
     "useBlank": true,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Retro Rush",
@@ -497,7 +546,8 @@
     "link": "https://azgames.io/retro-rush",
     "verified": true,
     "useBlank": true,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Ratatoing",
@@ -507,7 +557,8 @@
     "link": "https://www.youtube.com/watch?v=JC2dQaqRuBY",
     "verified": false,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "The Little Panda Fighter",
@@ -517,7 +568,8 @@
     "link": "https://www.youtube.com/watch?v=mlSV-EeQy9M",
     "verified": false,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Lifes a Jungle: Africas Most Wanted",
@@ -527,7 +579,8 @@
     "link": "https://www.youtube.com/watch?v=Zeo5JwLv6Js",
     "verified": false,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Finding Jesus",
@@ -537,7 +590,8 @@
     "link": "https://www.youtube.com/watch?v=P2zZEbiDnxQ",
     "verified": false,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Tetris",
@@ -547,7 +601,8 @@
     "link": "https://www.freetetris.org/",
     "verified": false,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Coolmath Games",
@@ -557,7 +612,8 @@
     "link": "https://www.coolmathgames.com",
     "verified": true,
     "useBlank": true,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Jelly Mario",
@@ -567,7 +623,8 @@
     "link": "https://jellymar.io/",
     "verified": false,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Deer Adventure",
@@ -577,7 +634,8 @@
     "link": "https://zapgames.io/deer-adventure",
     "verified": true,
     "useBlank": true,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "BoredFlix",
@@ -587,7 +645,8 @@
     "link": "https://boredflix.tv/",
     "verified": false,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Fmovies",
@@ -597,7 +656,8 @@
     "link": "https://ww4.fmovies.co/26/",
     "verified": false,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Spotify",
@@ -607,7 +667,8 @@
     "link": "https://open.spotify.com/",
     "verified": true,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Apple Music",
@@ -617,7 +678,8 @@
     "link": "https://music.apple.com/",
     "verified": true,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Pandora",
@@ -627,7 +689,8 @@
     "link": "https://www.pandora.com/",
     "verified": true,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Claude",
@@ -637,7 +700,8 @@
     "link": "https://claude.ai/",
     "verified": false,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "DeepSeek",
@@ -647,7 +711,8 @@
     "link": "https://chat.deepseek.com/",
     "verified": true,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Geometry Dash",
@@ -657,7 +722,8 @@
     "link": "https://crazygamesunblocked.net/geometry-dash",
     "verified": true,
     "useBlank": true,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Retro Bowl",
@@ -667,7 +733,8 @@
     "link": "https://retrobowl76.io/",
     "verified": false,
     "useBlank": true,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "FunVideoTV",
@@ -677,7 +744,8 @@
     "link": "https://www.youtube.com/user/FunVideoTV",
     "verified": false,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "GeoDuels",
@@ -687,7 +755,8 @@
     "link": "https://geoduels.io/",
     "verified": false,
     "useBlank": true,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Ultrakill",
@@ -697,7 +766,8 @@
     "link": "https://duckmath.org/class/ultrakill",
     "verified": true,
     "useBlank": true,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Cursor Camp",
@@ -707,7 +777,8 @@
     "link": "https://neal.fun/cursor-camp",
     "verified": true,
     "useBlank": true,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "TuneIn",
@@ -717,7 +788,8 @@
     "link": "https://tunein.com",
     "verified": false,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "FrontWars",
@@ -727,7 +799,8 @@
     "link": "https://frontwars.io/",
     "verified": false,
     "useBlank": true,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Snek.io",
@@ -737,7 +810,8 @@
     "link": "https://snek-io.netlify.app/",
     "verified": false,
     "useBlank": true,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Gun Spin",
@@ -747,7 +821,8 @@
     "link": "https://learn-duck.firebaseapp.com/class/gun-spin",
     "verified": true,
     "useBlank": true,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Jackbox.TV",
@@ -757,7 +832,8 @@
     "link": "https://jackbox.tv",
     "verified": true,
     "useBlank": true,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "GrammaCrackers",
@@ -767,7 +843,8 @@
     "link": "https://youtube.com/@grammacrackers",
     "verified": true,
     "useBlank": true,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Cobb Can Move",
@@ -777,7 +854,8 @@
     "link": "http://cobb-can-move.com/",
     "verified": true,
     "useBlank": true,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "White Lake Bets",
@@ -787,7 +865,8 @@
     "link": "https://wlbets.lovable.app/",
     "verified": true,
     "useBlank": true,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Uncle's AI",
@@ -797,7 +876,8 @@
     "link": "https://unclesai.lovable.app/",
     "verified": true,
     "useBlank": true,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "VirusTotal",
@@ -807,7 +887,8 @@
     "link": "https://virustotal.com/",
     "verified": true,
     "useBlank": true,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Fishbrain",
@@ -817,7 +898,8 @@
     "link": "http://fishbrain.com/",
     "verified": true,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Granny",
@@ -827,7 +909,8 @@
     "link": "https://learn-duck.firebaseapp.com/class/granny",
     "verified": true,
     "useBlank": true,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "LarpTube",
@@ -837,7 +920,8 @@
     "link": "https://larptube.com/",
     "verified": false,
     "useBlank": true,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Sword Fights on the Heights IV",
@@ -847,7 +931,8 @@
     "link": "https://shedletsky.com/SFOTH/",
     "verified": false,
     "useBlank": true,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "Fortnite OG",
@@ -857,7 +942,8 @@
     "link": "https://fortniteog.lol/fortnite",
     "verified": false,
     "useBlank": true,
-    "new": false
+    "new": false,
+    "date_added": "N/A"
   },
   {
     "title": "SmartPass",
@@ -867,7 +953,8 @@
     "link": "https://mysmartpass.garnerj826.workers.dev",
     "verified": true,
     "useBlank": false,
-    "new": false
+    "new": false,
+    "date_added": "10/07/2026"
   },
   {
     "title": "BO1 Zombies",
@@ -877,7 +964,8 @@
     "link": "https://vel.gg/bo1z",
     "verified": false,
     "useBlank": true,
-    "new": true
+    "new": true,
+    "date_added": "10/11/2026"
   },
   {
     "title": "Call of Duty: Modern Warfare 2",
@@ -887,7 +975,8 @@
     "link": "https://ovz-game-production.up.railway.app/",
     "verified": false,
     "useBlank": true,
-    "new": true
+    "new": true,
+    "date_added": "10/11/2026"
   },
   {
     "title": "Skate 3",
@@ -897,7 +986,8 @@
     "link": "https://skate.aaddpp.lol/",
     "verified": false,
     "useBlank": true,
-    "new": true
+    "new": true,
+    "date_added": "10/11/2026"
   },
   {
     "title": "CS Surf",
@@ -907,7 +997,8 @@
     "link": "https://surfd.net/",
     "verified": false,
     "useBlank": true,
-    "new": true
+    "new": true,
+    "date_added": "10/11/2026"
   },
   {
     "title": "Half Life",
@@ -917,7 +1008,8 @@
     "link": "https://pixelsuft.github.io/hl/xash.html#150",
     "verified": false,
     "useBlank": true,
-    "new": true
+    "new": true,
+    "date_added": "10/11/2026"
   },
   {
     "title": "Grand Theft Auto V",
@@ -927,7 +1019,8 @@
     "link": "https://web.archive.org/web/20261005232456/https://playgta5.com/",
     "verified": false,
     "useBlank": true,
-    "new": true
+    "new": true,
+    "date_added": "10/11/2026"
   },
   {
     "title": "Grand Theft Auto: Vice City",
@@ -937,7 +1030,8 @@
     "link": "https://joncodeofficial.github.io/gta-vice-city-wasm/",
     "verified": false,
     "useBlank": true,
-    "new": true
+    "new": true,
+    "date_added": "10/11/2026"
   },
   {
     "title": "The Simpsons: Hit & Run",
@@ -947,7 +1041,8 @@
     "link": "https://shar-wasm.cjoseph.workers.dev/?skipmovie",
     "verified": false,
     "useBlank": true,
-    "new": true
+    "new": true,
+    "date_added": "10/11/2026"
   },
   {
     "title": "Halo: Combat Evolved",
@@ -957,7 +1052,8 @@
     "link": "https://mitchellhynes.com/halo/halo.html",
     "verified": false,
     "useBlank": true,
-    "new": true
+    "new": true,
+    "date_added": "10/11/2026"
   },
   {
     "title": "Diablo",
@@ -967,7 +1063,8 @@
     "link": "https://johnimril.github.io/diablo_web/",
     "verified": false,
     "useBlank": true,
-    "new": true
+    "new": true,
+    "date_added": "10/11/2026"
   },
   {
     "title": "Quake 1",
@@ -977,7 +1074,8 @@
     "link": "https://q1.pieter.com/",
     "verified": false,
     "useBlank": true,
-    "new": true
+    "new": true,
+    "date_added": "10/11/2026"
   },
   {
     "title": "Vortex",
@@ -987,6 +1085,7 @@
     "link": "https://playvortex.io",
     "verified": false,
     "useBlank": false,
-    "new": true
+    "new": true,
+    "date_added": "10/11/2026"
   }
 ]
