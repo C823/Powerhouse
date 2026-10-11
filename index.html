@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Powerhouse</title>
-    <meta name="powerhouse-site-version" content="2.8.4">
+    <meta name="powerhouse-site-version" content="2.12.0">
     <link rel="icon" id="faviconEl" type="image/png" sizes="any" href="https://cdn.jsdelivr.net/gh/C823/powerhouse@main/icons/POWERHOUSE-icon.png?v=20261009">
     <link rel="shortcut icon" type="image/png" href="https://cdn.jsdelivr.net/gh/C823/powerhouse@main/icons/POWERHOUSE-icon.png?v=20261009">
     <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/C823/powerhouse@main/icons/POWERHOUSE-icon.png?v=20261009">
     <!-- The Worker may inject a GitHub <base>. Keep browser navigation on this Worker origin. -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
-        /* Powerhouse palette v2.11.2 — sampled from supplied reference:
+        /* Powerhouse palette v2.12.0 — sampled from supplied reference:
            black #000000, charcoal #1c1c1c, white #ffffff. */
         :root {
             --accent: #444444;
@@ -43,7 +43,7 @@
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         body { margin: 0; font-family: 'Outfit', sans-serif; background-color: var(--bg-main); color: var(--text); min-height: 100vh; overflow-x: hidden; display: flex; transition: background 0.3s ease; }
 
-        /* --- AUTH PAGE — website v2.11.2 --- */
+        /* --- AUTH PAGE — website v2.12.0 --- */
         #landing-page { position:fixed; inset:0; z-index:5000; display:none; align-items:center; justify-content:center; overflow:auto; padding:32px 22px; color:#eee; background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.6)),url('https://files.enderman.ch/wallpapers/Moonlight.png') center center / cover no-repeat fixed #090b12; }
         #landing-page::before { content:''; position:fixed; inset:0; pointer-events:none; background:rgba(0,0,0,.10); }
         #landing-page::after { content:none; }
@@ -126,7 +126,7 @@
         .nav-item:hover { background: var(--accent-light); color: var(--text); }
         .nav-item.active { background: var(--accent); color: white; }
         .nav-item svg { width: 20px; height: 20px; flex: 0 0 20px; display: block; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; fill: none; }
-        /* v2.11.2: solid filled sidebar navigation icons */
+        /* v2.12.0: solid filled sidebar navigation icons */
         #sidebar .nav-item svg.sidebar-solid-icon { fill: currentColor; stroke: none; stroke-width: 0; }
         .badge { position: absolute; right: 12px; background: var(--accent2); padding: 2px 8px; border-radius: 20px; font-size: 10px; color: white; font-weight: 800; }
 
@@ -257,6 +257,21 @@
         /* --- GRID --- */
         #game-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr)); gap: 22px; }
         .game-card { text-decoration: none; color: inherit; }
+        /* Favorites — compact shelf and per-game save control */
+        .favorites-section { margin:0 0 30px; }
+        .favorites-heading { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:15px; }
+        .favorites-heading h2 {font-size:21px; font-weight:750; margin:0; letter-spacing:-.3px;}
+        .favorites-heading span { font-size:12px; color:var(--text-muted); }
+        .favorites-grid {display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr)); gap:18px;}
+        .game-card-wrap {position:relative; min-width:0;}
+        .game-card-wrap .game-card {display:block;}
+        .favorite-button {position:absolute; z-index:2; right:10px; top:10px; width:36px; height:36px; display:flex; align-items:center; justify-content:center; background:rgba(13,13,13,.83); border:1px solid rgba(255,255,255,.18); border-radius:10px; color:#d1d1d1; cursor:pointer; transition:background .15s, transform .15s;}
+        .favorite-button:hover {background:#333; transform:scale(1.07);}
+        .favorite-button[aria-pressed="true"] {color:#fff; background:#454545;}
+        .favorite-button svg {width:19px; height:19px; fill:none; stroke:currentColor; stroke-width:2; stroke-linejoin:round;}
+        .favorite-button[aria-pressed="true"] svg {fill:currentColor;}
+        .favorites-empty {font-size:13px; color:var(--text-muted); padding:15px 0 5px;}
+
 
         /* Verified games: original Powerhouse badge, aligned next to the title. */
         .game-title-row { display:flex; align-items:center; gap:6px; min-width:0; }
@@ -296,7 +311,7 @@
         .social-card img { width:54px; height:54px; object-fit:cover; flex-shrink:0; background:var(--surface); }
         .social-card-name { font-size:13px; font-weight:700; margin:0 8px 0 12px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; flex:1; }
 
-        /* v2.11.2: banned/deleted accounts retain removable friend entries, never a profile link. */
+        /* v2.12.0: banned/deleted accounts retain removable friend entries, never a profile link. */
         .social-deleted-profile {display:flex;align-items:center;flex:1;min-width:0;pointer-events:none;color:var(--text-muted);}
         .social-deleted-profile img {filter:grayscale(1);opacity:.55;}
         .social-deleted-text {display:flex;flex-direction:column;gap:2px;min-width:0;margin-left:12px;}
@@ -712,7 +727,7 @@
         .account-userid-row button:disabled { opacity:.45; cursor:default; }
         .account-userid-hint, #account-userid-feedback { color:#aaa; font-size:12px; margin:7px 0 0; }
 
-/* v2.11.2 — Messaging */
+/* v2.12.0 — Messaging */
 #messages-view [hidden], #side-messages .message-nav-count[hidden], #profile-message-action[hidden] { display:none !important; }
 #side-messages { position:relative; }
 .message-nav-count { margin-left:auto; min-width:19px; padding:2px 6px; border-radius:30px; background:#393939; color:#fff; font-size:11px; font-weight:700; text-align:center; }
@@ -757,7 +772,7 @@
 .messages-back { border:0; background:#343434; color:white; border-radius:7px; padding:6px 10px; cursor:pointer; }
 
 
-/* v2.11.2 — Friends / Requests */
+/* v2.12.0 — Friends / Requests */
 .requests-count {display:inline-flex;min-width:19px;height:19px;padding:0 5px;align-items:center;justify-content:center;border-radius:9px;background:#383838;color:#fff;font-size:11px;margin-left:5px;}
 .requests-count[hidden] {display:none!important;}
 .social-request-card {height:auto;min-height:78px;padding-right:12px;gap:12px;}
@@ -776,7 +791,7 @@
 #friends-view:has(.social-request-card) .social-grid {grid-template-columns:repeat(auto-fill,minmax(min(100%,470px),470px));}
 @media(max-width:540px){.social-request-card{flex-wrap:wrap;padding:8px;}.social-request-actions{width:100%;justify-content:flex-end}.social-request-card .social-profile-link{width:100%;}}
 
-/* v2.11.2 — Not found page */
+/* v2.12.0 — Not found page */
 #not-found-view .error-layout { min-height:calc(100vh - 190px); display:flex; align-items:center; justify-content:center; text-align:center; padding:64px 16px; }
 #not-found-view .error-content {max-width:520px; width:100%; }
 #not-found-view .error-kicker {color:#9b9b9b; font-weight:700; letter-spacing:.18em; font-size:12px; text-transform:uppercase; margin-bottom:16px;}
@@ -1560,7 +1575,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
 
 
 
-    <!-- AUTH PAGE | Powerhouse website v2.11.2 -->
+    <!-- AUTH PAGE | Powerhouse website v2.12.0 -->
     <div id="landing-page">
         <div class="auth-shell">
             <section class="auth-promo" aria-label="Welcome to Powerhouse">
@@ -1596,7 +1611,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                     </form>
                     <p class="auth-bottom">Already have an account? <button type="button" class="auth-switch-link" onclick="switchAuthMode('login')">Sign in</button></p>
                 </div>
-                <span class="auth-release">POWERHOUSE v2.11.2</span>
+                <span class="auth-release">POWERHOUSE v2.12.0</span>
             </section>
         </div>
     </div>
@@ -1632,7 +1647,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             <a class="c823-footer-link" href="https://home.c823.workers.dev" aria-label="Open C823 Hub" title="C823 Hub">
                 <img class="c823-footer-icon" src="https://raw.githubusercontent.com/C823/Powerhouse/main/icons/C823%20logo.png" alt="C823" loading="lazy">
             </a>
-            <div class="sidebar-release" aria-label="Powerhouse version">POWERHOUSE <span>v2.11.2</span></div>
+            <div class="sidebar-release" aria-label="Powerhouse version">POWERHOUSE <span>v2.12.0</span></div>
         </div>
     </aside>
 
@@ -1685,6 +1700,10 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                     </div>
                 </div>
             </div>
+            <section class="favorites-section" aria-label="Favorite games">
+                <div class="favorites-heading"><h2>Favorites</h2><span id="favorites-count"></span></div>
+                <div class="favorites-grid" id="favorites-grid" aria-live="polite"></div>
+            </section>
             <div class="game-filter-toolbar" aria-label="Game filters">
                 <span class="filter-title">Games</span>
                 <div class="game-filter-options" role="group" aria-label="Filter games">
@@ -1694,6 +1713,15 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                 <span class="filter-count" id="game-filter-count" aria-live="polite"></span>
             </div>
             <div id="game-grid"></div>
+        </section>
+
+
+        <!-- GAME DETAILS VIEW -->
+        <section id="game-view" class="view-section" aria-label="Game details">
+            <div class="game-detail">
+                <nav class="game-breadcrumb" aria-label="Breadcrumb"><a href="/home" onclick="event.preventDefault();navigateTo('home')">Home</a><span aria-hidden="true">/</span><span id="game-breadcrumb-name">Game</span></nav>
+                <div id="game-detail-content" aria-live="polite"><div class="game-detail-message">Loading game…</div></div>
+            </div>
         </section>
 
         <!-- SEARCH VIEW -->
@@ -1976,6 +2004,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
 
             // Independent requests: none are awaited during startup.
             Promise.resolve().then(loadSiteBanner).catch(error => console.warn('Banner failed:', error));
+            renderGames();
             Promise.resolve().then(fetchGames).catch(error => console.error('Games failed:', error));
             if (user.token) {
                 Promise.resolve().then(loadStaffPermissions).catch(error => console.warn('Role check failed:', error));
@@ -2176,6 +2205,11 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                     const { data } = await r.json();
                     if (!data || !user.token) return;
                     accountSavedData = data;
+                    if (Array.isArray(data.favorites)) {
+                        favoriteGames = normalizeFavorites(data.favorites);
+                        persistFavoriteCache();
+                        renderGames();
+                    }
                     setAccountUserId(data.userId);
                     renderPicturePicker();
                     setAccountAbout(typeof data.settings?.about === 'string' ? data.settings.about : '');
@@ -2311,6 +2345,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                     try { nextPage = (sessionStorage.getItem('ph_return_to') || '/home').slice(1); sessionStorage.removeItem('ph_return_to'); } catch(e) {}
                     if (nextPage.startsWith('user/')) { history.replaceState({},'', '/' + nextPage); routeFromURL(); }
                     else navigateTo(ROUTE_PAGES.has(nextPage) ? nextPage : 'home', true);
+                    loadFavoriteCache(); renderGames();
                     fetchUserData(); fetchHomeFriends(); loadStaffPermissions().catch(console.warn);
                 } else authLoginFeedback(data.error || 'Incorrect username or password.');
             } catch(e) { authLoginFeedback('Unable to connect. Please try again.'); }
@@ -2341,6 +2376,90 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                 return (data.friends || []).some(friend => String(friend.username || friend).toLowerCase() === username.toLowerCase() && !friend.deleted);
             } catch { return false; }
         }
+        // Game slugs are generated from titles in games.txt, with stable suffixes
+        // when two titles normalize to the same slug.
+        function gameSlug(title) {
+            return String(title || '').normalize('NFKD').replace(/[\u0300-\u036f]/g,'')
+              .toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'') || 'game';
+        }
+        function buildGameIndex(games) {
+            const map = new Map(), used = new Map();
+            for (const game of (Array.isArray(games) ? games : [])) {
+                const base = gameSlug(game.title);
+                const count = (used.get(base) || 0) + 1;
+                used.set(base,count);
+                const slug = count === 1 ? base : `${base}-${count}`;
+                map.set(slug,game);
+            }
+            return map;
+        }
+        function gamePath(game) {
+            // Exact source-object lookup keeps duplicate normalized names distinct.
+            for (const [slug,item] of buildGameIndex(window.allGames).entries()) {
+                if (item === game || (item.title === game.title && item.link === game.link))
+                    return '/games/' + encodeURIComponent(slug);
+            }
+            return '/games/' + encodeURIComponent(gameSlug(game.title));
+        }
+        function openGameDetails(event,game) {
+            if (event && (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey)) return;
+            event?.preventDefault();
+            const target = gamePath(game);
+            history.pushState({},'',target);
+            routeFromURL();
+        }
+        async function ensureGamesLoaded() {
+            if (Array.isArray(window.allGames)) return window.allGames;
+            if (!window.powerhouseGamesPending) {
+                window.powerhouseGamesPending = fetch('https://raw.githubusercontent.com/C823/Powerhouse/main/games.txt',{cache:'no-store'})
+                    .then(r=>{if(!r.ok)throw Error('Game catalog unavailable');return r.json();})
+                    .then(games=>{if(!Array.isArray(games))throw Error('Invalid game catalog');window.allGames=games;renderGames();return games;})
+                    .finally(()=>{window.powerhouseGamesPending=null;});
+            }
+            return window.powerhouseGamesPending;
+        }
+        let gameDetailRequest=0;
+        async function renderGameDetail(slug) {
+            const seq=++gameDetailRequest, host=document.getElementById('game-detail-content');
+            host.replaceChildren();
+            const state=document.createElement('div');state.className='game-detail-message';state.textContent='Loading game…';host.append(state);
+            try {
+                const games=await ensureGamesLoaded();
+                if(seq!==gameDetailRequest || parseRoute().page!=='game')return;
+                const game=buildGameIndex(games).get(slug);
+                if(!game){
+                    // Match the standard branded 404 view for unknown game slugs.
+                    renderRoute({page:'not-found'});document.title='404 — Game not found | Powerhouse';return;
+                }
+                document.title=(game.title||'Game')+' | Powerhouse';
+                document.getElementById('game-breadcrumb-name').textContent=game.title||'Game';
+                const image=document.createElement('img');image.className='game-hero-image';image.src=game.thumb||'';image.alt=(game.title||'Game')+' cover art';
+                const top=document.createElement('div');top.className='game-info-top';
+                const left=document.createElement('div');left.className='game-info-name';
+                const heading=document.createElement('h1');heading.textContent=game.title||'Untitled';
+                if(isVerifiedGame(game)){
+                    const icon=document.createElement('img');icon.className='game-verified-icon';icon.src='https://raw.githubusercontent.com/C823/Powerhouse/main/icons/verified.svg';icon.alt='Verified Unblocked';icon.title='Verified Unblocked';heading.append(icon);
+                }
+                const pills=document.createElement('div');pills.className='game-pill-list';
+                const category=Array.isArray(game.category)?game.category.join(', '):(game.category||game.genre||'Uncategorized');
+                const makePill=(value)=>{const span=document.createElement('span');span.className='game-info-pill';span.textContent=value;pills.append(span);};
+                makePill('Category: '+category);makePill(isVerifiedGame(game)?'Verified Unblocked':'Not verified');
+                left.append(heading,pills);
+                const play=document.createElement('a');play.className='game-play-button';play.textContent='▶  Play';
+                const launch=String(game.link||'').trim();
+                if(launch && launch!=='#') {play.href=launch;play.target='_blank';play.rel='noopener noreferrer';}
+                else{play.href='#';play.setAttribute('aria-disabled','true');play.title='No playable link available';}
+                top.append(left,play);
+                const panel=document.createElement('section');panel.className='game-content-panel';
+                const about=document.createElement('h2');about.textContent='About';
+                const description=document.createElement('p');description.className='game-description';description.textContent=String(game.desc||game.description||'No description available.');
+                const details=document.createElement('div');details.className='game-details-grid';
+                const addField=(label,value)=>{const field=document.createElement('div');field.className='game-detail-field';const small=document.createElement('small');small.textContent=label;const strong=document.createElement('strong');strong.textContent=value;field.append(small,strong);details.append(field);};
+                addField('Category',category);addField('Unblocked status',isVerifiedGame(game)?'Verified':'Not verified');
+                panel.append(about,description,details);
+                host.replaceChildren(image,top,panel);
+            }catch(error){if(seq!==gameDetailRequest)return;host.replaceChildren();const fail=document.createElement('div');fail.className='game-detail-message';fail.textContent='Could not load this game. Please try again later.';host.append(fail);}
+        }
         async function renderSearchPage() {
             const q = (new URLSearchParams(location.search).get('q') || '').trim().slice(0,80);
             const seq = ++searchPageSequence;
@@ -2363,9 +2482,8 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                 games.forEach(g => {
                     const link = document.createElement('a');
                     link.className = 'search-game-item';
-                    link.href = g.link || '#';
-                    link.target = '_blank';
-                    link.rel = 'noopener noreferrer';
+                    link.href = gamePath(g);
+                    link.addEventListener('click',event=>openGameDetails(event,g));
                     const thumb = document.createElement('img'); thumb.src = g.thumb || ''; thumb.alt = ''; thumb.loading = 'lazy';
                     const label = document.createElement('div'); label.className = 'search-game-title';
                     const text = document.createElement('span'); text.textContent = g.title || 'Untitled'; label.append(text);
@@ -2451,11 +2569,85 @@ function adminSetBanner(){return staffLegacySaveBanner();}
 
         async function fetchGames() {
             try {
-                const r = await fetch('https://raw.githubusercontent.com/C823/powerhouse/main/games.txt');
-                window.allGames = await r.json();
+                await ensureGamesLoaded();
                 renderGames();
             } catch(e) {}
         }
+
+        // Restore the legacy favorites list, with a per-account local cache and KV sync.
+        function normalizeFavorites(list) {
+            if (!Array.isArray(list)) return [];
+            const unique = new Map();
+            for (const game of list) {
+                if (!game || typeof game !== 'object' || !game.title) continue;
+                unique.set(String(game.title).toLowerCase(), game);
+            }
+            return [...unique.values()];
+        }
+        function favoriteStorageKey() { return user.username ? `power_favorites:${user.username.toLowerCase()}` : 'power_favorites'; }
+        let favoriteGames = [];
+        function loadFavoriteCache() {
+            try {
+                const scoped = localStorage.getItem(favoriteStorageKey());
+                const legacy = localStorage.getItem('power_favorites');
+                favoriteGames = normalizeFavorites(JSON.parse(scoped || legacy || '[]'));
+            } catch { favoriteGames = []; }
+        }
+        function persistFavoriteCache() {
+            try { localStorage.setItem(favoriteStorageKey(),JSON.stringify(favoriteGames)); } catch {}
+        }
+        let favoriteSaveChain = Promise.resolve();
+        async function saveFavoritesToKV(accountToken, username, games) {
+            if (!accountToken || !username) return;
+            const headers = {Authorization:`Bearer ${accountToken}`,'Content-Type':'application/json'};
+            const load = await fetch(`${API_BASE}/auth/load`,{headers,cache:'no-store'});
+            if (!load.ok) throw new Error('Could not load favorites from your account');
+            const response = await load.json();
+            const current = response.data && typeof response.data==='object' ? response.data : {};
+            const payload = {...current,settings:current.settings||{},
+                history:current.history||[],favorites:games};
+            const saved = await fetch(`${API_BASE}/auth/save`,{method:'POST',headers,body:JSON.stringify(payload)});
+            const result = await saved.json().catch(()=>({}));
+            if (!saved.ok || result.error) throw new Error(result.error || 'Could not sync favorites');
+            if (user.token === accountToken && user.username?.toLowerCase()===username.toLowerCase()) {
+                accountSavedData = {...current,favorites:games};
+            }
+        }
+        function toggleGameFavorite(game) {
+            const key=String(game.title||'').toLowerCase();
+            if (!key) return;
+            const idx=favoriteGames.findIndex(g=>String(g.title||'').toLowerCase()===key);
+            if (idx<0) favoriteGames.unshift({...game}); else favoriteGames.splice(idx,1);
+            persistFavoriteCache();
+            renderGames();
+            const token=user.token, username=user.username, snapshot=favoriteGames.map(g=>({...g}));
+            if (token && username) {
+                favoriteSaveChain=favoriteSaveChain.catch(()=>{}).then(()=>saveFavoritesToKV(token,username,snapshot));
+                favoriteSaveChain.catch(e=>console.warn('Favorites sync failed; saved locally:',e));
+            }
+        }
+        function renderFavoriteGameCard(game) {
+            const wrapper=document.createElement('div'); wrapper.className='game-card-wrap';
+            const link=document.createElement('a'); link.className='game-card';
+            link.href=gamePath(game); link.addEventListener('click',event=>openGameDetails(event,game));
+            const thumb=document.createElement('img'); thumb.className='game-thumb';thumb.src=game.thumb||'';thumb.alt='';thumb.loading='lazy';
+            const row=document.createElement('div');row.className='game-title-row';
+            const title=document.createElement('p');title.style.cssText='font-weight:700;margin:0;';title.textContent=game.title||'Untitled';row.append(title);
+            if (isVerifiedGame(game)) {
+                const verified=document.createElement('img');verified.className='game-verified-icon';
+                verified.src='https://raw.githubusercontent.com/C823/Powerhouse/main/icons/verified.svg';
+                verified.alt='Verified Unblocked'; verified.title='Verified Unblocked'; verified.loading='lazy';row.append(verified);
+            }
+            link.append(thumb,row);
+            const button=document.createElement('button');button.type='button';button.className='favorite-button';
+            const active=favoriteGames.some(g=>String(g.title||'').toLowerCase()===String(game.title||'').toLowerCase());
+            button.setAttribute('aria-pressed',String(active));button.setAttribute('aria-label',`${active?'Remove':'Add'} ${game.title} ${active?'from':'to'} favorites`);
+            button.title=active?'Remove from Favorites':'Add to Favorites';
+            button.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.7 2.88 5.83 6.43.94-4.66 4.54 1.1 6.41L12 17.4l-5.75 3.02 1.1-6.41L2.69 9.47l6.43-.94Z"/></svg>';
+            button.addEventListener('click',()=>toggleGameFavorite(game));
+            wrapper.append(link,button);return wrapper;
+        }
+        loadFavoriteCache();
 
         let activeGameFilter = 'all';
         function isVerifiedGame(game) {
@@ -2472,44 +2664,19 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             renderGames();
         }
         function renderGames() {
-            const search = ''; // Home always shows games; global search has its own page.
-            const grid = document.getElementById('game-grid');
-            if (!Array.isArray(window.allGames)) return;
-            const games = window.allGames.filter(g =>
-                String(g.title || '').toLowerCase().includes(search) &&
-                (activeGameFilter !== 'verified' || isVerifiedGame(g))
-            );
-            document.getElementById('game-filter-count').textContent = `${games.length} game${games.length === 1 ? '' : 's'}`;
-            grid.replaceChildren();
-            games.forEach(g => {
-                const link = document.createElement('a');
-                link.className = 'game-card';
-                link.href = g.link || '#';
-                link.target = '_blank';
-                link.rel = 'noopener noreferrer';
-                const img = document.createElement('img');
-                img.className = 'game-thumb';
-                img.src = g.thumb || '';
-                img.alt = '';
-                const title = document.createElement('p');
-                title.style.cssText = 'font-weight:700;margin:0;';
-                title.textContent = g.title || 'Untitled';
-                const titleRow = document.createElement('div');
-                titleRow.className = 'game-title-row';
-                titleRow.appendChild(title);
-                if (isVerifiedGame(g)) {
-                    const verifiedIcon = document.createElement('img');
-                    verifiedIcon.className = 'game-verified-icon';
-                    verifiedIcon.src = 'https://raw.githubusercontent.com/C823/Powerhouse/main/icons/verified.svg';
-                    verifiedIcon.alt = 'Verified Unblocked';
-                    verifiedIcon.title = 'Verified Unblocked';
-                    verifiedIcon.loading = 'lazy';
-                    titleRow.appendChild(verifiedIcon);
-                }
-                link.append(img,titleRow);
-                grid.append(link);
-            });
-            if (!games.length) grid.innerHTML = '<p style="color:var(--text-muted)">No matching games found.</p>';
+            const grid=document.getElementById('game-grid');
+            const favoritesGrid=document.getElementById('favorites-grid');
+            if (!grid || !favoritesGrid) return;
+            const available=Array.isArray(window.allGames)?window.allGames:[];
+            const games=available.filter(g=>activeGameFilter!=='verified'||isVerifiedGame(g));
+            document.getElementById('game-filter-count').textContent=`${games.length} game${games.length===1?'':'s'}`;
+            grid.replaceChildren(...games.map(renderFavoriteGameCard));
+            if (!games.length) {const empty=document.createElement('p');empty.className='favorites-empty';empty.textContent='No games found.';grid.append(empty);}
+            // Use current catalog data where available so old saved entries still launch correctly.
+            const saved=favoriteGames.map(f=>available.find(g=>String(g.title||'').toLowerCase()===String(f.title||'').toLowerCase())||f);
+            favoritesGrid.replaceChildren(...saved.map(renderFavoriteGameCard));
+            document.getElementById('favorites-count').textContent=saved.length?`${saved.length} saved`:'';
+            if (!saved.length) {const empty=document.createElement('p');empty.className='favorites-empty';empty.textContent='No favorites yet. Select the star on a game to save it here.';favoritesGrid.append(empty);}
         }
 
         let activeSocialTab = 'friends';
@@ -2886,7 +3053,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
         }
 
 
-        // v2.11.2 - KV-backed direct messages (existing /social/* API)
+        // v2.12.0 - KV-backed direct messages (existing /social/* API)
         let messageConversations = [];
         let activeMessagePeer = '';
         let messagesLoadSequence = 0;
@@ -3049,6 +3216,8 @@ function adminSetBanner(){return staffLegacySaveBanner();}
         }
         function parseRoute() {
             const path = location.pathname.replace(/\/+$/, '') || '/';
+            const gameMatch=path.match(/^\/games\/([a-z0-9]+(?:-[a-z0-9]+)*)$/i);
+            if(gameMatch)return {page:'game',slug:gameMatch[1].toLowerCase()};
             const match = path.match(/^\/users\/([1-9]\d*)\/profile$/);
             if (match && Number.isSafeInteger(Number(match[1]))) return {page:'profile',id:Number(match[1])};
             if (/^\/(?:user|users)(?:\/|$)/i.test(path)) return {page:'invalid-profile'};
@@ -3251,6 +3420,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             document.getElementById('user-dropdown')?.classList.remove('show');
             document.title = (page === 'not-found' ? '404 — Page not found' : page === 'profile' ? (profileNames.get(route.id) || 'Profile') : social ? 'Social' : page.charAt(0).toUpperCase()+page.slice(1)) + ' | Powerhouse';
             if (page === 'profile') renderProfile(route.id ?? route.username);
+            if (page === 'game') renderGameDetail(route.slug);
             if (page === 'search') renderSearchPage();
             if (page === 'messages') openMessagesPage();
             if (page !== 'messages' && messagesPoller) {clearInterval(messagesPoller);messagesPoller=null;}
@@ -3268,7 +3438,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                 else route.username = user.username;
                 if (route.page === 'profile' && route.username) { navigateProfile(route.username); return; }
             }
-            if (!user.token && !['sign-in','profile','not-found','invalid-profile'].includes(route.page)) {
+            if (!user.token && !['sign-in','profile','not-found','invalid-profile','game'].includes(route.page)) {
                 try { sessionStorage.setItem('ph_return_to',location.pathname + location.search); } catch(e) {}
                 history.replaceState({},'', '/sign-in'); route = {page:'sign-in'};
             }
@@ -3367,6 +3537,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             localStorage.removeItem('ph_pfp');
             user = { token: null, username: null, pfp: null };
             accountSavedData = null;
+            favoriteGames = [];
             currentAbout = '';
             renderPicturePicker();
             resetStaffUI(); // Hide staff links and clear role badges immediately.
