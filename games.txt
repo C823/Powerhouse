@@ -978,5 +978,15 @@
     "verified": false,
     "useBlank": true,
     "new": true
+  },
+  {
+    "title": "Vortex",
+    "category": "Utility",
+    "desc": "Discover Vortex",
+    "thumb": "https://playvortex.io/logo.png",
+    "link": "https://playvortex.io",
+    "verified": false,
+    "useBlank": false,
+    "new": true
   }
 ]
