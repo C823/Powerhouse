@@ -781,5 +781,50 @@
     "link": "https://mysmartpass.garnerj826.workers.dev",
     "verified": true,
     "useBlank": false
+  },
+  {
+    "title": "BO1 Zombies",
+    "category": "Arcade",
+    "desc": "Call of Duty: Black Ops is a 2010 first-person shooter game developed by Treyarch and published by Activision.",
+    "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fportpowered.fun%2Fassets%2Fbo1-zombies-xsGi-bOr.jpg&f=1&nofb=1&ipt=83f0f3ddea65c17f7479c2838fb41508581f9117ee73c55e903ce83551e1e403&ipo=images",
+    "link": "https://vel.gg/bo1z",
+    "verified": false,
+    "useBlank": false
+  },
+  {
+    "title": "Call of Duty: Modern Warfare 2",
+    "category": "Arcade",
+    "desc": "The most-anticipated game of the year and the sequel to the best-selling first-person action game of all time, Modern Warfare 2 continues the gripping and heart-racing action as players face off against a new threat dedicated to bringing the world to the brink of collapse.",
+    "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpaperaccess.com%2Ffull%2F2204595.jpg&f=1&nofb=1&ipt=8a2319a9cde3ecf3d100acb821c5750172ed0ceae3a51cc5a262890a145e526c&ipo=images",
+    "link": "https://ovz-game-production.up.railway.app/",
+    "verified": false,
+    "useBlank": false
+  },
+  {
+    "title": "Skate 3",
+    "category": "Arcade",
+    "desc": "The award winning SKATE™ franchise is back and rolling into new territory as SKATE™ 3 heads to the brand new city of Port Carverton.",
+    "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.altarofgaming.com%2Fwp-content%2Fuploads%2F2022%2F04%2Fskate-3-game-cover-altar-of-gaming.jpg&f=1&nofb=1&ipt=11db6660cad70895069310599f98c31cc1b7466e25947c7bca7aa29baa2fe8d0&ipo=images",
+    "link": "https://skate.aaddpp.lol/",
+    "verified": false,
+    "useBlank": false
+  },
+  {
+    "title": "CS Surf",
+    "category": "Arcade",
+    "desc": "Play the world's number 1 online action game, and surf?",
+    "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2F8B-Dyw8wep0%2Fhqdefault.jpg&f=1&nofb=1&ipt=756e35b66cdd3ce30d23adf51e9172271e63032de35057252ff678bcb436862a&ipo=images",
+    "link": "https://surfd.net/",
+    "verified": false,
+    "useBlank": false
+  },
+  {
+    "title": "Half Life",
+    "category": "Arcade",
+    "desc": "Named Game of the Year by over 50 publications, Valve's debut title blends action and adventure with award-winning technology to create a frighteningly realistic world where players must think to survive. Also includes an exciting multiplayer mode that allows you to play against friends and enemies around the world.",
+    "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.cloudflare.steamstatic.com%2Fhalf-life.com%2Fimages%2Fhalflife25%2FHLwallpaper01_16x9.jpg&f=1&nofb=1&ipt=937206752d005f5c8299ea50fe3bd82d25fef15d34b89280a4a609761805e0ed&ipo=images",
+    "link": "https://pixelsuft.github.io/hl/xash.html#150",
+    "verified": false,
+    "useBlank": false
   }
 ]
