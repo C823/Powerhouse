@@ -144,7 +144,7 @@
   },
   {
     "title": "ChatGPT",
-    "category": "s",
+    "category": "Tools",
     "desc": "Interact with the state-of-the-art AI for coding, writing, and brainstorming.",
     "thumb": "https://www.internetmatters.org/wp-content/uploads/2025/06/Chat-GPT-logo.webp",
     "link": "https://chatgpt.com/",
@@ -155,7 +155,7 @@
   },
   {
     "title": "Gemini",
-    "category": "s",
+    "category": "Tools",
     "desc": "Google's powerful AI model for creative and technical assistance.",
     "thumb": "https://cdn.mos.cms.futurecdn.net/v2/t:0,l:260,cw:1576,ch:1182,q:80,w:1576/gHfBJ6FBHKnLbW36hEDvgV.png",
     "link": "https://gemini.google.com/",
@@ -243,7 +243,7 @@
   },
   {
     "title": "MS Paint",
-    "category": "s",
+    "category": "Tools",
     "desc": "MS Paint remake by Isaiah Odhner.",
     "thumb": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/MSFT-Colorful-flower-in-the-Paint-app:VP1-539x349",
     "link": "https://jspaint.app/",
@@ -265,7 +265,7 @@
   },
   {
     "title": "Sound Buttons",
-    "category": "s",
+    "category": "Tools",
     "desc": "Find the best funny sound buttons to play and download.",
     "thumb": "https://play-lh.googleusercontent.com/6BSIx2y6WflHgfJoR63nxCNpKe22dmh5sutzai2B-5V0p91z08EA_RYnK6Eak7S_ow=w3840-h2160-rw",
     "link": "https://soundbuttonsworld.com/",
@@ -540,7 +540,7 @@
   },
   {
     "title": "Retro Rush",
-    "category": "RDriving",
+    "category": "Driving",
     "desc": "A fast-paced neon driving game where you dodge traffic and race against the clock.",
     "thumb": "https://store-images.s-microsoft.com/image/apps.52831.13894313373290055.755c0d8b-3d2e-4002-92cb-11aff86c00d1.0df3019c-4752-4778-88ba-d1d7470765df?q=90&w=480&h=270",
     "link": "https://azgames.io/retro-rush",
@@ -661,7 +661,7 @@
   },
   {
     "title": "Spotify",
-    "category": "",
+    "category": "Tools",
     "desc": "Listen to music, podcasts, and more on Spotify.",
     "thumb": "https://storage.googleapis.com/pr-newsroom-wp/1/2023/05/2024-spotify-brand-assets-media-kit.jpg",
     "link": "https://open.spotify.com/",
@@ -672,7 +672,7 @@
   },
   {
     "title": "Apple Music",
-    "category": "",
+    "category": "Tools",
     "desc": "Stream over 100 million songs, ad-free on Apple Music.",
     "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQSbl1bLb2mQjx4gAIasxURGuTvURgC4t5sw&s",
     "link": "https://music.apple.com/",
