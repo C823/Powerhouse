@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Powerhouse</title>
-    <meta name="powerhouse-site-version" content="2.21.12">
+    <meta name="powerhouse-site-version" content="2.21.16">
     <link rel="icon" id="faviconEl" type="image/png" sizes="any" href="https://cdn.jsdelivr.net/gh/C823/powerhouse@main/icons/POWERHOUSE-icon.png?v=20261009">
     <link rel="shortcut icon" type="image/png" href="https://cdn.jsdelivr.net/gh/C823/powerhouse@main/icons/POWERHOUSE-icon.png?v=20261009">
     <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/C823/powerhouse@main/icons/POWERHOUSE-icon.png?v=20261009">
     <!-- The Worker may inject a GitHub <base>. Keep browser navigation on this Worker origin. -->
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        /* Powerhouse palette v2.21.14 — sampled from supplied reference:
+        /* Powerhouse palette v2.21.16 — sampled from supplied reference:
            black #000000, charcoal #1c1c1c, white #ffffff. */
         :root {
             --accent: #444444;
@@ -46,7 +46,7 @@
 
         button, input, textarea, select { font-family: inherit; }
 
-        /* --- AUTH PAGE — website v2.21.14 --- */
+        /* --- AUTH PAGE — website v2.21.16 --- */
         #landing-page { position:fixed; inset:0; z-index:5000; display:none; align-items:center; justify-content:center; overflow:auto; padding:32px 22px; color:#eee; background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.6)),url('https://files.enderman.ch/wallpapers/Moonlight.png') center center / cover no-repeat fixed #090b12; }
         #landing-page::before { content:''; position:fixed; inset:0; pointer-events:none; background:rgba(0,0,0,.10); }
         #landing-page::after { content:none; }
@@ -106,7 +106,7 @@
 
         /* --- DASHBOARD UI --- */
 
-        /* v2.21.14 — optional compact sidebar, based on the narrow navigation reference. */
+        /* v2.21.16 — optional compact sidebar, based on the narrow navigation reference. */
         body[data-compact-sidebar="true"] { --sidebar-width: 184px; }
         body[data-compact-sidebar="true"] #sidebar { padding: 15px 10px 12px; }
         body[data-compact-sidebar="true"] #sidebar .logo-area { margin-bottom: 10px; padding: 0 2px; }
@@ -170,7 +170,7 @@
         .nav-item:hover { background: var(--accent-light); color: var(--text); }
         .nav-item.active { background: var(--accent); color: white; }
         .nav-item svg { width: 20px; height: 20px; flex: 0 0 20px; display: block; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; fill: none; }
-        /* v2.21.14: solid filled sidebar navigation icons */
+        /* v2.21.16: solid filled sidebar navigation icons */
         #sidebar .nav-item svg.sidebar-solid-icon { fill: currentColor; stroke: none; stroke-width: 0; }
         .badge { position: absolute; right: 12px; background: var(--accent2); padding: 2px 8px; border-radius: 20px; font-size: 10px; color: white; font-weight: 800; }
 
@@ -251,7 +251,7 @@
         .profile-action:hover { transform:translateY(-2px); border-color:var(--accent); }
         .profile-divider { height:1px;background:var(--border);margin:28px 0; }
 
-        /* v2.21.14 — public profile Favorites */
+        /* v2.21.16 — public profile Favorites */
         .profile-favorites-card { margin-top:20px; padding:22px; border:1px solid var(--border); background:var(--surface); border-radius:16px; }
         .profile-favorites-heading { display:flex; justify-content:space-between; gap:12px; align-items:baseline; margin-bottom:17px; }
         .profile-favorites-heading h2 { margin:0; font-size:18px; }
@@ -373,7 +373,7 @@
         .social-card img { width:54px; height:54px; object-fit:cover; flex-shrink:0; background:var(--surface); }
         .social-card-name { font-size:13px; font-weight:700; margin:0 8px 0 12px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; flex:1; }
 
-        /* v2.21.14: banned/deleted accounts retain removable friend entries, never a profile link. */
+        /* v2.21.16: banned/deleted accounts retain removable friend entries, never a profile link. */
         .social-deleted-profile {display:flex;align-items:center;flex:1;min-width:0;pointer-events:none;color:var(--text-muted);}
         .social-deleted-profile img {filter:grayscale(1);opacity:.55;}
         .social-deleted-text {display:flex;flex-direction:column;gap:2px;min-width:0;margin-left:12px;}
@@ -789,7 +789,7 @@
         .account-userid-row button:disabled { opacity:.45; cursor:default; }
         .account-userid-hint, #account-userid-feedback { color:#aaa; font-size:12px; margin:7px 0 0; }
 
-/* v2.21.14 — Messaging */
+/* v2.21.16 — Messaging */
 #messages-view [hidden], #side-messages .message-nav-count[hidden], #profile-message-action[hidden] { display:none !important; }
 #side-messages { position:relative; }
 .message-nav-count { margin-left:auto; min-width:19px; padding:2px 6px; border-radius:30px; background:#393939; color:#fff; font-size:11px; font-weight:700; text-align:center; }
@@ -834,7 +834,7 @@
 .messages-back { border:0; background:#343434; color:white; border-radius:7px; padding:6px 10px; cursor:pointer; }
 
 
-/* v2.21.14 — Friends / Requests */
+/* v2.21.16 — Friends / Requests */
 .requests-count {display:inline-flex;min-width:19px;height:19px;padding:0 5px;align-items:center;justify-content:center;border-radius:9px;background:#383838;color:#fff;font-size:11px;margin-left:5px;}
 .requests-count[hidden] {display:none!important;}
 .social-request-card {height:auto;min-height:78px;padding-right:12px;gap:12px;}
@@ -853,7 +853,7 @@
 #friends-view:has(.social-request-card) .social-grid {grid-template-columns:repeat(auto-fill,minmax(min(100%,470px),470px));}
 @media(max-width:540px){.social-request-card{flex-wrap:wrap;padding:8px;}.social-request-actions{width:100%;justify-content:flex-end}.social-request-card .social-profile-link{width:100%;}}
 
-/* v2.21.14 — Not found page */
+/* v2.21.16 — Not found page */
 #not-found-view .error-layout { min-height:calc(100vh - 190px); display:flex; align-items:center; justify-content:center; text-align:center; padding:64px 16px; }
 #not-found-view .error-content {max-width:520px; width:100%; }
 #not-found-view .error-kicker {color:#9b9b9b; font-weight:700; letter-spacing:.18em; font-size:12px; text-transform:uppercase; margin-bottom:16px;}
@@ -865,7 +865,7 @@
 #not-found-view .error-home-link:focus-visible {outline:2px solid white;outline-offset:3px;}
 
 
-/* v2.21.14 — Game details: image-safe, responsive editorial layout. */
+/* v2.21.16 — Game details: image-safe, responsive editorial layout. */
 #game-view { width:100%; }
 #game-view .game-detail { width:min(1120px,100%); margin:0 auto; min-width:0; }
 #game-view .game-breadcrumb { display:flex; align-items:center; flex-wrap:wrap; gap:10px; margin:4px 0 21px; color:#999; font-size:13px; }
@@ -909,7 +909,7 @@
 @media(prefers-reduced-motion:reduce){#game-detail-content .game-play-button{transition:none;}}
 
 
-        /* Home section layout editor - v2.21.14 */
+        /* Home section layout editor - v2.21.16 */
         .layout-editor{margin-top:30px;padding-top:24px;border-top:1px solid var(--border,#333)}
         .layout-editor-header h3{margin:0 0 7px;font-size:18px}
         .layout-editor-header p{margin:0 0 17px;color:var(--text-muted,#aaa);font-size:13px;line-height:1.5}
@@ -927,7 +927,7 @@
         @media(max-width:560px){.layout-editor-row{padding:10px;gap:8px}.layout-editor-move button{padding:5px 8px}}
 
 
-/* v2.21.14 — Game dates and dual launch choices */
+/* v2.21.16 — Game dates and dual launch choices */
 .game-date-setting{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:21px 0 3px;border-top:1px solid #333;margin-top:24px}
 .game-date-setting strong{font-size:15px;color:#f4f4f4}
 .game-date-setting p{margin:6px 0 0;font-size:12px;line-height:1.55;color:#aaa;max-width:480px}
@@ -938,7 +938,7 @@
 @media(max-width:390px){#game-detail-content .game-launch-actions{grid-template-columns:1fr}}
 
 
-/* v2.21.14 — international game date controls */
+/* v2.21.16 — international game date controls */
 .game-date-format-setting{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 0 20px;border-bottom:1px solid #333}
 .game-date-format-setting label{display:flex;flex-direction:column;gap:6px;min-width:0}
 .game-date-format-setting strong{color:#f4f4f4;font-size:15px}
@@ -946,10 +946,10 @@
 .game-date-format-setting select{width:min(310px,100%);min-width:190px;margin:0;cursor:pointer;background:#222;color:#f4f4f4;border:1px solid #474747}
 @media(max-width:640px){.game-date-format-setting{align-items:stretch;flex-direction:column;gap:12px}.game-date-format-setting select{width:100%}}
 
-/* Powerhouse v2.21.14 — Blog */
+/* Powerhouse v2.21.16 — Blog */
 .blog-shell{max-width:1050px;margin:auto}.blog-heading{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:24px;flex-wrap:wrap}.blog-heading h1{font-size:clamp(1.7rem,3vw,2.2rem);margin:0}.blog-heading p{color:#999;margin:6px 0 0}.blog-toolbar{display:flex;gap:10px;flex-wrap:wrap}.blog-action{background:#292929;color:#fff;border:1px solid #444;border-radius:9px;padding:10px 15px;cursor:pointer;font:inherit}.blog-action:hover{background:#383838}.blog-action.primary{background:#ededed;color:#161616;border-color:#ededed;font-weight:700}.blog-action.primary:hover{background:#cfcfcf}.blog-action.danger{color:#ffb9b9;border-color:#724444}.blog-card-list{display:grid;gap:13px}.blog-feed-card{display:block;text-align:left;width:100%;border:1px solid #363636;background:#202020;color:inherit;border-radius:14px;padding:22px;cursor:pointer;transition:border-color .15s,transform .15s}.blog-feed-card:hover{border-color:#888;transform:translateY(-2px)}.blog-feed-card h2{font-size:1.25rem;margin:8px 0}.blog-feed-card p{color:#adadad;margin:6px 0 0;line-height:1.55;overflow-wrap:anywhere}.blog-meta{color:#949494;font-size:.8rem}.blog-tag{font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#dedede;background:#363636;border:1px solid #4a4a4a;border-radius:5px;padding:4px 7px;display:inline-block}.blog-panel-box{background:#1f1f1f;border:1px solid #353535;padding:clamp(18px,3vw,32px);border-radius:15px}.blog-article-title{font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.15;margin:15px 0}.blog-article-body{line-height:1.8;overflow-wrap:anywhere;font-size:1rem;white-space:normal}.blog-article-body p{margin:0 0 1em}.blog-article-body h1,.blog-article-body h2,.blog-article-body h3{margin:1.5em 0 .5em}.blog-article-body a{color:#ddd;text-decoration:underline}.blog-article-body img{max-width:100%;height:auto}.blog-article-body pre{white-space:pre-wrap;background:#111;padding:12px;border-radius:8px}.blog-article-body blockquote{border-left:3px solid #888;margin:12px 0;padding-left:16px;color:#bbb}.blog-form{display:grid;gap:16px}.blog-form label{display:grid;gap:7px;font-size:.9rem;font-weight:600}.blog-form input,.blog-form textarea,.blog-form select{background:#111;color:#fff;border:1px solid #454545;border-radius:8px;padding:12px;font:inherit;width:100%;box-sizing:border-box}.blog-form textarea{min-height:220px;resize:vertical}.blog-form :is(input,textarea,select):focus{outline:2px solid #aaa;outline-offset:1px}.blog-manage-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 0;border-bottom:1px solid #383838}.blog-manage-row>div:first-child{min-width:0;overflow-wrap:anywhere}.blog-empty{padding:50px 20px;text-align:center;color:#999;border:1px dashed #444;border-radius:12px}.blog-feedback{font-size:.9rem;color:#ccc;min-height:1.2em}.blog-feedback.error{color:#ff9e9e}.blog-hidden{display:none!important}@media(max-width:660px){.blog-manage-row{align-items:flex-start;flex-direction:column}.blog-feed-card{padding:17px}}
 
-/* Guest trial | v2.21.14 */
+/* Guest trial | v2.21.16 */
         .guest-expired-choice { margin-top:18px; padding:18px; background:#242424; border:1px solid #555; border-radius:10px; }
         .guest-expired-choice[hidden] { display:none!important; }
         .guest-expired-choice h3 { margin:0 0 6px; color:#fff; font-size:16px; }
@@ -966,7 +966,19 @@
 .guest-settings-info p{color:#aaa;line-height:1.6}.guest-settings-info button{max-width:275px;margin-top:22px}
 .guest-trial-nav{margin-top:12px;font-size:11px;color:#a7a7a7;line-height:1.6;max-width:220px}
 
-/* v2.21.14 — category library and personalized recommendations */
+/* v2.21.16 — always-visible category navigation, aligned with category heading. */
+#all-games-categories .category-block{position:relative;min-width:0}
+#all-games-categories .category-heading{display:flex!important;align-items:center!important;justify-content:space-between!important;min-height:42px;padding-right:0;margin-bottom:12px}
+#all-games-categories .category-heading-actions{display:flex!important;visibility:visible!important;opacity:1!important;align-items:center;justify-content:flex-end;gap:9px;flex:0 0 auto;margin-left:auto;position:relative;z-index:5}
+#all-games-categories .category-carousel-control{appearance:none;display:inline-flex!important;visibility:visible!important;opacity:1!important;position:relative!important;inset:auto!important;transform:none!important;width:38px!important;height:38px!important;min-width:38px!important;min-height:38px!important;padding:0!important;border:1px solid #646464!important;border-radius:10px!important;background:#303030!important;color:#fff!important;align-items:center!important;justify-content:center!important;cursor:pointer!important;flex:none!important;box-shadow:none!important}
+#all-games-categories .category-carousel-control:hover:not(:disabled){background:#484848!important;border-color:#a9a9a9!important}
+#all-games-categories .category-carousel-control:disabled{opacity:.38!important;cursor:default!important}
+#all-games-categories .category-carousel-control svg{display:block!important;width:21px;height:21px;fill:none!important;stroke:currentColor!important;stroke-width:2.5!important;stroke-linecap:round;stroke-linejoin:round}
+body[data-theme="light"] #all-games-categories .category-carousel-control{background:#fff!important;color:#252d37!important;border-color:#aeb8c2!important}
+body[data-theme="light"] #all-games-categories .category-carousel-control:hover:not(:disabled){background:#e7eef4!important}
+@media(max-width:600px){#all-games-categories .category-carousel-control{width:32px!important;height:32px!important;min-width:32px!important;min-height:32px!important}#all-games-categories .category-heading-actions{gap:5px}}
+
+/* v2.21.16 — category library and personalized recommendations */
 .browse-all-games{margin-left:auto;color:#eee;text-decoration:none;font-size:13px;font-weight:650;background:#303030;border:1px solid #444;border-radius:8px;padding:9px 13px;white-space:nowrap;transition:background .16s}
 .browse-all-games:hover{background:#414141;color:#fff}
 .recommendation-description{color:#999;font-size:13px;margin:0 0 17px}
@@ -1003,7 +1015,7 @@ body[data-game-card-size="compact"] #all-games-view{--all-games-card-width:220px
 #all-games-view .category-carousel-track .game-card{display:block;width:100%;min-width:0}
 #all-games-view .category-carousel-track .game-thumb{display:block;width:100%;height:auto;max-width:100%;box-sizing:border-box}
 #all-games-view .category-carousel-track .game-title-row{min-width:0;overflow-wrap:break-word}
-/* v2.21.14: visible, accessible carousel arrows in the category header */
+/* v2.21.16: visible, accessible carousel arrows in the category header */
 #all-games-view .category-heading-actions{display:flex;align-items:center;gap:10px;margin-left:auto}
 #all-games-view .category-carousel-control{
     position:static;transform:none;flex:0 0 38px;
@@ -1026,7 +1038,7 @@ body[data-game-card-size="compact"] #all-games-view{--all-games-card-width:220px
     #all-games-view .category-heading-actions{gap:6px}
 }
 
-/* v2.21.14 - game collection pages and landing preference */
+/* v2.21.16 - game collection pages and landing preference */
 .shelf-heading-link{color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:10px}
 .shelf-heading-link:hover,.shelf-heading-link:focus-visible{color:var(--text-muted,#bbbbbb)}
 .shelf-heading-link span{font-size:14px;opacity:.6}
@@ -1040,7 +1052,7 @@ body[data-game-card-size="compact"] #all-games-view{--all-games-card-width:220px
 .landing-destination-setting .landing-setting-note{font-size:12px;max-width:530px;color:#999}
 .landing-destination-setting .switch{flex-shrink:0}
 
-        /* v2.21.14 — per-user Home presentation and card proportions. */
+        /* v2.21.16 — per-user Home presentation and card proportions. */
         body[data-hide-home-profile="true"] #home-view > .hero { display:none !important; }
         body[data-game-card-size="square"] .game-thumb,
         body[data-game-card-size="square"] .search-game-item > img { aspect-ratio:1 / 1; }
@@ -1057,7 +1069,7 @@ body[data-game-card-size="compact"] #all-games-view{--all-games-card-width:220px
         .home-presentation-row .settings-input { width:min(230px,45%);margin:0;flex-shrink:0; }
         @media(max-width:520px){.home-presentation-row{align-items:flex-start;flex-direction:column;gap:12px}.home-presentation-row .settings-input{width:100%}}
 
-/* v2.21.14 — Mulish typography and text-only sidebar navigation accents. */
+/* v2.21.16 — Mulish typography and text-only sidebar navigation accents. */
 #sidebar .nav-item,
 #sidebar .nav-item.active,
 #sidebar .nav-item:hover,
@@ -1075,7 +1087,7 @@ body[data-game-card-size="compact"] #all-games-view{--all-games-card-width:220px
 #sidebar .nav-item:focus-visible { outline:2px solid currentColor;outline-offset:1px; }
 
 
-/* Powerhouse v2.21.14 — comprehensive light theme restoration.
+/* Powerhouse v2.21.16 — comprehensive light theme restoration.
    Overrides legacy dark-only styles without changing the dark palette. */
 body[data-theme="light"] #sidebar,
 body[data-theme="light"] #user-dropdown {background:#fff;color:var(--text);}
@@ -1177,6 +1189,68 @@ body[data-theme="light"] .profile-about-card,
 body[data-theme="light"] .settings-card {background:#fff;}
 body[data-theme="light"] .game-info-pill.new-game-pill {background:#263746!important;color:#fff!important;border-color:#263746!important;}
 body[data-theme="light"] :is(.auth-guest-button,.guest-expired-choice,.guest-settings-info button) {color:var(--text);}
+
+
+/* v2.21.16 — light-mode foreground contrast, respecting dark action buttons. */
+body[data-theme="light"] { --light-text:#1c2631; --light-muted:#576574; --light-stroke:#cad3dd; }
+/* Global readable text where older sections hard-coded a dark-theme color. */
+body[data-theme="light"] :is(.view-section,.view-section h1,.view-section h2,.view-section h3,
+ .hero,.home-section-heading,.section-heading,.game-card,.game-card-wrap,.game-title-row,
+ .game-title,.game-title-row a,.game-filter,.game-date-setting strong,
+ .game-date-format-setting strong,.category-heading h2,.category-heading span,
+ .social-card-name,.home-friend-name,.username-text,.profile-display-name,
+ .settings-card h2,.settings-card h3,.settings-card label,.settings-card strong,
+ .profile-page-card h2,.profile-char-card h2,.profile-about-card h2,.search-user-name) { color:var(--light-text); }
+body[data-theme="light"] :is(.recommendation-description,.category-heading-count,
+ .all-games-heading p,.all-games-total,.profile-page-card small,
+ .settings-card small,.settings-help,.settings-description,
+ .game-date-setting p,.game-date-format-setting p,.game-detail-field small,
+ .home-friend-meta,.social-card-meta,.social-card-subtitle) { color:var(--light-muted); }
+/* Sidebar idle text must not remain pale gray against white. */
+body[data-theme="light"] #sidebar .nav-item:not(:hover):not(.active) {color:#485666;}
+body[data-theme="light"][data-compact-sidebar="true"] #sidebar .compact-sidebar-username {color:var(--light-text);border-bottom-color:var(--light-stroke);}
+body[data-theme="light"] #sidebar .sidebar-release,body[data-theme="light"] #sidebar .sidebar-release span{color:#536273;}
+/* Fix interactive labels and muted headings across the game catalog and home. */
+body[data-theme="light"] .browse-all-games {background:#e7edf3;border-color:#c2ceda;color:#243445;}
+body[data-theme="light"] .browse-all-games:hover {background:#d9e4ed;color:#182837;}
+body[data-theme="light"] .home-friend-card:hover .home-friend-name,
+body[data-theme="light"] .social-profile-link:hover .social-card-name {color:#0879b4;}
+body[data-theme="light"] #game-view .game-breadcrumb a:hover,
+body[data-theme="light"] .blog-article-body a {color:#086da5;}
+body[data-theme="light"] .game-date-format-setting select,
+body[data-theme="light"] .settings-input,
+body[data-theme="light"] #admin-view .admin-search-input {background:#fff;color:var(--light-text);border-color:var(--light-stroke);}
+body[data-theme="light"] :is(input,textarea,select)::placeholder {color:#697786;opacity:1;}
+/* Administration: dark backgrounds and white text were not switched previously. */
+body[data-theme="light"] #admin-view .staff-panel,
+body[data-theme="light"] #admin-view :is(.admin-stat,.admin-user-row,.admin-announce-box),
+body[data-theme="light"] .legacy-staff :is(.mod-panel,.mod-stat,.mod-user-row) {background:#fff;border-color:var(--light-stroke);color:var(--light-text);}
+body[data-theme="light"] #admin-view :is(.admin-page-heading h1,.admin-section-title,.admin-stat-val,.admin-user-name),
+body[data-theme="light"] .legacy-staff :is(.mod-section-title,.mod-stat-val,.mod-user-name,.admin-msg) {color:var(--light-text);}
+body[data-theme="light"] #admin-view :is(.admin-eyebrow,.admin-page-heading p,.admin-section-note,.admin-stat-lbl,.admin-user-meta,.admin-empty,.admin-version-tag),
+body[data-theme="light"] .legacy-staff :is(.mod-stat-lbl,.mod-user-meta) {color:var(--light-muted);}
+body[data-theme="light"] #admin-view .admin-version-tag,
+body[data-theme="light"] #admin-view .legacy-staff .admin-tabs {border-color:var(--light-stroke);}
+body[data-theme="light"] #admin-view .legacy-staff .admin-tab,
+body[data-theme="light"] .legacy-staff .mod-tab {color:#4a5b6c;border-color:transparent;}
+body[data-theme="light"] #admin-view .legacy-staff .admin-tab:is(:hover,.active),
+body[data-theme="light"] .legacy-staff .mod-tab:is(:hover,.active) {background:#e4edf4;border-color:#bbcedd;color:#203043;}
+body[data-theme="light"] #admin-view .admin-btn:not(.danger):not(.primary),
+body[data-theme="light"] .legacy-staff .mod-btn:not(.danger):not(.primary) {background:#eaf0f5;border-color:#c6d2dd;color:#213345;}
+body[data-theme="light"] #admin-view .admin-btn.primary {background:#263746;border-color:#263746;color:#fff;}
+body[data-theme="light"] #admin-view .admin-btn.danger {background:#fff0f0;border-color:#d9a0a0;color:#a92323;}
+body[data-theme="light"] #admin-view .admin-empty {background:#f5f7f9;border-color:var(--light-stroke);}
+/* Settings action buttons in the old CSS used light-theme accent + white letters. */
+body[data-theme="light"] #account-about-save,
+body[data-theme="light"] .staff-btn,
+body[data-theme="light"] .s-nav-btn.active,
+body[data-theme="light"] .game-filter.active {color:#1c2836;}
+/* Preserve intentional white-on-dark contrast for solid primary actions. */
+body[data-theme="light"] :is(.dropdown-item.sign-out,.blog-action.primary,
+ .messages-composer button,.messages-action,.social-request-accept,
+ #game-detail-content .game-play-button) {color:#fff;}
+body[data-theme="light"] .blog-feedback,
+body[data-theme="light"] .blog-article-body blockquote {color:#526476;}
 
 </style>
 </head>
@@ -1951,7 +2025,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
 
 
 
-    <!-- AUTH PAGE | Powerhouse website v2.21.14 -->
+    <!-- AUTH PAGE | Powerhouse website v2.21.16 -->
     <div id="landing-page">
         <div class="auth-shell">
             <section class="auth-promo" aria-label="Welcome to Powerhouse">
@@ -1998,7 +2072,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                     </form>
                     <p class="auth-bottom">Already have an account? <button type="button" class="auth-switch-link" onclick="switchAuthMode('login')">Sign in</button></p>
                 </div>
-                <span class="auth-release">POWERHOUSE v2.21.14</span>
+                <span class="auth-release">POWERHOUSE v2.21.16</span>
             </section>
         </div>
     </div>
@@ -2037,7 +2111,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             <a class="c823-footer-link" href="https://home.c823.workers.dev" aria-label="Open C823 Hub" title="C823 Hub">
                 <img class="c823-footer-icon" src="https://raw.githubusercontent.com/C823/Powerhouse/main/icons/C823%20logo.png" alt="C823" loading="lazy">
             </a>
-            <div class="sidebar-release" aria-label="Powerhouse version">POWERHOUSE <span>v2.21.14</span></div>
+            <div class="sidebar-release" aria-label="Powerhouse version">POWERHOUSE <span>v2.21.16</span></div>
         </div>
     </aside>
 
@@ -3493,10 +3567,11 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             const button = document.createElement('button');
             button.type = 'button';
             button.className = `category-carousel-control ${direction}`;
-            button.setAttribute('aria-label', direction === 'next' ? 'Scroll right' : 'Scroll left');
+            button.setAttribute('aria-label', direction === 'next' ? 'Next games in category' : 'Previous games in category');
+            button.title = direction === 'next' ? 'Next games' : 'Previous games';
             button.innerHTML = direction === 'next'
-                ? '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>'
-                : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15.41 7.41-4.58 4.59 4.58 4.59L14 18l-6-6 6-6z"/></svg>';
+                ? '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>'
+                : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg>';
             button.addEventListener('click', () => {
                 const card = track.querySelector('.game-card-wrap');
                 const gap = parseFloat(getComputedStyle(track).columnGap) || 16;
@@ -3511,7 +3586,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             const sync = () => {
                 const max = Math.max(0, track.scrollWidth - track.clientWidth - 2);
                 prev.disabled = track.scrollLeft <= 2;
-                next.disabled = track.scrollLeft >= max;
+                next.disabled = max <= 2 || track.scrollLeft >= max;
             };
             track.addEventListener('scroll', sync, { passive: true });
             if (typeof ResizeObserver !== 'undefined') {
@@ -4046,7 +4121,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
         }
 
 
-        // v2.21.14 - KV-backed direct messages (existing /social/* API)
+        // v2.21.16 - KV-backed direct messages (existing /social/* API)
         let messageConversations = [];
         let activeMessagePeer = '';
         let messagesLoadSequence = 0;
@@ -4173,7 +4248,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
         });
 
 
-        // Blog v2.21.14 — uses the original /blog/* KV-backed API.
+        // Blog v2.21.16 — uses the original /blog/* KV-backed API.
         let blogPosts=[], blogAdminPosts=[], blogCanManage=false, blogEditingId=null, blogRequest=0;
         const blogEscape = value => String(value??'').replace(/[&<>"']/g, x=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[x]));
         const blogDate = value => {const d=new Date(value);return Number.isNaN(d.getTime())?'':d.toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'});};
@@ -4335,7 +4410,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                 }
             }
         }
-        // v2.21.14: Public favorites come from the profile API; never read the viewer's
+        // v2.21.16: Public favorites come from the profile API; never read the viewer's
         // local Favorites when displaying another account's profile.
         let profileFavoritesSequence = 0;
         async function renderProfileFavorites(profileName, titles) {
@@ -4557,7 +4632,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
         window.addEventListener('popstate', routeFromURL);
 
 
-        // v2.21.14 — The root loader reads this account-scoped local preference.
+        // v2.21.16 — The root loader reads this account-scoped local preference.
         function gamesLandingPreferenceKey(name=user.username) {
             return 'powerhouse:defaultGamesLanding:'+(name||'guest').toLowerCase();
         }
@@ -4587,7 +4662,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                 accountSavedData={...(accountSavedData||{}),settings:{...(accountSavedData?.settings||{}),defaultGamesLanding:enabled}};
             }catch(error){console.warn('Default landing preference saved locally; KV sync failed:',error);}
         }
-        // v2.21.14 — Per-user Home section order and visibility.
+        // v2.21.16 — Per-user Home section order and visibility.
         const HOME_LAYOUT_DEFAULT = ['favorites','recent','games','all'];
         const HOME_LAYOUT_LABELS = {favorites:'Favorites',recent:'Recently Played',games:'Recommended',all:'All Games'};
         let homeLayout = {order:[...HOME_LAYOUT_DEFAULT], visible:{favorites:true,recent:true,games:true,all:false}, hideProfile:false, cardSize:'wide', compactSidebar:false};
