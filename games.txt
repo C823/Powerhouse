@@ -1,7 +1,7 @@
 [
   {
     "title": "SoFlo Wheelie Life",
-    "category": "Simulator",
+    "category": "Driving",
     "desc": "Pop wheelies and navigate through a neon SoFlo inspired world.",
     "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQetoevXJFXRoM1Z2hAes9LxTtJNqbp_b8RvQ&s",
     "link": "https://scratch.mit.edu/projects/1290209730/fullscreen/",
@@ -12,7 +12,7 @@
   },
   {
     "title": "Brgr Duty",
-    "category": "Arcade",
+    "category": "Action",
     "desc": "In a world infested by living burger monsters, a simple sauce bottle must take drastic measures to ensure its survival.",
     "thumb": "https://cdn2.scratch.mit.edu/get_image/project/1215838682_282x210.png",
     "link": "https://scratch.mit.edu/projects/1215838682/fullscreen/",
@@ -23,7 +23,7 @@
   },
   {
     "title": "VENDS",
-    "category": "Arcade",
+    "category": "Strategy",
     "desc": "A game inspired by Roblox natural disaster survival games, but 2D and in scratch!",
     "thumb": "https://cdn2.scratch.mit.edu/get_image/project/1296814899_282x210.png",
     "link": "https://scratch.mit.edu/projects/1296814899/fullscreen/",
@@ -34,7 +34,7 @@
   },
   {
     "title": "CrazyGames",
-    "category": "Hub",
+    "category": "Game Hubs",
     "desc": "CrazyGames features the latest and best free online games. Just load up your favorite games instantly and enjoy.",
     "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcnX447YDT0ztZ4GMlUiXKoaj3E68j3hnCxg&s",
     "link": "https://crazygamesunblocked.net/",
@@ -56,7 +56,7 @@
   },
   {
     "title": "Neal.Fun",
-    "category": "Hub",
+    "category": "Game Hubs",
     "desc": "Games and stuff by Neal.",
     "thumb": "https://res.cloudinary.com/ybmedia/image/upload/c_crop,e_improve,h_649,w_1154,x_23,y_0/c_fill,f_auto,h_1215,q_auto,w_2160/v1/m/e/e/eeb8778cf3826ffb64f9e8d77fa84512062a437c/image-86-1-scaled-e1744380714382.jpg",
     "link": "https://neal.fun",
@@ -78,7 +78,7 @@
   },
   {
     "title": "Golf Orbit",
-    "category": "Simulator",
+    "category": "Sports",
     "desc": "Launch your golf ball into space in this satisfying arcade sports game.",
     "thumb": "https://i.ytimg.com/vi/RS43Yz9sSC0/maxresdefault.jpg",
     "link": "https://gamesnacks.com/games/7e0r297sgk0j0",
@@ -89,7 +89,7 @@
   },
   {
     "title": "Watch Documentaries Games",
-    "category": "Hub",
+    "category": "Game Hubs",
     "desc": "Real and good games on a educational website.",
     "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR9BysHlwclKDEoaCcJcLJ6rxjx-MxWQaQ8A&s",
     "link": "https://watchdocumentaries.com/games/",
@@ -100,7 +100,7 @@
   },
   {
     "title": "Lake Boys Productions",
-    "category": "Media",
+    "category": "Videos & Creators",
     "desc": "Ft. Grandpa Joey, Stein, and Big M.",
     "thumb": "https://yt3.googleusercontent.com/a1qglvAjzdFooHEfqEZ0c9WYGr-T1KYVCLxFcskwoLtdQwb199sJw9fH4b-qcQxAjml8zJfBrA=s900-c-k-c0x00ffffff-no-rj",
     "link": "https://www.youtube.com/@TheLakeBoysProductions",
@@ -111,7 +111,7 @@
   },
   {
     "title": "Tiny Fishing",
-    "category": "Arcade",
+    "category": "Sports",
     "desc": "Tiny Fishing is a relaxing and fun fishing game. Cast your line and reel in fish!",
     "thumb": "https://www.coolmathgames.com/sites/default/files/TinyFishing_OG-logo.jpg",
     "link": "https://tinyfishingame.com/",
@@ -122,7 +122,7 @@
   },
   {
     "title": "The Survival",
-    "category": "Media",
+    "category": "Videos & Creators",
     "desc": "Explore survival builds and creative construction techniques.",
     "thumb": "https://yt3.googleusercontent.com/jBm6Zb6THFWnfdM2Ih0GfzivYF9mJBj4gJHeE-LsnOoJl3rvVwoZc1asIxIusHRbPl8-ihWPbw=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj",
     "link": "https://www.youtube.com/@TheSurvival",
@@ -133,7 +133,7 @@
   },
   {
     "title": "Teqiyokid",
-    "category": "Media",
+    "category": "Videos & Creators",
     "desc": "Entertaining and creative video content from Teqiyokid.",
     "thumb": "https://i.ytimg.com/vi/TlMVYZao84A/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA9-GkyikXq7RmzTXKptRjSZvu90w",
     "link": "https://www.youtube.com/@Teqiyokid",
@@ -144,7 +144,7 @@
   },
   {
     "title": "ChatGPT",
-    "category": "Utility",
+    "category": "s",
     "desc": "Interact with the state-of-the-art AI for coding, writing, and brainstorming.",
     "thumb": "https://www.internetmatters.org/wp-content/uploads/2025/06/Chat-GPT-logo.webp",
     "link": "https://chatgpt.com/",
@@ -155,7 +155,7 @@
   },
   {
     "title": "Gemini",
-    "category": "Utility",
+    "category": "s",
     "desc": "Google's powerful AI model for creative and technical assistance.",
     "thumb": "https://cdn.mos.cms.futurecdn.net/v2/t:0,l:260,cw:1576,ch:1182,q:80,w:1576/gHfBJ6FBHKnLbW36hEDvgV.png",
     "link": "https://gemini.google.com/",
@@ -166,7 +166,7 @@
   },
   {
     "title": "Super Lemon Basket",
-    "category": "Arcade",
+    "category": "Sports",
     "desc": "A goofy physics-based basketball game featuring a very bouncy lemon.",
     "thumb": "https://www.coolmathgames.com/sites/default/files/super-lemon-basket.png",
     "link": "https://www.coolmathgames.com/0-super-lemon-basket",
@@ -177,7 +177,7 @@
   },
   {
     "title": "Eaglercraft",
-    "category": "Arcade",
+    "category": "Adventure",
     "desc": "Play Minecraft 1.8.8 directly in your browser with full multiplayer support.",
     "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUJrDtymSXQF87It_b6EzIm1njr9MYmJPxmQ&s",
     "link": "https://duckmath.freetls.fastly.net/class/eagle-craft",
@@ -188,7 +188,7 @@
   },
   {
     "title": "Ai or Not?",
-    "category": "Utility",
+    "category": "Trivia & Party",
     "desc": "Test your skills at distinguishing between AI-generated and human images.",
     "thumb": "https://equivant-court.com/wp-content/uploads/2024/10/what-ai-is-or-isnt-blog-image.png",
     "link": "https://sightengine.com/ai-or-not?version=2024Q3",
@@ -199,7 +199,7 @@
   },
   {
     "title": "What Beats Rock",
-    "category": "Arcade",
+    "category": "Puzzle",
     "desc": "An endless game of logic where you must name something that beats the last object.",
     "thumb": "https://www.whatbeatsrock.com/_next/image?url=%2Fprofile%2Frock-default.png&w=1920&q=75",
     "link": "https://www.whatbeatsrock.com/",
@@ -210,7 +210,7 @@
   },
   {
     "title": "Bringus Studios",
-    "category": "Media",
+    "category": "Videos & Creators",
     "desc": "Tech exploration and fascinating experiments with optical media.",
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.wikia.nocookie.net%2Fyoutube%2Fimages%2F2%2F29%2FBringus_Studios.jpg%2Frevision%2Flatest%2Fscale-to-width-down%2F350%3Fcb%3D20240601040622&f=1&nofb=1&ipt=6002b51b6e36361122623f86213376691df849c60c19a6cbc3dbf48ef80c751c&ipo=images",
     "link": "https://www.youtube.com/@BringusStudios/featured",
@@ -221,7 +221,7 @@
   },
   {
     "title": "M&Jmetal",
-    "category": "Media",
+    "category": "Videos & Creators",
     "desc": "Awesome metal-working and creative engineering projects.",
     "thumb": "https://yt3.googleusercontent.com/HbSiwNm1OwCPTcsMHegI1eVM_PYFmqmWiOSDOohtgbQ6LpxW8GS4J8dhZD6keyfKKI29jSpKCas=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj",
     "link": "https://www.youtube.com/@martyandjamie",
@@ -232,7 +232,7 @@
   },
   {
     "title": "Google Space",
-    "category": "Arcade",
+    "category": "Simulation",
     "desc": "The classic Zero-G Google search interface experiment by Mr.Doob.",
     "thumb": "https://lh6.ggpht.com/qMSDMY5_zyRjerhq4AIrSn5R4Ar5Rq4nV-zN5HrJP3bEgH5C228FlbkyViBTTPwSWQPFKRthxiWX8YCOtymNihualOObLBxI9n3N",
     "link": "https://mrdoob.com/projects/chromeexperiments/google-space/",
@@ -243,7 +243,7 @@
   },
   {
     "title": "MS Paint",
-    "category": "Utility",
+    "category": "s",
     "desc": "MS Paint remake by Isaiah Odhner.",
     "thumb": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/MSFT-Colorful-flower-in-the-Paint-app:VP1-539x349",
     "link": "https://jspaint.app/",
@@ -254,7 +254,7 @@
   },
   {
     "title": "Cookie Clicker",
-    "category": "Arcade",
+    "category": "Idle",
     "desc": "The ultimate idle game. Bake an astronomical number of cookies.",
     "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe0MEhmA4C4wPGi_KTGQjMMF0cyqZ346K7xQ&s",
     "link": "https://orteil.dashnet.org/cookieclicker/",
@@ -265,7 +265,7 @@
   },
   {
     "title": "Sound Buttons",
-    "category": "Utility",
+    "category": "s",
     "desc": "Find the best funny sound buttons to play and download.",
     "thumb": "https://play-lh.googleusercontent.com/6BSIx2y6WflHgfJoR63nxCNpKe22dmh5sutzai2B-5V0p91z08EA_RYnK6Eak7S_ow=w3840-h2160-rw",
     "link": "https://soundbuttonsworld.com/",
@@ -276,7 +276,7 @@
   },
   {
     "title": "Google Doodle Games",
-    "category": "Arcade",
+    "category": "Game Hubs",
     "desc": "A massive collection of interactive Google Doodles, including Pac-Man, Cricket, and more.",
     "thumb": "https://images.netcomlearning.com/cms/images/google-baseball-doodle.jpg",
     "link": "https://www.google.com/search?q=google+doodle+games",
@@ -287,7 +287,7 @@
   },
   {
     "title": "Sandboxels",
-    "category": "Simulator",
+    "category": "Simulation",
     "desc": "A falling sand physics simulator with over 500 elements.",
     "thumb": "https://neal.fun/link-images/sandboxels.svg",
     "link": "https://neal.fun/sandboxels/",
@@ -309,7 +309,7 @@
   },
   {
     "title": "Stimulation Clicker",
-    "category": "Arcade",
+    "category": "Idle",
     "desc": "An idle clicker designed to provide maximum sensory satisfaction.",
     "thumb": "https://neal.fun/link-images/stimulation-clicker.svg",
     "link": "https://neal.fun/stimulation-clicker/",
@@ -342,7 +342,7 @@
   },
   {
     "title": "Draw a Perfect Circle",
-    "category": "Arcade",
+    "category": "Trivia & Party",
     "desc": "Test your steady hand and try to draw a perfect circle.",
     "thumb": "https://neal.fun/link-images/perfect-circle.svg",
     "link": "https://neal.fun/perfect-circle/",
@@ -364,7 +364,7 @@
   },
   {
     "title": "Design the Next iPhone",
-    "category": "Simulator",
+    "category": "Simulation",
     "desc": "Take control of Apple's design and create the future of smartphones.",
     "thumb": "https://neal.fun/link-images/design-the-next-iphone.svg",
     "link": "https://neal.fun/design-the-next-iphone/",
@@ -375,7 +375,7 @@
   },
   {
     "title": "Let's Settle This",
-    "category": "Arcade",
+    "category": "Trivia & Party",
     "desc": "Vote on the Internet's most debated questions and see where you stand.",
     "thumb": "https://neal.fun/link-images/lets-settle-this.svg",
     "link": "https://neal.fun/lets-settle-this/",
@@ -386,7 +386,7 @@
   },
   {
     "title": "The Auction Game",
-    "category": "Arcade",
+    "category": "Trivia & Party",
     "desc": "Guess the prices of items sold at high-stakes auctions.",
     "thumb": "https://neal.fun/link-images/auction-game.svg",
     "link": "https://neal.fun/auction-game/",
@@ -397,7 +397,7 @@
   },
   {
     "title": "Draw Logos from Memory",
-    "category": "Arcade",
+    "category": "Trivia & Party",
     "desc": "How well do you remember the world's most famous logos?",
     "thumb": "https://neal.fun/link-images/logos-from-memory.svg",
     "link": "https://neal.fun/logos-from-memory/",
@@ -408,7 +408,7 @@
   },
   {
     "title": "Asteroid Launcher",
-    "category": "Simulator",
+    "category": "Simulation",
     "desc": "Design your own asteroid and simulate its impact on Earth.",
     "thumb": "https://neal.fun/link-images/asteroid-launcher.svg",
     "link": "https://neal.fun/asteroid-launcher/",
@@ -419,7 +419,7 @@
   },
   {
     "title": "Survival Race",
-    "category": "Racing",
+    "category": "Driving",
     "desc": "Race through dangerous terrain and survive the obstacles.",
     "thumb": "https://watchdocumentaries.com/wp-content/uploads/survival-race-game-360x203.jpg",
     "link": "https://watchdocumentaries.com/survival-race-game/",
@@ -430,7 +430,7 @@
   },
   {
     "title": "Snow Rider 3D",
-    "category": "Racing",
+    "category": "Sports",
     "desc": "Ride your sleigh through a snowy mountain path in 3D.",
     "thumb": "https://watchdocumentaries.com/wp-content/uploads/snow-rider-3d-game-360x203.jpg",
     "link": "https://watchdocumentaries.com/snow-rider-3d-game/",
@@ -441,7 +441,7 @@
   },
   {
     "title": "PolyTrack",
-    "category": "Racing",
+    "category": "Driving",
     "desc": "Low-poly racing action with high-speed tracks.",
     "thumb": "https://watchdocumentaries.com/wp-content/uploads/polytrack-game-360x203.jpg",
     "link": "https://watchdocumentaries.com/polytrack-game/?p=0",
@@ -452,7 +452,7 @@
   },
   {
     "title": "DriveMad",
-    "category": "Racing",
+    "category": "Driving",
     "desc": "Extreme driving challenges where every level gets crazier.",
     "thumb": "https://watchdocumentaries.com/wp-content/uploads/drive-mad-game-360x203.jpg",
     "link": "https://drivinggames.io/mad-driving",
@@ -496,7 +496,7 @@
   },
   {
     "title": "Moto X3M",
-    "category": "Racing",
+    "category": "Sports",
     "desc": "Stunt-based motocross racing with over 20 intense levels.",
     "thumb": "https://watchdocumentaries.com/wp-content/uploads/moto-x3m-game-360x203.jpg",
     "link": "https://watchdocumentaries.com/moto-x3m-game/",
@@ -507,7 +507,7 @@
   },
   {
     "title": "Highway Traffic",
-    "category": "Racing",
+    "category": "Driving",
     "desc": "Avoid traffic and race at high speeds on the open highway.",
     "thumb": "https://watchdocumentaries.com/wp-content/uploads/highway-traffic-game-360x203.jpg",
     "link": "https://watchdocumentaries.com/highway-traffic-game/",
@@ -518,7 +518,7 @@
   },
   {
     "title": "GeoFS",
-    "category": "Simulator",
+    "category": "Simulation",
     "desc": "A multiplayer flight simulator with a global environment generated from satellite images and digital geographic data.",
     "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy2rCMHiXjK2vD4e6XL-uDV2bpWaYSfZLZiw&s",
     "link": "https://www.geo-fs.com/geofs.php",
@@ -540,7 +540,7 @@
   },
   {
     "title": "Retro Rush",
-    "category": "Racing",
+    "category": "RDriving",
     "desc": "A fast-paced neon driving game where you dodge traffic and race against the clock.",
     "thumb": "https://store-images.s-microsoft.com/image/apps.52831.13894313373290055.755c0d8b-3d2e-4002-92cb-11aff86c00d1.0df3019c-4752-4778-88ba-d1d7470765df?q=90&w=480&h=270",
     "link": "https://azgames.io/retro-rush",
@@ -551,7 +551,7 @@
   },
   {
     "title": "Ratatoing",
-    "category": "Media",
+    "category": "Movies & TV",
     "desc": "The legendary animated tale of a chef rodent in Rio de Janeiro.",
     "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXIlEts_keifKOIFYwrVtS8_6SmvBNfMgdrQ&s",
     "link": "https://www.youtube.com/watch?v=JC2dQaqRuBY",
@@ -562,7 +562,7 @@
   },
   {
     "title": "The Little Panda Fighter",
-    "category": "Media",
+    "category": "Movies & TV",
     "desc": "A martial arts adventure featuring a panda with big dreams and even bigger challenges.",
     "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcnrXzKvin0l5zRzzKASbnMjnDEHHnRVVNeg&s",
     "link": "https://www.youtube.com/watch?v=mlSV-EeQy9M",
@@ -573,7 +573,7 @@
   },
   {
     "title": "Lifes a Jungle: Africas Most Wanted",
-    "category": "Media",
+    "category": "Movies & TV",
     "desc": "An animated adventure following a pampered dog who must learn to survive the challenges of the African safari.",
     "thumb": "https://m.media-amazon.com/images/M/MV5BNGNmZjJmNGEtOTliNS00ZGY5LThlYTItYzE0NjcyYWI5MWNhXkEyXkFqcGc@._V1_.jpg",
     "link": "https://www.youtube.com/watch?v=Zeo5JwLv6Js",
@@ -584,7 +584,7 @@
   },
   {
     "title": "Finding Jesus",
-    "category": "Media",
+    "category": "Movies & TV",
     "desc": "An underwater adventure following a group of marine friends as they share stories and lessons of faith.",
     "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWsIN8P9_JXAFtvBiVjkf8Ge5RnQ3OOQUJYA&s",
     "link": "https://www.youtube.com/watch?v=P2zZEbiDnxQ",
@@ -595,7 +595,7 @@
   },
   {
     "title": "Tetris",
-    "category": "Arcade",
+    "category": "Puzzle",
     "desc": "The iconic tile-matching puzzle game. Arrange falling blocks to clear lines and rack up a high score.",
     "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKQW-AK-RBkoEJ6rhyMkZi0cEJU93LNZdbUg&s",
     "link": "https://www.freetetris.org/",
@@ -606,7 +606,7 @@
   },
   {
     "title": "Coolmath Games",
-    "category": "Hub",
+    "category": "Game Hubs",
     "desc": "The classic destination for brain-training and fun logic games.",
     "thumb": "https://www.coolmathgames.com/themes/custom/coolmath/logo-stacked.svg",
     "link": "https://www.coolmathgames.com",
@@ -628,8 +628,8 @@
   },
   {
     "title": "Deer Adventure",
-    "category": "Simulator",
-    "desc": "Become a deer? Sounds weird\u2014but that\u2019s exactly what Deer Adventure is all about. Jump in and take on the role of a deer roaming freely around the bustling, open-world city and do whatever you want, of course, as a deer.",
+    "category": "Adventure",
+    "desc": "Become a deer? Sounds weird—but that’s exactly what Deer Adventure is all about. Jump in and take on the role of a deer roaming freely around the bustling, open-world city and do whatever you want, of course, as a deer.",
     "thumb": "https://deeradventure.io/data/image/options/deer-adventure-banner.jpg",
     "link": "https://zapgames.io/deer-adventure",
     "verified": true,
@@ -639,7 +639,7 @@
   },
   {
     "title": "BoredFlix",
-    "category": "Hub",
+    "category": "Movies & TV",
     "desc": "Boredflix.com is a website offering free streaming of movies and TV shows without requiring sign-up. Launched in 2025 after two years of development, it quickly received significant user traffic, logging 6.1 million visits in October 2025.",
     "thumb": "https://play-lh.googleusercontent.com/fZNXd1jZWAkZMx10JPYBNnHWVx1eccx66QyU99NWc07LBWR9B6lq1ISnbNxKsEXd030-I1Sh4Tag7TbbeySu=w240-h480-rw",
     "link": "https://boredflix.tv/",
@@ -650,7 +650,7 @@
   },
   {
     "title": "Fmovies",
-    "category": "Hub",
+    "category": "Movies & TV",
     "desc": "Just a better place for watching online movies for free!",
     "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw0Km-r9xoHAhu2fT0eY32d7h3Pb0fkQozfg&s",
     "link": "https://ww4.fmovies.co/26/",
@@ -661,7 +661,7 @@
   },
   {
     "title": "Spotify",
-    "category": "Media",
+    "category": "",
     "desc": "Listen to music, podcasts, and more on Spotify.",
     "thumb": "https://storage.googleapis.com/pr-newsroom-wp/1/2023/05/2024-spotify-brand-assets-media-kit.jpg",
     "link": "https://open.spotify.com/",
@@ -672,7 +672,7 @@
   },
   {
     "title": "Apple Music",
-    "category": "Media",
+    "category": "",
     "desc": "Stream over 100 million songs, ad-free on Apple Music.",
     "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQSbl1bLb2mQjx4gAIasxURGuTvURgC4t5sw&s",
     "link": "https://music.apple.com/",
@@ -683,7 +683,7 @@
   },
   {
     "title": "Pandora",
-    "category": "Media",
+    "category": "Tools",
     "desc": "Free music and podcasts, personalized for you.",
     "thumb": "https://musicconsultant.com/site/uploads/2019/06/PandoraRebrand1-1260x840.png",
     "link": "https://www.pandora.com/",
@@ -694,7 +694,7 @@
   },
   {
     "title": "Claude",
-    "category": "Utility",
+    "category": "Tools",
     "desc": "Claude is an AI assistant made by Anthropic. Ask anything, brainstorm ideas, get help with writing, coding, and more.",
     "thumb": "https://cdn.sanity.io/images/9u514z6s/production/d1ab6e8aba08df9961ad9b46eddd00b9b48663b4-2624x1440.png",
     "link": "https://claude.ai/",
@@ -705,7 +705,7 @@
   },
   {
     "title": "DeepSeek",
-    "category": "Utility",
+    "category": "Tools",
     "desc": "DeepSeek is a powerful AI assistant for coding, reasoning, and general questions.",
     "thumb": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/25848982/STKB320_DEEPSEEK_AI_CVIRGINIA_A.jpg?quality=90&strip=all&crop=0,0,100,100",
     "link": "https://chat.deepseek.com/",
@@ -716,8 +716,8 @@
   },
   {
     "title": "Geometry Dash",
-    "category": "Arcade",
-    "desc": "Geometry Dash is a high-octane, rhythm-based platformer developed by RobTop Games. It\u2019s famous for its simple mechanics, punishing difficulty, and an iconic soundtrack that is synced directly to the gameplay.",
+    "category": "Tools",
+    "desc": "Geometry Dash is a high-octane, rhythm-based platformer developed by RobTop Games. It’s famous for its simple mechanics, punishing difficulty, and an iconic soundtrack that is synced directly to the gameplay.",
     "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCd8DHW4zOb9QqjJ59t9FpV8LnEeKwIttiaw&s",
     "link": "https://crazygamesunblocked.net/geometry-dash",
     "verified": true,
@@ -727,7 +727,7 @@
   },
   {
     "title": "Retro Bowl",
-    "category": "Arcade",
+    "category": "Sports",
     "desc": "Retro Bowl is a hyper-addictive, stylized American football game that blends deep front-office management with simple, arcade-style gameplay. Designed with a charming 8-bit aesthetic, it pays homage to classic titles like Tecmo Bowl while offering modern depth.",
     "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtsZZ_dJjUPe7Id2lKsCRqFT_AlAOvb3DZag&s",
     "link": "https://retrobowl76.io/",
@@ -738,7 +738,7 @@
   },
   {
     "title": "FunVideoTV",
-    "category": "Media",
+    "category": "Videos & Creators",
     "desc": "Addicted to the Angry Birds, thats what I am !!!",
     "thumb": "https://yt3.googleusercontent.com/qru8manzk9XSf_AHPAxEEsF5ky94GoMj17KkLgWQTSJUfAi5zTYr44W8zI1XSpnFUfXDtTLyXaU=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj",
     "link": "https://www.youtube.com/user/FunVideoTV",
@@ -749,7 +749,7 @@
   },
   {
     "title": "GeoDuels",
-    "category": "Arcade",
+    "category": "Trivia & Party",
     "desc": "Play GeoDuels, a competitive GeoGuessr-style multiplayer geography game with ranked duels, Street View rounds, and singleplayer practice.",
     "thumb": "https://igebeprgtgspizprnkoz.supabase.co/storage/v1/object/public/vibe-assets/url-intake/9e213d86-8245-4581-b7e2-a3640c80a8d5/screenshots/1773777984205-0-e691340ec26d.webp",
     "link": "https://geoduels.io/",
@@ -760,7 +760,7 @@
   },
   {
     "title": "Ultrakill",
-    "category": "Media",
+    "category": "Action",
     "desc": "steam game yes.",
     "thumb": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1229490/capsule_616x353.jpg?t=1774188523",
     "link": "https://duckmath.org/class/ultrakill",
@@ -782,7 +782,7 @@
   },
   {
     "title": "TuneIn",
-    "category": "Utility",
+    "category": "Tools",
     "desc": "radio.",
     "thumb": "https://store-images.s-microsoft.com/image/apps.44829.9007199266246398.fab84bd6-dd10-4a80-9137-0a0428d5234f.75f86c00-f9c7-4097-a291-20a532f66d90?h=210",
     "link": "https://tunein.com",
@@ -793,7 +793,7 @@
   },
   {
     "title": "FrontWars",
-    "category": "Simulator",
+    "category": "Strategy",
     "desc": "yes.",
     "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvng2WwNwI-ua_aN-8MrLWhrB1qzUBTgEIXQ&s",
     "link": "https://frontwars.io/",
@@ -815,7 +815,7 @@
   },
   {
     "title": "Gun Spin",
-    "category": "Arcade",
+    "category": "Action",
     "desc": "spin.",
     "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdS20YMopMPcV7xgRlO_4aq33o6XUMavO5Hg&s",
     "link": "https://learn-duck.firebaseapp.com/class/gun-spin",
@@ -826,7 +826,7 @@
   },
   {
     "title": "Jackbox.TV",
-    "category": "Arcade",
+    "category": "Trivia & Party",
     "desc": "game required.",
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.insidehook.com%2Fwp-content%2Fuploads%2F2020%2F05%2FJackbox-Games-Logo.jpg%3Ffit%3D1500%252C1000&f=1&nofb=1&ipt=3d6df4f2d5b8d6156654ef0e4e6242174407a9eaf52fde43d69e20c0c179579b&ipo=images",
     "link": "https://jackbox.tv",
@@ -837,7 +837,7 @@
   },
   {
     "title": "GrammaCrackers",
-    "category": "Media",
+    "category": "Videos & Creators",
     "desc": "poor grandma got swatted.",
     "thumb": "https://d.ibtimes.co.uk/en/full/1784070/gramma-crackers.png?w=736&f=824727b308ecc4ad6d3bd1ab40e0f01e",
     "link": "https://youtube.com/@grammacrackers",
@@ -859,7 +859,7 @@
   },
   {
     "title": "White Lake Bets",
-    "category": "Simulator",
+    "category": "Simulation",
     "desc": "Every bet plays out live — watch it happen.",
     "thumb": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/6a/40/75/white-lake-state-park.jpg?w=900&h=500&s=1",
     "link": "https://wlbets.lovable.app/",
@@ -870,7 +870,7 @@
   },
   {
     "title": "Uncle's AI",
-    "category": "Utility",
+    "category": "Tools",
     "desc": "Every AI combined into one.",
     "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Artificial_Intelligence_%26_AI_%26_Machine_Learning_-_30212411048.jpg/1280px-Artificial_Intelligence_%26_AI_%26_Machine_Learning_-_30212411048.jpg?utm_source=en.wikiversity.org&utm_campaign=index&utm_content=thumbnail",
     "link": "https://unclesai.lovable.app/",
@@ -881,7 +881,7 @@
   },
   {
     "title": "VirusTotal",
-    "category": "Utility",
+    "category": "Tools",
     "desc": "Scan files for viruses.",
     "thumb": "https://images.contentstack.io/v3/assets/blt38f1f401b66100ad/bltad293621115db1a4/690b50abdfd10011073354da/vt-1200.png",
     "link": "https://virustotal.com/",
@@ -892,7 +892,7 @@
   },
   {
     "title": "Fishbrain",
-    "category": "Utility",
+    "category": "Tools",
     "desc": "Find your best fishing spot.",
     "thumb": "https://fishbrain.com/_next/static/media/og_image_homepage.17dqb6i1ii3es.png",
     "link": "http://fishbrain.com/",
@@ -903,7 +903,7 @@
   },
   {
     "title": "Granny",
-    "category": "Arcade",
+    "category": "Adventure",
     "desc": "I see you...",
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%2Fid%2FOIP.YAaTxHm6aymfanh02qsv3QHaEK%3Fr%3D0%26pid%3DApi&f=1&ipt=2211bdec874b4688727aed72992c689b0e93e4fc315b16b6b4d659d9155902b3&ipo=images",
     "link": "https://learn-duck.firebaseapp.com/class/granny",
@@ -914,7 +914,7 @@
   },
   {
     "title": "LarpTube",
-    "category": "Media",
+    "category": "Videos & Creators",
     "desc": "Larp.",
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flarptube.lovable.app%2F__l5e%2Fassets-v1%2F867607e1-c93c-429a-afed-8594154b77c9%2Flarptube-logo.png&f=1&nofb=1&ipt=18e3c76968c03b41c9937bbb4486d1e3605c742e3bd3230f73a557db007c04d5&ipo=images",
     "link": "https://larptube.com/",
@@ -925,7 +925,7 @@
   },
   {
     "title": "Sword Fights on the Heights IV",
-    "category": "Arcade",
+    "category": "Action",
     "desc": "Death before dishonor.",
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.sftcdn.net%2Fimages%2Ft_app-cover-l%2Cf_auto%2Fp%2F5cbced38-e912-4cc9-998f-86e3df009972%2F653554917%2Fsword-fights-on-the-heights-iv-screenshot.png&f=1&nofb=1&ipt=9f3d9feaf7b2ae223e9be659c3d2b4cccbeb12fda080ac956fcb26166cfa3503&ipo=images",
     "link": "https://shedletsky.com/SFOTH/",
@@ -936,7 +936,7 @@
   },
   {
     "title": "Fortnite OG",
-    "category": "Arcade",
+    "category": "Action",
     "desc": "Drop into OG.",
     "thumb": "https://fortniteog.lol/assets/logo.png",
     "link": "https://fortniteog.lol/fortnite",
@@ -947,7 +947,7 @@
   },
   {
     "title": "SmartPass",
-    "category": "Utility",
+    "category": "Tools",
     "desc": "A Safer, Smarter Way to Optimize the School Day.",
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fedovatecapital.com%2Fwp-content%2Fuploads%2F2024%2F04%2FSmartPass-6x4-1.jpg&f=1&nofb=1&ipt=94b026a19267603ecb1bdf4e36b401f75ed6bbca8df49e0d5b5964773e17d458&ipo=images",
     "link": "https://mysmartpass.garnerj826.workers.dev",
@@ -958,7 +958,7 @@
   },
   {
     "title": "BO1 Zombies",
-    "category": "Arcade",
+    "category": "Action",
     "desc": "Call of Duty: Black Ops is a 2010 first-person shooter game developed by Treyarch and published by Activision.",
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fportpowered.fun%2Fassets%2Fbo1-zombies-xsGi-bOr.jpg&f=1&nofb=1&ipt=83f0f3ddea65c17f7479c2838fb41508581f9117ee73c55e903ce83551e1e403&ipo=images",
     "link": "https://vel.gg/bo1z",
@@ -969,7 +969,7 @@
   },
   {
     "title": "Call of Duty: Modern Warfare 2",
-    "category": "Arcade",
+    "category": "Action",
     "desc": "The most-anticipated game of the year and the sequel to the best-selling first-person action game of all time, Modern Warfare 2 continues the gripping and heart-racing action as players face off against a new threat dedicated to bringing the world to the brink of collapse.",
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpaperaccess.com%2Ffull%2F2204595.jpg&f=1&nofb=1&ipt=8a2319a9cde3ecf3d100acb821c5750172ed0ceae3a51cc5a262890a145e526c&ipo=images",
     "link": "https://ovz-game-production.up.railway.app/",
@@ -980,7 +980,7 @@
   },
   {
     "title": "Skate 3",
-    "category": "Arcade",
+    "category": "Sports",
     "desc": "The award winning SKATE™ franchise is back and rolling into new territory as SKATE™ 3 heads to the brand new city of Port Carverton.",
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.altarofgaming.com%2Fwp-content%2Fuploads%2F2022%2F04%2Fskate-3-game-cover-altar-of-gaming.jpg&f=1&nofb=1&ipt=11db6660cad70895069310599f98c31cc1b7466e25947c7bca7aa29baa2fe8d0&ipo=images",
     "link": "https://skate.aaddpp.lol/",
@@ -991,7 +991,7 @@
   },
   {
     "title": "CS Surf",
-    "category": "Arcade",
+    "category": "Sports",
     "desc": "Play the world's number 1 online action game, and surf?",
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2F8B-Dyw8wep0%2Fhqdefault.jpg&f=1&nofb=1&ipt=756e35b66cdd3ce30d23adf51e9172271e63032de35057252ff678bcb436862a&ipo=images",
     "link": "https://surfd.net/",
@@ -1002,7 +1002,7 @@
   },
   {
     "title": "Half Life",
-    "category": "Arcade",
+    "category": "Action",
     "desc": "Named Game of the Year by over 50 publications, Valve's debut title blends action and adventure with award-winning technology to create a frighteningly realistic world where players must think to survive. Also includes an exciting multiplayer mode that allows you to play against friends and enemies around the world.",
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.cloudflare.steamstatic.com%2Fhalf-life.com%2Fimages%2Fhalflife25%2FHLwallpaper01_16x9.jpg&f=1&nofb=1&ipt=937206752d005f5c8299ea50fe3bd82d25fef15d34b89280a4a609761805e0ed&ipo=images",
     "link": "https://pixelsuft.github.io/hl/xash.html#150",
@@ -1013,7 +1013,7 @@
   },
   {
     "title": "Grand Theft Auto V",
-    "category": "Arcade",
+    "category": "Adventure",
     "desc": "Named Game of the Year by over 50 publications, Valve's debut title blends action and adventure with award-winning technology to create a frighteningly realistic world where players must think to survive. Also includes an exciting multiplayer mode that allows you to play against friends and enemies around the world.",
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapers.com%2Fimages%2Ffeatured%2Fgrand-theft-auto-v-naej4yiap4gnxh2o.jpg&f=1&nofb=1&ipt=d83c1216d7a325c21a9e27e2853aebaa29ea80e9a384eb3012513d6f3cfc08ff&ipo=images",
     "link": "https://web.archive.org/web/20261005232456/https://playgta5.com/",
@@ -1024,7 +1024,7 @@
   },
   {
     "title": "Grand Theft Auto: Vice City",
-    "category": "Arcade",
+    "category": "Adventure",
     "desc": "Grand Theft Auto: Vice City is a 2002 action-adventure game developed by Rockstar North and published by Rockstar Games.",
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic0.gamerantimages.com%2Fwordpress%2Fwp-content%2Fuploads%2F2022%2F10%2FGrand-Theft-Auto-Vice-City-Open-World-Aesthetics.jpg&f=1&nofb=1&ipt=2fb78640bd0bac4c871775ac2a822b3fc7a55ee30fad1b9c582e3164c437cd20&ipo=images",
     "link": "https://joncodeofficial.github.io/gta-vice-city-wasm/",
@@ -1035,7 +1035,7 @@
   },
   {
     "title": "The Simpsons: Hit & Run",
-    "category": "Arcade",
+    "category": "Adventure",
     "desc": "Doh!",
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.megavisions.net%2Fwp-content%2Fuploads%2F2021%2F08%2FSimpsons-Hit-Run-Cover-902x507-1280x720-1.jpg&f=1&nofb=1&ipt=1f0a91539d3e7b3922cf8d17fc21ac03f3ce6699d39bc462b4e4eea4c99ea4a2&ipo=images",
     "link": "https://shar-wasm.cjoseph.workers.dev/?skipmovie",
@@ -1046,7 +1046,7 @@
   },
   {
     "title": "Halo: Combat Evolved",
-    "category": "Arcade",
+    "category": "Action",
     "desc": "Halo: Combat Evolved is a 2001 first-person shooter game developed by Bungie and published by Microsoft Game Studios.",
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp4163717.jpg&f=1&nofb=1&ipt=368eb9bad06746690da20f02cb61b14e4beb2eb6876251bdb261b61be0f928f9&ipo=images",
     "link": "https://mitchellhynes.com/halo/halo.html",
@@ -1057,7 +1057,7 @@
   },
   {
     "title": "Diablo",
-    "category": "Arcade",
+    "category": "Adventure",
     "desc": "Diablo is an action role-playing dungeon crawler video game series originally developed by Blizzard North and continued by Blizzard Entertainment after the original North studio shut down in 2005.",
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.moddb.com%2Fimages%2Fmods%2F1%2F57%2F56661%2Fdiablo-1-1996-pc-download-em-por.jpg&f=1&nofb=1&ipt=db0000bcdf733cbb3838c8b8767e2129f5921c939d1dd08acb268e275c20017d&ipo=images",
     "link": "https://johnimril.github.io/diablo_web/",
@@ -1068,7 +1068,7 @@
   },
   {
     "title": "Quake 1",
-    "category": "Arcade",
+    "category": "Action",
     "desc": "Quake is a 1996 first-person shooter video game developed by id Software and published by GT Interactive.",
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.api.playstation.com%2Fvulcan%2Fap%2Frnd%2F202108%2F0523%2FjzJhJ0OlUd8lqLJKfaF5hioZ.jpg&f=1&nofb=1&ipt=3483ec26f17b2d81f884310770ab362c218fe1e59c640505b8850ca37cf2a274&ipo=images",
     "link": "https://q1.pieter.com/",
@@ -1079,7 +1079,7 @@
   },
   {
     "title": "Vortex",
-    "category": "Hub",
+    "category": "Game Hubs",
     "desc": "Discover Vortex",
     "thumb": "https://playvortex.io/logo.png",
     "link": "https://playvortex.io",
@@ -1090,7 +1090,7 @@
   },
   {
     "title": "Cork7",
-    "category": "Arcade",
+    "category": "Sports",
     "desc": "A free online 3D free ski game. Ride solo or multiplayer, land corks and flips, slide rails, customize your skier and save replay clips.",
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.kayak.co.uk%2Fnews%2Fwp-content%2Fuploads%2Fsites%2F5%2F2022%2F11%2FDEST_CANADA_WHISTLER_BLACKCOMB_THEME_PEOPLE_SKIER_ON_FRESH-POWDER_GettyImages-629629078.jpg&f=1&nofb=1&ipt=2f564e86883dcdf7046a434dd13e7446958dabc0c34eab792f475f07e9ddd6fa&ipo=images",
     "link": "https://cork7.com",
