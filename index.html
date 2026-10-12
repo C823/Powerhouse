@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Powerhouse</title>
-    <meta name="powerhouse-site-version" content="2.14.0">
+    <meta name="powerhouse-site-version" content="2.21.4">
     <link rel="icon" id="faviconEl" type="image/png" sizes="any" href="https://cdn.jsdelivr.net/gh/C823/powerhouse@main/icons/POWERHOUSE-icon.png?v=20261009">
     <link rel="shortcut icon" type="image/png" href="https://cdn.jsdelivr.net/gh/C823/powerhouse@main/icons/POWERHOUSE-icon.png?v=20261009">
     <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/C823/powerhouse@main/icons/POWERHOUSE-icon.png?v=20261009">
     <!-- The Worker may inject a GitHub <base>. Keep browser navigation on this Worker origin. -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        /* Powerhouse palette v2.21.2 — sampled from supplied reference:
+        /* Powerhouse palette v2.21.5 — sampled from supplied reference:
            black #000000, charcoal #1c1c1c, white #ffffff. */
         :root {
             --accent: #444444;
@@ -41,9 +41,11 @@
         }
 
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        body { margin: 0; font-family: 'Outfit', sans-serif; background-color: var(--bg-main); color: var(--text); min-height: 100vh; overflow-x: hidden; display: flex; transition: background 0.3s ease; }
+        body { margin: 0; font-family: 'Mulish', sans-serif; background-color: var(--bg-main); color: var(--text); min-height: 100vh; overflow-x: hidden; display: flex; transition: background 0.3s ease; }
 
-        /* --- AUTH PAGE — website v2.21.2 --- */
+        button, input, textarea, select { font-family: inherit; }
+
+        /* --- AUTH PAGE — website v2.21.5 --- */
         #landing-page { position:fixed; inset:0; z-index:5000; display:none; align-items:center; justify-content:center; overflow:auto; padding:32px 22px; color:#eee; background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.6)),url('https://files.enderman.ch/wallpapers/Moonlight.png') center center / cover no-repeat fixed #090b12; }
         #landing-page::before { content:''; position:fixed; inset:0; pointer-events:none; background:rgba(0,0,0,.10); }
         #landing-page::after { content:none; }
@@ -71,12 +73,12 @@
         #landing-page .form-group label { display:block; color:#d1d2d5; font-weight:500; font-size:12px; margin-bottom:9px; }
         .auth-input-wrap { position:relative; }
         .auth-input-icon { display:none; }
-        #landing-page .form-group input { display:block; width:100%; height:46px; padding:0 14px; font:400 14px 'Outfit',sans-serif; color:#eee; background:#111111; border:1px solid #444444; border-radius:5px; outline:none; transition:border-color .16s ease,box-shadow .16s ease; }
+        #landing-page .form-group input { display:block; width:100%; height:46px; padding:0 14px; font:400 14px 'Mulish',sans-serif; color:#eee; background:#111111; border:1px solid #444444; border-radius:5px; outline:none; transition:border-color .16s ease,box-shadow .16s ease; }
         #landing-page .form-group input::placeholder { color:#7f8086; }
         #landing-page .form-group input:focus { border-color:#b3b3b3; box-shadow:0 0 0 3px rgba(255,255,255,.10); }
-        .auth-show-password { position:absolute; right:7px; top:50%; transform:translateY(-50%); padding:8px; border:0; border-radius:4px; color:#a8abb0; background:transparent; cursor:pointer; font:500 12px 'Outfit',sans-serif; }
+        .auth-show-password { position:absolute; right:7px; top:50%; transform:translateY(-50%); padding:8px; border:0; border-radius:4px; color:#a8abb0; background:transparent; cursor:pointer; font:500 12px 'Mulish',sans-serif; }
         .auth-show-password:hover { color:#fff; background:#303030; }
-        #landing-page .landing-btn { display:flex; align-items:center; justify-content:center; gap:10px; width:100%; height:45px; margin-top:6px; color:#fff; background:#3b3b3b; border:1px solid #3b3b3b; border-radius:5px; font:600 14px 'Outfit',sans-serif; cursor:pointer; box-shadow:none; transition:background .16s ease,transform .16s ease; }
+        #landing-page .landing-btn { display:flex; align-items:center; justify-content:center; gap:10px; width:100%; height:45px; margin-top:6px; color:#fff; background:#3b3b3b; border:1px solid #3b3b3b; border-radius:5px; font:600 14px 'Mulish',sans-serif; cursor:pointer; box-shadow:none; transition:background .16s ease,transform .16s ease; }
         #landing-page .landing-btn:hover:not(:disabled) { background:#525252; transform:translateY(-1px); box-shadow:none; filter:none; }
         #landing-page .landing-btn:active:not(:disabled) { transform:translateY(0); }
         #landing-page .landing-btn:disabled { cursor:wait; opacity:.7; }
@@ -87,7 +89,7 @@
         .auth-release { position:absolute; bottom:17px; right:22px; font-size:10px; color:#686b72; letter-spacing:.03em; }
 
         #landing-page [hidden] { display:none!important; }
-        .auth-switch-link { border:0; background:transparent; color:#f4f4f4; font:600 13px 'Outfit',sans-serif; padding:3px 4px; cursor:pointer; text-decoration:underline; text-decoration-color:#737373; text-underline-offset:4px; transition:color .2s,text-decoration-color .2s; }
+        .auth-switch-link { border:0; background:transparent; color:#f4f4f4; font:600 13px 'Mulish',sans-serif; padding:3px 4px; cursor:pointer; text-decoration:underline; text-decoration-color:#737373; text-underline-offset:4px; transition:color .2s,text-decoration-color .2s; }
         .auth-switch-link:hover { color:#fff; text-decoration-color:white; }
         .auth-hint {display:block; font-size:11px; color:#969696; margin-top:7px;}
         .auth-agreement { display:flex; align-items:flex-start; gap:10px; color:#bcbcbc; font-size:12px; line-height:1.5; margin:0 0 18px; cursor:pointer; }
@@ -103,7 +105,7 @@
 
         /* --- DASHBOARD UI --- */
 
-        /* v2.21.2 — optional compact sidebar, based on the narrow navigation reference. */
+        /* v2.21.5 — optional compact sidebar, based on the narrow navigation reference. */
         body[data-compact-sidebar="true"] { --sidebar-width: 184px; }
         body[data-compact-sidebar="true"] #sidebar { padding: 15px 10px 12px; }
         body[data-compact-sidebar="true"] #sidebar .logo-area { margin-bottom: 10px; padding: 0 2px; }
@@ -152,7 +154,7 @@
         .nav-item:hover { background: var(--accent-light); color: var(--text); }
         .nav-item.active { background: var(--accent); color: white; }
         .nav-item svg { width: 20px; height: 20px; flex: 0 0 20px; display: block; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; fill: none; }
-        /* v2.21.2: solid filled sidebar navigation icons */
+        /* v2.21.5: solid filled sidebar navigation icons */
         #sidebar .nav-item svg.sidebar-solid-icon { fill: currentColor; stroke: none; stroke-width: 0; }
         .badge { position: absolute; right: 12px; background: var(--accent2); padding: 2px 8px; border-radius: 20px; font-size: 10px; color: white; font-weight: 800; }
 
@@ -196,7 +198,7 @@
         .hero { align-items:flex-start; }
         .hero-info { min-width:0; flex:1; }
         .hero-info h1 { margin:0 0 18px; font-size:clamp(28px,3vw,40px); letter-spacing:-.8px; }
-        .home-friends-heading { display:inline-flex; align-items:center; gap:9px; background:none; border:0; padding:0; margin:0 0 10px; color:var(--text); font:700 18px 'Outfit',sans-serif; cursor:pointer; transition:color .18s ease,transform .18s ease; }
+        .home-friends-heading { display:inline-flex; align-items:center; gap:9px; background:none; border:0; padding:0; margin:0 0 10px; color:var(--text); font:700 18px 'Mulish',sans-serif; cursor:pointer; transition:color .18s ease,transform .18s ease; }
         .home-friends-heading:hover { color:#fff; transform:translateX(2px); }
         .home-friends-count { display:inline-flex; position:static; min-width:23px; height:23px; box-sizing:border-box; justify-content:center; align-items:center; padding:0 8px; border:0; border-radius:100px; color:#fff; background:#363636; font-size:11px; font-weight:700; box-shadow:none; }
         .home-friends-grid { display:flex; flex-wrap:wrap; align-items:flex-start; gap:12px; }
@@ -229,11 +231,11 @@
         .profile-joined {margin-top:12px;color:var(--text-muted);font-size:13px;display:flex;align-items:center;gap:7px;}
         .profile-joined strong {font-weight:600;color:var(--text);}
         .profile-head-actions { align-self:flex-start; margin-left:auto; }
-        .profile-action { border:1px solid var(--border); background:var(--surface); color:var(--text); border-radius:9px; padding:11px 19px; font:700 13px 'Outfit',sans-serif; cursor:pointer; transition:transform .18s, border-color .18s; }
+        .profile-action { border:1px solid var(--border); background:var(--surface); color:var(--text); border-radius:9px; padding:11px 19px; font:700 13px 'Mulish',sans-serif; cursor:pointer; transition:transform .18s, border-color .18s; }
         .profile-action:hover { transform:translateY(-2px); border-color:var(--accent); }
         .profile-divider { height:1px;background:var(--border);margin:28px 0; }
 
-        /* v2.21.2 — public profile Favorites */
+        /* v2.21.5 — public profile Favorites */
         .profile-favorites-card { margin-top:20px; padding:22px; border:1px solid var(--border); background:var(--surface); border-radius:16px; }
         .profile-favorites-heading { display:flex; justify-content:space-between; gap:12px; align-items:baseline; margin-bottom:17px; }
         .profile-favorites-heading h2 { margin:0; font-size:18px; }
@@ -245,7 +247,7 @@
         .profile-about-card { border:1px solid var(--border);background:var(--surface);border-radius:16px;padding:24px 22px;min-height:115px; }
         .profile-about-title {display:flex;justify-content:space-between;align-items:center;gap:12px;}
         .profile-about-title h2 {margin:0;font-size:17px;}
-        #profile-about-edit { background:none;border:0;color:var(--text-muted);font:600 13px 'Outfit',sans-serif;cursor:pointer; }
+        #profile-about-edit { background:none;border:0;color:var(--text-muted);font:600 13px 'Mulish',sans-serif;cursor:pointer; }
         #profile-about-edit:hover {color:var(--accent);}
         #profile-about {font-size:15px;line-height:1.55;white-space:pre-wrap;overflow-wrap:anywhere;margin:17px 0 0;}
         .account-about-editor {margin-top:24px;padding-top:20px;border-top:1px solid var(--border);}
@@ -255,7 +257,7 @@
         #account-about-input:focus {outline:2px solid var(--accent);outline-offset:1px;}
         .about-editor-footer {display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:10px;}
         #account-about-count {font-size:12px;color:var(--text-muted);}
-        #account-about-save {background:var(--accent);color:#fff;border:0;border-radius:9px;padding:10px 18px;font:700 13px 'Outfit',sans-serif;cursor:pointer;}
+        #account-about-save {background:var(--accent);color:#fff;border:0;border-radius:9px;padding:10px 18px;font:700 13px 'Mulish',sans-serif;cursor:pointer;}
         #account-about-save:disabled {opacity:.5;cursor:wait;}
         #account-about-feedback {min-height:20px;font-size:13px;color:var(--text-muted);}
         @media(max-width:680px) { .profile-page-card {padding:16px;} .profile-topline {gap:14px;flex-wrap:wrap;} .profile-avatar-frame {width:90px;height:90px;} .profile-head-actions {width:100%;margin-left:0;} .profile-action {width:100%;} .profile-divider {margin:18px 0;} .profile-about-card {padding:18px;} }
@@ -271,7 +273,7 @@
         .picture-option { display:flex; flex-direction:column; align-items:center; gap:6px; min-width:0; }
         .picture-option .picture-choice { width:60px; max-width:100%; flex:none; }
         .picture-label { font-size:11px; line-height:1.3; text-align:center; color:var(--text-muted); overflow-wrap:anywhere; }
-        .picture-choice { width:100%; aspect-ratio:1; padding:2px; background:var(--surface); border:2px solid transparent; border-radius:50%; cursor:pointer; overflow:hidden; display:flex; justify-content:center; align-items:center; font:600 11px 'Outfit',sans-serif; color:var(--text); transition:transform .18s,border-color .18s; }
+        .picture-choice { width:100%; aspect-ratio:1; padding:2px; background:var(--surface); border:2px solid transparent; border-radius:50%; cursor:pointer; overflow:hidden; display:flex; justify-content:center; align-items:center; font:600 11px 'Mulish',sans-serif; color:var(--text); transition:transform .18s,border-color .18s; }
         .picture-choice img { display:block; width:100%; height:100%; object-fit:cover; border-radius:50%; }
         .picture-choice:hover { transform:scale(1.06); border-color:var(--accent); }
         .picture-choice.selected { border-color:var(--accent); box-shadow:0 0 0 2px var(--accent-light); }
@@ -333,7 +335,7 @@
         .game-filter-toolbar { display:flex; align-items:center; flex-wrap:wrap; gap:14px; margin-bottom:22px; }
         .filter-title { font-weight:800; font-size:21px; margin-right:5px; }
         .game-filter-options { display:flex; gap:5px; padding:4px; background:var(--surface); border:1px solid var(--border); border-radius:12px; }
-        .game-filter { border:0; background:transparent; color:var(--text-muted); padding:9px 15px; border-radius:9px; cursor:pointer; font:600 13px 'Outfit',sans-serif; transition:background .2s,color .2s,transform .2s; }
+        .game-filter { border:0; background:transparent; color:var(--text-muted); padding:9px 15px; border-radius:9px; cursor:pointer; font:600 13px 'Mulish',sans-serif; transition:background .2s,color .2s,transform .2s; }
         .game-filter:hover { color:var(--text); }
         .game-filter.active { background:var(--accent); color:white; }
         .filter-count { font-size:12px; color:var(--text-muted); margin-left:auto; }
@@ -344,7 +346,7 @@
         .social-title { font-size:28px; letter-spacing:-.7px; margin:0 0 22px; font-weight:700; }
         .social-tabs { display:flex; gap:9px; border-bottom:1px solid var(--border); margin-bottom:20px; overflow-x:auto; scrollbar-width:none; }
         .social-tabs::-webkit-scrollbar { display:none; }
-        .social-tab { appearance:none; background:none; border:0; color:var(--text-muted); padding:12px 14px 15px; font:600 13px 'Outfit',sans-serif; white-space:nowrap; cursor:pointer; position:relative; transition:color .2s ease; }
+        .social-tab { appearance:none; background:none; border:0; color:var(--text-muted); padding:12px 14px 15px; font:600 13px 'Mulish',sans-serif; white-space:nowrap; cursor:pointer; position:relative; transition:color .2s ease; }
         .social-tab:hover { color:var(--text); }
         .social-tab.active { color:var(--text); }
         .social-tab.active::after { content:''; position:absolute; bottom:0; left:11px; right:11px; height:2px; border-radius:2px; background:var(--accent); animation: tabIn .2s ease both; }
@@ -355,14 +357,14 @@
         .social-card img { width:54px; height:54px; object-fit:cover; flex-shrink:0; background:var(--surface); }
         .social-card-name { font-size:13px; font-weight:700; margin:0 8px 0 12px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; flex:1; }
 
-        /* v2.21.2: banned/deleted accounts retain removable friend entries, never a profile link. */
+        /* v2.21.5: banned/deleted accounts retain removable friend entries, never a profile link. */
         .social-deleted-profile {display:flex;align-items:center;flex:1;min-width:0;pointer-events:none;color:var(--text-muted);}
         .social-deleted-profile img {filter:grayscale(1);opacity:.55;}
         .social-deleted-text {display:flex;flex-direction:column;gap:2px;min-width:0;margin-left:12px;}
         .social-deleted-text strong {font-size:13px;color:var(--text);font-weight:650;}
         .social-deleted-text small {font-size:11px;color:var(--text-muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
         .social-deleted-card:hover {transform:none;box-shadow:none;}
-        .social-action { border:0; background:transparent; color:#ff4c67; padding:10px 12px 10px 4px; font:600 10px 'Outfit',sans-serif; cursor:pointer; white-space:nowrap; transition:color .2s ease, transform .2s ease; }
+        .social-action { border:0; background:transparent; color:#ff4c67; padding:10px 12px 10px 4px; font:600 10px 'Mulish',sans-serif; cursor:pointer; white-space:nowrap; transition:color .2s ease, transform .2s ease; }
         .social-action:hover { color:#ff8c9b; transform:translateY(-1px); }
         .social-action:disabled { opacity:.5; cursor:wait; }
         .social-empty { grid-column:1/-1; padding:44px 20px; border:1px dashed var(--border); border-radius:16px; text-align:center; color:var(--text-muted); font-size:14px; }
@@ -771,7 +773,7 @@
         .account-userid-row button:disabled { opacity:.45; cursor:default; }
         .account-userid-hint, #account-userid-feedback { color:#aaa; font-size:12px; margin:7px 0 0; }
 
-/* v2.21.2 — Messaging */
+/* v2.21.5 — Messaging */
 #messages-view [hidden], #side-messages .message-nav-count[hidden], #profile-message-action[hidden] { display:none !important; }
 #side-messages { position:relative; }
 .message-nav-count { margin-left:auto; min-width:19px; padding:2px 6px; border-radius:30px; background:#393939; color:#fff; font-size:11px; font-weight:700; text-align:center; }
@@ -816,7 +818,7 @@
 .messages-back { border:0; background:#343434; color:white; border-radius:7px; padding:6px 10px; cursor:pointer; }
 
 
-/* v2.21.2 — Friends / Requests */
+/* v2.21.5 — Friends / Requests */
 .requests-count {display:inline-flex;min-width:19px;height:19px;padding:0 5px;align-items:center;justify-content:center;border-radius:9px;background:#383838;color:#fff;font-size:11px;margin-left:5px;}
 .requests-count[hidden] {display:none!important;}
 .social-request-card {height:auto;min-height:78px;padding-right:12px;gap:12px;}
@@ -835,7 +837,7 @@
 #friends-view:has(.social-request-card) .social-grid {grid-template-columns:repeat(auto-fill,minmax(min(100%,470px),470px));}
 @media(max-width:540px){.social-request-card{flex-wrap:wrap;padding:8px;}.social-request-actions{width:100%;justify-content:flex-end}.social-request-card .social-profile-link{width:100%;}}
 
-/* v2.21.2 — Not found page */
+/* v2.21.5 — Not found page */
 #not-found-view .error-layout { min-height:calc(100vh - 190px); display:flex; align-items:center; justify-content:center; text-align:center; padding:64px 16px; }
 #not-found-view .error-content {max-width:520px; width:100%; }
 #not-found-view .error-kicker {color:#9b9b9b; font-weight:700; letter-spacing:.18em; font-size:12px; text-transform:uppercase; margin-bottom:16px;}
@@ -847,7 +849,7 @@
 #not-found-view .error-home-link:focus-visible {outline:2px solid white;outline-offset:3px;}
 
 
-/* v2.21.2 — Game details: image-safe, responsive editorial layout. */
+/* v2.21.5 — Game details: image-safe, responsive editorial layout. */
 #game-view { width:100%; }
 #game-view .game-detail { width:min(1120px,100%); margin:0 auto; min-width:0; }
 #game-view .game-breadcrumb { display:flex; align-items:center; flex-wrap:wrap; gap:10px; margin:4px 0 21px; color:#999; font-size:13px; }
@@ -891,7 +893,7 @@
 @media(prefers-reduced-motion:reduce){#game-detail-content .game-play-button{transition:none;}}
 
 
-        /* Home section layout editor - v2.21.2 */
+        /* Home section layout editor - v2.21.5 */
         .layout-editor{margin-top:30px;padding-top:24px;border-top:1px solid var(--border,#333)}
         .layout-editor-header h3{margin:0 0 7px;font-size:18px}
         .layout-editor-header p{margin:0 0 17px;color:var(--text-muted,#aaa);font-size:13px;line-height:1.5}
@@ -909,7 +911,7 @@
         @media(max-width:560px){.layout-editor-row{padding:10px;gap:8px}.layout-editor-move button{padding:5px 8px}}
 
 
-/* v2.21.2 — Game dates and dual launch choices */
+/* v2.21.5 — Game dates and dual launch choices */
 .game-date-setting{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:21px 0 3px;border-top:1px solid #333;margin-top:24px}
 .game-date-setting strong{font-size:15px;color:#f4f4f4}
 .game-date-setting p{margin:6px 0 0;font-size:12px;line-height:1.55;color:#aaa;max-width:480px}
@@ -920,7 +922,7 @@
 @media(max-width:390px){#game-detail-content .game-launch-actions{grid-template-columns:1fr}}
 
 
-/* v2.21.2 — international game date controls */
+/* v2.21.5 — international game date controls */
 .game-date-format-setting{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 0 20px;border-bottom:1px solid #333}
 .game-date-format-setting label{display:flex;flex-direction:column;gap:6px;min-width:0}
 .game-date-format-setting strong{color:#f4f4f4;font-size:15px}
@@ -928,10 +930,10 @@
 .game-date-format-setting select{width:min(310px,100%);min-width:190px;margin:0;cursor:pointer;background:#222;color:#f4f4f4;border:1px solid #474747}
 @media(max-width:640px){.game-date-format-setting{align-items:stretch;flex-direction:column;gap:12px}.game-date-format-setting select{width:100%}}
 
-/* Powerhouse v2.21.2 — Blog */
+/* Powerhouse v2.21.5 — Blog */
 .blog-shell{max-width:1050px;margin:auto}.blog-heading{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:24px;flex-wrap:wrap}.blog-heading h1{font-size:clamp(1.7rem,3vw,2.2rem);margin:0}.blog-heading p{color:#999;margin:6px 0 0}.blog-toolbar{display:flex;gap:10px;flex-wrap:wrap}.blog-action{background:#292929;color:#fff;border:1px solid #444;border-radius:9px;padding:10px 15px;cursor:pointer;font:inherit}.blog-action:hover{background:#383838}.blog-action.primary{background:#ededed;color:#161616;border-color:#ededed;font-weight:700}.blog-action.primary:hover{background:#cfcfcf}.blog-action.danger{color:#ffb9b9;border-color:#724444}.blog-card-list{display:grid;gap:13px}.blog-feed-card{display:block;text-align:left;width:100%;border:1px solid #363636;background:#202020;color:inherit;border-radius:14px;padding:22px;cursor:pointer;transition:border-color .15s,transform .15s}.blog-feed-card:hover{border-color:#888;transform:translateY(-2px)}.blog-feed-card h2{font-size:1.25rem;margin:8px 0}.blog-feed-card p{color:#adadad;margin:6px 0 0;line-height:1.55;overflow-wrap:anywhere}.blog-meta{color:#949494;font-size:.8rem}.blog-tag{font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#dedede;background:#363636;border:1px solid #4a4a4a;border-radius:5px;padding:4px 7px;display:inline-block}.blog-panel-box{background:#1f1f1f;border:1px solid #353535;padding:clamp(18px,3vw,32px);border-radius:15px}.blog-article-title{font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.15;margin:15px 0}.blog-article-body{line-height:1.8;overflow-wrap:anywhere;font-size:1rem;white-space:normal}.blog-article-body p{margin:0 0 1em}.blog-article-body h1,.blog-article-body h2,.blog-article-body h3{margin:1.5em 0 .5em}.blog-article-body a{color:#ddd;text-decoration:underline}.blog-article-body img{max-width:100%;height:auto}.blog-article-body pre{white-space:pre-wrap;background:#111;padding:12px;border-radius:8px}.blog-article-body blockquote{border-left:3px solid #888;margin:12px 0;padding-left:16px;color:#bbb}.blog-form{display:grid;gap:16px}.blog-form label{display:grid;gap:7px;font-size:.9rem;font-weight:600}.blog-form input,.blog-form textarea,.blog-form select{background:#111;color:#fff;border:1px solid #454545;border-radius:8px;padding:12px;font:inherit;width:100%;box-sizing:border-box}.blog-form textarea{min-height:220px;resize:vertical}.blog-form :is(input,textarea,select):focus{outline:2px solid #aaa;outline-offset:1px}.blog-manage-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 0;border-bottom:1px solid #383838}.blog-manage-row>div:first-child{min-width:0;overflow-wrap:anywhere}.blog-empty{padding:50px 20px;text-align:center;color:#999;border:1px dashed #444;border-radius:12px}.blog-feedback{font-size:.9rem;color:#ccc;min-height:1.2em}.blog-feedback.error{color:#ff9e9e}.blog-hidden{display:none!important}@media(max-width:660px){.blog-manage-row{align-items:flex-start;flex-direction:column}.blog-feed-card{padding:17px}}
 
-/* Guest trial | v2.21.2 */
+/* Guest trial | v2.21.5 */
         .guest-expired-choice { margin-top:18px; padding:18px; background:#242424; border:1px solid #555; border-radius:10px; }
         .guest-expired-choice[hidden] { display:none!important; }
         .guest-expired-choice h3 { margin:0 0 6px; color:#fff; font-size:16px; }
@@ -948,7 +950,7 @@
 .guest-settings-info p{color:#aaa;line-height:1.6}.guest-settings-info button{max-width:275px;margin-top:22px}
 .guest-trial-nav{margin-top:12px;font-size:11px;color:#a7a7a7;line-height:1.6;max-width:220px}
 
-/* v2.21.2 — category library and personalized recommendations */
+/* v2.21.5 — category library and personalized recommendations */
 .browse-all-games{margin-left:auto;color:#eee;text-decoration:none;font-size:13px;font-weight:650;background:#303030;border:1px solid #444;border-radius:8px;padding:9px 13px;white-space:nowrap;transition:background .16s}
 .browse-all-games:hover{background:#414141;color:#fff}
 .recommendation-description{color:#999;font-size:13px;margin:0 0 17px}
@@ -982,7 +984,7 @@ body[data-game-card-size="compact"] #all-games-view{--all-games-card-width:220px
 #all-games-view .category-carousel-control svg{width:20px;height:20px;fill:currentColor}
 @media(max-width:600px){.all-games-heading{align-items:flex-start;flex-direction:column}.category-game-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.browse-all-games{padding:8px 10px;font-size:12px}#all-games-view .category-carousel-track{padding-right:0;grid-auto-columns:minmax(0,min(74vw,var(--all-games-card-width)))}#all-games-view .category-carousel-control{display:none}}
 
-/* v2.21.2 - game collection pages and landing preference */
+/* v2.21.5 - game collection pages and landing preference */
 .shelf-heading-link{color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:10px}
 .shelf-heading-link:hover,.shelf-heading-link:focus-visible{color:var(--text-muted,#bbbbbb)}
 .shelf-heading-link span{font-size:14px;opacity:.6}
@@ -996,7 +998,7 @@ body[data-game-card-size="compact"] #all-games-view{--all-games-card-width:220px
 .landing-destination-setting .landing-setting-note{font-size:12px;max-width:530px;color:#999}
 .landing-destination-setting .switch{flex-shrink:0}
 
-        /* v2.21.2 — per-user Home presentation and card proportions. */
+        /* v2.21.5 — per-user Home presentation and card proportions. */
         body[data-hide-home-profile="true"] #home-view > .hero { display:none !important; }
         body[data-game-card-size="square"] .game-thumb,
         body[data-game-card-size="square"] .search-game-item > img { aspect-ratio:1 / 1; }
@@ -1012,6 +1014,24 @@ body[data-game-card-size="compact"] #all-games-view{--all-games-card-width:220px
         .home-presentation-row p {font-size:12px;color:var(--text-muted);line-height:1.5;margin:5px 0 0;}
         .home-presentation-row .settings-input { width:min(230px,45%);margin:0;flex-shrink:0; }
         @media(max-width:520px){.home-presentation-row{align-items:flex-start;flex-direction:column;gap:12px}.home-presentation-row .settings-input{width:100%}}
+
+/* v2.21.5 — Mulish typography and text-only sidebar navigation accents. */
+#sidebar .nav-item,
+#sidebar .nav-item.active,
+#sidebar .nav-item:hover,
+#sidebar .nav-item:focus-visible {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+#sidebar .nav-item { color: #c9c9c9; transition: color .17s ease; }
+/* All regular sidebar links use the Friends cyan when hovered or selected. */
+#sidebar .nav-item:is(:hover,.active) { color: #00b9ff !important; }
+/* Staff links use green instead, without changing their permissions. */
+#sidebar #side-admin:is(:hover,.active),
+#sidebar #side-moderation:is(:hover,.active) { color: #02b757 !important; }
+#sidebar .nav-item svg { color: inherit; }
+#sidebar .nav-item:focus-visible { outline:2px solid currentColor;outline-offset:1px; }
+
 </style>
 </head>
 <body>
@@ -1785,7 +1805,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
 
 
 
-    <!-- AUTH PAGE | Powerhouse website v2.21.2 -->
+    <!-- AUTH PAGE | Powerhouse website v2.21.5 -->
     <div id="landing-page">
         <div class="auth-shell">
             <section class="auth-promo" aria-label="Welcome to Powerhouse">
@@ -1832,7 +1852,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                     </form>
                     <p class="auth-bottom">Already have an account? <button type="button" class="auth-switch-link" onclick="switchAuthMode('login')">Sign in</button></p>
                 </div>
-                <span class="auth-release">POWERHOUSE v2.21.2</span>
+                <span class="auth-release">POWERHOUSE v2.21.5</span>
             </section>
         </div>
     </div>
@@ -1871,7 +1891,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             <a class="c823-footer-link" href="https://home.c823.workers.dev" aria-label="Open C823 Hub" title="C823 Hub">
                 <img class="c823-footer-icon" src="https://raw.githubusercontent.com/C823/Powerhouse/main/icons/C823%20logo.png" alt="C823" loading="lazy">
             </a>
-            <div class="sidebar-release" aria-label="Powerhouse version">POWERHOUSE <span>v2.21.2</span></div>
+            <div class="sidebar-release" aria-label="Powerhouse version">POWERHOUSE <span>v2.21.5</span></div>
         </div>
     </aside>
 
@@ -3862,7 +3882,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
         }
 
 
-        // v2.21.2 - KV-backed direct messages (existing /social/* API)
+        // v2.21.5 - KV-backed direct messages (existing /social/* API)
         let messageConversations = [];
         let activeMessagePeer = '';
         let messagesLoadSequence = 0;
@@ -3989,7 +4009,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
         });
 
 
-        // Blog v2.21.2 — uses the original /blog/* KV-backed API.
+        // Blog v2.21.5 — uses the original /blog/* KV-backed API.
         let blogPosts=[], blogAdminPosts=[], blogCanManage=false, blogEditingId=null, blogRequest=0;
         const blogEscape = value => String(value??'').replace(/[&<>"']/g, x=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[x]));
         const blogDate = value => {const d=new Date(value);return Number.isNaN(d.getTime())?'':d.toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'});};
@@ -4151,7 +4171,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                 }
             }
         }
-        // v2.21.2: Public favorites come from the profile API; never read the viewer's
+        // v2.21.5: Public favorites come from the profile API; never read the viewer's
         // local Favorites when displaying another account's profile.
         let profileFavoritesSequence = 0;
         async function renderProfileFavorites(profileName, titles) {
@@ -4373,7 +4393,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
         window.addEventListener('popstate', routeFromURL);
 
 
-        // v2.21.2 — The root loader reads this account-scoped local preference.
+        // v2.21.5 — The root loader reads this account-scoped local preference.
         function gamesLandingPreferenceKey(name=user.username) {
             return 'powerhouse:defaultGamesLanding:'+(name||'guest').toLowerCase();
         }
@@ -4403,7 +4423,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                 accountSavedData={...(accountSavedData||{}),settings:{...(accountSavedData?.settings||{}),defaultGamesLanding:enabled}};
             }catch(error){console.warn('Default landing preference saved locally; KV sync failed:',error);}
         }
-        // v2.21.2 — Per-user Home section order and visibility.
+        // v2.21.5 — Per-user Home section order and visibility.
         const HOME_LAYOUT_DEFAULT = ['favorites','recent','games','all'];
         const HOME_LAYOUT_LABELS = {favorites:'Favorites',recent:'Recently Played',games:'Recommended',all:'All Games'};
         let homeLayout = {order:[...HOME_LAYOUT_DEFAULT], visible:{favorites:true,recent:true,games:true,all:false}, hideProfile:false, cardSize:'wide', compactSidebar:false};
