@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Powerhouse</title>
-    <meta name="powerhouse-site-version" content="2.21.4">
+    <meta name="powerhouse-site-version" content="2.21.12">
     <link rel="icon" id="faviconEl" type="image/png" sizes="any" href="https://cdn.jsdelivr.net/gh/C823/powerhouse@main/icons/POWERHOUSE-icon.png?v=20261009">
     <link rel="shortcut icon" type="image/png" href="https://cdn.jsdelivr.net/gh/C823/powerhouse@main/icons/POWERHOUSE-icon.png?v=20261009">
     <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/C823/powerhouse@main/icons/POWERHOUSE-icon.png?v=20261009">
     <!-- The Worker may inject a GitHub <base>. Keep browser navigation on this Worker origin. -->
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        /* Powerhouse palette v2.21.9 — sampled from supplied reference:
+        /* Powerhouse palette v2.21.12 — sampled from supplied reference:
            black #000000, charcoal #1c1c1c, white #ffffff. */
         :root {
             --accent: #444444;
@@ -27,17 +27,18 @@
             --sidebar-width: 260px;
             --danger: #c42b1c;
         }
-        /* The reference is an intentionally dark-only color scheme. */
-        [data-theme="light"] {
-            --accent: #444444;
-            --accent2: #555555;
-            --accent-light: rgba(255, 255, 255, 0.07);
-            --bg-main: #1c1c1c;
-            --bg-side: #000000;
-            --surface: #1c1c1c;
-            --border: rgba(255, 255, 255, 0.13);
-            --text: #ffffff;
-            --text-muted: #b5b5b5;
+        /* Functional light theme; dark remains the default. */
+        body[data-theme="light"] {
+            --accent: #e0e4e8;
+            --accent2: #dce3e8;
+            --accent-light: rgba(15, 23, 42, .055);
+            --bg-main: #f3f5f7;
+            --bg-side: #ffffff;
+            --surface: #ffffff;
+            --border: rgba(29, 38, 52, .17);
+            --text: #171c25;
+            --text-muted: #5a6470;
+            color-scheme: light;
         }
 
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -45,7 +46,7 @@
 
         button, input, textarea, select { font-family: inherit; }
 
-        /* --- AUTH PAGE — website v2.21.9 --- */
+        /* --- AUTH PAGE — website v2.21.12 --- */
         #landing-page { position:fixed; inset:0; z-index:5000; display:none; align-items:center; justify-content:center; overflow:auto; padding:32px 22px; color:#eee; background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.6)),url('https://files.enderman.ch/wallpapers/Moonlight.png') center center / cover no-repeat fixed #090b12; }
         #landing-page::before { content:''; position:fixed; inset:0; pointer-events:none; background:rgba(0,0,0,.10); }
         #landing-page::after { content:none; }
@@ -105,11 +106,15 @@
 
         /* --- DASHBOARD UI --- */
 
-        /* v2.21.9 — optional compact sidebar, based on the narrow navigation reference. */
+        /* v2.21.12 — optional compact sidebar, based on the narrow navigation reference. */
         body[data-compact-sidebar="true"] { --sidebar-width: 184px; }
         body[data-compact-sidebar="true"] #sidebar { padding: 15px 10px 12px; }
         body[data-compact-sidebar="true"] #sidebar .logo-area { margin-bottom: 10px; padding: 0 2px; }
         body[data-compact-sidebar="true"] #sidebar .logo-area img { height: 32px !important; max-width: 100%; }
+        #sidebar .sidebar-logo-link { display:inline-flex; align-items:center; justify-content:flex-start; max-width:100%; border:0; padding:0; margin:0; background:transparent; color:inherit; cursor:pointer; line-height:0; }
+        #sidebar .sidebar-logo-link img { max-width:100%; width:auto; object-fit:contain; }
+        #sidebar .sidebar-logo-link:hover img { opacity:.86; }
+        #sidebar .sidebar-logo-link:focus-visible { outline:2px solid #00b9ff; outline-offset:5px; border-radius:3px; }
         #sidebar .compact-sidebar-username { display: none; }
         body[data-compact-sidebar="true"] #sidebar .compact-sidebar-username {
             display: block; margin: 1px 3px 9px; padding: 0 0 9px;
@@ -165,7 +170,7 @@
         .nav-item:hover { background: var(--accent-light); color: var(--text); }
         .nav-item.active { background: var(--accent); color: white; }
         .nav-item svg { width: 20px; height: 20px; flex: 0 0 20px; display: block; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; fill: none; }
-        /* v2.21.9: solid filled sidebar navigation icons */
+        /* v2.21.12: solid filled sidebar navigation icons */
         #sidebar .nav-item svg.sidebar-solid-icon { fill: currentColor; stroke: none; stroke-width: 0; }
         .badge { position: absolute; right: 12px; background: var(--accent2); padding: 2px 8px; border-radius: 20px; font-size: 10px; color: white; font-weight: 800; }
 
@@ -246,7 +251,7 @@
         .profile-action:hover { transform:translateY(-2px); border-color:var(--accent); }
         .profile-divider { height:1px;background:var(--border);margin:28px 0; }
 
-        /* v2.21.9 — public profile Favorites */
+        /* v2.21.12 — public profile Favorites */
         .profile-favorites-card { margin-top:20px; padding:22px; border:1px solid var(--border); background:var(--surface); border-radius:16px; }
         .profile-favorites-heading { display:flex; justify-content:space-between; gap:12px; align-items:baseline; margin-bottom:17px; }
         .profile-favorites-heading h2 { margin:0; font-size:18px; }
@@ -368,7 +373,7 @@
         .social-card img { width:54px; height:54px; object-fit:cover; flex-shrink:0; background:var(--surface); }
         .social-card-name { font-size:13px; font-weight:700; margin:0 8px 0 12px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; flex:1; }
 
-        /* v2.21.9: banned/deleted accounts retain removable friend entries, never a profile link. */
+        /* v2.21.12: banned/deleted accounts retain removable friend entries, never a profile link. */
         .social-deleted-profile {display:flex;align-items:center;flex:1;min-width:0;pointer-events:none;color:var(--text-muted);}
         .social-deleted-profile img {filter:grayscale(1);opacity:.55;}
         .social-deleted-text {display:flex;flex-direction:column;gap:2px;min-width:0;margin-left:12px;}
@@ -784,7 +789,7 @@
         .account-userid-row button:disabled { opacity:.45; cursor:default; }
         .account-userid-hint, #account-userid-feedback { color:#aaa; font-size:12px; margin:7px 0 0; }
 
-/* v2.21.9 — Messaging */
+/* v2.21.12 — Messaging */
 #messages-view [hidden], #side-messages .message-nav-count[hidden], #profile-message-action[hidden] { display:none !important; }
 #side-messages { position:relative; }
 .message-nav-count { margin-left:auto; min-width:19px; padding:2px 6px; border-radius:30px; background:#393939; color:#fff; font-size:11px; font-weight:700; text-align:center; }
@@ -829,7 +834,7 @@
 .messages-back { border:0; background:#343434; color:white; border-radius:7px; padding:6px 10px; cursor:pointer; }
 
 
-/* v2.21.9 — Friends / Requests */
+/* v2.21.12 — Friends / Requests */
 .requests-count {display:inline-flex;min-width:19px;height:19px;padding:0 5px;align-items:center;justify-content:center;border-radius:9px;background:#383838;color:#fff;font-size:11px;margin-left:5px;}
 .requests-count[hidden] {display:none!important;}
 .social-request-card {height:auto;min-height:78px;padding-right:12px;gap:12px;}
@@ -848,7 +853,7 @@
 #friends-view:has(.social-request-card) .social-grid {grid-template-columns:repeat(auto-fill,minmax(min(100%,470px),470px));}
 @media(max-width:540px){.social-request-card{flex-wrap:wrap;padding:8px;}.social-request-actions{width:100%;justify-content:flex-end}.social-request-card .social-profile-link{width:100%;}}
 
-/* v2.21.9 — Not found page */
+/* v2.21.12 — Not found page */
 #not-found-view .error-layout { min-height:calc(100vh - 190px); display:flex; align-items:center; justify-content:center; text-align:center; padding:64px 16px; }
 #not-found-view .error-content {max-width:520px; width:100%; }
 #not-found-view .error-kicker {color:#9b9b9b; font-weight:700; letter-spacing:.18em; font-size:12px; text-transform:uppercase; margin-bottom:16px;}
@@ -860,7 +865,7 @@
 #not-found-view .error-home-link:focus-visible {outline:2px solid white;outline-offset:3px;}
 
 
-/* v2.21.9 — Game details: image-safe, responsive editorial layout. */
+/* v2.21.12 — Game details: image-safe, responsive editorial layout. */
 #game-view { width:100%; }
 #game-view .game-detail { width:min(1120px,100%); margin:0 auto; min-width:0; }
 #game-view .game-breadcrumb { display:flex; align-items:center; flex-wrap:wrap; gap:10px; margin:4px 0 21px; color:#999; font-size:13px; }
@@ -904,7 +909,7 @@
 @media(prefers-reduced-motion:reduce){#game-detail-content .game-play-button{transition:none;}}
 
 
-        /* Home section layout editor - v2.21.9 */
+        /* Home section layout editor - v2.21.12 */
         .layout-editor{margin-top:30px;padding-top:24px;border-top:1px solid var(--border,#333)}
         .layout-editor-header h3{margin:0 0 7px;font-size:18px}
         .layout-editor-header p{margin:0 0 17px;color:var(--text-muted,#aaa);font-size:13px;line-height:1.5}
@@ -922,7 +927,7 @@
         @media(max-width:560px){.layout-editor-row{padding:10px;gap:8px}.layout-editor-move button{padding:5px 8px}}
 
 
-/* v2.21.9 — Game dates and dual launch choices */
+/* v2.21.12 — Game dates and dual launch choices */
 .game-date-setting{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:21px 0 3px;border-top:1px solid #333;margin-top:24px}
 .game-date-setting strong{font-size:15px;color:#f4f4f4}
 .game-date-setting p{margin:6px 0 0;font-size:12px;line-height:1.55;color:#aaa;max-width:480px}
@@ -933,7 +938,7 @@
 @media(max-width:390px){#game-detail-content .game-launch-actions{grid-template-columns:1fr}}
 
 
-/* v2.21.9 — international game date controls */
+/* v2.21.12 — international game date controls */
 .game-date-format-setting{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 0 20px;border-bottom:1px solid #333}
 .game-date-format-setting label{display:flex;flex-direction:column;gap:6px;min-width:0}
 .game-date-format-setting strong{color:#f4f4f4;font-size:15px}
@@ -941,10 +946,10 @@
 .game-date-format-setting select{width:min(310px,100%);min-width:190px;margin:0;cursor:pointer;background:#222;color:#f4f4f4;border:1px solid #474747}
 @media(max-width:640px){.game-date-format-setting{align-items:stretch;flex-direction:column;gap:12px}.game-date-format-setting select{width:100%}}
 
-/* Powerhouse v2.21.9 — Blog */
+/* Powerhouse v2.21.12 — Blog */
 .blog-shell{max-width:1050px;margin:auto}.blog-heading{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:24px;flex-wrap:wrap}.blog-heading h1{font-size:clamp(1.7rem,3vw,2.2rem);margin:0}.blog-heading p{color:#999;margin:6px 0 0}.blog-toolbar{display:flex;gap:10px;flex-wrap:wrap}.blog-action{background:#292929;color:#fff;border:1px solid #444;border-radius:9px;padding:10px 15px;cursor:pointer;font:inherit}.blog-action:hover{background:#383838}.blog-action.primary{background:#ededed;color:#161616;border-color:#ededed;font-weight:700}.blog-action.primary:hover{background:#cfcfcf}.blog-action.danger{color:#ffb9b9;border-color:#724444}.blog-card-list{display:grid;gap:13px}.blog-feed-card{display:block;text-align:left;width:100%;border:1px solid #363636;background:#202020;color:inherit;border-radius:14px;padding:22px;cursor:pointer;transition:border-color .15s,transform .15s}.blog-feed-card:hover{border-color:#888;transform:translateY(-2px)}.blog-feed-card h2{font-size:1.25rem;margin:8px 0}.blog-feed-card p{color:#adadad;margin:6px 0 0;line-height:1.55;overflow-wrap:anywhere}.blog-meta{color:#949494;font-size:.8rem}.blog-tag{font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#dedede;background:#363636;border:1px solid #4a4a4a;border-radius:5px;padding:4px 7px;display:inline-block}.blog-panel-box{background:#1f1f1f;border:1px solid #353535;padding:clamp(18px,3vw,32px);border-radius:15px}.blog-article-title{font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.15;margin:15px 0}.blog-article-body{line-height:1.8;overflow-wrap:anywhere;font-size:1rem;white-space:normal}.blog-article-body p{margin:0 0 1em}.blog-article-body h1,.blog-article-body h2,.blog-article-body h3{margin:1.5em 0 .5em}.blog-article-body a{color:#ddd;text-decoration:underline}.blog-article-body img{max-width:100%;height:auto}.blog-article-body pre{white-space:pre-wrap;background:#111;padding:12px;border-radius:8px}.blog-article-body blockquote{border-left:3px solid #888;margin:12px 0;padding-left:16px;color:#bbb}.blog-form{display:grid;gap:16px}.blog-form label{display:grid;gap:7px;font-size:.9rem;font-weight:600}.blog-form input,.blog-form textarea,.blog-form select{background:#111;color:#fff;border:1px solid #454545;border-radius:8px;padding:12px;font:inherit;width:100%;box-sizing:border-box}.blog-form textarea{min-height:220px;resize:vertical}.blog-form :is(input,textarea,select):focus{outline:2px solid #aaa;outline-offset:1px}.blog-manage-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 0;border-bottom:1px solid #383838}.blog-manage-row>div:first-child{min-width:0;overflow-wrap:anywhere}.blog-empty{padding:50px 20px;text-align:center;color:#999;border:1px dashed #444;border-radius:12px}.blog-feedback{font-size:.9rem;color:#ccc;min-height:1.2em}.blog-feedback.error{color:#ff9e9e}.blog-hidden{display:none!important}@media(max-width:660px){.blog-manage-row{align-items:flex-start;flex-direction:column}.blog-feed-card{padding:17px}}
 
-/* Guest trial | v2.21.9 */
+/* Guest trial | v2.21.12 */
         .guest-expired-choice { margin-top:18px; padding:18px; background:#242424; border:1px solid #555; border-radius:10px; }
         .guest-expired-choice[hidden] { display:none!important; }
         .guest-expired-choice h3 { margin:0 0 6px; color:#fff; font-size:16px; }
@@ -961,7 +966,7 @@
 .guest-settings-info p{color:#aaa;line-height:1.6}.guest-settings-info button{max-width:275px;margin-top:22px}
 .guest-trial-nav{margin-top:12px;font-size:11px;color:#a7a7a7;line-height:1.6;max-width:220px}
 
-/* v2.21.9 — category library and personalized recommendations */
+/* v2.21.12 — category library and personalized recommendations */
 .browse-all-games{margin-left:auto;color:#eee;text-decoration:none;font-size:13px;font-weight:650;background:#303030;border:1px solid #444;border-radius:8px;padding:9px 13px;white-space:nowrap;transition:background .16s}
 .browse-all-games:hover{background:#414141;color:#fff}
 .recommendation-description{color:#999;font-size:13px;margin:0 0 17px}
@@ -998,19 +1003,18 @@ body[data-game-card-size="compact"] #all-games-view{--all-games-card-width:220px
 #all-games-view .category-carousel-track .game-card{display:block;width:100%;min-width:0}
 #all-games-view .category-carousel-track .game-thumb{display:block;width:100%;height:auto;max-width:100%;box-sizing:border-box}
 #all-games-view .category-carousel-track .game-title-row{min-width:0;overflow-wrap:break-word}
+/* v2.21.12: visible, accessible carousel arrows in the category header */
+#all-games-view .category-heading-actions{display:flex;align-items:center;gap:10px;margin-left:auto}
 #all-games-view .category-carousel-control{
-    position:absolute;top:50%;transform:translateY(-50%);
-    width:44px;height:44px;border-radius:50%;border:1px solid #5c5c5c;
-    background:rgba(25,25,25,.96);color:#fff;display:flex;align-items:center;
-    justify-content:center;cursor:pointer;z-index:5;
+    position:static;transform:none;flex:0 0 38px;
+    width:38px;height:38px;border-radius:50%;border:1px solid #6c6c6c;
+    background:#303030;color:#fff;display:inline-flex;align-items:center;
+    justify-content:center;cursor:pointer;z-index:2;
     transition:background .16s,border-color .16s,opacity .16s;
-    box-shadow:0 6px 20px rgba(0,0,0,.5)
 }
-#all-games-view .category-carousel-control:hover:not(:disabled){background:#424242;border-color:#999}
+#all-games-view .category-carousel-control:hover:not(:disabled){background:#464646;border-color:#aaa}
 #all-games-view .category-carousel-control:focus-visible{outline:2px solid #00b9ff;outline-offset:2px}
-#all-games-view .category-carousel-control:disabled{opacity:0;visibility:hidden;pointer-events:none}
-#all-games-view .category-carousel-control.prev{left:5px}
-#all-games-view .category-carousel-control.next{right:5px}
+#all-games-view .category-carousel-control:disabled{opacity:.32;cursor:default}
 #all-games-view .category-carousel-control svg{width:22px;height:22px;fill:currentColor}
 @media(max-width:600px){
     .all-games-heading{align-items:flex-start;flex-direction:column}
@@ -1018,10 +1022,11 @@ body[data-game-card-size="compact"] #all-games-view{--all-games-card-width:220px
     .browse-all-games{padding:8px 10px;font-size:12px}
     #all-games-view .category-carousel-track{gap:12px}
     #all-games-view .category-carousel-track > .game-card-wrap{flex-basis:min(var(--all-games-card-width),68vw);width:min(var(--all-games-card-width),68vw)}
-    #all-games-view .category-carousel-control{width:36px;height:36px}
+    #all-games-view .category-carousel-control{width:34px;height:34px;flex-basis:34px}
+    #all-games-view .category-heading-actions{gap:6px}
 }
 
-/* v2.21.9 - game collection pages and landing preference */
+/* v2.21.12 - game collection pages and landing preference */
 .shelf-heading-link{color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:10px}
 .shelf-heading-link:hover,.shelf-heading-link:focus-visible{color:var(--text-muted,#bbbbbb)}
 .shelf-heading-link span{font-size:14px;opacity:.6}
@@ -1035,7 +1040,7 @@ body[data-game-card-size="compact"] #all-games-view{--all-games-card-width:220px
 .landing-destination-setting .landing-setting-note{font-size:12px;max-width:530px;color:#999}
 .landing-destination-setting .switch{flex-shrink:0}
 
-        /* v2.21.9 — per-user Home presentation and card proportions. */
+        /* v2.21.12 — per-user Home presentation and card proportions. */
         body[data-hide-home-profile="true"] #home-view > .hero { display:none !important; }
         body[data-game-card-size="square"] .game-thumb,
         body[data-game-card-size="square"] .search-game-item > img { aspect-ratio:1 / 1; }
@@ -1052,7 +1057,7 @@ body[data-game-card-size="compact"] #all-games-view{--all-games-card-width:220px
         .home-presentation-row .settings-input { width:min(230px,45%);margin:0;flex-shrink:0; }
         @media(max-width:520px){.home-presentation-row{align-items:flex-start;flex-direction:column;gap:12px}.home-presentation-row .settings-input{width:100%}}
 
-/* v2.21.9 — Mulish typography and text-only sidebar navigation accents. */
+/* v2.21.12 — Mulish typography and text-only sidebar navigation accents. */
 #sidebar .nav-item,
 #sidebar .nav-item.active,
 #sidebar .nav-item:hover,
@@ -1068,6 +1073,110 @@ body[data-game-card-size="compact"] #all-games-view{--all-games-card-width:220px
 #sidebar #side-moderation:is(:hover,.active) { color: #02b757 !important; }
 #sidebar .nav-item svg { color: inherit; }
 #sidebar .nav-item:focus-visible { outline:2px solid currentColor;outline-offset:1px; }
+
+
+/* Powerhouse v2.21.12 — comprehensive light theme restoration.
+   Overrides legacy dark-only styles without changing the dark palette. */
+body[data-theme="light"] #sidebar,
+body[data-theme="light"] #user-dropdown {background:#fff;color:var(--text);}
+body[data-theme="light"] #main-wrapper {color:var(--text);}
+body[data-theme="light"] #sidebar .sidebar-release,
+body[data-theme="light"] #sidebar .sidebar-release span {color:#65707c;}
+body[data-theme="light"] #sidebar .c823-footer-link:hover {background:#edf0f3;}
+body[data-theme="light"] .home-friends-count,
+body[data-theme="light"] .requests-count,
+body[data-theme="light"] .message-nav-count {background:#e1e7ed;color:#26323d;}
+body[data-theme="light"] .settings-input {color:var(--text);}
+body[data-theme="light"] .home-friends-heading:hover {color:#0078b5;}
+body[data-theme="light"] .social-card:hover {border-color:#adbcc8;}
+body[data-theme="light"] .search-user-action,
+body[data-theme="light"] .account-userid-row button {background:#e5eaf0;color:#202832;border-color:#c4cdd6;}
+body[data-theme="light"] .search-user-action:hover:not(:disabled),
+body[data-theme="light"] .account-userid-row button:hover:not(:disabled) {background:#d9e1e8;}
+body[data-theme="light"] .search-user-avatar {background:#e8edf1;}
+body[data-theme="light"] .search-game-item>img {background:#e5e8ec;}
+body[data-theme="light"] .game-new-tag {background:#171c25;color:#fff;}
+body[data-theme="light"] #all-games-view .category-heading h2,
+body[data-theme="light"] .all-games-heading h1 {color:#1b2530;}
+body[data-theme="light"] .all-games-heading p,
+body[data-theme="light"] .all-games-total,
+body[data-theme="light"] #all-games-view .category-heading-count {color:#647180;}
+body[data-theme="light"] #all-games-view .category-carousel-control {background:#fff;border-color:#bfcad4;color:#1d2834;}
+body[data-theme="light"] #all-games-view .category-carousel-control:hover:not(:disabled) {background:#e9eef3;border-color:#8396a7;}
+body[data-theme="light"] .browse-all-games,
+body[data-theme="light"] .layout-editor-move button,
+body[data-theme="light"] .layout-editor-actions button,
+body[data-theme="light"] .messages-back {background:#edf1f5;color:#1d2834;border:1px solid #c9d2da;}
+body[data-theme="light"] .game-filter.active {color:#141a20;}
+body[data-theme="light"] .messages-shell {background:#fff;border-color:#cbd4de;}
+body[data-theme="light"] .messages-list-panel {border-color:#d4dce5;}
+body[data-theme="light"] .messages-list-head,
+body[data-theme="light"] .messages-chat-header {border-color:#d4dce5;}
+body[data-theme="light"] .messages-thread-row {color:#18222e;}
+body[data-theme="light"] .messages-thread-row:hover,
+body[data-theme="light"] .messages-thread-row.active {background:#eaf0f5;}
+body[data-theme="light"] .messages-thread-preview,
+body[data-theme="light"] .messages-thread-time,
+body[data-theme="light"] .messages-list-head small {color:#667481;}
+body[data-theme="light"] .messages-bubble {background:#e9eef4;color:#19232e;}
+body[data-theme="light"] .messages-bubble-wrap.own .messages-bubble {background:#dce8f3;color:#132536;}
+body[data-theme="light"] .messages-composer {border-color:#d4dce5;}
+body[data-theme="light"] .messages-composer textarea {background:#f8fafc;color:#1e2935;border-color:#c6d0db;}
+body[data-theme="light"] .messages-composer button,
+body[data-theme="light"] .messages-action {background:#303f50;color:#fff;}
+body[data-theme="light"] #profile-message-action {background:#f5f7f9;color:#23303d;border-color:#bdc8d2;}
+body[data-theme="light"] .social-request-accept {background:#26394a;color:white;}
+body[data-theme="light"] .social-request-decline {background:#e6ebf0;color:#26323d;}
+body[data-theme="light"] #not-found-view .error-kicker,
+body[data-theme="light"] #not-found-view p {color:#5c6876;}
+body[data-theme="light"] #not-found-view .error-code,
+body[data-theme="light"] #not-found-view h1 {color:#1e2934;}
+body[data-theme="light"] #not-found-view .error-home-link {background:#263746;color:white;border-color:#263746;}
+body[data-theme="light"] #game-view .game-breadcrumb,
+body[data-theme="light"] #game-view .game-breadcrumb a,
+body[data-theme="light"] #game-view #game-breadcrumb-name {color:#596777;}
+body[data-theme="light"] #game-detail-content .game-info-top,
+body[data-theme="light"] #game-detail-content .game-content-panel {background:#fff;border-color:#cbd4de;}
+body[data-theme="light"] #game-detail-content .game-info-name h1,
+body[data-theme="light"] #game-detail-content .game-content-panel h2 {color:#1c2632;}
+body[data-theme="light"] #game-detail-content .game-description {color:#3e4a57;}
+body[data-theme="light"] #game-detail-content .game-info-pill {background:#edf1f5;border-color:#cbd4dd;color:#354454;}
+body[data-theme="light"] #game-detail-content .game-details-grid {border-color:#d6dee6;}
+body[data-theme="light"] #game-detail-content .game-detail-field small {color:#5a6a79;}
+body[data-theme="light"] #game-detail-content .game-play-button {background:#263746;border-color:#263746;color:white;}
+body[data-theme="light"] #game-detail-content .game-blank-button {background:#edf1f5;border-color:#c7d1db;color:#263746;}
+body[data-theme="light"] #game-detail-content .game-cover {border-color:#cbd4de;}
+body[data-theme="light"] .blog-panel-box,
+body[data-theme="light"] .blog-feed-card,
+body[data-theme="light"] .guest-settings-info,
+body[data-theme="light"] .home-presentation-row {background:#fff;border-color:#cbd4de;color:#202b37;}
+body[data-theme="light"] .blog-feed-card h2,
+body[data-theme="light"] .blog-panel-box h1,
+body[data-theme="light"] .blog-article-title,
+body[data-theme="light"] .blog-form label,
+body[data-theme="light"] .blog-heading h1 {color:#202b37;}
+body[data-theme="light"] .blog-feed-card p,
+body[data-theme="light"] .blog-article-body,
+body[data-theme="light"] .blog-meta,
+body[data-theme="light"] .blog-heading p {color:#556371;}
+body[data-theme="light"] .blog-tag,
+body[data-theme="light"] .blog-action {background:#edf1f5;border-color:#cbd4de;color:#293747;}
+body[data-theme="light"] .blog-action.primary {background:#263746;border-color:#263746;color:#fff;}
+body[data-theme="light"] .blog-form input,
+body[data-theme="light"] .blog-form textarea,
+body[data-theme="light"] .blog-form select {background:#f8fafc;border-color:#cbd4de;color:#1e2935;}
+body[data-theme="light"] .guest-settings-info p,
+body[data-theme="light"] .home-presentation-row p {color:#5e6a77;}
+body[data-theme="light"] .layout-editor-row,
+body[data-theme="light"] .admin-stat,
+body[data-theme="light"] .admin-user-row {border-color:#cbd4de;}
+body[data-theme="light"] .profile-page-card,
+body[data-theme="light"] .profile-char-card,
+body[data-theme="light"] .profile-favorites-card,
+body[data-theme="light"] .profile-about-card,
+body[data-theme="light"] .settings-card {background:#fff;}
+body[data-theme="light"] .game-info-pill.new-game-pill {background:#263746!important;color:#fff!important;border-color:#263746!important;}
+body[data-theme="light"] :is(.auth-guest-button,.guest-expired-choice,.guest-settings-info button) {color:var(--text);}
 
 </style>
 </head>
@@ -1842,7 +1951,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
 
 
 
-    <!-- AUTH PAGE | Powerhouse website v2.21.9 -->
+    <!-- AUTH PAGE | Powerhouse website v2.21.12 -->
     <div id="landing-page">
         <div class="auth-shell">
             <section class="auth-promo" aria-label="Welcome to Powerhouse">
@@ -1889,14 +1998,14 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                     </form>
                     <p class="auth-bottom">Already have an account? <button type="button" class="auth-switch-link" onclick="switchAuthMode('login')">Sign in</button></p>
                 </div>
-                <span class="auth-release">POWERHOUSE v2.21.9</span>
+                <span class="auth-release">POWERHOUSE v2.21.12</span>
             </section>
         </div>
     </div>
 
     <!-- SIDEBAR -->
     <aside id="sidebar">
-        <div class="logo-area"><img src="https://raw.githubusercontent.com/C823/powerhouse/main/icons/POWERHOUSE-dark.svg" style="height:28px;" data-powerhouse-logo></div>
+        <div class="logo-area"><button type="button" class="sidebar-logo-link" title="Go to your start page" aria-label="Powerhouse — go to your start page" onclick="navigateTo(isGuest() ? 'home' : startingPage())"><img src="https://raw.githubusercontent.com/C823/powerhouse/main/icons/POWERHOUSE-dark.svg" style="height:28px;" alt="Powerhouse" data-powerhouse-logo></button></div>
         <div class="compact-sidebar-username" id="compact-sidebar-username" aria-label="Signed-in username"></div>
         <nav class="nav-group">
             <a href="/home" class="nav-item active" id="side-home">
@@ -1928,7 +2037,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             <a class="c823-footer-link" href="https://home.c823.workers.dev" aria-label="Open C823 Hub" title="C823 Hub">
                 <img class="c823-footer-icon" src="https://raw.githubusercontent.com/C823/Powerhouse/main/icons/C823%20logo.png" alt="C823" loading="lazy">
             </a>
-            <div class="sidebar-release" aria-label="Powerhouse version">POWERHOUSE <span>v2.21.9</span></div>
+            <div class="sidebar-release" aria-label="Powerhouse version">POWERHOUSE <span>v2.21.12</span></div>
         </div>
     </aside>
 
@@ -3395,7 +3504,8 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             } else {
                 window.addEventListener('resize', sync);
             }
-            requestAnimationFrame(sync);
+            // Only measure after the category track is attached and laid out.
+            requestAnimationFrame(() => requestAnimationFrame(sync));
         }
         async function renderAllGamesPage() {
             const seq = ++allGamesRequest;
@@ -3427,7 +3537,10 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                     const count = document.createElement('span');
                     count.className = 'category-heading-count';
                     count.textContent = `${games.length} game${games.length === 1 ? '' : 's'}`;
-                    heading.append(title, count);
+                    const prevControls = document.createElement('div');
+                    prevControls.className = 'category-heading-actions';
+                    heading.append(title, prevControls);
+                    prevControls.append(count);
 
                     const carousel = document.createElement('div');
                     carousel.className = 'category-carousel';
@@ -3436,11 +3549,11 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                     track.replaceChildren(...newestGamesFirst(games).map(renderFavoriteGameCard));
                     const prev = createCarouselControl('prev', track);
                     const next = createCarouselControl('next', track);
-                    carousel.append(prev, track, next);
-                    bindCarouselButtons(track, prev, next);
-
+                    prevControls.append(prev, next);
+                    carousel.append(track);
                     section.append(heading, carousel);
                     host.append(section);
+                    bindCarouselButtons(track, prev, next);
                 }
                 if (!groups.size) host.textContent = 'No games available.';
             } catch (error) {
@@ -3917,7 +4030,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
         }
 
 
-        // v2.21.9 - KV-backed direct messages (existing /social/* API)
+        // v2.21.12 - KV-backed direct messages (existing /social/* API)
         let messageConversations = [];
         let activeMessagePeer = '';
         let messagesLoadSequence = 0;
@@ -4044,7 +4157,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
         });
 
 
-        // Blog v2.21.9 — uses the original /blog/* KV-backed API.
+        // Blog v2.21.12 — uses the original /blog/* KV-backed API.
         let blogPosts=[], blogAdminPosts=[], blogCanManage=false, blogEditingId=null, blogRequest=0;
         const blogEscape = value => String(value??'').replace(/[&<>"']/g, x=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[x]));
         const blogDate = value => {const d=new Date(value);return Number.isNaN(d.getTime())?'':d.toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'});};
@@ -4206,7 +4319,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                 }
             }
         }
-        // v2.21.9: Public favorites come from the profile API; never read the viewer's
+        // v2.21.12: Public favorites come from the profile API; never read the viewer's
         // local Favorites when displaying another account's profile.
         let profileFavoritesSequence = 0;
         async function renderProfileFavorites(profileName, titles) {
@@ -4428,7 +4541,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
         window.addEventListener('popstate', routeFromURL);
 
 
-        // v2.21.9 — The root loader reads this account-scoped local preference.
+        // v2.21.12 — The root loader reads this account-scoped local preference.
         function gamesLandingPreferenceKey(name=user.username) {
             return 'powerhouse:defaultGamesLanding:'+(name||'guest').toLowerCase();
         }
@@ -4458,7 +4571,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                 accountSavedData={...(accountSavedData||{}),settings:{...(accountSavedData?.settings||{}),defaultGamesLanding:enabled}};
             }catch(error){console.warn('Default landing preference saved locally; KV sync failed:',error);}
         }
-        // v2.21.9 — Per-user Home section order and visibility.
+        // v2.21.12 — Per-user Home section order and visibility.
         const HOME_LAYOUT_DEFAULT = ['favorites','recent','games','all'];
         const HOME_LAYOUT_LABELS = {favorites:'Favorites',recent:'Recently Played',games:'Recommended',all:'All Games'};
         let homeLayout = {order:[...HOME_LAYOUT_DEFAULT], visible:{favorites:true,recent:true,games:true,all:false}, hideProfile:false, cardSize:'wide', compactSidebar:false};
