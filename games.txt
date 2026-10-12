@@ -1059,7 +1059,7 @@
     "title": "Diablo",
     "category": "Arcade",
     "desc": "Diablo is an action role-playing dungeon crawler video game series originally developed by Blizzard North and continued by Blizzard Entertainment after the original North studio shut down in 2005.",
-    "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.wccftech.com%2Fwp-content%2Fuploads%2F2023%2F06%2Fdiablo-iv-lilith-HD-scaled.jpeg&f=1&nofb=1&ipt=a1ea19f07f429982cec5c472999b9ab9fe1ac1b882b70c6e35be22edde7a6b2f&ipo=images",
+    "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.moddb.com%2Fimages%2Fmods%2F1%2F57%2F56661%2Fdiablo-1-1996-pc-download-em-por.jpg&f=1&nofb=1&ipt=db0000bcdf733cbb3838c8b8767e2129f5921c939d1dd08acb268e275c20017d&ipo=images",
     "link": "https://johnimril.github.io/diablo_web/",
     "verified": false,
     "useBlank": true,
