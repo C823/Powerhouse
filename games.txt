@@ -1087,7 +1087,7 @@
     "useBlank": false,
     "new": true,
     "date_added": "10/11/2026"
-  }
+  },
   {
     "title": "Cork7",
     "category": "Hub",
