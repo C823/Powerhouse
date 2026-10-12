@@ -943,7 +943,7 @@
     "verified": false,
     "useBlank": true,
     "new": false,
-    "date_added": "N/A"
+    "date_added": "10/09/2026"
   },
   {
     "title": "SmartPass",
@@ -954,7 +954,7 @@
     "verified": true,
     "useBlank": false,
     "new": false,
-    "date_added": "10/07/2026"
+    "date_added": "10/09/2026"
   },
   {
     "title": "BO1 Zombies",
