@@ -1079,7 +1079,7 @@
   },
   {
     "title": "Vortex",
-    "category": "Utility",
+    "category": "Hub",
     "desc": "Discover Vortex",
     "thumb": "https://playvortex.io/logo.png",
     "link": "https://playvortex.io",
