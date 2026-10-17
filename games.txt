@@ -1098,5 +1098,16 @@
     "useBlank": false,
     "new": true,
     "date_added": "10/12/2026"
+  },
+  {
+    "title": "Cork7",
+    "category": "Sports",
+    "desc": "A physics-based sheep battle royale where you ram rivals off Ireland, Egypt and Sweden maps to be last sheep standing.",
+    "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.lemon-web.net%2Fimages%2Fblog_articles%2F1283%2Fcrazycattle.jpeg&f=1&nofb=1&ipt=59a54a5a438d29620a26f65f6ccd111d49c4ccc4729ff0f0ae06307e556a5bb8&ipo=images",
+    "link": "https://crazycattle3d.github.io/",
+    "verified": false,
+    "useBlank": false,
+    "new": true,
+    "date_added": "10/17/2026"
   }
 ]
