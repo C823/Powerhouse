@@ -288,7 +288,7 @@
   {
     "title": "Sandboxels",
     "category": "Simulation",
-    "desc": "A falling sand physics simulator with over 500 elements.",
+    "desc": "A falling sand physics Simulation with over 500 elements.",
     "thumb": "https://neal.fun/link-images/sandboxels.svg",
     "link": "https://neal.fun/sandboxels/",
     "verified": true,
@@ -519,7 +519,7 @@
   {
     "title": "GeoFS",
     "category": "Simulation",
-    "desc": "A multiplayer flight simulator with a global environment generated from satellite images and digital geographic data.",
+    "desc": "A multiplayer flight Simulation with a global environment generated from satellite images and digital geographic data.",
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.geo-fs.com%2Fimages%2Fmedia%2F10.jpg&f=1&nofb=1&ipt=369b958a560710ae3c73c8d76d7ba1524e7232d38e1c9d89ce4e88ef168a168f&ipo=images",
     "link": "https://www.geo-fs.com/geofs.php",
     "verified": false,
@@ -1090,7 +1090,7 @@
   },
   {
     "title": "Gridiron Tycoon",
-    "category": "Simulator",
+    "category": "Simulation",
     "desc": "Buy a made-up pro football team with money from a retiring investor, then run it: draft and sign players, set ticket prices, upgrade the stadium, and coach or watch every game on an animated field.",
     "thumb": "https://raw.githubusercontent.com/C823/assets/refs/heads/main/gridiron_thumbnail.png",
     "link": "https://home.c823.workers.dev/football-manager",
