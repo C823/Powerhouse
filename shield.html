@@ -4167,7 +4167,7 @@
                         </div>
                         <div class="acct-result-info" style="flex:1;min-width:0">
                             <div class="acct-result-name">${escHtmlAcct(u.username)}${getBadgeHtml(u.username, admins.includes(u.username.toLowerCase()), 'sm', contribs.includes(u.username.toLowerCase()))}${getRankBadgeHtml(rank, true)}</div>
-                        ${_acctToken && u.username.toLowerCase() !== (_acctUsername||'').toLowerCase() ? `<button class="friend-btn" style="font-size:.65rem;padding:3px 8px;margin-top:3px" onclick="friendRequest('${escHtmlAcct(u.username)}')">+ Add Friend</button>` : ''}
+                        ${_acctToken && u.username.toLowerCase() !== (_acctUsername||'').toLowerCase() ? `<button class="friend-btn" style="font-size:.65rem;padding:3px 8px;margin-top:3px" onclick="friendRequest(${jsArg(u.username)})">+ Add Friend</button>` : ''}
                             <div class="acct-result-since">Joined ${new Date(u.createdAt).toLocaleDateString()}</div>
                         </div>
 
@@ -4179,6 +4179,7 @@
     }
 
     function escHtmlAcct(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+    function jsArg(value) { return String(JSON.stringify(String(value ?? ''))).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 
     // ── TAB NAVIGATION (logged-in panel) ─────────────────────────────────────
     function liSwitchTab(tab) {
@@ -4311,7 +4312,7 @@
         if (!list) return;
         if (_blogPosts.length === 0) { list.innerHTML = '<div class="blog-empty">No posts yet.</div>'; return; }
         list.innerHTML = _blogPosts.map(p => `
-            <div class="blog-post-card" onclick="blogOpenPost('${p.id}')">
+            <div class="blog-post-card" onclick="blogOpenPost(${jsArg(p.id)})">
                 ${p.tag ? `<div class="blog-post-tag">${escHtmlBlog(p.tag)}</div>` : ''}
                 ${p.status === 'draft' ? '<div class="blog-post-tag" style="background:rgba(196,43,28,.1);color:#c42b1c;border-color:rgba(196,43,28,.3)">DRAFT</div>' : ''}
                 <div class="blog-post-card-top">
@@ -4374,8 +4375,8 @@
                     <div class="blog-admin-row-title">${escHtmlBlog(p.title)}</div>
                     ${p.status==='draft' ? '<span style="font-size:.6rem;color:#c42b1c;font-weight:700">DRAFT</span>' : ''}
                     <div class="blog-admin-row-date">${blogFmtDate(p.createdAt)}</div>
-                    <button class="blog-admin-edit" onclick="blogEditPost('${p.id}')">Edit</button>
-                    <button class="blog-admin-del"  onclick="blogDeletePost('${p.id}')">Delete</button>
+                    <button class="blog-admin-edit" onclick="blogEditPost(${jsArg(p.id)})">Edit</button>
+                    <button class="blog-admin-del"  onclick="blogDeletePost(${jsArg(p.id)})">Delete</button>
                 </div>`).join('');
         } catch(e) { if (el) el.innerHTML = '<div class="blog-empty">Failed to load.</div>'; }
     }
@@ -4724,7 +4725,7 @@
                 return;
             }
             document.getElementById('msgConvosList').innerHTML = convos.map(c => `
-                <div class="msg-convo-item" onclick="msgOpenChat('${escHtmlAcct(c.username)}')">
+                <div class="msg-convo-item" onclick="msgOpenChat(${jsArg(c.username)})">
                     <div class="msg-convo-avatar">${c.pfp ? `<img src="${PFP_BASE + c.pfp}" alt="">` : `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--accent);color:#fff;font-weight:700;font-size:.75rem;border-radius:50%">${escHtmlAcct(c.username).slice(0,2).toUpperCase()}</div>`}</div>
                     <div class="msg-convo-info">
                         <div class="msg-convo-name">${escHtmlAcct(c.username)}${getBadgeHtml(c.username, c.isAdmin, 'sm', c.isContributor)}${getRankBadgeHtml(ranksData[c.username.toLowerCase()]||'', true)}</div>
@@ -4978,8 +4979,8 @@
                         <div class="friend-since">Formerly ${escHtmlAcct(f.username)}</div>
                     </div>
                     <div class="friend-actions">
-                        <button class="friend-btn" onclick="friendMessage('${escHtmlAcct(f.username)}')">Message</button>
-                        <button class="friend-btn danger" onclick="friendRemove('${escHtmlAcct(f.username)}')">Remove</button>
+                        <button class="friend-btn" onclick="friendMessage(${jsArg(f.username)})">Message</button>
+                        <button class="friend-btn danger" onclick="friendRemove(${jsArg(f.username)})">Remove</button>
                     </div>
                 </div>` : `
                 <div class="friend-row">
@@ -4989,8 +4990,8 @@
                         <div class="friend-since">Friends since ${new Date(f.since).toLocaleDateString()}</div>
                     </div>
                     <div class="friend-actions">
-                        <button class="friend-btn" onclick="friendMessage('${escHtmlAcct(f.username)}')">Message</button>
-                        <button class="friend-btn danger" onclick="friendRemove('${escHtmlAcct(f.username)}')">Remove</button>
+                        <button class="friend-btn" onclick="friendMessage(${jsArg(f.username)})">Message</button>
+                        <button class="friend-btn danger" onclick="friendRemove(${jsArg(f.username)})">Remove</button>
                     </div>
                 </div>`).join('');
         } catch(e) { el.innerHTML = '<div class="friends-empty">Failed to load.</div>'; }
@@ -5024,8 +5025,8 @@
                         <div class="friend-since">${new Date(req.sentAt).toLocaleDateString()}</div>
                     </div>
                     <div class="friend-actions">
-                        <button class="friend-btn accept" onclick="friendAccept('${escHtmlAcct(req.from)}')">Accept</button>
-                        <button class="friend-btn danger" onclick="friendDecline('${escHtmlAcct(req.from)}')">Decline</button>
+                        <button class="friend-btn accept" onclick="friendAccept(${jsArg(req.from)})">Accept</button>
+                        <button class="friend-btn danger" onclick="friendDecline(${jsArg(req.from)})">Decline</button>
                     </div>
                 </div>`).join('');
         } catch(e) {}
@@ -5247,15 +5248,15 @@
                     </div>
                     <div class="admin-user-actions">
                         ${u.username.toLowerCase() !== (_acctUsername||'').toLowerCase() ? `
-                        <button class="admin-btn" onclick="triggerCalmDownForUser('${escHtmlAcct(u.username)}')" title="Make user watch calming video on next login">Calm Down</button>
-                        ${['c823','powerhouse','toethesis','unclejoe826'].includes(u.username.toLowerCase()) ? '' : `<button class="admin-btn danger" onclick="adminDeleteUser('${escHtmlAcct(u.username)}')">Delete</button>`}
+                        <button class="admin-btn" onclick="triggerCalmDownForUser(${jsArg(u.username)})" title="Make user watch calming video on next login">Calm Down</button>
+                        ${['c823','powerhouse','toethesis','unclejoe826'].includes(u.username.toLowerCase()) ? '' : `<button class="admin-btn danger" onclick="adminDeleteUser(${jsArg(u.username)})">Delete</button>`}
                         ${isAdm
-                            ? (['c823','powerhouse','toethesis','unclejoe826'].includes(u.username.toLowerCase()) ? '<span style="font-size:.65rem;color:var(--muted)">Protected</span>' : `<button class="admin-btn" onclick="adminToggleAdmin('${escHtmlAcct(u.username)}', false)">Revoke Admin</button>`)
-                            : `<button class="admin-btn primary" onclick="adminToggleAdmin('${escHtmlAcct(u.username)}', true)">Make Admin</button>`
+                            ? (['c823','powerhouse','toethesis','unclejoe826'].includes(u.username.toLowerCase()) ? '<span style="font-size:.65rem;color:var(--muted)">Protected</span>' : `<button class="admin-btn" onclick="adminToggleAdmin(${jsArg(u.username)}, false)">Revoke Admin</button>`)
+                            : `<button class="admin-btn primary" onclick="adminToggleAdmin(${jsArg(u.username)}, true)">Make Admin</button>`
                         }
                         ${!isAdm ? (contributors.includes(u.username.toLowerCase())
-                            ? `<button class="admin-btn" onclick="adminToggleContributor('${escHtmlAcct(u.username)}', false)">Revoke Contrib</button>`
-                            : `<button class="admin-btn" onclick="adminToggleContributor('${escHtmlAcct(u.username)}', true)">Make Contrib</button>`)
+                            ? `<button class="admin-btn" onclick="adminToggleContributor(${jsArg(u.username)}, false)">Revoke Contrib</button>`
+                            : `<button class="admin-btn" onclick="adminToggleContributor(${jsArg(u.username)}, true)">Make Contrib</button>`)
                         : ''}` : '<span style="font-size:.65rem;color:var(--muted)">You</span>'}
                     </div>
                 </div>`;
@@ -5293,14 +5294,14 @@
                     </div>
                     <div class="admin-user-actions">
                         ${u.username.toLowerCase() !== (_acctUsername||'').toLowerCase() && !isProtected ? `
-                        <button class="admin-btn danger" onclick="adminDeleteUser('${escHtmlAcct(u.username)}')">Delete</button>
+                        <button class="admin-btn danger" onclick="adminDeleteUser(${jsArg(u.username)})">Delete</button>
                         ${isAdm
-                            ? `<button class="admin-btn" onclick="adminToggleAdmin('${escHtmlAcct(u.username)}', false)">Revoke Admin</button>`
-                            : `<button class="admin-btn primary" onclick="adminToggleAdmin('${escHtmlAcct(u.username)}', true)">Make Admin</button>`
+                            ? `<button class="admin-btn" onclick="adminToggleAdmin(${jsArg(u.username)}, false)">Revoke Admin</button>`
+                            : `<button class="admin-btn primary" onclick="adminToggleAdmin(${jsArg(u.username)}, true)">Make Admin</button>`
                         }
                         ${!isAdm ? (contributors.includes(u.username.toLowerCase())
-                            ? `<button class="admin-btn" onclick="adminToggleContributor('${escHtmlAcct(u.username)}', false)">Revoke Contrib</button>`
-                            : `<button class="admin-btn" onclick="adminToggleContributor('${escHtmlAcct(u.username)}', true)">Make Contrib</button>`)
+                            ? `<button class="admin-btn" onclick="adminToggleContributor(${jsArg(u.username)}, false)">Revoke Contrib</button>`
+                            : `<button class="admin-btn" onclick="adminToggleContributor(${jsArg(u.username)}, true)">Make Contrib</button>`)
                         : ''}` : `<span style="font-size:.65rem;color:var(--muted)">${isProtected ? 'Protected' : 'You'}</span>`}
                     </div>
                 </div>`;
@@ -5482,7 +5483,7 @@
             el.innerHTML = suggestions.map(s => `
                 <div style="background:color-mix(in srgb,var(--text) 3%,transparent);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px;margin-bottom:10px">
                     <div style="display:flex;align-items:flex-start;gap:10px">
-                        <img src="${s.thumbnail}" alt="${s.name}" style="width:60px;height:60px;border-radius:4px;object-fit:cover;flex-shrink:0">
+                        <img src="${escHtmlAcct(String(s.thumbnail ?? ''))}" alt="${escHtmlAcct(String(s.name ?? ''))}" style="width:60px;height:60px;border-radius:4px;object-fit:cover;flex-shrink:0">
                         <div style="flex:1;min-width:0">
                             <div style="font-size:.85rem;font-weight:600">${escHtmlAcct(s.name)}</div>
                             <div style="font-size:.7rem;color:var(--muted);margin:3px 0">${escHtmlAcct(s.description).slice(0,100)}</div>
@@ -5491,7 +5492,7 @@
                                 ${s.verified ? ' · Verified' : ''} ${s.canUseBlank ? ' · about:blank' : ''}
                             </div>
                         </div>
-                        <button class="admin-btn danger" onclick="adminRemoveSuggestion('${s.id}')" style="padding:6px 12px;font-size:.7rem">Remove</button>
+                        <button class="admin-btn danger" onclick="adminRemoveSuggestion(${jsArg(s.id)})" style="padding:6px 12px;font-size:.7rem">Remove</button>
                     </div>
                 </div>
             `).join('');
@@ -5826,7 +5827,7 @@
                     </div>
                     <div class="admin-user-actions" style="flex-wrap:wrap">
                         ${['Founder','Moderator','VIP',''].map(r =>
-                            `<button class="admin-btn${r===rank?' primary':''}" onclick="adminSetRank('${escHtmlAcct(u.username)}','${r}')">${r||'Remove Rank'}</button>`
+                            `<button class="admin-btn${r===rank?' primary':''}" onclick="adminSetRank(${jsArg(u.username)},${jsArg(r)})">${r||'Remove Rank'}</button>`
                         ).join('')}
                     </div>
                 </div>`;
@@ -5887,8 +5888,8 @@
                         <div class="mod-user-meta">Joined ${new Date(u.createdAt).toLocaleDateString()}</div>
                     </div>
                     <div class="mod-actions">
-                        ${['c823','powerhouse','toethesis','unclejoe826'].includes(u.username.toLowerCase()) ? `<button class="mod-btn" disabled title="Protected account" style="opacity: 0.5; cursor: not-allowed;">Warn</button>` : `<button class="mod-btn" onclick="modWarnPrompt('${escHtmlAcct(u.username)}')">Warn</button>`}
-                        <button class="mod-btn danger" onclick="modBanPrompt('${escHtmlAcct(u.username)}')" ${u.rank === 'Founder' ? 'disabled title="Founder-ranked users cannot be banned"' : ''} style="${u.rank === 'Founder' ? 'opacity: 0.5; cursor: not-allowed;' : ''}">Ban</button>
+                        ${['c823','powerhouse','toethesis','unclejoe826'].includes(u.username.toLowerCase()) ? `<button class="mod-btn" disabled title="Protected account" style="opacity: 0.5; cursor: not-allowed;">Warn</button>` : `<button class="mod-btn" onclick="modWarnPrompt(${jsArg(u.username)})">Warn</button>`}
+                        <button class="mod-btn danger" onclick="modBanPrompt(${jsArg(u.username)})" ${u.rank === 'Founder' ? 'disabled title="Founder-ranked users cannot be banned"' : ''} style="${u.rank === 'Founder' ? 'opacity: 0.5; cursor: not-allowed;' : ''}">Ban</button>
                     </div>
                 </div>`).join('');
         } catch(e) { el.innerHTML = '<div class="mod-empty">Failed.</div>'; }
@@ -5909,8 +5910,8 @@
             <div style="font-size:.7rem;color:var(--muted);margin-bottom:6px">This warning will be logged and shown to the user. 3 warnings = automatic ban.</div>
             <textarea class="warn-reason-input" id="warnReason_${escHtmlAcct(username)}" rows="2" placeholder="Reason for warning…"></textarea>
             <div style="display:flex;gap:6px;margin-top:8px">
-                <button class="mod-btn danger" onclick="modIssueWarn('${escHtmlAcct(username)}')">Issue Warning</button>
-                <button class="mod-btn" onclick="document.getElementById('warnForm_${escHtmlAcct(username)}').remove()">Cancel</button>
+                <button class="mod-btn danger" onclick="modIssueWarn(${jsArg(username)})">Issue Warning</button>
+                <button class="mod-btn" onclick="document.getElementById(${jsArg('warnForm_' + username)}).remove()">Cancel</button>
             </div>`;
         if (el) el.appendChild(form);
         document.getElementById('warnReason_' + username)?.focus();
@@ -5981,8 +5982,8 @@
                 </select>
             </div>
             <div style="display:flex;gap:6px;margin-top:8px">
-                <button class="mod-btn danger" onclick="modIssueBan('${escHtmlAcct(username)}')">Confirm Ban</button>
-                <button class="mod-btn" onclick="document.getElementById('banForm_${escHtmlAcct(username)}').remove()">Cancel</button>
+                <button class="mod-btn danger" onclick="modIssueBan(${jsArg(username)})">Confirm Ban</button>
+                <button class="mod-btn" onclick="document.getElementById(${jsArg('banForm_' + username)}).remove()">Cancel</button>
             </div>`;
         if (el) el.appendChild(form);
         document.getElementById('banReason_' + username)?.focus();
@@ -6045,7 +6046,7 @@
                         <div class="mod-user-meta">${new Date(b.bannedAt).toLocaleDateString()} · by ${escHtmlAcct(b.by)}</div>
                     </div>
                     <div class="mod-actions">
-                        <button class="mod-btn green" onclick="modUnban('${escHtmlAcct(b.username)}')">Unban</button>
+                        <button class="mod-btn green" onclick="modUnban(${jsArg(b.username)})">Unban</button>
                     </div>
                 </div>`;
             }).join('');
@@ -6082,7 +6083,7 @@
                         <div class="mod-user-meta">${new Date(w.issuedAt).toLocaleDateString()} · by ${escHtmlAcct(w.by)}</div>
                     </div>
                     <div class="mod-actions">
-                        <button class="mod-btn danger" onclick="modRemoveWarn('${escHtmlAcct(w.username)}','${w.id}')">Remove</button>
+                        <button class="mod-btn danger" onclick="modRemoveWarn(${jsArg(w.username)},${jsArg(w.id)})">Remove</button>
                     </div>
                 </div>`).join('');
         } catch(e) { el.innerHTML = '<div class="mod-empty">Failed.</div>'; }
@@ -6315,7 +6316,7 @@
         const cats = ['ALL', 'UNBLOCKED', ...new Set(games.map(g => g.category.toUpperCase()))];
         bar.innerHTML = cats.map(c => `
             <button class="filter-btn ${currentFilter === c ? 'active' : ''}" 
-                    onclick="setFilter('${c}')">${c}</button>
+                    onclick="setFilter(${jsArg(c)})">${c}</button>
         `).join('');
     }
 

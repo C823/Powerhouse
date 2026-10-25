@@ -888,6 +888,10 @@
 #game-detail-content .game-hero-image { position:relative; display:block; width:100%; height:100%; max-width:100%; max-height:100%; object-fit:contain; object-position:center; padding:12px; border:0; border-radius:0; background:transparent; box-shadow:none; }
 #game-detail-content .game-info-top { display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap; min-width:0; border:1px solid #333; background:#1a1a1a; border-radius:16px; padding:23px 26px; }
 #game-detail-content .game-info-name { flex:1 1 310px; min-width:0; }
+#game-detail-content .game-og-badge { position:relative; display:inline-block; flex:0 0 auto; width:.78em; height:.78em; background:url('https://raw.githubusercontent.com/C823/Powerhouse/main/icons/POWERHOUSE-icon-dark.png') center/contain no-repeat; cursor:help; outline:none; }
+#game-detail-content .game-og-badge::after { content:attr(data-tooltip); position:absolute; left:50%; bottom:calc(100% + 8px); transform:translate(-50%,4px); padding:6px 10px; border-radius:8px; background:#11131a; color:#fff; border:1px solid rgba(255,255,255,.12); box-shadow:0 6px 20px rgba(0,0,0,.35); font-size:13px; font-weight:600; letter-spacing:0; line-height:1.2; white-space:nowrap; opacity:0; pointer-events:none; transition:opacity .15s ease, transform .15s ease; z-index:5; }
+#game-detail-content .game-og-badge:hover::after, #game-detail-content .game-og-badge:focus-visible::after { opacity:1; transform:translate(-50%,0); }
+body[data-theme="light"] #game-detail-content .game-og-badge { background-image:url('https://raw.githubusercontent.com/C823/Powerhouse/main/icons/POWERHOUSE-icon-light.png'); }
 #game-detail-content .game-info-name h1 { display:flex; align-items:center; flex-wrap:wrap; gap:9px; color:#fff; margin:0 0 13px; font-size:clamp(24px,3vw,36px); font-weight:750; line-height:1.16; letter-spacing:-.035em; overflow-wrap:anywhere; }
 #game-detail-content .game-info-name h1 .game-verified-icon { width:.78em; height:.78em; max-width:.78em; max-height:.78em; object-fit:contain; flex:0 0 auto; background:none; padding:0; border:0; box-shadow:none; }
 #game-detail-content .game-pill-list { display:flex; flex-wrap:wrap; align-items:center; gap:8px; }
@@ -1416,6 +1420,7 @@ body[data-theme="light"] #all-games-view .all-games-filter-result{color:#576574}
 let _adminDeleteTarget = '';
 let _cacheRanks = null, _cacheRanksAt = 0;
 function staffEsc(value) { return String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function jsArg(value) { return String(JSON.stringify(String(value ?? ''))).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 // Official Powerhouse role icons, served as SVG image files from GitHub.
 const POWERHOUSE_ROLE_ICON_URLS = {
  founder: 'https://raw.githubusercontent.com/C823/Powerhouse/main/icons/founder_icon.svg',
@@ -1556,15 +1561,15 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                     </div>
                     <div class="admin-user-actions">
                         ${u.username.toLowerCase() !== (user.username||'').toLowerCase() ? `
-                        <button class="admin-btn" onclick="triggerCalmDownForUser('${staffEsc(u.username)}')" title="Make user watch calming video on next login">Calm Down</button>
-                        ${['c823','powerhouse','toethesis','unclejoe826'].includes(u.username.toLowerCase()) ? '' : `<button class="admin-btn danger" onclick="adminDeleteUser('${staffEsc(u.username)}')">Delete</button>`}
+                        <button class="admin-btn" onclick="triggerCalmDownForUser(${jsArg(u.username)})" title="Make user watch calming video on next login">Calm Down</button>
+                        ${['c823','powerhouse','toethesis','unclejoe826'].includes(u.username.toLowerCase()) ? '' : `<button class="admin-btn danger" onclick="adminDeleteUser(${jsArg(u.username)})">Delete</button>`}
                         ${isAdm
-                            ? (['c823','powerhouse','toethesis','unclejoe826'].includes(u.username.toLowerCase()) ? '<span style="font-size:.65rem;color:var(--muted)">Protected</span>' : `<button class="admin-btn" onclick="adminToggleAdmin('${staffEsc(u.username)}', false)">Revoke Admin</button>`)
-                            : `<button class="admin-btn primary" onclick="adminToggleAdmin('${staffEsc(u.username)}', true)">Make Admin</button>`
+                            ? (['c823','powerhouse','toethesis','unclejoe826'].includes(u.username.toLowerCase()) ? '<span style="font-size:.65rem;color:var(--muted)">Protected</span>' : `<button class="admin-btn" onclick="adminToggleAdmin(${jsArg(u.username)}, false)">Revoke Admin</button>`)
+                            : `<button class="admin-btn primary" onclick="adminToggleAdmin(${jsArg(u.username)}, true)">Make Admin</button>`
                         }
                         ${!isAdm ? (contributors.includes(u.username.toLowerCase())
-                            ? `<button class="admin-btn" onclick="adminToggleContributor('${staffEsc(u.username)}', false)">Revoke Contrib</button>`
-                            : `<button class="admin-btn" onclick="adminToggleContributor('${staffEsc(u.username)}', true)">Make Contrib</button>`)
+                            ? `<button class="admin-btn" onclick="adminToggleContributor(${jsArg(u.username)}, false)">Revoke Contrib</button>`
+                            : `<button class="admin-btn" onclick="adminToggleContributor(${jsArg(u.username)}, true)">Make Contrib</button>`)
                         : ''}` : '<span style="font-size:.65rem;color:var(--muted)">You</span>'}
                     </div>
                 </div>`;
@@ -1603,14 +1608,14 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                     </div>
                     <div class="admin-user-actions">
                         ${u.username.toLowerCase() !== (user.username||'').toLowerCase() && !isProtected ? `
-                        <button class="admin-btn danger" onclick="adminDeleteUser('${staffEsc(u.username)}')">Delete</button>
+                        <button class="admin-btn danger" onclick="adminDeleteUser(${jsArg(u.username)})">Delete</button>
                         ${isAdm
-                            ? `<button class="admin-btn" onclick="adminToggleAdmin('${staffEsc(u.username)}', false)">Revoke Admin</button>`
-                            : `<button class="admin-btn primary" onclick="adminToggleAdmin('${staffEsc(u.username)}', true)">Make Admin</button>`
+                            ? `<button class="admin-btn" onclick="adminToggleAdmin(${jsArg(u.username)}, false)">Revoke Admin</button>`
+                            : `<button class="admin-btn primary" onclick="adminToggleAdmin(${jsArg(u.username)}, true)">Make Admin</button>`
                         }
                         ${!isAdm ? (contributors.includes(u.username.toLowerCase())
-                            ? `<button class="admin-btn" onclick="adminToggleContributor('${staffEsc(u.username)}', false)">Revoke Contrib</button>`
-                            : `<button class="admin-btn" onclick="adminToggleContributor('${staffEsc(u.username)}', true)">Make Contrib</button>`)
+                            ? `<button class="admin-btn" onclick="adminToggleContributor(${jsArg(u.username)}, false)">Revoke Contrib</button>`
+                            : `<button class="admin-btn" onclick="adminToggleContributor(${jsArg(u.username)}, true)">Make Contrib</button>`)
                         : ''}` : `<span style="font-size:.65rem;color:var(--muted)">${isProtected ? 'Protected' : 'You'}</span>`}
                     </div>
                 </div>`;
@@ -1761,7 +1766,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             el.innerHTML = suggestions.map(s => `
                 <div style="background:color-mix(in srgb,var(--text) 3%,transparent);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px;margin-bottom:10px">
                     <div style="display:flex;align-items:flex-start;gap:10px">
-                        <img src="${s.thumbnail}" alt="${s.name}" style="width:60px;height:60px;border-radius:4px;object-fit:cover;flex-shrink:0">
+                        <img src="${staffEsc(s.thumbnail)}" alt="${staffEsc(s.name)}" style="width:60px;height:60px;border-radius:4px;object-fit:cover;flex-shrink:0">
                         <div style="flex:1;min-width:0">
                             <div style="font-size:.85rem;font-weight:600">${staffEsc(s.name)}</div>
                             <div style="font-size:.7rem;color:var(--muted);margin:3px 0">${staffEsc(s.description).slice(0,100)}</div>
@@ -1770,7 +1775,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                                 ${s.verified ? ' · Verified' : ''} ${s.canUseBlank ? ' · about:blank' : ''}
                             </div>
                         </div>
-                        <button class="admin-btn danger" onclick="adminRemoveSuggestion('${s.id}')" style="padding:6px 12px;font-size:.7rem">Remove</button>
+                        <button class="admin-btn danger" onclick="adminRemoveSuggestion(${jsArg(s.id)})" style="padding:6px 12px;font-size:.7rem">Remove</button>
                     </div>
                 </div>
             `).join('');
@@ -1930,8 +1935,8 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                         <div class="mod-user-meta">Joined ${new Date(u.createdAt).toLocaleDateString()}</div>
                     </div>
                     <div class="mod-actions">
-                        ${['c823','powerhouse','toethesis','unclejoe826'].includes(u.username.toLowerCase()) ? `<button class="mod-btn" disabled title="Protected account" style="opacity: 0.5; cursor: not-allowed;">Warn</button>` : `<button class="mod-btn" onclick="modWarnPrompt('${staffEsc(u.username)}')">Warn</button>`}
-                        <button class="mod-btn danger" onclick="modBanPrompt('${staffEsc(u.username)}')" ${u.rank === 'Founder' ? 'disabled title="Founder-ranked users cannot be banned"' : ''} style="${u.rank === 'Founder' ? 'opacity: 0.5; cursor: not-allowed;' : ''}">Ban</button>
+                        ${['c823','powerhouse','toethesis','unclejoe826'].includes(u.username.toLowerCase()) ? `<button class="mod-btn" disabled title="Protected account" style="opacity: 0.5; cursor: not-allowed;">Warn</button>` : `<button class="mod-btn" onclick="modWarnPrompt(${jsArg(u.username)})">Warn</button>`}
+                        <button class="mod-btn danger" onclick="modBanPrompt(${jsArg(u.username)})" ${u.rank === 'Founder' ? 'disabled title="Founder-ranked users cannot be banned"' : ''} style="${u.rank === 'Founder' ? 'opacity: 0.5; cursor: not-allowed;' : ''}">Ban</button>
                     </div>
                 </div>`).join('');
         } catch(e) { el.innerHTML = '<div class="mod-empty">Failed.</div>'; }
@@ -1953,8 +1958,8 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             <div style="font-size:.7rem;color:var(--muted);margin-bottom:6px">This warning will be logged and shown to the user. 3 warnings = automatic ban.</div>
             <textarea class="warn-reason-input" id="warnReason_${staffEsc(username)}" rows="2" placeholder="Reason for warning…"></textarea>
             <div style="display:flex;gap:6px;margin-top:8px">
-                <button class="mod-btn danger" onclick="modIssueWarn('${staffEsc(username)}')">Issue Warning</button>
-                <button class="mod-btn" onclick="document.getElementById('warnForm_${staffEsc(username)}').remove()">Cancel</button>
+                <button class="mod-btn danger" onclick="modIssueWarn(${jsArg(username)})">Issue Warning</button>
+                <button class="mod-btn" onclick="document.getElementById(${jsArg('warnForm_' + username)}).remove()">Cancel</button>
             </div>`;
         if (el) el.appendChild(form);
         document.getElementById('warnReason_' + username)?.focus();
@@ -2027,8 +2032,8 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                 </select>
             </div>
             <div style="display:flex;gap:6px;margin-top:8px">
-                <button class="mod-btn danger" onclick="modIssueBan('${staffEsc(username)}')">Confirm Ban</button>
-                <button class="mod-btn" onclick="document.getElementById('banForm_${staffEsc(username)}').remove()">Cancel</button>
+                <button class="mod-btn danger" onclick="modIssueBan(${jsArg(username)})">Confirm Ban</button>
+                <button class="mod-btn" onclick="document.getElementById(${jsArg('banForm_' + username)}).remove()">Cancel</button>
             </div>`;
         if (el) el.appendChild(form);
         document.getElementById('banReason_' + username)?.focus();
@@ -2093,7 +2098,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                         <div class="mod-user-meta">${new Date(b.bannedAt).toLocaleDateString()} · by ${staffEsc(b.by)}</div>
                     </div>
                     <div class="mod-actions">
-                        <button class="mod-btn green" onclick="modUnban('${staffEsc(b.username)}')">Unban</button>
+                        <button class="mod-btn green" onclick="modUnban(${jsArg(b.username)})">Unban</button>
                     </div>
                 </div>`;
             }).join('');
@@ -2132,7 +2137,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                         <div class="mod-user-meta">${new Date(w.issuedAt).toLocaleDateString()} · by ${staffEsc(w.by)}</div>
                     </div>
                     <div class="mod-actions">
-                        <button class="mod-btn danger" onclick="modRemoveWarn('${staffEsc(w.username)}','${w.id}')">Remove</button>
+                        <button class="mod-btn danger" onclick="modRemoveWarn(${jsArg(w.username)},${jsArg(w.id)})">Remove</button>
                     </div>
                 </div>`).join('');
         } catch(e) { el.innerHTML = '<div class="mod-empty">Failed.</div>'; }
@@ -3423,6 +3428,9 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                 if(isVerifiedGame(game)){
                     const icon=document.createElement('img');icon.className='game-verified-icon';icon.src='https://raw.githubusercontent.com/C823/Powerhouse/main/icons/verified.svg';icon.alt='Verified Unblocked';icon.title='Verified Unblocked';heading.append(icon);
                 }
+                if(isOriginalGame(game)){
+                    const og=document.createElement('span');og.className='game-og-badge';og.setAttribute('role','img');og.setAttribute('aria-label','Powerhouse Original game');og.dataset.tooltip='Powerhouse Original game';og.tabIndex=0;heading.append(og);
+                }
                 const pills=document.createElement('div');pills.className='game-pill-list';
                 const category=Array.isArray(game.category)?game.category.join(', '):(game.category||game.genre||'Uncategorized');
                 const makePill=(value)=>{const span=document.createElement('span');span.className='game-info-pill';span.textContent=value;pills.append(span);};
@@ -3709,6 +3717,10 @@ function adminSetBanner(){return staffLegacySaveBanner();}
         function isVerifiedGame(game) {
             // The internal games.txt field is `verified`; the UI calls it Unblocked.
             return game.verified === true || game.verified === 1 || game.verified === 'true' || game.verified === '1';
+        }
+        function isOriginalGame(game) {
+            // games.txt `OG: true` marks a Powerhouse original.
+            return game.OG === true || game.OG === 1 || game.OG === 'true' || game.OG === '1';
         }
         function setGameFilter(filter) {
             activeGameFilter = filter === 'verified' ? 'verified' : 'all';
