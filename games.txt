@@ -1109,5 +1109,16 @@
     "useBlank": false,
     "new": true,
     "date_added": "10/17/2026"
+  },
+  {
+    "title": "Backrooms game",
+    "category": "Action",
+    "desc": "",
+    "thumb": "https://raw.githubusercontent.com/C823/assets/backrooms_thumbnail.png",
+    "link": "https://powerhouse.c823.workers.dev/backrooms-game",
+    "verified": false,
+    "useBlank": false,
+    "new": true,
+    "date_added": "10/25/2026"
   }
 ]
