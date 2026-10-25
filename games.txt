@@ -948,7 +948,7 @@
   {
     "title": "mySmartPass",
     "category": "Tools",
-    "desc": "A Safer, Smarter Way to Optimize the School Day.",
+    "desc": "A self-hosted digital hall pass app inspired by SmartPass, built as a hobby project.",
     "thumb": "https://raw.githubusercontent.com/Uncle826/mysmartpass/refs/heads/main/banner.jpg",
     "link": "https://mysmartpass.garnerj826.workers.dev",
     "verified": true,
