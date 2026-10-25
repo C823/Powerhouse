@@ -1182,7 +1182,7 @@
     "thumb": "https://raw.githubusercontent.com/C823/assets/refs/heads/main/backrooms_thumbnail.png",
     "link": "https://home.c823.workers.dev/backrooms-game",
     "verified": false,
-    "OG": false,
+    "OG": true,
     "useBlank": false,
     "new": true,
     "date_added": "10/25/2026"
@@ -1194,7 +1194,7 @@
     "thumb": "https://raw.githubusercontent.com/C823/assets/refs/heads/main/gridiron_thumbnail.png",
     "link": "https://home.c823.workers.dev/football-manager",
     "verified": false,
-    "OG": false,
+    "OG": true,
     "useBlank": false,
     "new": true,
     "date_added": "10/25/2026"
