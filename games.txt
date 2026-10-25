@@ -968,17 +968,6 @@
     "date_added": "10/11/2026"
   },
   {
-    "title": "Call of Duty: Modern Warfare 2",
-    "category": "Action",
-    "desc": "The most-anticipated game of the year and the sequel to the best-selling first-person action game of all time, Modern Warfare 2 continues the gripping and heart-racing action as players face off against a new threat dedicated to bringing the world to the brink of collapse.",
-    "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpaperaccess.com%2Ffull%2F2204595.jpg&f=1&nofb=1&ipt=8a2319a9cde3ecf3d100acb821c5750172ed0ceae3a51cc5a262890a145e526c&ipo=images",
-    "link": "https://ovz-game-production.up.railway.app/",
-    "verified": false,
-    "useBlank": true,
-    "new": true,
-    "date_added": "10/11/2026"
-  },
-  {
     "title": "Skate 3",
     "category": "Sports",
     "desc": "The award winning SKATE™ franchise is back and rolling into new territory as SKATE™ 3 heads to the brand new city of Port Carverton.",
@@ -1115,7 +1104,7 @@
     "category": "Action",
     "desc": "Backrooms: Endless is a browser horror game where you're trapped in the Backrooms. Find the key on each level, reach the exit door, and go deeper. Every level is a bigger maze with more entities hunting you.",
     "thumb": "https://raw.githubusercontent.com/C823/assets/refs/heads/main/backrooms_thumbnail.png",
-    "link": "https://powerhouse.c823.workers.dev/backrooms-game",
+    "link": "https://home.c823.workers.dev/backrooms-game",
     "verified": false,
     "useBlank": false,
     "new": true,
