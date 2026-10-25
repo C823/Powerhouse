@@ -1078,11 +1078,22 @@
     "date_added": "10/17/2026"
   },
   {
-    "title": "Backrooms Endless",
+    "title": "Backrooms: Endless",
     "category": "Action",
     "desc": "Backrooms: Endless is a browser horror game where you're trapped in the Backrooms. Find the key on each level, reach the exit door, and go deeper. Every level is a bigger maze with more entities hunting you.",
     "thumb": "https://raw.githubusercontent.com/C823/assets/refs/heads/main/backrooms_thumbnail.png",
     "link": "https://home.c823.workers.dev/backrooms-game",
+    "verified": false,
+    "useBlank": false,
+    "new": true,
+    "date_added": "10/25/2026"
+  },
+  {
+    "title": "Gridiron Tycoon",
+    "category": "Simulator",
+    "desc": "Buy a made-up pro football team with money from a retiring investor, then run it: draft and sign players, set ticket prices, upgrade the stadium, and coach or watch every game on an animated field.",
+    "thumb": "https://raw.githubusercontent.com/C823/assets/refs/heads/main/gridiron_thumbnail.png",
+    "link": "https://home.c823.workers.dev/football-manager",
     "verified": false,
     "useBlank": false,
     "new": true,
