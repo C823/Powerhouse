@@ -1036,9 +1036,7 @@
   {
     "title": "Halo: Combat Evolved",
     "category": "Action",
-    "desc": "Halo: Combat Evolved is a 2001 first-person shooter game developed by Bungie and published by Microsoft Game Studios.
-
-GAME XISO FILE IS REQUIRED!!!",
+    "desc": "Halo: Combat Evolved is a 2001 first-person shooter game developed by Bungie and published by Microsoft Game Studios.",
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp4163717.jpg&f=1&nofb=1&ipt=368eb9bad06746690da20f02cb61b14e4beb2eb6876251bdb261b61be0f928f9&ipo=images",
     "link": "https://mitchellhynes.com/halo/halo.html",
     "verified": false,
