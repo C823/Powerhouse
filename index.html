@@ -3308,16 +3308,15 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                 const label=doc.createElement('strong');label.textContent=game.title||'Game';
                 // Capability detection belongs to the new window. These are browser
                 // features, not polyfills: a cross-origin iframe controls its own APIs.
+                // Use `in`, never read prototype.audioWorklet: that getter throws
+                // "Illegal invocation" in Chromium and used to abort the wrapper.
+                const AudioContextClass=tab.AudioContext || tab.webkitAudioContext;
                 const capabilities = {
-                    audioWorklet: !!(tab.AudioContext || tab.webkitAudioContext) &&
-                        !!(tab.AudioContext?.prototype?.audioWorklet || tab.AudioWorkletNode),
+                    audioWorklet: !!AudioContextClass &&
+                        ('audioWorklet' in AudioContextClass.prototype || !!tab.AudioWorkletNode),
                     sharedArrayBuffer: !!tab.crossOriginIsolated && typeof tab.SharedArrayBuffer === 'function',
                     crossOriginIsolated: !!tab.crossOriginIsolated
                 };
-                // Some browsers expose audioWorklet only on an AudioContext instance.
-                const AudioContextClass=tab.AudioContext || tab.webkitAudioContext;
-                capabilities.audioWorklet = !!AudioContextClass &&
-                    ('audioWorklet' in AudioContextClass.prototype || !!tab.AudioWorkletNode);
                 // Public helper for any Powerhouse-owned audio in this wrapper.
                 // Call in a user gesture, e.g. from a future wrapper audio button.
                 tab.powerhouseCreateAudioContext = () => {
@@ -3346,7 +3345,20 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                 const fallback=doc.createElement('a');fallback.href=url;fallback.target='_blank';fallback.rel='noopener noreferrer';fallback.textContent='Open Direct';
                 blocked.append(h,notice,fallback);main.append(frame,blocked);doc.body.append(bar,main);
                 frame.onerror=()=>{frame.style.display='none';blocked.style.display='flex'};
-            } catch (error) { tab.location.replace(url); }
+            } catch (error) {
+                // Stay on about:blank: fall back to a bare full-page iframe, and only
+                // navigate the tab to the real URL if even that is impossible.
+                console.error('About:Blank wrapper failed:', error);
+                try {
+                    const doc = tab.document;
+                    doc.body.replaceChildren();
+                    doc.body.style.cssText = 'margin:0;height:100vh;overflow:hidden';
+                    const frame = doc.createElement('iframe');
+                    frame.src = url; frame.allow = 'autoplay; fullscreen; gamepad'; frame.allowFullscreen = true;
+                    frame.style.cssText = 'width:100%;height:100%;border:0';
+                    doc.body.append(frame);
+                } catch (fallbackError) { tab.location.replace(url); }
+            }
         }
         // games.txt always supplies MM/DD/YYYY (or N/A); output format is a user preference.
         const GAME_DATE_FORMATS=['us','uk','eu','iso'];
