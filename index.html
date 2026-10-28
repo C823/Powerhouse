@@ -3285,6 +3285,54 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             return window.powerhouseGamesPending;
         }
         // Both launch modes are always available, regardless of useBlank or verified.
+        // Runs inside the about:blank tab (injected as a <script>), so its controls
+        // keep working after the Powerhouse tab that opened it is closed.
+        function powerhouseBlankRuntime() {
+            const data = window.__phLaunch || {};
+            const $ = id => document.getElementById(id);
+            const body = document.body, frame = $('ph-frame'), loading = $('ph-loading'), hint = $('ph-hint');
+            let hintTimer = 0, hideTimer = 0;
+            // A site that refuses framing (X-Frame-Options/CSP) still fires `load`,
+            // and its cross-origin frame can't be inspected. So after every load the
+            // hint appears briefly; if nothing loads at all it stays up.
+            function showHint(sticky) {
+                hint.hidden = false; clearTimeout(hideTimer);
+                if (!sticky) hideTimer = setTimeout(() => { if (!hint.matches(':hover, :focus-within')) hint.hidden = true; }, 9000);
+            }
+            function load() {
+                hint.hidden = true; loading.classList.remove('done');
+                clearTimeout(hintTimer); clearTimeout(hideTimer);
+                hintTimer = setTimeout(() => showHint(true), 15000);
+                frame.src = data.url;
+            }
+            frame.addEventListener('load', () => {
+                // The iframe's own about:blank fires a load before the game starts.
+                if (!frame.getAttribute('src')) return;
+                loading.classList.add('done');
+                clearTimeout(hintTimer); hintTimer = setTimeout(() => showHint(false), 2500);
+            });
+            hint.addEventListener('mouseleave', () => { if (!hideTimer) return; clearTimeout(hideTimer); hideTimer = setTimeout(() => { hint.hidden = true; }, 2500); });
+            $('ph-reload').addEventListener('click', load);
+            $('ph-retry').addEventListener('click', load);
+            $('ph-hint-close').addEventListener('click', () => { clearTimeout(hideTimer); hint.hidden = true; });
+            const full = $('ph-full');
+            full.addEventListener('click', () => {
+                if (document.fullscreenElement) document.exitFullscreen?.();
+                else (frame.requestFullscreen || frame.webkitRequestFullscreen)?.call(frame);
+            });
+            if (!(document.fullscreenEnabled || document.webkitFullscreenEnabled)) full.hidden = true;
+            function setBar(visible) {
+                body.classList.toggle('bar-hidden', !visible);
+                $('ph-show').hidden = visible;
+                try { localStorage.setItem('ph_blank_bar_hidden', visible ? '0' : '1'); } catch (e) {}
+            }
+            $('ph-hide').addEventListener('click', () => setBar(false));
+            $('ph-show').addEventListener('click', () => setBar(true));
+            try { if (localStorage.getItem('ph_blank_bar_hidden') === '1') setBar(false); } catch (e) {}
+            $('ph-close').addEventListener('click', () => window.close());
+            load();
+            frame.focus();
+        }
         function launchPowerhouseGame(game, event, mode = 'direct') {
             if (event) event.preventDefault();
             const url = String(game?.link || '').trim();
@@ -3299,13 +3347,90 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             if (!tab) { window.open(url, '_blank', 'noopener,noreferrer'); return; }
             try {
                 const doc = tab.document;
+                const light = document.body.getAttribute('data-theme') === 'light';
                 doc.title = (game.title || 'Game') + ' — Powerhouse';
+                doc.documentElement.lang = 'en';
+                if (light) doc.documentElement.classList.add('light');
                 const meta = doc.createElement('meta'); meta.name='viewport';meta.content='width=device-width,initial-scale=1';doc.head.append(meta);
-                const favicon=doc.createElement('link');favicon.rel='icon';favicon.href='https://raw.githubusercontent.com/C823/Powerhouse/main/icons/POWERHOUSE-icon-dark.png';doc.head.append(favicon);
-                const style=doc.createElement('style');style.textContent=`*{box-sizing:border-box}html,body{margin:0;height:100%;background:#101010;color:white;font:14px system-ui,Arial,sans-serif}header{height:54px;background:#1c1c1c;border-bottom:1px solid #383838;display:flex;align-items:center;padding:0 16px;gap:12px}header img{width:30px;height:30px;border-radius:6px;object-fit:cover}header strong{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.launch-features{font-size:11px;color:#bcbcbc;max-width:280px;line-height:1.35}@media(max-width:750px){.launch-features{display:none}}header a,header button,#blocked a{color:#fff;text-decoration:none;background:#383838;padding:9px 13px;border:0;border-radius:8px;cursor:pointer;font:inherit}main{height:calc(100% - 54px);position:relative}iframe{width:100%;height:100%;border:0;background:white}#blocked{display:none;position:absolute;inset:0;align-items:center;justify-content:center;flex-direction:column;gap:15px;text-align:center;background:#101010;padding:24px}#blocked p{color:#aaa;max-width:420px}`;doc.head.append(style);
-                const bar=doc.createElement('header');
-                const image=doc.createElement('img');image.src=String(game.thumb||'');image.alt='';image.onerror=()=>{image.style.display='none'};
-                const label=doc.createElement('strong');label.textContent=game.title||'Game';
+                const favicon=doc.createElement('link');favicon.rel='icon';favicon.href='https://raw.githubusercontent.com/C823/Powerhouse/main/icons/POWERHOUSE-icon-'+(light?'light':'dark')+'.png';doc.head.append(favicon);
+                const font=doc.createElement('link');font.rel='stylesheet';font.href='https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700;800&display=swap';doc.head.append(font);
+                // Same palette as the main site (:root and body[data-theme="light"]).
+                const style=doc.createElement('style');style.textContent=`
+*{box-sizing:border-box}
+:root{--bg:#1c1c1c;--bar:#000;--surface:#262626;--btn:#303030;--btn-hover:#3a3a3a;--btn-border:#494949;--border:rgba(255,255,255,.13);--text:#fff;--muted:#b5b5b5;--primary:#eee;--primary-hover:#fff;--primary-text:#161616;--bar-h:58px;color-scheme:dark}
+:root.light{--bg:#f3f5f7;--bar:#fff;--surface:#fff;--btn:#edf1f5;--btn-hover:#e3e9ef;--btn-border:#c7d1db;--border:rgba(29,38,52,.17);--text:#171c25;--muted:#5a6470;--primary:#263746;--primary-hover:#30475b;--primary-text:#fff;color-scheme:light}
+html,body{margin:0;height:100%;overflow:hidden;background:var(--bg);color:var(--text);font:14px/1.3 'Mulish',system-ui,sans-serif}
+button,a{font:inherit}
+#ph-bar{position:fixed;inset:0 0 auto;height:var(--bar-h);display:flex;align-items:center;gap:14px;padding:0 14px 0 18px;background:var(--bar);border-bottom:1px solid var(--border);z-index:10;transition:transform .25s ease}
+.bar-hidden #ph-bar{transform:translateY(-100%)}
+#ph-logo{height:20px;flex:none}
+.ph-divider{width:1px;height:26px;background:var(--border);flex:none}
+#ph-thumb{width:34px;height:34px;border-radius:8px;object-fit:cover;flex:none;border:1px solid var(--border)}
+.ph-titles{display:flex;flex-direction:column;min-width:0;flex:1}
+#ph-title{font-size:15px;font-weight:800;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ph-sub{font-size:11.5px;font-weight:600;color:var(--muted)}
+.ph-actions{display:flex;align-items:center;gap:8px;flex:none}
+.ph-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:38px;min-width:38px;padding:0 13px;border-radius:10px;border:1px solid var(--btn-border);background:var(--btn);color:var(--text);font-size:13.5px;font-weight:700;text-decoration:none;cursor:pointer;white-space:nowrap;transition:background .15s,border-color .15s,transform .15s}
+.ph-btn:hover{background:var(--btn-hover)}
+.ph-btn:active{transform:translateY(1px)}
+.ph-btn:focus-visible{outline:2px solid var(--text);outline-offset:2px}
+.ph-btn.icon{padding:0;width:38px}
+.ph-btn.primary{background:var(--primary);border-color:var(--primary);color:var(--primary-text)}
+.ph-btn.primary:hover{background:var(--primary-hover);border-color:var(--primary-hover)}
+.ph-btn svg{width:17px;height:17px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+#ph-show{position:fixed;top:10px;right:12px;z-index:11;height:32px;padding:0 12px;font-size:12.5px;opacity:.55;box-shadow:0 4px 18px rgba(0,0,0,.3)}
+#ph-show:hover,#ph-show:focus-visible{opacity:1}
+#ph-stage{position:fixed;inset:var(--bar-h) 0 0;transition:top .25s ease}
+.bar-hidden #ph-stage{top:0}
+#ph-frame{display:block;width:100%;height:100%;border:0;background:var(--bg)}
+#ph-loading{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:var(--bg);transition:opacity .3s ease,visibility .3s}
+#ph-loading.done{opacity:0;visibility:hidden}
+#ph-loading img{width:84px;height:84px;border-radius:18px;object-fit:cover;border:1px solid var(--border);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.ph-spinner{width:30px;height:30px;border-radius:50%;border:3px solid var(--border);border-top-color:var(--text);animation:ph-spin .8s linear infinite}
+#ph-loading p{margin:0;font-weight:700;color:var(--muted)}
+@keyframes ph-spin{to{transform:rotate(360deg)}}
+#ph-hint{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);width:min(560px,calc(100% - 28px));display:flex;align-items:center;gap:12px;padding:12px 12px 12px 16px;border-radius:14px;background:var(--surface);border:1px solid var(--border);box-shadow:0 12px 40px rgba(0,0,0,.4);z-index:5}
+#ph-hint[hidden],#ph-show[hidden],.ph-btn[hidden]{display:none}
+#ph-hint p{margin:0;flex:1;font-size:13px;color:var(--muted)}
+#ph-hint strong{display:block;color:var(--text);font-size:14px;margin-bottom:2px}
+@media(max-width:700px){#ph-logo,.ph-divider,.ph-sub,#ph-bar .label{display:none}#ph-bar{gap:10px;padding:0 10px}#ph-bar .ph-btn{padding:0;width:38px}#ph-hint{flex-wrap:wrap;padding:14px}#ph-hint p{flex:1 1 calc(100% - 50px)}#ph-hint-direct,#ph-retry{order:1;flex:1}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation-duration:2s!important}}`;doc.head.append(style);
+                // Static markup only; game data is filled in below with textContent/attributes.
+                doc.body.innerHTML=`
+<header id="ph-bar">
+  <img id="ph-logo" alt="Powerhouse">
+  <span class="ph-divider" aria-hidden="true"></span>
+  <img id="ph-thumb" alt="">
+  <div class="ph-titles"><span id="ph-title"></span><span class="ph-sub">Playing on Powerhouse</span></div>
+  <nav class="ph-actions" aria-label="Game controls">
+    <button id="ph-reload" class="ph-btn icon" type="button" title="Reload game" aria-label="Reload game"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg></button>
+    <button id="ph-full" class="ph-btn icon" type="button" title="Fullscreen" aria-label="Fullscreen"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+    <button id="ph-hide" class="ph-btn icon" type="button" title="Hide bar" aria-label="Hide bar"><svg viewBox="0 0 24 24"><path d="m6 15 6-6 6 6"/></svg></button>
+    <a id="ph-direct" class="ph-btn" target="_blank" rel="noopener noreferrer" title="Open the game in a normal tab"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg><span class="label">Open Direct</span></a>
+    <button id="ph-close" class="ph-btn primary" type="button" title="Close tab"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg><span class="label">Close</span></button>
+  </nav>
+</header>
+<button id="ph-show" class="ph-btn" type="button" hidden>Show bar</button>
+<main id="ph-stage">
+  <iframe id="ph-frame" allow="autoplay; fullscreen; gamepad; clipboard-write" allowfullscreen></iframe>
+  <div id="ph-loading" role="status"><img id="ph-loading-thumb" alt=""><div class="ph-spinner" aria-hidden="true"></div><p id="ph-loading-text"></p></div>
+  <div id="ph-hint" role="alert" hidden>
+    <p><strong>Game blank or not loading?</strong>Some sites block being loaded inside another page. Open it directly instead.</p>
+    <a id="ph-hint-direct" class="ph-btn primary" target="_blank" rel="noopener noreferrer">Open Direct</a>
+    <button id="ph-retry" class="ph-btn" type="button">Try again</button>
+    <button id="ph-hint-close" class="ph-btn icon" type="button" aria-label="Dismiss"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+</main>`;
+                const title=game.title||'Game', thumb=String(game.thumb||'');
+                const $=id=>doc.getElementById(id);
+                $('ph-logo').src=light?PH_LOGOS.light:PH_LOGOS.dark;
+                $('ph-title').textContent=title;
+                $('ph-frame').title=title;
+                $('ph-loading-text').textContent='Loading '+title+'…';
+                $('ph-direct').href=url;$('ph-hint-direct').href=url;
+                for(const img of [$('ph-thumb'),$('ph-loading-thumb')]){
+                    if(thumb){img.src=thumb;img.onerror=()=>{img.style.display='none';};}else img.style.display='none';
+                }
                 // Capability detection belongs to the new window. These are browser
                 // features, not polyfills: a cross-origin iframe controls its own APIs.
                 // Use `in`, never read prototype.audioWorklet: that getter throws
@@ -3329,22 +3454,8 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                     return context;
                 };
                 tab.powerhouseCapabilities = capabilities;
-                const availability=doc.createElement('span');
-                availability.className='launch-features';
-                availability.textContent = 'AudioWorklet: '+(capabilities.audioWorklet?'available':'unavailable')+
-                    ' · SharedArrayBuffer: '+(capabilities.sharedArrayBuffer?'available':'requires isolation');
-                availability.title='These statuses describe the About:Blank wrapper, not the embedded website. SharedArrayBuffer needs COOP/COEP headers and cross-origin isolation; an iframe also needs appropriate embedding permission.';
-                const direct=doc.createElement('a');direct.href=url;direct.target='_blank';direct.rel='noopener noreferrer';direct.textContent='Open Direct';
-                const close=doc.createElement('button');close.textContent='Close';close.onclick=()=>tab.close();
-                bar.append(image,label,availability,direct,close);
-                const main=doc.createElement('main');
-                const frame=doc.createElement('iframe');frame.allow='autoplay; fullscreen; gamepad';frame.allowFullscreen=true;frame.src=url;frame.title=game.title||'Game';
-                const blocked=doc.createElement('div');blocked.id='blocked';
-                const h=doc.createElement('h2');h.textContent='Unable to embed this game';
-                const notice=doc.createElement('p');notice.textContent='Some websites prevent loading inside another page. Try opening the game directly.';
-                const fallback=doc.createElement('a');fallback.href=url;fallback.target='_blank';fallback.rel='noopener noreferrer';fallback.textContent='Open Direct';
-                blocked.append(h,notice,fallback);main.append(frame,blocked);doc.body.append(bar,main);
-                frame.onerror=()=>{frame.style.display='none';blocked.style.display='flex'};
+                tab.__phLaunch = { url, title };
+                const runtime=doc.createElement('script');runtime.textContent='('+powerhouseBlankRuntime.toString()+')();';doc.body.append(runtime);
             } catch (error) {
                 // Stay on about:blank: fall back to a bare full-page iframe, and only
                 // navigate the tab to the real URL if even that is impossible.
