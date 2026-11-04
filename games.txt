@@ -1020,18 +1020,6 @@
     "date_added": "N/A"
   },
   {
-    "title": "Fortnite OG",
-    "category": "Action",
-    "desc": "Drop into OG.",
-    "thumb": "https://fortniteog.lol/assets/logo.png",
-    "link": "https://fortniteog.lol/fortnite",
-    "verified": false,
-    "OG": false,
-    "useBlank": true,
-    "new": false,
-    "date_added": "10/09/2026"
-  },
-  {
     "title": "mySmartPass",
     "category": "Tools",
     "desc": "A self-hosted digital hall pass app inspired by SmartPass, built as a hobby project.",
