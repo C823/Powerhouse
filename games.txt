@@ -1219,5 +1219,16 @@
     "OG": true,
     "new": true,
     "date_added": "11/4/2026"
+  },
+  {
+    "title": "Dirt & Air",
+    "category": "Arcade",
+    "desc": "A bike game. ride a BMX or a mountain bike through a skatepark or down a forest trail, and chain tricks together for the high score.",
+    "thumb": "https://raw.githubusercontent.com/C823/assets/refs/heads/main/bike-game-thumbnail.png",
+    "link": "https://home.c823.workers.dev/bike-game",
+    "verified": false,
+    "OG": true,
+    "new": true,
+    "date_added": "11/4/2026"
   }
 ]
