@@ -1052,7 +1052,7 @@
     "verified": false,
     "OG": false,
     "useBlank": true,
-    "new": true,
+    "new": false,
     "date_added": "10/11/2026"
   },
   {
@@ -1064,7 +1064,7 @@
     "verified": false,
     "OG": false,
     "useBlank": true,
-    "new": true,
+    "new": false,
     "date_added": "10/11/2026"
   },
   {
@@ -1076,7 +1076,7 @@
     "verified": false,
     "OG": false,
     "useBlank": true,
-    "new": true,
+    "new": false,
     "date_added": "10/11/2026"
   },
   {
@@ -1088,7 +1088,7 @@
     "verified": false,
     "OG": false,
     "useBlank": true,
-    "new": true,
+    "new": false,
     "date_added": "10/11/2026"
   },
   {
@@ -1100,7 +1100,7 @@
     "verified": false,
     "OG": false,
     "useBlank": true,
-    "new": true,
+    "new": false,
     "date_added": "10/11/2026"
   },
   {
@@ -1112,7 +1112,7 @@
     "verified": false,
     "OG": false,
     "useBlank": true,
-    "new": true,
+    "new": false,
     "date_added": "10/11/2026"
   },
   {
@@ -1124,7 +1124,7 @@
     "verified": false,
     "OG": false,
     "useBlank": true,
-    "new": true,
+    "new": false,
     "date_added": "10/11/2026"
   },
   {
@@ -1136,7 +1136,7 @@
     "verified": false,
     "OG": false,
     "useBlank": true,
-    "new": true,
+    "new": false,
     "date_added": "10/11/2026"
   },
   {
@@ -1148,7 +1148,7 @@
     "verified": false,
     "OG": false,
     "useBlank": false,
-    "new": true,
+    "new": false,
     "date_added": "10/11/2026"
   },
   {
@@ -1160,7 +1160,7 @@
     "verified": true,
     "OG": false,
     "useBlank": false,
-    "new": true,
+    "new": false,
     "date_added": "10/12/2026"
   },
   {
@@ -1172,7 +1172,7 @@
     "verified": false,
     "OG": false,
     "useBlank": false,
-    "new": true,
+    "new": false,
     "date_added": "10/17/2026"
   },
   {
