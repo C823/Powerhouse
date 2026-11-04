@@ -1181,7 +1181,7 @@
     "desc": "Backrooms: Endless is a browser horror game where you're trapped in the Backrooms. Find the key on each level, reach the exit door, and go deeper. Every level is a bigger maze with more entities hunting you.",
     "thumb": "https://raw.githubusercontent.com/C823/assets/refs/heads/main/backrooms_thumbnail.png",
     "link": "https://home.c823.workers.dev/backrooms-game",
-    "verified": false,
+    "verified": true,
     "OG": true,
     "useBlank": false,
     "new": true,
@@ -1193,10 +1193,31 @@
     "desc": "Buy a made-up pro football team with money from a retiring investor, then run it: draft and sign players, set ticket prices, upgrade the stadium, and coach or watch every game on an animated field.",
     "thumb": "https://raw.githubusercontent.com/C823/assets/refs/heads/main/gridiron_thumbnail.png",
     "link": "https://home.c823.workers.dev/football-manager",
-    "verified": false,
+    "verified": true,
     "OG": true,
-    "useBlank": false,
     "new": true,
     "date_added": "10/25/2026"
+  },
+  {
+    "title": "Pong",
+    "category": "Arcade",
+    "desc": "A two-dimensional sports video game that simulates table tennis, where players control paddles to hit a ball back and forth, aiming to score points by making the opponent fail to return the ball.",
+    "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fa57.foxnews.com%2Fa57.foxnews.com%2Fstatic.foxnews.com%2Ffoxnews.com%2Fcontent%2Fuploads%2F2018%2F09%2F640%2F320%2F1862%2F1048%2Fa7fc3a1e-Pong.jpg%3Fve%3D1%26tl%3D1%3Fve%3D1%26tl%3D1&f=1&nofb=1&ipt=1ecf1c9ece58a4a3bc024e1c36b3d61a60a91ebce71e4415bb2c4533f756fcfc&ipo=images",
+    "link": "https://home.c823.workers.dev/pong",
+    "verified": true,
+    "OG": true,
+    "new": true,
+    "date_added": "11/04/2026"
+  },
+  {
+    "title": "Pool",
+    "category": "Arcade",
+    "desc": "A cue sport played on a table with six pockets, where players aim to pocket balls using a cue stick. ",
+    "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fplay-lh.googleusercontent.com%2Fp9xFn7QNBALEji76nsC8PBYr-ILCJFfbiN3Bdr7tcZPmThI9GqE9ZK0xOLEB1hVoHg%3Dw526-h296&f=1&nofb=1&ipt=f6d0e06b56717e5f8c9e1d1fc9217e91a01d5ec8cd0a8aead5ad679a063203f6&ipo=images",
+    "link": "https://home.c823.workers.dev/pool",
+    "verified": false,
+    "OG": true,
+    "new": true,
+    "date_added": "11/4/2026"
   }
 ]
