@@ -1532,6 +1532,10 @@ body[data-theme="light"]{--panel:#fff;--panel-2:#f3f5f8;--field:#fff;--line:rgba
 :where(.admin-btn,.mod-btn,.blog-action,.profile-action,.social-request-decline,.staff-btn,.search-user-action,.messages-action,#profile-message-action,
   #account-userid-copy,#settings-view [onclick="resetHomeLayout()"]):hover:not(:disabled){border-color:var(--text-muted)!important}
 :where(.admin-btn,.mod-btn,.blog-action,.staff-btn,.messages-action,#account-userid-copy,#account-about-save):disabled{opacity:.45;cursor:not-allowed}
+/* The display:inline-flex above would otherwise un-hide buttons the page hides with the
+   hidden attribute (e.g. "Send Request" on your own profile). */
+:where(.admin-btn,.mod-btn,.blog-action,.profile-action,.social-action,.social-request-decline,.social-request-accept,.staff-btn,.search-user-action,.messages-action,#profile-message-action,
+  #account-userid-copy,#account-about-save,#settings-view .landing-btn,#settings-view [onclick="resetHomeLayout()"])[hidden]{display:none!important}
 :where(.admin-btn.primary,.mod-btn.primary,.social-request-accept,#account-about-save,#settings-view .landing-btn){background:var(--text)!important;border-color:var(--text)!important;color:var(--bg-main)!important}
 :where(.admin-btn.primary,.mod-btn.primary,.social-request-accept,#account-about-save,#settings-view .landing-btn):hover:not(:disabled){opacity:.88}
 :where(.admin-btn.danger,.mod-btn.danger){background:transparent!important;border-color:rgba(255,107,107,.4)!important;color:var(--danger-text)!important}
@@ -1632,6 +1636,10 @@ body[data-theme="light"] #user-dropdown{box-shadow:0 18px 40px rgba(15,23,42,.14
 #sidebar .classroom-globe-icon{width:20px;height:20px}
 #sidebar .sidebar-release{font-size:11px!important;color:var(--text-muted)!important;opacity:.7;letter-spacing:.04em}
 body[data-compact-sidebar="true"] #sidebar .nav-label{display:none!important}
+/* Username at the top of the compact sidebar: a button that opens your profile */
+body[data-compact-sidebar="true"] #sidebar .compact-sidebar-username{width:calc(100% - 6px);background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:0 0 9px;font-family:var(--font-ui);font-size:17px;font-weight:700;color:var(--text);text-align:left;cursor:pointer;transition:color .15s}
+body[data-compact-sidebar="true"] #sidebar .compact-sidebar-username:hover{color:var(--brand)}
+body[data-compact-sidebar="true"] #sidebar .compact-sidebar-username:empty{display:none}
 
 /* Type scale for content */
 #main-wrapper h1{letter-spacing:-.022em}
@@ -1720,6 +1728,12 @@ body[data-theme="light"] .game-card:hover .game-thumb{box-shadow:0 14px 30px rgb
 #game-detail-content{display:flex;flex-direction:column;gap:20px}
 .gp-hero{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(300px,1fr);gap:20px;align-items:stretch}
 .gp-hero > *{min-width:0}
+/* Thumbnails come in every shape: fill the 16:10 frame and crop the excess (centered)
+   instead of letterboxing, so every game page's cover looks the same size. */
+#game-detail-content .gp-hero .game-hero-image{position:absolute!important;inset:0;width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;object-fit:cover!important;object-position:center!important;padding:0!important}
+#game-detail-content .gp-hero .game-cover-backdrop{display:none!important}
+/* Same rule for every other game thumbnail (cards, search results, suggestions) */
+.game-thumb,.search-game-item > img,.suggest-item img,.featured-art{object-fit:cover!important;object-position:center!important}
 .gp-hero .game-cover{width:100%!important;max-width:100%!important;height:auto!important;max-height:none!important;min-height:0!important;aspect-ratio:16/10;align-self:start;border-radius:var(--r-lg)!important;border:1px solid var(--line)!important}
 .gp-info{display:flex;flex-direction:column;gap:14px;min-width:0;padding:24px;border-radius:var(--r-lg);background:var(--panel);border:1px solid var(--line)}
 .gp-badges{display:flex;flex-wrap:wrap;gap:6px}
@@ -1767,6 +1781,48 @@ body[data-theme="light"] .gp-badge-ok{color:#1a7f4b;background:rgba(26,127,75,.0
     .gp-info{padding:18px}
     .gp-actions{flex-direction:column}
     .gp-actions .gp-btn{flex:none}
+}
+
+/* Profile: banner header card, then About and Favorite games as their own cards */
+#profile-view{display:flex;flex-direction:column;gap:20px}
+#profile-view .profile-page-card{position:relative;padding:0!important;min-height:0!important;overflow:hidden;isolation:isolate}
+#profile-view .pf-banner{position:relative;height:150px;overflow:hidden;background:linear-gradient(135deg,var(--brand-soft),var(--panel-2))}
+#profile-view .pf-banner img{position:absolute;inset:-40px;width:calc(100% + 80px);height:calc(100% + 80px);object-fit:cover;filter:blur(36px) saturate(1.4) brightness(.6);transform:scale(1.05)}
+#profile-view .pf-banner img:not([src]),#profile-view .pf-banner img[src=""]{display:none}
+#profile-view .pf-banner::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,color-mix(in srgb,var(--panel) 55%,transparent))}
+/* Only the avatar overlaps the banner; name, stats and buttons sit below it */
+#profile-view .profile-topline{display:grid!important;grid-template-columns:auto minmax(0,1fr) auto;align-items:start;gap:20px!important;min-height:0!important;padding:14px 28px 24px!important;margin:0!important;position:relative}
+#profile-view .profile-avatar-frame{width:120px!important;height:120px!important;margin-top:-74px;border-radius:50%!important;border:4px solid var(--panel)!important;background:var(--panel-2)!important;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+#profile-view .profile-render{width:100%;height:100%;object-fit:cover;display:block}
+#profile-view .profile-head-details{min-width:0;padding-bottom:4px}
+#profile-view .profile-username{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:0 0 8px!important;font-size:clamp(24px,2.6vw,32px)!important;font-weight:700!important;letter-spacing:-.025em;line-height:1.15;color:var(--text)!important;overflow-wrap:anywhere}
+#profile-view .pf-stats{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px;color:var(--text-muted)}
+#profile-view .pf-stat strong{color:var(--text);font-weight:600}
+#profile-view .profile-head-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:8px;padding-bottom:4px}
+#profile-view :is(#profile-edit-button,#profile-friend-action,#profile-message-action){min-height:40px;padding:0 16px!important}
+/* Main action: "Send Request" for non-friends, "Message" for friends; "Remove Friend" stays quiet */
+#profile-view #profile-friend-action:not([disabled]):not(.is-friend),#profile-view #profile-message-action{background:var(--text)!important;border-color:var(--text)!important;color:var(--bg-main)!important}
+#profile-view #profile-friend-action.is-friend{background:transparent!important;color:var(--text-muted)!important}
+#profile-view #profile-friend-action.is-friend:hover{color:var(--danger-text)!important;border-color:rgba(255,107,107,.45)!important}
+#profile-view .profile-friend-feedback{flex-basis:100%;text-align:right;font-size:13px;color:var(--text-muted)}
+#profile-view .profile-friend-feedback:empty{display:none}
+#profile-view .pf-card{background:var(--panel)!important;border:1px solid var(--line)!important;border-radius:var(--r-lg)!important;padding:22px 24px!important;margin:0!important}
+#profile-view .profile-about-title,#profile-view .profile-favorites-heading{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:0 0 12px}
+#profile-view .pf-card h2{margin:0!important;font-size:17px!important;font-weight:650!important;letter-spacing:-.012em}
+#profile-view #profile-about-edit{background:none;border:0;padding:4px 8px;border-radius:6px;color:var(--text-muted);font:inherit;font-size:13px;font-weight:600;cursor:pointer}
+#profile-view #profile-about-edit:hover{color:var(--text);background:var(--accent-light)}
+#profile-view #profile-about{margin:0;color:var(--text);font-size:15px;line-height:1.6;white-space:pre-wrap;overflow-wrap:anywhere;max-width:75ch}
+#profile-view #profile-favorites-count{font-size:13px;color:var(--text-muted)}
+#profile-view .profile-favorites-grid{display:grid!important;grid-template-columns:repeat(auto-fill,minmax(min(100%,180px),1fr))!important;gap:16px!important}
+@media (max-width:760px){
+    #profile-view .pf-banner{height:110px}
+    #profile-view .profile-topline{grid-template-columns:1fr;gap:12px!important;padding:0 18px 18px!important}
+    #profile-view .profile-avatar-frame{width:96px!important;height:96px!important;margin-top:-48px}
+    #profile-view .profile-head-actions{justify-content:stretch}
+    #profile-view .profile-head-actions .profile-action{flex:1 1 auto}
+    #profile-view .profile-friend-feedback{text-align:left}
+    #profile-view .pf-card{padding:18px!important}
+    #profile-view .profile-favorites-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}
 }
 
 /* OG badge tooltip opens leftward from the badge (it sits at the end of the title),
@@ -2622,7 +2678,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
     <!-- SIDEBAR -->
     <aside id="sidebar">
         <div class="logo-area"><button type="button" class="sidebar-logo-link" title="Go to your start page" aria-label="Powerhouse — go to your start page" onclick="navigateTo(isGuest() ? 'home' : startingPage())"><img src="https://raw.githubusercontent.com/C823/powerhouse/main/icons/POWERHOUSE-dark.svg" style="height:28px;" alt="Powerhouse" data-powerhouse-logo></button></div>
-        <div class="compact-sidebar-username" id="compact-sidebar-username" aria-label="Signed-in username"></div>
+        <button type="button" class="compact-sidebar-username" id="compact-sidebar-username" title="View your profile" onclick="if(user.username)navigateProfile(user.username)"></button>
         <nav class="nav-group">
             <div class="nav-label">Browse</div>
             <a href="/home" class="nav-item active" id="side-home">
@@ -2816,30 +2872,34 @@ function adminSetBanner(){return staffLegacySaveBanner();}
         <!-- PROFILE VIEW -->
         <section id="profile-view" class="view-section">
             <div class="profile-page-card">
+                <!-- Banner: a blurred copy of the profile picture (filled in by script) -->
+                <div class="pf-banner" aria-hidden="true"><img id="profile-banner" alt=""></div>
                 <div class="profile-topline">
                     <div class="profile-avatar-frame"><img id="profile-render" class="profile-render" src="" alt="Profile picture"></div>
                     <div class="profile-head-details">
                         <h1 id="profile-name-header" class="profile-username">User</h1>
-                        <div class="profile-friends-stat"><span id="profile-friends-number">—</span><span>Friends</span></div>
-                        <div class="profile-joined"><span>Joined</span><strong id="profile-joined-date">—</strong></div>
+                        <div class="pf-stats">
+                            <span class="pf-stat"><strong id="profile-friends-number">—</strong> Friends</span>
+                            <span class="pf-stat"><strong id="profile-favorites-number">—</strong> Favorites</span>
+                            <span class="pf-stat">Joined <strong id="profile-joined-date">—</strong></span>
+                        </div>
                     </div>
                     <div class="profile-head-actions">
-                        <button type="button" class="profile-action" id="profile-edit-button" onclick="showPage('settings');switchSettings('account')">Edit Profile</button>
+                        <button type="button" class="profile-action" id="profile-edit-button" onclick="showPage('settings');switchSettings('account')">Edit profile</button>
                         <button type="button" class="profile-action" id="profile-friend-action" hidden>Send Request</button>
                         <button type="button" class="profile-action" id="profile-message-action" hidden>Message</button>
                         <span id="profile-friend-feedback" class="profile-friend-feedback" role="status" aria-live="polite"></span>
                     </div>
                 </div>
-                <div class="profile-divider"></div>
-                <div class="profile-about-card">
-                    <div class="profile-about-title"><h2>About</h2><button type="button" id="profile-about-edit" onclick="showPage('settings');switchSettings('account')">✎ Edit</button></div>
-                    <p id="profile-about">No description yet.</p>
-                </div>
-                <div class="profile-favorites-card" aria-label="Favorite games">
-                    <div class="profile-favorites-heading"><h2>Favorite Games</h2><span id="profile-favorites-count"></span></div>
-                    <div id="profile-favorites-grid" class="profile-favorites-grid" aria-live="polite"><p class="profile-favorites-empty">Loading favorites…</p></div>
-                </div>
             </div>
+            <section class="profile-about-card pf-card" aria-labelledby="profile-about-heading">
+                <div class="profile-about-title"><h2 id="profile-about-heading">About</h2><button type="button" id="profile-about-edit" onclick="showPage('settings');switchSettings('account')">Edit</button></div>
+                <p id="profile-about">No description yet.</p>
+            </section>
+            <section class="profile-favorites-card pf-card" aria-label="Favorite games">
+                <div class="profile-favorites-heading"><h2>Favorite games</h2><span id="profile-favorites-count"></span></div>
+                <div id="profile-favorites-grid" class="profile-favorites-grid" aria-live="polite"><p class="profile-favorites-empty">Loading favorites…</p></div>
+            </section>
         </section>
 
         <!-- SETTINGS VIEW (RESTORED SECURITY) -->
@@ -5498,6 +5558,11 @@ button,a{font:inherit}
         // v2.21.22: Public favorites come from the profile API; never read the viewer's
         // local Favorites when displaying another account's profile.
         let profileFavoritesSequence = 0;
+        // Profile banner mirrors whatever picture the avatar ends up showing (including fallbacks).
+        document.getElementById('profile-render')?.addEventListener('load', event => {
+            const banner = document.getElementById('profile-banner');
+            if (banner) banner.src = event.target.currentSrc || event.target.src;
+        });
         async function renderProfileFavorites(profileName, titles) {
             const request = ++profileFavoritesSequence;
             const grid = document.getElementById('profile-favorites-grid');
@@ -5505,6 +5570,8 @@ button,a{font:inherit}
             if (!grid || !count) return;
             grid.replaceChildren();
             const message = text => { const p=document.createElement('p'); p.className='profile-favorites-empty';p.textContent=text;grid.replaceChildren(p); };
+            const stat = document.getElementById('profile-favorites-number');
+            if (stat) stat.textContent = Array.isArray(titles) ? String(titles.length) : '0';
             if (!Array.isArray(titles) || !titles.length) {count.textContent=''; message('No favorite games yet.'); return;}
             count.textContent = `${titles.length} saved`;
             message('Loading games…');
@@ -5565,6 +5632,7 @@ button,a{font:inherit}
                 ? (currentAbout || 'No description yet.')
                 : (cached?.about || 'Loading profile…');
             document.getElementById('profile-friends-number').textContent = '—';
+            document.getElementById('profile-favorites-number').textContent = '—';
             document.getElementById('profile-joined-date').textContent = formatProfileJoinDate(cached?.createdAt);
             document.getElementById('profile-favorites-count').textContent='';
             document.getElementById('profile-favorites-grid').innerHTML='<p class="profile-favorites-empty">Loading favorites…</p>';
