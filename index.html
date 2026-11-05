@@ -882,6 +882,13 @@
 #game-view .game-breadcrumb a:hover { color:#fff; }
 #game-view #game-breadcrumb-name { min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:60vw; color:#eee; }
 #game-detail-content { min-width:0; display:grid; gap:20px; padding-bottom:55px; }
+#game-detail-content .c823-board table { width:100%; border-collapse:collapse; font-size:14px; margin-top:6px; }
+#game-detail-content .c823-board th { text-align:left; font-size:12px; font-weight:700; color:var(--muted, #b5b5b5); padding:8px 10px; }
+#game-detail-content .c823-board td { padding:8px 10px; border-top:1px solid rgba(128,128,128,.25); }
+#game-detail-content .c823-board td:first-child, #game-detail-content .c823-board th:first-child { width:40px; }
+#game-detail-content .c823-board td:last-child { color:var(--muted, #b5b5b5); }
+#game-detail-content .c823-board tr.mine td { background:rgba(128,128,128,.18); font-weight:700; }
+#game-detail-content .c823-board .c823-board-note { margin:0; color:var(--muted, #b5b5b5); }
 #game-detail-content .game-cover { height:clamp(235px,40vw,490px); max-height:min(55vh,490px); min-height:235px; position:relative; isolation:isolate; overflow:hidden; display:grid; place-items:center; border-radius:18px; border:1px solid #3c3c3c; background:#101010; }
 #game-detail-content .game-cover-backdrop { position:absolute; inset:-35px; width:calc(100% + 70px); height:calc(100% + 70px); object-fit:cover; object-position:center; filter:blur(32px) brightness(.36) saturate(.75); transform:scale(1.04); opacity:.9; z-index:-1; pointer-events:none; }
 #game-detail-content .game-cover::after {content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.06),rgba(0,0,0,.18));}
@@ -3668,11 +3675,35 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             load();
             frame.focus();
         }
+        // The C823 games (games.txt links under home.c823.workers.dev/play/) keep their scores and saves on C823.
+        // A signed-in player's game opens with a 5-minute code after the # (from /auth/game-token), so C823
+        // knows who's playing and their scores land under their Powerhouse name. Signed out = guest.
+        const C823_HOME = 'https://home.c823.workers.dev';
+        const isC823Game = game => String(game?.link || '').trim().startsWith(C823_HOME + '/play/');
+        async function c823GameUrl(url) {
+            if (!user.token) return url;
+            try {
+                const r = await fetch(`${API_BASE}/auth/game-token`, { method: 'POST', headers: { Authorization: `Bearer ${user.token}` } });
+                const j = r.ok ? await r.json() : null;
+                return j && j.token ? url + '#ph=' + encodeURIComponent(j.token) : url;
+            } catch (e) { return url; }
+        }
         function launchPowerhouseGame(game, event, mode = 'direct') {
             if (event) event.preventDefault();
             const url = String(game?.link || '').trim();
             if (!/^https?:\/\//i.test(url)) return;
             recordRecentlyPlayed(game);
+            if (isC823Game(game) && user.token) {
+                // Open the tab during the click (popup blockers), then point it at the game once the code is back.
+                const tab = window.open('about:blank', '_blank');
+                if (!tab) { window.open(url, '_blank', 'noopener,noreferrer'); return; }
+                c823GameUrl(url).then(full => {
+                    if (mode === 'blank') { fillBlankTab(tab, game, full); return; }
+                    try { tab.opener = null; } catch (e) {}
+                    tab.location.replace(full);
+                });
+                return;
+            }
             if (mode !== 'blank') {
                 window.open(url, '_blank', 'noopener,noreferrer');
                 return;
@@ -3680,6 +3711,9 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             // Open synchronously during the click to avoid popup blockers.
             const tab = window.open('about:blank', '_blank');
             if (!tab) { window.open(url, '_blank', 'noopener,noreferrer'); return; }
+            fillBlankTab(tab, game, url);
+        }
+        function fillBlankTab(tab, game, url) {
             try {
                 const doc = tab.document;
                 const light = document.body.getAttribute('data-theme') === 'light';
@@ -3917,7 +3951,46 @@ button,a{font:inherit}
                 addField('Category',category);addField('Unblocked status',isVerifiedGame(game)?'Verified':'Not verified');addField('Date added',formatGameAddedDate(game.date_added));
                 panel.append(about,description,details);
                 host.replaceChildren(cover,top,panel);
+                if(game.c823board)host.append(c823BoardPanel(game.c823board));
             }catch(error){if(seq!==gameDetailRequest)return;host.replaceChildren();const fail=document.createElement('div');fail.className='game-detail-message';fail.textContent='Could not load this game. Please try again later.';host.append(fail);}
+        }
+        // Leaderboards for the C823 games. The scores are stored on home.c823.workers.dev (public, read-only here);
+        // a moved C823 account and a Powerhouse account are the same name, so your own row is highlighted.
+        const C823_BOARD_TEXT = {
+            backrooms: r => 'Level ' + r.score,
+            gridiron: r => { const v = Number(r.score) || 0; return v >= 1000 ? '$' + (v / 1000).toFixed(2) + 'B' : '$' + v.toFixed(v >= 10 ? 1 : 2) + 'M'; },
+            dirtair: r => Number(r.score).toLocaleString('en-US') + ' pts',
+            pool: r => r.score + ' pts',
+            pong: r => r.points + ' pts',
+        };
+        const C823_BOARD_EXTRA = {
+            pool: r => { const w = parseInt(r.extra, 10) || 0; return w + ' win' + (w === 1 ? '' : 's'); },
+            pong: r => r.wins + ' win' + (r.wins === 1 ? '' : 's') + ' in ' + r.played,
+        };
+        function c823BoardPanel(id) {
+            const panel = document.createElement('section'); panel.className = 'game-content-panel c823-board';
+            const h = document.createElement('h2'); h.textContent = 'Leaderboard';
+            const note = document.createElement('p'); note.className = 'c823-board-note'; note.textContent = 'Loading the leaderboard…';
+            panel.append(h, note);
+            const url = id === 'pong' ? C823_HOME + '/api/pong?diff=all' : C823_HOME + '/api/scores?game=' + encodeURIComponent(id);
+            fetch(url, { cache: 'no-store' }).then(r => r.ok ? r.json() : Promise.reject(r.status)).then(d => {
+                const rows = (d && d.rows) || [];
+                if (!rows.length) { note.textContent = user.token ? 'No scores yet. Play to get on the board!' : 'No scores yet. Sign in and play to get on the board!'; return; }
+                note.textContent = user.token ? '' : 'Sign in before you play to get your name on the board.';
+                const table = document.createElement('table');
+                const head = table.createTHead().insertRow();
+                for (const t of ['#', 'Player', 'Best', '']) { const th = document.createElement('th'); th.textContent = t; head.append(th); }
+                const body = table.createTBody();
+                const me = String(user.username || '').toLowerCase();
+                for (const r of rows.slice(0, 50)) {
+                    const tr = body.insertRow();
+                    if (me && String(r.user || '').toLowerCase() === me) tr.className = 'mine';
+                    const extra = C823_BOARD_EXTRA[id] ? C823_BOARD_EXTRA[id](r) : (r.extra || '');
+                    for (const v of [r.rank, r.name, (C823_BOARD_TEXT[id] || (x => x.score))(r), extra]) { const td = tr.insertCell(); td.textContent = v; }
+                }
+                panel.append(table);
+            }).catch(() => { note.textContent = "The leaderboard isn't available right now."; });
+            return panel;
         }
         async function renderSearchPage() {
             const q = (new URLSearchParams(location.search).get('q') || '').trim().slice(0,80);
