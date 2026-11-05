@@ -889,6 +889,8 @@
 #game-detail-content .c823-board td:last-child { color:var(--muted, #b5b5b5); }
 #game-detail-content .c823-board tr.mine td { background:rgba(128,128,128,.18); font-weight:700; }
 #game-detail-content .c823-board .c823-board-note { margin:0; color:var(--muted, #b5b5b5); }
+#game-detail-content .c823-board .c823-board-player { color:inherit; font-weight:700; text-decoration:none; }
+#game-detail-content .c823-board .c823-board-player:hover { text-decoration:underline; }
 #game-detail-content .game-cover { height:clamp(235px,40vw,490px); max-height:min(55vh,490px); min-height:235px; position:relative; isolation:isolate; overflow:hidden; display:grid; place-items:center; border-radius:18px; border:1px solid #3c3c3c; background:#101010; }
 #game-detail-content .game-cover-backdrop { position:absolute; inset:-35px; width:calc(100% + 70px); height:calc(100% + 70px); object-fit:cover; object-position:center; filter:blur(32px) brightness(.36) saturate(.75); transform:scale(1.04); opacity:.9; z-index:-1; pointer-events:none; }
 #game-detail-content .game-cover::after {content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.06),rgba(0,0,0,.18));}
@@ -3987,6 +3989,14 @@ button,a{font:inherit}
                     if (me && String(r.user || '').toLowerCase() === me) tr.className = 'mine';
                     const extra = C823_BOARD_EXTRA[id] ? C823_BOARD_EXTRA[id](r) : (r.extra || '');
                     for (const v of [r.rank, r.name, (C823_BOARD_TEXT[id] || (x => x.score))(r), extra]) { const td = tr.insertCell(); td.textContent = v; }
+                    // players whose account is on Powerhouse (r.ph, their Powerhouse name) link to their profile
+                    if (r.ph) {
+                        const link = document.createElement('a'); link.className = 'c823-board-player'; link.textContent = r.name;
+                        if (Number.isSafeInteger(r.phid) && r.phid > 0) { profileIds.set(r.ph, r.phid); link.href = `/users/${r.phid}/profile`; }
+                        else { link.href = profileURL(r.ph); bindProfileHref(link, r.ph); }
+                        link.addEventListener('click', e => { if (e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return; e.preventDefault(); navigateProfile(r.ph); });
+                        tr.cells[1].replaceChildren(link);
+                    }
                 }
                 panel.append(table);
             }).catch(() => { note.textContent = "The leaderboard isn't available right now."; });
