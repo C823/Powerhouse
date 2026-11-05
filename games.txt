@@ -1229,16 +1229,5 @@
     "OG": false,
     "new": false,
     "date_added": "11/04/2025"
-  },
-  {
-    "title": "Golf Orbit LearnDuck",
-    "category": "Sports",
-    "desc": "Golf Orbit is an exciting golf simulator game within our sports category where you aim to launch golf balls to incredible heights, even reaching Mars. Have fun in one-shot golf battles, complete challenging levels, and master the art of the perfect shot.",
-    "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fyoplay.io%2Fdata%2Fimage%2Fgame%2Fgolf-orbit.jpg&f=1&nofb=1&ipt=7337dee1af291afc58c69f33942d7ab6656e52f576ef33b8732de8872276422e&ipo=images",
-    "link": "https://db.duckmath.org/html/golf_orbit/unity-2020.js",
-    "verified": false,
-    "OG": false,
-    "new": false,
-    "date_added": "11/04/2026"
   }
 ]
