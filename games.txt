@@ -192,18 +192,6 @@
     "date_added": "N/A"
   },
   {
-    "title": "Eaglercraft",
-    "category": "Adventure",
-    "desc": "Play Minecraft 1.8.8 directly in your browser with full multiplayer support.",
-    "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUJrDtymSXQF87It_b6EzIm1njr9MYmJPxmQ&s",
-    "link": "https://duckmath.freetls.fastly.net/class/eagle-craft",
-    "verified": true,
-    "OG": false,
-    "useBlank": true,
-    "new": false,
-    "date_added": "N/A"
-  },
-  {
     "title": "Ai or Not?",
     "category": "Trivia & Party",
     "desc": "Test your skills at distinguishing between AI-generated and human images.",
@@ -1232,7 +1220,7 @@
     "date_added": "11/4/2026"
   },
   {
-    "title": "Eagle Craft",
+    "title": "Eaglercraft",
     "category": "Arcade",
     "desc": "Eaglercraft is Minecraft rebuilt to run on JavaScript and WebAssembly. Build and survive in singleplayer, join hundreds of multiplayer servers or open your world to friends, on Chromebooks, phones and pretty much anything with a browser.",
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.1EFGLRuF0B0lnNQ878NRxAHaEo%3Fr%3D0%26pid%3DApi&f=1&ipt=bf9ff3376181ed316d44f61f916fb37a93f4e5ed6af4d279823c4d7878e4293e&ipo=images",
