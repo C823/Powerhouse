@@ -1159,7 +1159,6 @@
     "link": "https://home.c823.workers.dev/backrooms-game",
     "verified": true,
     "OG": true,
-    "useBlank": false,
     "new": true,
     "date_added": "10/25/2026"
   },
@@ -1178,7 +1177,7 @@
     "title": "Pong",
     "category": "Simulator",
     "desc": "A two-dimensional sports video game that simulates table tennis, where players control paddles to hit a ball back and forth, aiming to score points by making the opponent fail to return the ball.",
-    "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fa57.foxnews.com%2Fa57.foxnews.com%2Fstatic.foxnews.com%2Ffoxnews.com%2Fcontent%2Fuploads%2F2018%2F09%2F640%2F320%2F1862%2F1048%2Fa7fc3a1e-Pong.jpg%3Fve%3D1%26tl%3D1%3Fve%3D1%26tl%3D1&f=1&nofb=1&ipt=1ecf1c9ece58a4a3bc024e1c36b3d61a60a91ebce71e4415bb2c4533f756fcfc&ipo=images",
+    "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%2Fid%2FOIP.odZ1o4wCKEbVAIzRSO4BuAHaEJ%3Fr%3D0%26pid%3DApi&f=1&ipt=be729e2fcdd2c60dabc5da6fd5dc82aa061a30a5b57ecd61e1dea61840f6fd33&ipo=images",
     "link": "https://home.c823.workers.dev/pong",
     "verified": true,
     "OG": true,
