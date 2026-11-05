@@ -1783,6 +1783,41 @@ body[data-theme="light"] .gp-badge-ok{color:#1a7f4b;background:rgba(26,127,75,.0
     .gp-actions .gp-btn{flex:none}
 }
 
+/* Visually hidden but read by screen readers */
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* All Games: compact pinned toolbar (search, sort, unblocked toggle, clear) + chips */
+/* nowrap/stretch: an older rule set flex-wrap:wrap, which in a column stack pushed rows sideways */
+#all-games-view .ag-toolbar{display:flex!important;flex-direction:column;flex-wrap:nowrap!important;align-items:stretch!important;gap:12px!important;padding:14px!important;margin-bottom:12px!important}
+#all-games-view .ag-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+#all-games-view .ag-search{position:relative;flex:1 1 260px;min-width:0;display:block!important;margin:0}
+#all-games-view .ag-search svg{position:absolute;left:12px;top:50%;width:17px;height:17px;transform:translateY(-50%);fill:none;stroke:var(--text-muted);stroke-width:2;stroke-linecap:round;pointer-events:none}
+#all-games-view #all-games-text-filter{width:100%;height:40px!important;padding:0 12px 0 38px!important;font-size:14px!important;font-weight:500!important}
+#all-games-view .ag-sort{display:block!important;margin:0;flex:0 0 auto}
+#all-games-view #all-games-sort{height:40px;padding:0 34px 0 12px;border-radius:var(--r-sm);border:1px solid var(--line-strong);background:var(--field);color:var(--text);font:inherit;font-size:14px;font-weight:500;cursor:pointer}
+.ag-toggle{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 14px;border-radius:var(--r-sm);border:1px solid var(--line-strong);background:var(--field);color:var(--text-muted);font:inherit;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap;transition:color .15s,border-color .15s,background .15s}
+.ag-toggle svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ag-toggle:hover{color:var(--text);border-color:var(--text-muted)}
+.ag-toggle[aria-pressed="true"]{color:#4cc38a;background:rgba(76,195,138,.1);border-color:rgba(76,195,138,.4)}
+body[data-theme="light"] .ag-toggle[aria-pressed="true"]{color:#1a7f4b;background:rgba(26,127,75,.08);border-color:rgba(26,127,75,.35)}
+.ag-clear{height:40px;padding:0 12px;border:0;border-radius:var(--r-sm);background:transparent;color:var(--brand);font:inherit;font-size:14px;font-weight:600;cursor:pointer}
+.ag-clear:hover{background:var(--brand-soft)}
+.ag-clear[hidden]{display:none}
+#all-games-view #all-games-chips{order:0;flex:none}
+.ag-summary{margin:0 0 22px;font-size:13.5px;color:var(--text-muted)}
+#all-games-view .category-heading{display:flex;align-items:baseline;gap:12px}
+#all-games-view .category-heading h2{margin-right:auto!important}
+.ag-view-all{border:0;background:none;padding:4px 8px;border-radius:6px;color:var(--text-muted);font:inherit;font-size:13.5px;font-weight:600;cursor:pointer}
+.ag-view-all:hover{color:var(--brand);background:var(--brand-soft)}
+.ag-empty{display:flex;flex-direction:column;align-items:center;gap:10px}
+.ag-empty p{margin:0}
+@media (max-width:760px){
+    #all-games-view .ag-search{flex-basis:100%}
+    #all-games-view .ag-sort,#all-games-view .ag-toggle{flex:1 1 0}
+    #all-games-view #all-games-sort{width:100%}
+    .ag-toggle{justify-content:center}
+}
+
 /* Profile: banner header card, then About and Favorite games as their own cards */
 #profile-view{display:flex;flex-direction:column;gap:20px}
 #profile-view .profile-page-card{position:relative;padding:0!important;min-height:0!important;overflow:hidden;isolation:isolate}
@@ -2812,21 +2847,34 @@ function adminSetBanner(){return staffLegacySaveBanner();}
 
         <!-- ALL GAMES / CATEGORY LIBRARY -->
         <section id="all-games-view" class="view-section" aria-label="All games organized by category">
-            <div class="all-games-heading"><div><h1>All Games</h1><p>Explore the entire Powerhouse library, grouped by category.</p></div><span id="all-games-total" class="all-games-total"></span></div>
-            <div class="all-games-filter-bar" role="group" aria-label="Filter All Games">
-                <label for="all-games-text-filter" class="all-games-text-label">Find a game
-                    <input type="search" id="all-games-text-filter" placeholder="Type a name…" autocomplete="off" maxlength="60">
-                </label>
-                <label for="all-games-category-filter" class="all-games-category-label">Category
-                    <select id="all-games-category-filter" aria-label="Filter games by category"><option value="">All categories</option></select>
-                </label>
-                <label for="all-games-unblocked-filter">Availability
-                    <select id="all-games-unblocked-filter" aria-label="Filter by unblocked status"><option value="all">All games</option><option value="verified">Unblocked only</option></select>
-                </label>
-                <span id="all-games-filter-result" class="all-games-filter-result" aria-live="polite"></span>
+            <div class="all-games-heading"><div><h1>All Games</h1><p>Browse every game on Powerhouse. Search, filter by category, or sort.</p></div><span id="all-games-total" class="all-games-total"></span></div>
+            <div class="all-games-filter-bar ag-toolbar" role="search" aria-label="Filter All Games">
+                <div class="ag-row">
+                    <label class="ag-search" for="all-games-text-filter">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                        <span class="sr-only">Find a game</span>
+                        <input type="search" id="all-games-text-filter" placeholder="Find a game…" autocomplete="off" maxlength="60">
+                    </label>
+                    <label class="ag-sort" for="all-games-sort"><span class="sr-only">Sort games</span>
+                        <select id="all-games-sort" aria-label="Sort games">
+                            <option value="category">By category</option>
+                            <option value="newest">Newest first</option>
+                            <option value="az">A–Z</option>
+                        </select>
+                    </label>
+                    <button type="button" id="all-games-unblocked-toggle" class="ag-toggle" aria-pressed="false" title="Only show games verified to be unblocked">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 7.6-1.7"/></svg>
+                        Unblocked only
+                    </button>
+                    <button type="button" id="all-games-clear" class="ag-clear" hidden>Clear filters</button>
+                </div>
+                <!-- Kept for older code paths; the chips and toggle above drive these values. -->
+                <select id="all-games-category-filter" aria-hidden="true" tabindex="-1" hidden><option value="">All categories</option></select>
+                <select id="all-games-unblocked-filter" aria-hidden="true" tabindex="-1" hidden><option value="all">All games</option><option value="verified">Unblocked only</option></select>
                 <div id="all-games-chips" class="category-chips" role="group" aria-label="Category"></div>
             </div>
-            <div id="all-games-categories" aria-live="polite"><p class="favorites-empty">Loading games…</p></div>
+            <p id="all-games-filter-result" class="ag-summary" aria-live="polite"></p>
+            <div id="all-games-categories"><p class="favorites-empty">Loading games…</p></div>
         </section>
 
         <!-- FULL FAVORITES PAGE -->
@@ -4714,30 +4762,59 @@ button,a{font:inherit}
             if (!names.includes(allGamesCategoryFilter)) allGamesCategoryFilter = '';
             select.value = allGamesCategoryFilter;
         }
+        // Sort mode for All Games: grouped by category (default), newest first, or A–Z.
+        let allGamesSort = (() => { try { const saved = localStorage.getItem('powerhouse:allGamesSort'); return ['category','newest','az'].includes(saved) ? saved : 'category'; } catch { return 'category'; } })();
+        const ALL_GAMES_GROUP_PREVIEW = 8;
+        function gameAddedTime(game) {
+            const match = /^(\d{2})\/(\d{2})\/(\d{4})$/.exec(String(game?.date_added || '').trim());
+            return match ? Date.UTC(+match[3], +match[1] - 1, +match[2]) : 0;
+        }
         function bindAllGamesFilters() {
-            const category = document.getElementById('all-games-category-filter');
-            const unblocked = document.getElementById('all-games-unblocked-filter');
-            if (category && !category.dataset.bound) {
-                category.dataset.bound = 'true';
-                category.addEventListener('change', () => { allGamesCategoryFilter = category.value; renderAllGamesPage(); });
-            }
-            if (unblocked && !unblocked.dataset.bound) {
-                unblocked.dataset.bound = 'true';
-                unblocked.addEventListener('change', () => { allGamesUnblockedFilter = unblocked.value; renderAllGamesPage(); });
-            }
-            if (unblocked) unblocked.value = allGamesUnblockedFilter;
             const text = document.getElementById('all-games-text-filter');
             if (text && !text.dataset.bound) {
                 text.dataset.bound = 'true';
                 text.addEventListener('input', () => { allGamesTextFilter = text.value; renderAllGamesPage(); });
             }
             if (text && text.value !== allGamesTextFilter) text.value = allGamesTextFilter;
+            const sort = document.getElementById('all-games-sort');
+            if (sort && !sort.dataset.bound) {
+                sort.dataset.bound = 'true';
+                sort.addEventListener('change', () => {
+                    allGamesSort = sort.value;
+                    try { localStorage.setItem('powerhouse:allGamesSort', allGamesSort); } catch {}
+                    renderAllGamesPage();
+                });
+            }
+            if (sort) sort.value = allGamesSort;
+            const toggle = document.getElementById('all-games-unblocked-toggle');
+            if (toggle && !toggle.dataset.bound) {
+                toggle.dataset.bound = 'true';
+                toggle.addEventListener('click', () => { allGamesUnblockedFilter = allGamesUnblockedFilter === 'verified' ? 'all' : 'verified'; renderAllGamesPage(); });
+            }
+            if (toggle) toggle.setAttribute('aria-pressed', String(allGamesUnblockedFilter === 'verified'));
+            const unblocked = document.getElementById('all-games-unblocked-filter');
+            if (unblocked) unblocked.value = allGamesUnblockedFilter;
+            const clear = document.getElementById('all-games-clear');
+            if (clear && !clear.dataset.bound) {
+                clear.dataset.bound = 'true';
+                clear.addEventListener('click', () => {
+                    allGamesCategoryFilter = ''; allGamesUnblockedFilter = 'all'; allGamesTextFilter = '';
+                    renderAllGamesPage();
+                    document.getElementById('all-games-text-filter')?.focus();
+                });
+            }
+        }
+        function allGamesGrid(games) {
+            const grid = document.createElement('div');
+            grid.className = 'category-game-grid all-games-full-grid';
+            grid.replaceChildren(...games.map(renderFavoriteGameCard));
+            return grid;
         }
         async function renderAllGamesPage() {
             const seq = ++allGamesRequest;
             const host = document.getElementById('all-games-categories');
             const total = document.getElementById('all-games-total');
-            const filterResult = document.getElementById('all-games-filter-result');
+            const summary = document.getElementById('all-games-filter-result');
             if (!host) return;
             bindAllGamesFilters();
             // Only show the loading text on the first load, not on every keystroke.
@@ -4752,21 +4829,53 @@ button,a{font:inherit}
                     renderAllGamesPage();
                 }, 'All');
                 const textQuery = allGamesTextFilter.trim().toLowerCase();
-                const textMatches = textQuery ? new Set(rankGamesForQuery(available, textQuery)) : null;
+                const ranked = textQuery ? rankGamesForQuery(available, textQuery) : null;
+                const textMatches = ranked ? new Set(ranked) : null;
                 const filtered = available.filter(game =>
                     (!allGamesCategoryFilter || gameCategory(game) === allGamesCategoryFilter) &&
                     (allGamesUnblockedFilter !== 'verified' || isVerifiedGame(game)) &&
                     (!textMatches || textMatches.has(game))
                 );
+                const filtersOn = Boolean(allGamesCategoryFilter || allGamesUnblockedFilter === 'verified' || textQuery);
+                const clear = document.getElementById('all-games-clear');
+                if (clear) clear.hidden = !filtersOn;
+                if (total) total.textContent = `${available.length} games · ${new Set(available.map(gameCategory)).size} categories`;
+                if (summary) {
+                    const parts = [`Showing ${filtered.length} of ${available.length} games`];
+                    if (allGamesCategoryFilter) parts.push(`in ${allGamesCategoryFilter}`);
+                    if (allGamesUnblockedFilter === 'verified') parts.push('· unblocked only');
+                    if (textQuery) parts.push(`· matching “${allGamesTextFilter.trim()}”`);
+                    summary.textContent = parts.join(' ');
+                }
+                host.replaceChildren();
+                if (!filtered.length) {
+                    const empty = document.createElement('div');
+                    empty.className = 'favorites-empty ag-empty';
+                    const msg = document.createElement('p');
+                    msg.textContent = textQuery ? `No games match “${allGamesTextFilter.trim()}”.` : 'No games match these filters.';
+                    const reset = document.createElement('button'); reset.type = 'button'; reset.className = 'ag-clear'; reset.textContent = 'Clear filters';
+                    reset.addEventListener('click', () => document.getElementById('all-games-clear')?.click());
+                    empty.append(msg, reset);
+                    host.append(empty);
+                    return;
+                }
+                const byTitle = (a, b) => String(a.title).localeCompare(String(b.title), undefined, {sensitivity: 'base'});
+                // A search shows best matches first; otherwise use the chosen sort.
+                if (textQuery) { host.append(allGamesGrid(ranked.filter(game => filtered.includes(game)))); return; }
+                if (allGamesSort === 'newest') {
+                    host.append(allGamesGrid([...filtered].sort((a, b) => Number(isNewGame(b)) - Number(isNewGame(a)) || gameAddedTime(b) - gameAddedTime(a) || byTitle(a, b))));
+                    return;
+                }
+                if (allGamesSort === 'az') { host.append(allGamesGrid([...filtered].sort(byTitle))); return; }
+                // "By category" with one category picked: that category's games, newest first.
+                if (allGamesCategoryFilter) { host.append(allGamesGrid(newestGamesFirst([...filtered].sort(byTitle)))); return; }
+                // Grouped overview: each category shows its first games with a "View all" button.
                 const groups = new Map();
                 for (const game of filtered) {
                     const category = gameCategory(game);
                     if (!groups.has(category)) groups.set(category, []);
                     groups.get(category).push(game);
                 }
-                host.replaceChildren();
-                if (total) total.textContent = `${available.length} games · ${new Set(available.map(gameCategory)).size} categories`;
-                if (filterResult) filterResult.textContent = `${filtered.length} shown`;
                 for (const [name, games] of [...groups.entries()].sort(([a], [b]) => a.localeCompare(b, undefined, { sensitivity: 'base' }))) {
                     const section = document.createElement('section');
                     section.className = 'category-block';
@@ -4778,17 +4887,17 @@ button,a{font:inherit}
                     count.className = 'category-heading-count';
                     count.textContent = `${games.length} game${games.length === 1 ? '' : 's'}`;
                     heading.append(title, count);
-                    const grid = document.createElement('div');
-                    grid.className = 'category-game-grid all-games-full-grid';
-                    grid.replaceChildren(...newestGamesFirst(games).map(renderFavoriteGameCard));
-                    section.append(heading, grid);
+                    // Only collapse when it hides a meaningful number of games (not just one or two).
+                    const collapse = games.length > ALL_GAMES_GROUP_PREVIEW + 2;
+                    if (collapse) {
+                        const more = document.createElement('button');
+                        more.type = 'button'; more.className = 'ag-view-all';
+                        more.textContent = `View all ${games.length}`;
+                        more.addEventListener('click', () => { allGamesCategoryFilter = name; renderAllGamesPage(); window.scrollTo({top: 0, behavior: 'smooth'}); });
+                        heading.append(more);
+                    }
+                    section.append(heading, allGamesGrid(collapse ? newestGamesFirst(games).slice(0, ALL_GAMES_GROUP_PREVIEW) : newestGamesFirst(games)));
                     host.append(section);
-                }
-                if (!filtered.length) {
-                    const empty = document.createElement('p');
-                    empty.className = 'favorites-empty';
-                    empty.textContent = textQuery ? `No games match “${allGamesTextFilter.trim()}”. Try another name or category.` : 'No games match these filters.';
-                    host.append(empty);
                 }
             } catch (error) {
                 if (seq === allGamesRequest) host.textContent = 'Could not load the game library. Please try again.';
