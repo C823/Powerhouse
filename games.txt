@@ -1156,57 +1156,61 @@
     "category": "Action",
     "desc": "Backrooms: Endless is a browser horror game where you're trapped in the Backrooms. Find the key on each level, reach the exit door, and go deeper. Every level is a bigger maze with more entities hunting you.",
     "thumb": "https://raw.githubusercontent.com/C823/assets/refs/heads/main/backrooms_thumbnail.png",
-    "link": "https://home.c823.workers.dev/backrooms-game",
+    "link": "https://home.c823.workers.dev/play/backrooms",
     "verified": true,
     "OG": true,
     "new": true,
-    "date_added": "10/25/2026"
+    "date_added": "10/25/2026",
+    "c823board": "backrooms"
   },
   {
     "title": "Gridiron Tycoon",
     "category": "Simulation",
     "desc": "Buy a made-up pro football team with money from a retiring investor, then run it: draft and sign players, set ticket prices, upgrade the stadium, and coach or watch every game on an animated field.",
     "thumb": "https://raw.githubusercontent.com/C823/assets/refs/heads/main/gridiron_thumbnail.png",
-    "link": "https://home.c823.workers.dev/football-manager",
+    "link": "https://home.c823.workers.dev/play/gridiron",
     "verified": true,
     "OG": true,
     "new": true,
-    "date_added": "10/25/2026"
+    "date_added": "10/25/2026",
+    "c823board": "gridiron"
   },
   {
     "title": "Pong",
     "category": "Simulator",
     "desc": "A two-dimensional sports video game that simulates table tennis, where players control paddles to hit a ball back and forth, aiming to score points by making the opponent fail to return the ball.",
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.vox-cdn.com%2Fthumbor%2F5DTuK5n6DSbXtpDjPA0VC1BlUUs%3D%2F0x75%3A800x525%2F1600x900%2Fcdn.vox-cdn.com%2Fassets%2F1812005%2FPong.png&f=1&nofb=1&ipt=6864f79842a65ae9fa8c5f52c8e0121cc2724b951fdac246f6575bfcc67e4a9e&ipo=images",
-    "link": "https://home.c823.workers.dev/pong",
+    "link": "https://home.c823.workers.dev/play/pong",
     "verified": true,
     "OG": true,
     "new": true,
-    "date_added": "11/04/2026"
+    "date_added": "11/04/2026",
+    "c823board": "pong"
   },
   {
     "title": "Pool",
     "category": "Simulator",
     "desc": "A cue sport played on a table with six pockets, where players aim to pocket balls using a cue stick. ",
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%2Fid%2FOIP.odZ1o4wCKEbVAIzRSO4BuAHaEJ%3Fr%3D0%26pid%3DApi&f=1&ipt=be729e2fcdd2c60dabc5da6fd5dc82aa061a30a5b57ecd61e1dea61840f6fd33&ipo=images",
-    "link": "https://home.c823.workers.dev/pool",
+    "link": "https://home.c823.workers.dev/play/pool",
     "verified": false,
     "OG": true,
     "new": true,
-    "date_added": "11/4/2026"
+    "date_added": "11/4/2026",
+    "c823board": "pool"
   },
   {
     "title": "Dirt & Air",
     "category": "Arcade",
     "desc": "A bike game. Ride a BMX or a mountain bike through a skatepark or down a forest trail, and chain tricks together for the high score.",
     "thumb": "https://raw.githubusercontent.com/C823/assets/refs/heads/main/bike-game-thumbnail.png",
-    "link": "https://home.c823.workers.dev/bike-game",
+    "link": "https://home.c823.workers.dev/play/dirt-air",
     "verified": false,
     "OG": true,
     "new": true,
-    "date_added": "11/4/2026"
+    "date_added": "11/4/2026",
+    "c823board": "dirtair"
   },
-
   {
     "title": "Duckcraft 12",
     "category": "Arcade",
