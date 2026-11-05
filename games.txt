@@ -989,7 +989,7 @@
     "desc": "I see you...",
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%2Fid%2FOIP.YAaTxHm6aymfanh02qsv3QHaEK%3Fr%3D0%26pid%3DApi&f=1&ipt=2211bdec874b4688727aed72992c689b0e93e4fc315b16b6b4d659d9155902b3&ipo=images",
     "link": "https://learn-duck.firebaseapp.com/class/granny",
-    "verified": true,
+    "verified": false,
     "OG": false,
     "useBlank": true,
     "new": false,
@@ -1188,7 +1188,7 @@
   },
   {
     "title": "Pong",
-    "category": "Arcade",
+    "category": "Simulator",
     "desc": "A two-dimensional sports video game that simulates table tennis, where players control paddles to hit a ball back and forth, aiming to score points by making the opponent fail to return the ball.",
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fa57.foxnews.com%2Fa57.foxnews.com%2Fstatic.foxnews.com%2Ffoxnews.com%2Fcontent%2Fuploads%2F2018%2F09%2F640%2F320%2F1862%2F1048%2Fa7fc3a1e-Pong.jpg%3Fve%3D1%26tl%3D1%3Fve%3D1%26tl%3D1&f=1&nofb=1&ipt=1ecf1c9ece58a4a3bc024e1c36b3d61a60a91ebce71e4415bb2c4533f756fcfc&ipo=images",
     "link": "https://home.c823.workers.dev/pong",
@@ -1199,7 +1199,7 @@
   },
   {
     "title": "Pool",
-    "category": "Arcade",
+    "category": "Simulator",
     "desc": "A cue sport played on a table with six pockets, where players aim to pocket balls using a cue stick. ",
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fplay-lh.googleusercontent.com%2Fp9xFn7QNBALEji76nsC8PBYr-ILCJFfbiN3Bdr7tcZPmThI9GqE9ZK0xOLEB1hVoHg%3Dw526-h296&f=1&nofb=1&ipt=f6d0e06b56717e5f8c9e1d1fc9217e91a01d5ec8cd0a8aead5ad679a063203f6&ipo=images",
     "link": "https://home.c823.workers.dev/pool",
@@ -1211,12 +1211,46 @@
   {
     "title": "Dirt & Air",
     "category": "Arcade",
-    "desc": "A bike game. ride a BMX or a mountain bike through a skatepark or down a forest trail, and chain tricks together for the high score.",
+    "desc": "A bike game. Ride a BMX or a mountain bike through a skatepark or down a forest trail, and chain tricks together for the high score.",
     "thumb": "https://raw.githubusercontent.com/C823/assets/refs/heads/main/bike-game-thumbnail.png",
     "link": "https://home.c823.workers.dev/bike-game",
     "verified": false,
     "OG": true,
     "new": true,
     "date_added": "11/4/2026"
+  },
+
+  {
+    "title": "Duckcraft 12",
+    "category": "Arcade",
+    "desc": "A bike game. ride a BMX or a mountain bike through a skatepark or down a forest trail, and chain tricks together for the high score.",
+    "thumb": "https://cdn.jsdelivr.net/gh/mathlesson/mathlesson.github.io/img3/duckcraft-12.webp",
+    "link": "https://db2.duckmath.org/2026/more/duckcraft-12/index.html",
+    "verified": false,
+    "OG": false,
+    "new": true,
+    "date_added": "11/4/2026"
+  },
+  {
+    "title": "Eagle Craft",
+    "category": "Arcade",
+    "desc": "Eaglercraft is Minecraft rebuilt to run on JavaScript and WebAssembly. Build and survive in singleplayer, join hundreds of multiplayer servers or open your world to friends, on Chromebooks, phones and pretty much anything with a browser.",
+    "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.1EFGLRuF0B0lnNQ878NRxAHaEo%3Fr%3D0%26pid%3DApi&f=1&ipt=bf9ff3376181ed316d44f61f916fb37a93f4e5ed6af4d279823c4d7878e4293e&ipo=images",
+    "link": "https://db.duckmath.org/html/minecraft/index.html",
+    "verified": false,
+    "OG": false,
+    "new": false,
+    "date_added": "11/04/2025"
+  },
+  {
+    "title": "Golf Orbit LearnDuck",
+    "category": "Sports",
+    "desc": "Golf Orbit is an exciting golf simulator game within our sports category where you aim to launch golf balls to incredible heights, even reaching Mars. Have fun in one-shot golf battles, complete challenging levels, and master the art of the perfect shot.",
+    "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fyoplay.io%2Fdata%2Fimage%2Fgame%2Fgolf-orbit.jpg&f=1&nofb=1&ipt=7337dee1af291afc58c69f33942d7ab6656e52f576ef33b8732de8872276422e&ipo=images",
+    "link": "https://db.duckmath.org/html/golf_orbit/unity-2020.js",
+    "verified": false,
+    "OG": false,
+    "new": false,
+    "date_added": "11/04/2026"
   }
 ]
