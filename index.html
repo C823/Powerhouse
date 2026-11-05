@@ -1647,16 +1647,16 @@ body[data-compact-sidebar="true"] #sidebar .nav-label{display:none!important}
 #home-view .hero-avatar-container{width:48px!important;height:48px!important;border-radius:50%!important;border:1px solid var(--line)!important}
 #home-view .hero-info{display:flex;align-items:center;justify-content:space-between;gap:12px 20px;flex-wrap:wrap}
 #home-view .hero-info h1{margin:0!important;font-size:clamp(21px,2vw,26px)!important;font-weight:700!important}
-#home-view .home-friends-preview{display:flex;align-items:center;gap:12px;margin:0}
-#home-view .home-friends-heading{font-size:13px!important;font-weight:600!important;color:var(--text-muted)!important;background:none;border:0;padding:0;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+#home-view .home-friends-preview{display:flex;align-items:center;gap:14px;margin:0}
+#home-view .home-friends-heading{font-size:15px!important;font-weight:600!important;color:var(--text-muted)!important;background:none;border:0;padding:0;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
 #home-view .home-friends-heading:hover{color:var(--text)!important}
-#home-view .home-friends-count{background:var(--panel-2)!important;color:var(--text)!important;border-radius:999px;padding:1px 8px;font-size:12px}
-#home-view .home-friends-grid{display:flex!important;align-items:center;gap:0!important;flex-wrap:nowrap!important;overflow:visible!important;padding-left:8px}
-#home-view .home-friend-card{width:auto!important;margin-left:-8px}
-#home-view .home-friend-card img{width:30px!important;height:30px!important;border-radius:50%!important;border:2px solid var(--bg-main)!important;margin:0!important;object-fit:cover}
+#home-view .home-friends-count{background:var(--panel-2)!important;color:var(--text)!important;border-radius:999px;padding:2px 9px;font-size:13px}
+#home-view .home-friends-grid{display:flex!important;align-items:center;gap:0!important;flex-wrap:nowrap!important;overflow:visible!important;padding-left:10px}
+#home-view .home-friend-card{width:auto!important;margin-left:-10px}
+#home-view .home-friend-card img{width:40px!important;height:40px!important;border-radius:50%!important;border:2px solid var(--bg-main)!important;margin:0!important;object-fit:cover}
 #home-view .home-friend-card :not(img){display:none!important}
 #home-view .home-friend-card:hover img{transform:translateY(-2px)}
-#home-view .home-friends-message{margin:0;font-size:13px;color:var(--text-muted)}
+#home-view .home-friends-message{margin:0;font-size:14px;color:var(--text-muted)}
 
 .home-featured{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);align-items:center;gap:32px;
     min-height:250px;padding:32px 36px;margin:0 0 26px;border-radius:18px;border:1px solid var(--line);background:#0a0b0e}
@@ -1711,6 +1711,63 @@ body[data-theme="light"] .game-card:hover .game-thumb{box-shadow:0 14px 30px rgb
 #game-detail-content .c823-board td:last-child{color:var(--text-muted);text-align:right}
 #game-detail-content .c823-board tr.mine td{background:var(--brand-soft)}
 #game-detail-content .c823-board .c823-board-player:hover{color:var(--brand)}
+
+/* Game page: cover and info side by side, actions next to the art */
+#game-view .game-breadcrumb{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 16px;font-size:13px;color:var(--text-muted)}
+#game-view .game-breadcrumb a{color:var(--text-muted);text-decoration:none;font-weight:500}
+#game-view .game-breadcrumb a:hover{color:var(--text)}
+#game-view .game-breadcrumb [aria-current]{color:var(--text);font-weight:600}
+#game-detail-content{display:flex;flex-direction:column;gap:20px}
+.gp-hero{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(300px,1fr);gap:20px;align-items:stretch}
+.gp-hero > *{min-width:0}
+.gp-hero .game-cover{width:100%!important;max-width:100%!important;height:auto!important;max-height:none!important;min-height:0!important;aspect-ratio:16/10;align-self:start;border-radius:var(--r-lg)!important;border:1px solid var(--line)!important}
+.gp-info{display:flex;flex-direction:column;gap:14px;min-width:0;padding:24px;border-radius:var(--r-lg);background:var(--panel);border:1px solid var(--line)}
+.gp-badges{display:flex;flex-wrap:wrap;gap:6px}
+.gp-badge{display:inline-flex;align-items:center;height:24px;padding:0 9px;border-radius:6px;font-size:12px;font-weight:600;background:var(--panel-2);color:var(--text-muted);border:1px solid var(--line);text-decoration:none}
+.gp-badge-link{color:var(--text)}
+.gp-badge-link:hover{border-color:var(--line-strong)}
+.gp-badge-new{background:var(--brand);border-color:var(--brand);color:#fff;text-transform:uppercase;letter-spacing:.05em;font-size:11px}
+.gp-badge-ok{color:#4cc38a;background:rgba(76,195,138,.1);border-color:rgba(76,195,138,.25)}
+body[data-theme="light"] .gp-badge-ok{color:#1a7f4b;background:rgba(26,127,75,.08);border-color:rgba(26,127,75,.22)}
+.gp-title{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:0!important;color:var(--text)!important;font-size:clamp(24px,2.6vw,32px)!important;font-weight:700!important;letter-spacing:-.025em;line-height:1.15;overflow-wrap:anywhere}
+.gp-title .game-verified-icon{width:.7em!important;height:.7em!important}
+.gp-title .game-og-badge{width:.72em!important;height:.72em!important}
+.gp-desc{margin:0;color:var(--text-muted);font-size:14.5px;line-height:1.55;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.gp-actions{display:flex;flex-direction:column;gap:10px;margin-top:4px}
+.gp-btn{display:flex;align-items:center;justify-content:center;gap:9px;height:46px;padding:0 18px;border-radius:10px;border:1px solid var(--line-strong);background:var(--panel-2);color:var(--text);font-size:15px;font-weight:600;text-decoration:none;transition:background .15s,border-color .15s,transform .15s,opacity .15s}
+.gp-btn:hover{border-color:var(--text-muted)}
+.gp-btn:active{transform:translateY(1px)}
+.gp-btn.primary{height:50px;background:var(--text);border-color:var(--text);color:var(--bg-main);font-size:16px}
+.gp-btn.primary:hover{opacity:.9}
+.gp-btn svg{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.gp-btn svg.fill{fill:currentColor;stroke:none;width:16px;height:16px}
+.gp-btn[aria-disabled="true"]{opacity:.45;cursor:not-allowed}
+.gp-tools{display:flex;align-items:center;gap:8px}
+.gp-icon-btn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;border:1px solid var(--line-strong);background:transparent;color:var(--text-muted);cursor:pointer;transition:color .15s,border-color .15s,background .15s}
+.gp-icon-btn:hover{color:var(--text);border-color:var(--text-muted)}
+.gp-icon-btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.gp-fav[aria-pressed="true"]{color:#ffd166;border-color:rgba(255,209,102,.45);background:rgba(255,209,102,.08)}
+.gp-fav[aria-pressed="true"] svg{fill:currentColor}
+.gp-share-note{font-size:13px;color:var(--text-muted)}
+.gp-facts{display:grid;grid-template-columns:auto 1fr;gap:8px 16px;margin:auto 0 0;padding-top:16px;border-top:1px solid var(--line);font-size:13.5px}
+.gp-facts dt{color:var(--text-muted)}
+.gp-facts dd{margin:0;color:var(--text);font-weight:500;text-align:right}
+.gp-about .game-description{max-width:75ch;line-height:1.65}
+.gp-more{margin-top:12px}
+.gp-see-all{font-size:13.5px;font-weight:600;color:var(--text-muted);text-decoration:none}
+.gp-see-all:hover{color:var(--brand)}
+@media (max-width:980px){
+    .gp-hero{grid-template-columns:1fr}
+    .gp-hero .game-cover{aspect-ratio:16/9}
+    .gp-actions{flex-direction:row;flex-wrap:wrap}
+    .gp-actions .gp-btn{flex:1 1 200px}
+    .gp-tools{flex:0 0 auto}
+}
+@media (max-width:560px){
+    .gp-info{padding:18px}
+    .gp-actions{flex-direction:column}
+    .gp-actions .gp-btn{flex:none}
+}
 
 /* OG badge tooltip opens leftward from the badge (it sits at the end of the title),
    so its hidden box never pushes the page wider than a phone screen */
@@ -3443,6 +3500,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                         recentGames = normalizeRecentGames([...recentGames, ...data.history]);
                         persistRecentCache();
                     }
+                    pruneRemovedGames();
                     renderGames();
                     setAccountUserId(data.userId);
                     renderPicturePicker();
@@ -3581,7 +3639,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                     try { nextPage = (sessionStorage.getItem('ph_return_to') || ('/'+(startingPage()==='all-games'?'games/all':'home'))).slice(1); sessionStorage.removeItem('ph_return_to'); } catch(e) {}
                     if (nextPage.startsWith('user/')) { history.replaceState({},'', '/' + nextPage); routeFromURL(); }
                     else navigateTo(nextPage==='games/all'?'all-games':(ROUTE_PAGES.has(nextPage) ? nextPage : startingPage()), true);
-                    loadFavoriteCache(); loadRecentCache(); renderGames();
+                    loadFavoriteCache(); loadRecentCache(); pruneRemovedGames(); renderGames();
                     fetchUserData(); fetchHomeFriends(); loadStaffPermissions().catch(console.warn);
                 } else authLoginFeedback(data.error || 'Incorrect username or password.');
             } catch(e) { authLoginFeedback('Unable to connect. Please try again.'); }
@@ -3827,7 +3885,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             if (!window.powerhouseGamesPending) {
                 window.powerhouseGamesPending = fetch('https://raw.githubusercontent.com/C823/Powerhouse/main/games.txt',{cache:'no-store'})
                     .then(r=>{if(!r.ok)throw Error('Game catalog unavailable');return r.json();})
-                    .then(games=>{if(!Array.isArray(games))throw Error('Invalid game catalog');window.allGames=games;renderGames();return games;})
+                    .then(games=>{if(!Array.isArray(games))throw Error('Invalid game catalog');window.allGames=games;pruneRemovedGames();renderGames();return games;})
                     .finally(()=>{window.powerhouseGamesPending=null;});
             }
             return window.powerhouseGamesPending;
@@ -4115,50 +4173,110 @@ button,a{font:inherit}
                     renderRoute({page:'not-found'});document.title='404 — Game not found | Powerhouse';return;
                 }
                 document.title=(game.title||'Game')+' | Powerhouse';
-                document.getElementById('game-breadcrumb-name').textContent=game.title||'Game';
+                renderGameBreadcrumb(game);
                 const cover=document.createElement('div');cover.className='game-cover';
                 const backdrop=document.createElement('img');backdrop.className='game-cover-backdrop';backdrop.src=game.thumb||'';backdrop.alt='';backdrop.setAttribute('aria-hidden','true');
                 const image=document.createElement('img');image.className='game-hero-image';image.src=game.thumb||'';image.alt=(game.title||'Game')+' cover art';image.loading='eager';image.decoding='async';
                 backdrop.onerror=()=>{backdrop.style.display='none';};image.onerror=()=>{image.style.display='none';};cover.append(backdrop,image);
-                const top=document.createElement('div');top.className='game-info-top';
-                const left=document.createElement('div');left.className='game-info-name';
-                const heading=document.createElement('h1');heading.textContent=game.title||'Untitled';
+                const heading=document.createElement('h1');heading.className='gp-title';heading.textContent=game.title||'Untitled';
                 if(isVerifiedGame(game)){
                     const icon=document.createElement('img');icon.className='game-verified-icon';icon.src='https://raw.githubusercontent.com/C823/Powerhouse/main/icons/verified.svg';icon.alt='Verified Unblocked';icon.title='Verified Unblocked';heading.append(icon);
                 }
                 if(isOriginalGame(game)){
                     const og=document.createElement('span');og.className='game-og-badge';og.setAttribute('role','img');og.setAttribute('aria-label','Powerhouse Original game');og.dataset.tooltip='Powerhouse Original game';og.tabIndex=0;heading.append(og);
                 }
-                const pills=document.createElement('div');pills.className='game-pill-list';
                 const category=Array.isArray(game.category)?game.category.join(', '):(game.category||game.genre||'Uncategorized');
-                const makePill=(value)=>{const span=document.createElement('span');span.className='game-info-pill';span.textContent=value;pills.append(span);};
-                makePill('Category: '+category);makePill(isVerifiedGame(game)?'Verified Unblocked':'Not verified');
-                if (isNewGame(game)) {makePill('NEW');pills.lastElementChild.classList.add('new-game-pill');}
-                left.append(heading,pills);
-                const actions=document.createElement('div');actions.className='game-launch-actions';
+                // Badges above the title: category (links to that category), NEW, verified status.
+                const badges=document.createElement('div');badges.className='gp-badges';
+                const categoryLink=document.createElement('a');categoryLink.className='gp-badge gp-badge-link';categoryLink.href='/games/all';categoryLink.textContent=category;
+                categoryLink.title='See all '+category+' games';
+                categoryLink.addEventListener('click',event=>{event.preventDefault();allGamesCategoryFilter=gameCategory(game);allGamesTextFilter='';navigateTo('all-games');});
+                badges.append(categoryLink);
+                if(isNewGame(game)){const tag=document.createElement('span');tag.className='gp-badge gp-badge-new';tag.textContent='New';badges.append(tag);}
+                const status=document.createElement('span');status.className='gp-badge '+(isVerifiedGame(game)?'gp-badge-ok':'gp-badge-muted');
+                status.textContent=isVerifiedGame(game)?'Verified unblocked':'Not verified';badges.append(status);
+                const summary=document.createElement('p');summary.className='gp-desc';summary.textContent=String(game.desc||game.description||'No description available.');
+
                 const launch=String(game.link||'').trim();
                 const canLaunch=/^https?:\/\//i.test(launch);
                 const makeLaunchButton=(text,mode,secondary=false)=>{
-                    const button=document.createElement('a');button.className='game-play-button'+(secondary?' game-blank-button':'');
-                    const label=document.createElement('span');label.textContent=text;
-                    if(!secondary){button.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg>';}
-                    button.append(label);
+                    const button=document.createElement('a');button.className='gp-btn'+(secondary?'':' primary');
+                    button.innerHTML=secondary
+                        ?'<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="2"/><path d="M3.5 8.5h17"/></svg>'
+                        :'<svg viewBox="0 0 24 24" aria-hidden="true" class="fill"><path d="M7 4.5v15l12-7.5z"/></svg>';
+                    const label=document.createElement('span');label.textContent=text;button.append(label);
                     if(canLaunch){button.href=launch;button.target='_blank';button.rel='noopener noreferrer';button.addEventListener('click',event=>launchPowerhouseGame(game,event,mode));}
                     else{button.href='#';button.setAttribute('aria-disabled','true');button.addEventListener('click',event=>event.preventDefault());button.title='No playable link available';}
                     return button;
                 };
-                actions.append(makeLaunchButton('Play','direct'),makeLaunchButton('Open in About:Blank','blank',true));
-                top.append(left,actions);
-                const panel=document.createElement('section');panel.className='game-content-panel';
-                const about=document.createElement('h2');about.textContent='About';
-                const description=document.createElement('p');description.className='game-description';description.textContent=String(game.desc||game.description||'No description available.');
-                const details=document.createElement('div');details.className='game-details-grid';
-                const addField=(label,value)=>{const field=document.createElement('div');field.className='game-detail-field';const small=document.createElement('small');small.textContent=label;const strong=document.createElement('strong');strong.textContent=value;field.append(small,strong);details.append(field);};
-                addField('Category',category);addField('Unblocked status',isVerifiedGame(game)?'Verified':'Not verified');addField('Date added',formatGameAddedDate(game.date_added));
-                panel.append(about,description,details);
-                host.replaceChildren(cover,top,panel);
-                if(game.c823board)host.append(c823BoardPanel(game.c823board));
+                const play=makeLaunchButton('Play','direct');
+                const blank=makeLaunchButton('Play in about:blank','blank',true);
+                blank.title='Opens the game inside a blank tab';
+                // Favorite + copy link as small icon buttons beside the play buttons.
+                const isFav=()=>favoriteGames.some(g=>String(g.title||'').toLowerCase()===String(game.title||'').toLowerCase());
+                const fav=document.createElement('button');fav.type='button';fav.className='gp-icon-btn gp-fav';
+                fav.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.7 2.88 5.83 6.43.94-4.66 4.54 1.1 6.41L12 17.4l-5.75 3.02 1.1-6.41L2.69 9.47l6.43-.94Z"/></svg>';
+                const syncFav=()=>{const on=isFav();fav.setAttribute('aria-pressed',String(on));fav.setAttribute('aria-label',on?'Remove from favorites':'Add to favorites');fav.title=on?'Remove from favorites':'Add to favorites';};
+                syncFav();fav.addEventListener('click',()=>{toggleGameFavorite(game);syncFav();});
+                const share=document.createElement('button');share.type='button';share.className='gp-icon-btn';share.setAttribute('aria-label','Copy link to this game');share.title='Copy link';
+                share.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1.2 1.2"/><path d="M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1.2-1.2"/></svg>';
+                const shareNote=document.createElement('span');shareNote.className='gp-share-note';shareNote.setAttribute('role','status');
+                share.addEventListener('click',async()=>{
+                    try{await navigator.clipboard.writeText(location.origin+gamePath(game));shareNote.textContent='Link copied';}
+                    catch(e){shareNote.textContent='Copy failed';}
+                    clearTimeout(share._t);share._t=setTimeout(()=>{shareNote.textContent='';},2000);
+                });
+                const actions=document.createElement('div');actions.className='gp-actions';
+                const tools=document.createElement('div');tools.className='gp-tools';tools.append(fav,share,shareNote);
+                actions.append(play,blank,tools);
+                // Quick facts
+                const facts=document.createElement('dl');facts.className='gp-facts';
+                const addFact=(label,value)=>{const dt=document.createElement('dt');dt.textContent=label;const dd=document.createElement('dd');dd.textContent=value;facts.append(dt,dd);};
+                addFact('Category',category);addFact('Status',isVerifiedGame(game)?'Verified unblocked':'Not verified');addFact('Added',formatGameAddedDate(game.date_added));
+                const info=document.createElement('div');info.className='gp-info';
+                info.append(badges,heading,summary,actions,facts);
+                const hero=document.createElement('div');hero.className='gp-hero';hero.append(cover,info);
+                // About (full description) only when it's longer than the summary shows.
+                const blocks=[hero];
+                const fullText=String(game.desc||game.description||'');
+                if(fullText.length>180){
+                    const panel=document.createElement('section');panel.className='game-content-panel gp-about';
+                    const about=document.createElement('h2');about.textContent='About';
+                    const description=document.createElement('p');description.className='game-description';description.textContent=fullText;
+                    panel.append(about,description);blocks.push(panel);
+                }
+                if(game.c823board)blocks.push(c823BoardPanel(game.c823board));
+                const more=renderMoreLikeThis(game,games);
+                if(more)blocks.push(more);
+                host.replaceChildren(...blocks);
             }catch(error){if(seq!==gameDetailRequest)return;host.replaceChildren();const fail=document.createElement('div');fail.className='game-detail-message';fail.textContent='Could not load this game. Please try again later.';host.append(fail);}
+        }
+        // Breadcrumb: All Games / Category / Title (category link opens All Games filtered to it).
+        function renderGameBreadcrumb(game) {
+            const nav = document.querySelector('#game-view .game-breadcrumb');
+            if (!nav) return;
+            const sep = () => { const s = document.createElement('span'); s.setAttribute('aria-hidden', 'true'); s.textContent = '/'; return s; };
+            const all = document.createElement('a'); all.href = '/games/all'; all.textContent = 'All Games';
+            all.addEventListener('click', event => { event.preventDefault(); allGamesCategoryFilter = ''; allGamesTextFilter = ''; navigateTo('all-games'); });
+            const cat = document.createElement('a'); cat.href = '/games/all'; cat.textContent = gameCategory(game);
+            cat.addEventListener('click', event => { event.preventDefault(); allGamesCategoryFilter = gameCategory(game); allGamesTextFilter = ''; navigateTo('all-games'); });
+            const name = document.createElement('span'); name.id = 'game-breadcrumb-name'; name.setAttribute('aria-current', 'page'); name.textContent = game.title || 'Game';
+            nav.replaceChildren(all, sep(), cat, sep(), name);
+        }
+        // "More like this": other games in the same category, newest first.
+        function renderMoreLikeThis(game, games) {
+            const same = games.filter(g => g !== game && g?.title && gameCategory(g) === gameCategory(game));
+            if (!same.length) return null;
+            const section = document.createElement('section'); section.className = 'gp-more';
+            const head = document.createElement('div'); head.className = 'favorites-heading';
+            const h2 = document.createElement('h2'); h2.textContent = 'More ' + gameCategory(game) + ' games';
+            const all = document.createElement('a'); all.className = 'gp-see-all'; all.href = '/games/all'; all.textContent = 'See all';
+            all.addEventListener('click', event => { event.preventDefault(); allGamesCategoryFilter = gameCategory(game); allGamesTextFilter = ''; navigateTo('all-games'); });
+            head.append(h2, all);
+            const grid = document.createElement('div'); grid.className = 'category-game-grid';
+            grid.replaceChildren(...newestGamesFirst(same).slice(0, 8).map(renderFavoriteGameCard));
+            section.append(head, grid);
+            return section;
         }
         // Leaderboards for the C823 games. The scores are stored on home.c823.workers.dev (public, read-only here);
         // a moved C823 account and a Powerhouse account are the same name, so your own row is highlighted.
@@ -4399,6 +4517,32 @@ button,a{font:inherit}
         }
         loadRecentCache();
         let favoriteSaveChain = Promise.resolve();
+        // Drop favorites and Recently Played entries whose game was removed from games.txt.
+        // Runs once the catalog has loaded (and again after the account's saved lists load),
+        // and only with a non-empty catalog, so a failed or partial fetch never wipes a list.
+        // Favorites are re-saved to the account; the history API can only add entries, so
+        // removed games stay in the account's stored history but are filtered out on every load.
+        function pruneRemovedGames() {
+            const catalog = Array.isArray(window.allGames) ? window.allGames : [];
+            if (!catalog.length) return;
+            const known = new Set(catalog.filter(game => game?.title).map(game => String(game.title).trim().toLowerCase()));
+            const exists = entry => known.has(String(entry?.title || '').trim().toLowerCase());
+            const favorites = favoriteGames.filter(exists);
+            if (favorites.length !== favoriteGames.length) {
+                favoriteGames = favorites;
+                persistFavoriteCache();
+                const token = user.token, username = user.username, snapshot = favoriteGames.map(g => ({...g}));
+                if (token && username) {
+                    favoriteSaveChain = favoriteSaveChain.catch(() => {}).then(() => saveFavoritesToKV(token, username, snapshot));
+                    favoriteSaveChain.catch(e => console.warn('Favorites cleanup sync failed; saved locally:', e));
+                }
+            }
+            const recent = recentGames.filter(exists);
+            if (recent.length !== recentGames.length) {
+                recentGames = recent;
+                persistRecentCache();
+            }
+        }
         async function saveFavoritesToKV(accountToken, username, games) {
             if (!accountToken || !username) return;
             const headers={Authorization:`Bearer ${accountToken}`,'Content-Type':'application/json'};
@@ -4592,7 +4736,8 @@ button,a{font:inherit}
         }
         function fullCollectionEntries(entries) {
             const available=Array.isArray(window.allGames)?window.allGames:[];
-            return entries.map(entry=>available.find(g=>String(g.title||'').toLowerCase()===String(entry.title||'').toLowerCase())||entry)
+            // Once the catalog is loaded, games removed from games.txt are never shown.
+            return entries.map(entry=>available.find(g=>String(g.title||'').toLowerCase()===String(entry.title||'').toLowerCase())||(available.length?null:entry))
                 .filter(g=>g && g.title && (g.thumb || g.link));
         }
         function renderCollectionPages() {
@@ -5607,7 +5752,7 @@ button,a{font:inherit}
         // v2.21.22 — Per-user Home section order and visibility.
         const HOME_LAYOUT_DEFAULT = ['favorites','recent','games','all'];
         const HOME_LAYOUT_LABELS = {favorites:'Favorites',recent:'Recently Played',games:'Recommended',all:'All Games'};
-        let homeLayout = {order:[...HOME_LAYOUT_DEFAULT], visible:{favorites:true,recent:true,games:true,all:false}, hideProfile:false, cardSize:'wide', compactSidebar:false};
+        let homeLayout = {order:[...HOME_LAYOUT_DEFAULT], visible:{favorites:true,recent:true,games:true,all:false}, hideProfile:false, cardSize:'wide', compactSidebar:true, sidebarChoice:false};
         let homeLayoutAccount = '';
         let homeLayoutSaving = false;
         let homeLayoutSaveQueued = false;
@@ -5619,8 +5764,11 @@ button,a{font:inherit}
             HOME_LAYOUT_DEFAULT.forEach(k=>{visible[k]=k==='all' ? raw?.visible?.[k] === true : raw?.visible?.[k] !== false;});
             const hideProfile = raw?.hideProfile === true;
             const cardSize = ['wide','square','compact','portrait'].includes(raw?.cardSize) ? raw.cardSize : 'wide';
-            const compactSidebar = raw?.compactSidebar === true;
-            return {order,visible,hideProfile,cardSize,compactSidebar};
+            // Compact is the default. Older saved layouts always stored compactSidebar:false,
+            // so a stored value only counts once the user has picked it (sidebarChoice).
+            const sidebarChoice = raw?.sidebarChoice === true;
+            const compactSidebar = sidebarChoice ? raw?.compactSidebar === true : true;
+            return {order,visible,hideProfile,cardSize,compactSidebar,sidebarChoice};
         }
         function homeLayoutStorageKey() {
             return 'powerhouse:homeLayout:' + (user.username||'guest').toLowerCase();
@@ -5688,7 +5836,7 @@ button,a{font:inherit}
             updateHomeLayout();
         }
         function setHomeProfileHidden(enabled){homeLayout.hideProfile=Boolean(enabled);updateHomeLayout();}
-        function setCompactSidebar(enabled){homeLayout.compactSidebar=Boolean(enabled);updateHomeLayout();}
+        function setCompactSidebar(enabled){homeLayout.compactSidebar=Boolean(enabled);homeLayout.sidebarChoice=true;updateHomeLayout();}
         function setGameCardSize(size){
             homeLayout.cardSize=['wide','square','compact','portrait'].includes(size)?size:'wide';
             updateHomeLayout();
