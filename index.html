@@ -9,35 +9,40 @@
     <link rel="shortcut icon" type="image/png" href="https://cdn.jsdelivr.net/gh/C823/powerhouse@main/icons/POWERHOUSE-icon.png?v=20261009">
     <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/C823/powerhouse@main/icons/POWERHOUSE-icon.png?v=20261009">
     <!-- The Worker may inject a GitHub <base>. Keep browser navigation on this Worker origin. -->
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Mulish:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        /* Powerhouse palette v2.21.22 — sampled from supplied reference:
-           black #000000, charcoal #1c1c1c, white #ffffff. */
+        /* Powerhouse palette v3 — near-black neutrals, white text, one blue accent
+           (--brand) for active and focus states. Dark is the default theme. */
         :root {
-            --accent: #444444;
-            --accent2: #555555;
-            --accent-light: rgba(255, 255, 255, 0.07);
-            --bg-main: #1c1c1c;
-            --bg-side: #000000;
-            --surface: #1c1c1c;
-            --border: rgba(255, 255, 255, 0.13);
-            --text: #ffffff;
-            --text-muted: #b5b5b5;
-            --radius: 14px;
-            --sidebar-width: 260px;
-            --danger: #c42b1c;
+            --brand: #5b8cff;
+            --brand-soft: rgba(91, 140, 255, .14);
+            --accent: #262933;
+            --accent2: #30333e;
+            --accent-light: rgba(255, 255, 255, 0.055);
+            --bg-main: #0f1013;
+            --bg-side: #0b0c0e;
+            --surface: #16171b;
+            --border: rgba(255, 255, 255, 0.08);
+            --text: #f3f4f6;
+            --text-muted: #9a9ea8;
+            --radius: 12px;
+            --sidebar-width: 240px;
+            --danger: #e5484d;
+            --font-ui: 'Inter', 'Mulish', system-ui, -apple-system, 'Segoe UI', sans-serif;
+            color-scheme: dark;
         }
-        /* Functional light theme; dark remains the default. */
         body[data-theme="light"] {
-            --accent: #e0e4e8;
-            --accent2: #dce3e8;
-            --accent-light: rgba(15, 23, 42, .055);
-            --bg-main: #f3f5f7;
+            --brand: #3563e9;
+            --brand-soft: rgba(53, 99, 233, .1);
+            --accent: #e9edf4;
+            --accent2: #dfe5ee;
+            --accent-light: rgba(15, 23, 42, .045);
+            --bg-main: #f6f7f9;
             --bg-side: #ffffff;
             --surface: #ffffff;
-            --border: rgba(29, 38, 52, .17);
-            --text: #171c25;
-            --text-muted: #5a6470;
+            --border: rgba(15, 23, 42, .09);
+            --text: #0f1729;
+            --text-muted: #5b6475;
             color-scheme: light;
         }
 
@@ -1399,7 +1404,7 @@ body[data-theme="light"] #all-games-view .all-games-filter-result{color:#576574}
 /* ═══ UI refresh: easier navigation, search and browsing ═══════════════════ */
 /* Flex item: let wide rows (category chips) scroll instead of stretching the page. */
 #main-wrapper{min-width:0}
-:where(#sidebar, #main-wrapper, #mobile-tabbar) :where(a, button, input, select, textarea):focus-visible{outline:2px solid var(--text);outline-offset:2px}
+:where(#sidebar, #main-wrapper, #mobile-tabbar) :where(a, button, input, select, textarea):focus-visible{outline:2px solid var(--brand);outline-offset:2px}
 
 /* Header search: icon, "/" hint and live suggestions */
 .search-container{position:relative}
@@ -1481,8 +1486,8 @@ body[data-theme="light"] #all-games-text-filter{background:#fff;border-color:#ba
    --field   text inputs and selects
    In dark mode --surface equals the page background, so cards built on it
    only showed as an outline; these tokens give every page the same depth. */
-:root{--panel:#232323;--panel-2:#2b2b2b;--field:#181818;--line:rgba(255,255,255,.1);--line-strong:rgba(255,255,255,.18);--danger-text:#ff7a7a;--r-lg:18px;--r-md:12px;--r-sm:10px;--page-max:1240px}
-body[data-theme="light"]{--panel:#fff;--panel-2:#f3f5f8;--field:#fff;--line:rgba(29,38,52,.14);--line-strong:rgba(29,38,52,.26);--danger-text:#c42b1c}
+:root{--panel:#16171b;--panel-2:#1d1f24;--field:#111215;--line:rgba(255,255,255,.08);--line-strong:rgba(255,255,255,.14);--danger-text:#ff6b6b;--r-lg:14px;--r-md:10px;--r-sm:8px;--page-max:1280px}
+body[data-theme="light"]{--panel:#fff;--panel-2:#f3f5f8;--field:#fff;--line:rgba(15,23,42,.09);--line-strong:rgba(15,23,42,.17);--danger-text:#c42b1c}
 
 /* Same content width on every page, so switching pages never shifts the layout */
 #main-wrapper .view-section{max-width:var(--page-max);margin-inline:auto}
@@ -1492,7 +1497,7 @@ body[data-theme="light"]{--panel:#fff;--panel-2:#f3f5f8;--field:#fff;--line:rgba
 /* Page headers */
 :is(.page-header,.messages-header,.blog-heading,.search-page-head,.collection-heading,.all-games-heading,#admin-view .admin-page-heading){margin:0 0 24px!important;gap:6px 20px}
 :is(.page-header,.messages-header,.blog-heading,.search-page-head,.collection-heading,.all-games-heading,#admin-view .admin-page-heading) h1,
-.page-header .social-title{margin:0 0 6px!important;font-size:clamp(26px,2.6vw,34px)!important;font-weight:800!important;letter-spacing:-.025em!important;line-height:1.15!important;color:var(--text)}
+.page-header .social-title{margin:0 0 6px!important;font-size:clamp(24px,2.3vw,30px)!important;font-weight:700!important;letter-spacing:-.022em!important;line-height:1.15!important;color:var(--text)}
 :is(.page-header,.messages-header,.blog-heading,.search-page-head,.collection-heading,.all-games-heading,#admin-view .admin-page-heading) p{margin:0!important;font-size:14.5px!important;color:var(--text-muted)!important;line-height:1.45}
 
 /* Cards */
@@ -1555,7 +1560,7 @@ body[data-theme="light"]{--panel:#fff;--panel-2:#f3f5f8;--field:#fff;--line:rgba
 .messages-chat-panel .messages-empty{border:0!important;margin:auto!important;max-width:320px;align-self:center}
 
 /* Section headings inside pages */
-:is(.favorites-heading h2,.game-filter-toolbar .filter-title,.category-heading h2,.profile-about-title,.profile-favorites-heading h2,.search-block-heading h2,#admin-view .admin-section-title){font-size:19px!important;font-weight:800!important;letter-spacing:-.015em!important}
+:is(.favorites-heading h2,.game-filter-toolbar .filter-title,.category-heading h2,.profile-about-title,.profile-favorites-heading h2,.search-block-heading h2,#admin-view .admin-section-title){font-size:17px!important;font-weight:650!important;letter-spacing:-.012em!important}
 
 /* Game page: keep the Play button above the fold on laptops */
 #game-detail-content .game-cover{height:clamp(220px,32vw,400px)!important;max-height:min(42vh,400px)!important}
@@ -1569,10 +1574,166 @@ body[data-theme="light"]{--panel:#fff;--panel-2:#f3f5f8;--field:#fff;--line:rgba
     :is(.social-tabs,.admin-tabs,.mod-tabs){display:flex!important}
     #game-detail-content .game-cover{height:clamp(190px,52vw,300px)!important}
     /* Settings: section menu becomes a row of tabs above the content */
+    /* (v3 phone shell rules live in the "Powerhouse UI v3" block below) */
     .settings-grid{grid-template-columns:minmax(0,1fr)!important;gap:16px!important}
     .settings-sidebar .settings-nav{display:flex;gap:4px;padding:4px;overflow-x:auto;scrollbar-width:none;border:1px solid var(--line);border-radius:var(--r-md);background:var(--panel)}
     .settings-sidebar .s-nav-btn{flex:1 0 auto;width:auto;margin:0;padding:9px 14px;text-align:center;white-space:nowrap}
     .settings-card{padding:18px!important}
+}
+
+/* ═══ Powerhouse UI v3 ═════════════════════════════════════════════════════
+   Professional pass over the whole app: Inter for UI text, a pinned header,
+   a sectioned sidebar, a featured game on Home and refined game cards.
+   Colors come from the palette at the top of this stylesheet. */
+body{font-family:var(--font-ui);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+:where(#sidebar,#main-wrapper,#mobile-tabbar,#landing-page,#user-dropdown) :is(h1,h2,h3,h4,p,span,a,button,input,select,textarea,label,div,li,td,th,strong,small,em,b,table){font-family:var(--font-ui)!important}
+::selection{background:var(--brand-soft)}
+html{scrollbar-color:rgba(255,255,255,.14) transparent}
+body[data-theme="light"]{scrollbar-color:rgba(15,23,42,.2) transparent}
+
+/* Shell: content gutter + pinned, frosted header */
+:root{--gutter:clamp(20px,3vw,40px);--header-h:64px}
+@media (min-width:761px){
+    body.app-ready #main-wrapper{padding:0 var(--gutter) 56px!important}
+    body.app-ready #main-wrapper > header{position:sticky;top:0;z-index:60;display:flex!important;flex-wrap:nowrap!important;align-items:center;justify-content:space-between;gap:16px;
+        height:var(--header-h);min-height:0;margin:0 calc(-1 * var(--gutter)) 28px!important;padding:0 var(--gutter);
+        background:color-mix(in srgb,var(--bg-main) 84%,transparent);-webkit-backdrop-filter:saturate(160%) blur(14px);backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid var(--line)}
+    body.app-ready #main-wrapper > header .search-container{order:0!important;flex:1 1 auto;width:auto!important;max-width:520px!important}
+    body.app-ready #main-wrapper > header .header-right{position:static!important;order:1!important;margin-left:auto}
+    #all-games-view .all-games-filter-bar{top:calc(var(--header-h) + 12px)!important}
+}
+.search-container input#searchInput{height:40px;padding-top:0;padding-bottom:0;background:var(--field);border:1px solid var(--line);border-radius:10px;font-size:14px}
+.user-pill{height:40px;padding:4px 4px 4px 14px!important;gap:10px!important;border-radius:999px!important;background:var(--panel)!important;border:1px solid var(--line)!important;transition:border-color .15s}
+.user-pill:hover{border-color:var(--line-strong)!important}
+#nav-username{font-size:14px;font-weight:600!important}
+#nav-pfp{width:30px!important;height:30px!important;border-radius:50%!important;object-fit:cover}
+#user-dropdown{background:var(--panel)!important;border:1px solid var(--line)!important;border-radius:12px!important;box-shadow:0 18px 44px rgba(0,0,0,.45)!important;padding:6px!important}
+#user-dropdown .dropdown-item{border-radius:8px!important;padding:9px 12px!important;font-size:14px!important;font-weight:500!important}
+body[data-theme="light"] #user-dropdown{box-shadow:0 18px 40px rgba(15,23,42,.14)!important}
+
+/* Sidebar: sections, quieter items, accent for the active page */
+#sidebar{padding:16px 12px 14px!important;background:var(--bg-side)!important;border-right:1px solid var(--line)!important}
+#sidebar .logo-area{margin:0 0 4px!important;padding:6px 10px 10px!important}
+#sidebar .logo-area img{height:22px!important;width:auto}
+#sidebar .nav-label{padding:18px 12px 6px;font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--text-muted);opacity:.7}
+#sidebar .nav-label:first-child{padding-top:6px}
+#sidebar .nav-label-staff{display:none}
+#sidebar .nav-group:has(> #side-admin:not([hidden])) .nav-label-staff,
+#sidebar .nav-group:has(> #side-moderation:not([hidden])) .nav-label-staff{display:block}
+#sidebar .nav-item{height:38px;padding:0 12px!important;gap:12px!important;margin:0 0 2px!important;border-radius:8px!important;font-size:14px!important;font-weight:500!important;color:var(--text-muted)!important;background:transparent!important}
+#sidebar .nav-item svg{width:18px!important;height:18px!important;flex-basis:18px!important;stroke-width:1.8}
+#sidebar .nav-item:hover{background:var(--accent-light)!important;color:var(--text)!important}
+#sidebar .nav-item.active{background:var(--brand-soft)!important;color:var(--text)!important;font-weight:600!important}
+#sidebar .nav-item.active svg{stroke:var(--brand)}
+#sidebar .message-nav-count{background:var(--brand)!important;color:#fff!important;min-width:20px;height:20px;line-height:16px;padding:2px 6px;border-radius:10px;font-size:11px}
+#sidebar .sidebar-footer{margin-top:auto;padding:12px 4px 0;border-top:1px solid var(--line)}
+#sidebar .c823-footer-link{width:34px!important;height:34px!important;border-radius:8px!important}
+#sidebar .c823-footer-icon{width:22px!important;height:22px!important}
+#sidebar .classroom-globe-icon{width:20px;height:20px}
+#sidebar .sidebar-release{font-size:11px!important;color:var(--text-muted)!important;opacity:.7;letter-spacing:.04em}
+body[data-compact-sidebar="true"] #sidebar .nav-label{display:none!important}
+
+/* Type scale for content */
+#main-wrapper h1{letter-spacing:-.022em}
+:is(.favorites-heading,.game-filter-toolbar){display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:0 0 14px!important}
+:is(.favorites-heading h2,.game-filter-toolbar .filter-title){margin:0!important}
+:is(#favorites-count,#recently-played-count,.filter-count,.category-heading-count,.all-games-total){font-size:13px!important;color:var(--text-muted)!important;font-weight:500!important}
+.shelf-heading-link{color:inherit;text-decoration:none}
+.shelf-heading-link:hover{color:var(--brand)}
+#home-game-sections > section{margin-bottom:36px}
+
+/* Home: welcome row + featured game */
+#home-view .hero{background:transparent!important;border:0!important;padding:0!important;margin:0 0 22px!important;gap:14px!important;align-items:center!important;border-radius:0!important}
+#home-view .hero-avatar-container{width:48px!important;height:48px!important;border-radius:50%!important;border:1px solid var(--line)!important}
+#home-view .hero-info{display:flex;align-items:center;justify-content:space-between;gap:12px 20px;flex-wrap:wrap}
+#home-view .hero-info h1{margin:0!important;font-size:clamp(21px,2vw,26px)!important;font-weight:700!important}
+#home-view .home-friends-preview{display:flex;align-items:center;gap:12px;margin:0}
+#home-view .home-friends-heading{font-size:13px!important;font-weight:600!important;color:var(--text-muted)!important;background:none;border:0;padding:0;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+#home-view .home-friends-heading:hover{color:var(--text)!important}
+#home-view .home-friends-count{background:var(--panel-2)!important;color:var(--text)!important;border-radius:999px;padding:1px 8px;font-size:12px}
+#home-view .home-friends-grid{display:flex!important;align-items:center;gap:0!important;flex-wrap:nowrap!important;overflow:visible!important;padding-left:8px}
+#home-view .home-friend-card{width:auto!important;margin-left:-8px}
+#home-view .home-friend-card img{width:30px!important;height:30px!important;border-radius:50%!important;border:2px solid var(--bg-main)!important;margin:0!important;object-fit:cover}
+#home-view .home-friend-card :not(img){display:none!important}
+#home-view .home-friend-card:hover img{transform:translateY(-2px)}
+#home-view .home-friends-message{margin:0;font-size:13px;color:var(--text-muted)}
+
+.home-featured{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);align-items:center;gap:32px;
+    min-height:250px;padding:32px 36px;margin:0 0 26px;border-radius:18px;border:1px solid var(--line);background:#0a0b0e}
+.home-featured[hidden]{display:none}
+.featured-backdrop{position:absolute;inset:-60px;width:calc(100% + 120px);height:calc(100% + 120px);object-fit:cover;filter:blur(48px) saturate(1.35) brightness(.42);z-index:-2}
+.home-featured::after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(7,8,11,.88) 0%,rgba(7,8,11,.6) 55%,rgba(7,8,11,.25) 100%)}
+.featured-body{min-width:0;color:#fff}
+.featured-eyebrow{display:inline-block;margin-bottom:14px;padding:5px 9px;border-radius:6px;background:rgba(91,140,255,.24);color:#d6e3ff;font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase}
+/* The banner stays dark in both themes, so its text colors are fixed */
+.featured-body h2{margin:0 0 8px;color:#fff!important;font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-.03em;line-height:1.08}
+.featured-body p{margin:0 0 10px;max-width:54ch;color:rgba(255,255,255,.78)!important;font-size:15px;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.featured-meta{display:block;margin-bottom:20px;color:rgba(255,255,255,.58)!important;font-size:13px;font-weight:500}
+.featured-actions{display:flex;flex-wrap:wrap;gap:10px}
+.featured-btn{display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 18px;border-radius:10px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.1);color:#fff;font-size:14px;font-weight:600;text-decoration:none;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);transition:background .15s,transform .15s}
+.featured-btn:hover{background:rgba(255,255,255,.18)}
+.featured-btn:active{transform:translateY(1px)}
+.featured-btn.primary{background:#fff;border-color:#fff;color:#0b0c0f}
+.featured-btn.primary:hover{background:#e8ebf1}
+.featured-btn svg{width:15px;height:15px;fill:currentColor}
+.featured-btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.featured-art{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:12px;border:1px solid rgba(255,255,255,.14);box-shadow:0 24px 60px rgba(0,0,0,.5)}
+
+/* Category chips */
+.category-chip{height:34px!important;padding:0 13px!important;background:var(--panel)!important;border:1px solid var(--line)!important;font-size:13px!important;font-weight:600!important}
+.category-chip:hover{border-color:var(--line-strong)!important}
+.category-chip[aria-pressed="true"]{background:var(--text)!important;border-color:var(--text)!important;color:var(--bg-main)!important}
+
+/* Game cards */
+.game-thumb{border-radius:12px!important;border:1px solid var(--line)!important;margin-bottom:10px!important;background:var(--panel)!important}
+.game-card{transition:transform .18s ease}
+.game-card:hover{transform:translateY(-3px)!important}
+.game-card:hover .game-thumb{border-color:var(--line-strong)!important;box-shadow:0 14px 32px rgba(0,0,0,.35)}
+body[data-theme="light"] .game-card:hover .game-thumb{box-shadow:0 14px 30px rgba(15,23,42,.14)}
+.game-title-row{gap:6px}
+.game-title-row p{font-size:14px!important;font-weight:600!important;line-height:1.3}
+.game-card-meta{font-size:12.5px!important;font-weight:500!important;margin-top:1px}
+.game-new-tag{background:var(--brand)!important;color:#fff!important;border:0!important;border-radius:6px!important;padding:3px 7px!important;font-size:10.5px!important;font-weight:700!important;letter-spacing:.06em;box-shadow:0 4px 12px rgba(0,0,0,.25)}
+.favorite-button{width:32px!important;height:32px!important;border-radius:8px!important;background:rgba(10,11,14,.62)!important;border:1px solid rgba(255,255,255,.14)!important;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);opacity:0;transition:opacity .15s ease,background .15s}
+.game-card-wrap:hover .favorite-button,.game-card-wrap:focus-within .favorite-button,.favorite-button[aria-pressed="true"]{opacity:1}
+@media (hover:none){.favorite-button{opacity:1}}
+.favorite-button svg{width:16px!important;height:16px!important}
+.favorite-button[aria-pressed="true"] svg{fill:#ffd166!important;stroke:#ffd166!important}
+
+/* Game page leaderboard (C823 games) */
+#game-detail-content .c823-board table{width:100%;margin-top:12px;border-collapse:collapse;font-size:14px}
+#game-detail-content .c823-board th{padding:8px 10px;border-bottom:1px solid var(--line);color:var(--text-muted);font-size:12px;font-weight:600;letter-spacing:.04em;text-align:left;text-transform:uppercase}
+#game-detail-content .c823-board td{padding:10px;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+#game-detail-content .c823-board tr:last-child td{border-bottom:0}
+#game-detail-content .c823-board td:first-child{width:44px;color:var(--text-muted);font-weight:600}
+#game-detail-content .c823-board tbody tr:nth-child(-n+3) td:first-child{color:var(--brand)}
+#game-detail-content .c823-board td:nth-child(3){font-weight:600}
+#game-detail-content .c823-board td:last-child{color:var(--text-muted);text-align:right}
+#game-detail-content .c823-board tr.mine td{background:var(--brand-soft)}
+#game-detail-content .c823-board .c823-board-player:hover{color:var(--brand)}
+
+/* OG badge tooltip opens leftward from the badge (it sits at the end of the title),
+   so its hidden box never pushes the page wider than a phone screen */
+#game-detail-content .game-og-badge::after{left:auto!important;right:-6px;transform:translateY(4px)!important}
+#game-detail-content .game-og-badge:is(:hover,:focus-visible)::after{transform:none!important}
+
+/* Accent touches */
+.tab-btn.active,body.nav-open #tab-menu{color:var(--brand)!important}
+:is(.social-tab,.admin-tab,.mod-tab).active{color:var(--text)!important}
+.settings-sidebar .s-nav-btn.active{background:var(--brand-soft)!important;color:var(--text)!important}
+
+@media (max-width:760px){
+    body.app-ready #main-wrapper{padding:0 14px calc(86px + env(safe-area-inset-bottom))!important}
+    body.app-ready #main-wrapper > header{position:sticky;top:0;z-index:60;display:flex!important;flex-wrap:nowrap!important;align-items:center;gap:10px;height:60px;
+        margin:0 -14px 18px!important;padding:0 14px;background:color-mix(in srgb,var(--bg-main) 88%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    body.app-ready #main-wrapper > header .search-container{order:0!important;flex:1 1 auto;width:auto!important;max-width:none!important}
+    body.app-ready #main-wrapper > header .header-right{position:static!important;order:1!important;margin:0!important}
+    #nav-username{display:none}
+    .user-pill{padding:4px!important}
+    .home-featured{grid-template-columns:1fr;gap:16px;padding:18px;min-height:0;border-radius:14px}
+    .featured-art{order:-1}
+    .featured-body h2{font-size:24px}
+    #home-view .hero-avatar-container{width:40px!important;height:40px!important}
 }
 
 </style>
@@ -2406,10 +2567,12 @@ function adminSetBanner(){return staffLegacySaveBanner();}
         <div class="logo-area"><button type="button" class="sidebar-logo-link" title="Go to your start page" aria-label="Powerhouse — go to your start page" onclick="navigateTo(isGuest() ? 'home' : startingPage())"><img src="https://raw.githubusercontent.com/C823/powerhouse/main/icons/POWERHOUSE-dark.svg" style="height:28px;" alt="Powerhouse" data-powerhouse-logo></button></div>
         <div class="compact-sidebar-username" id="compact-sidebar-username" aria-label="Signed-in username"></div>
         <nav class="nav-group">
+            <div class="nav-label">Browse</div>
             <a href="/home" class="nav-item active" id="side-home">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.2 12 3l8.5 7.2"/><path d="M5.5 9.6V20a1.5 1.5 0 0 0 1.5 1.5h10A1.5 1.5 0 0 0 18.5 20V9.6"/><path d="M9.5 21.5v-6h5v6"/></svg> Home
             </a>
             <a href="/games/all" class="nav-item" id="side-all-games" onclick="event.preventDefault();navigateTo('all-games')"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1.5"/><rect x="14" y="4" width="6" height="6" rx="1.5"/><rect x="4" y="14" width="6" height="6" rx="1.5"/><rect x="14" y="14" width="6" height="6" rx="1.5"/></svg><span>All Games</span></a>
+            <div class="nav-label">Social</div>
             <a href="/profile" class="nav-item" id="side-profile">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20c0-3.6 3.3-6 7.5-6s7.5 2.4 7.5 6"/></svg> Profile
             </a>
@@ -2419,11 +2582,13 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             <a href="/messages" class="nav-item" id="side-messages">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 5.5h15a1.5 1.5 0 0 1 1.5 1.5v9a1.5 1.5 0 0 1-1.5 1.5H9l-4.5 3v-3H4.5A1.5 1.5 0 0 1 3 16V7A1.5 1.5 0 0 1 4.5 5.5Z"/><path d="M8 10.5h8"/><path d="M8 14h5"/></svg> Messages <span id="messages-nav-count" class="message-nav-count" hidden></span>
             </a>
+            <div class="nav-label">More</div>
             <a href="/blog" class="nav-item" id="side-blog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5h8l4 4V20a1.5 1.5 0 0 1-1.5 1.5H6A1.5 1.5 0 0 1 4.5 20V5A1.5 1.5 0 0 1 6 3.5Z"/><path d="M14 3.8V8h4.2"/><path d="M8 12h8"/><path d="M8 15.5h8"/><path d="M8 19h5"/></svg> Blog <span id="blog-nav-count" class="message-nav-count" hidden></span></a>
             <a href="/settings" class="nav-item" id="side-settings">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.5"/><path d="M19.4 15a1 1 0 0 0 .2 1.1l.1.1a1.9 1.9 0 0 1 0 2.7l-.2.2a1.9 1.9 0 0 1-2.7 0l-.1-.1a1 1 0 0 0-1.1-.2 1 1 0 0 0-.6.9V20a1.9 1.9 0 0 1-1.9 1.9h-.3A1.9 1.9 0 0 1 10.9 20v-.2a1 1 0 0 0-.6-.9 1 1 0 0 0-1.1.2l-.1.1a1.9 1.9 0 0 1-2.7 0l-.2-.2a1.9 1.9 0 0 1 0-2.7l.1-.1a1 1 0 0 0 .2-1.1 1 1 0 0 0-.9-.6H5.4a1.9 1.9 0 0 1-1.9-1.9v-.3a1.9 1.9 0 0 1 1.9-1.9h.2a1 1 0 0 0 .9-.6 1 1 0 0 0-.2-1.1l-.1-.1a1.9 1.9 0 0 1 0-2.7l.2-.2a1.9 1.9 0 0 1 2.7 0l.1.1a1 1 0 0 0 1.1.2 1 1 0 0 0 .6-.9V4a1.9 1.9 0 0 1 1.9-1.9h.3A1.9 1.9 0 0 1 13.1 4v.2a1 1 0 0 0 .6.9 1 1 0 0 0 1.1-.2l.1-.1a1.9 1.9 0 0 1 2.7 0l.2.2a1.9 1.9 0 0 1 0 2.7l-.1.1a1 1 0 0 0-.2 1.1 1 1 0 0 0 .9.6h.2a1.9 1.9 0 0 1 1.9 1.9v.3a1.9 1.9 0 0 1-1.9 1.9h-.2a1 1 0 0 0-.9.6Z"/></svg> Settings
             </a>
 
+            <div class="nav-label nav-label-staff">Staff</div>
             <a href="/admin" class="nav-item" id="side-admin" hidden>
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 5.6v5.2c0 4.7 2.9 8.4 7 9.9 4.1-1.5 7-5.2 7-9.9V5.6L12 3Z"/><path d="m9.2 12.3 1.9 1.9 3.8-4"/></svg> Admin
             </a>
@@ -2509,6 +2674,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                     </div>
                 </div>
             </div>
+            <section id="home-featured" class="home-featured" aria-label="Featured game" hidden></section>
             <nav id="home-categories" class="category-chips" aria-label="Browse games by category"></nav>
             <div id="home-game-sections"><section class="favorites-section" data-home-section="favorites" aria-label="Favorite games">
                 <div class="favorites-heading"><h2><a href="/favorites" onclick="event.preventDefault();navigateTo('favorites')" class="shelf-heading-link">Favorites <span aria-hidden="true">↗</span></a></h2><span id="favorites-count"></span></div>
@@ -2927,7 +3093,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             const btn=document.getElementById('guestStartButton');
             if(btn && !user.token && safeStorageGet('ph_guest_consumed')==='1') {btn.disabled=true;btn.textContent='Guest trial already used';}
             const welcome=document.getElementById('welcome-text');
-            if(isActive && welcome)welcome.textContent='Hello, Guest!';
+            if(isActive && welcome)welcome.textContent=homeGreeting('Guest');
             const navName=document.getElementById('nav-username');if(isActive && navName)navName.textContent='Guest';
             if(isActive){for(const id of ['hero-avatar','nav-pfp']){const img=document.getElementById(id);if(img)img.src=GUEST_PFP_URL;}}
             const homePfp=document.getElementById('home-own-profile-link');if(homePfp && isActive){homePfp.removeAttribute('href');homePfp.onclick=e=>{e.preventDefault();navigateTo('settings');};}
@@ -3298,7 +3464,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                 img.src = pfpSource; 
                 img.onerror = function() { this.onerror = null; if (this.src !== themeDefaultPfp()) this.src = themeDefaultPfp(); };
             });
-            document.getElementById('welcome-text').textContent = `Hello, ${user.username}!`;
+            document.getElementById('welcome-text').textContent = homeGreeting(user.username);
             document.getElementById('nav-username').textContent = user.username;
             const compactName=document.getElementById('compact-sidebar-username');
             if(compactName)compactName.textContent=user.username;
@@ -3420,6 +3586,44 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                 } else authLoginFeedback(data.error || 'Incorrect username or password.');
             } catch(e) { authLoginFeedback('Unable to connect. Please try again.'); }
             finally { if (btn) { btn.disabled = false; btn.innerHTML = '<span id="authLoginButtonText">Sign in</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>'; } }
+        }
+
+        function homeGreeting(name) {
+            const hour = new Date().getHours();
+            const part = hour < 5 ? 'Good evening' : hour < 12 ? 'Good morning' : hour < 18 ? 'Good afternoon' : 'Good evening';
+            return name ? `${part}, ${name}` : part;
+        }
+
+        // ── Home: featured game banner. Picks one of the newest games (stable for the
+        // whole day, so it doesn't change on every visit), else a verified game.
+        function renderHomeFeatured() {
+            const host = document.getElementById('home-featured');
+            const games = (Array.isArray(window.allGames) ? window.allGames : []).filter(game => game?.title && game.thumb && /^https?:\/\//i.test(String(game.link || '')));
+            if (!host || !games.length) return;
+            const pool = games.filter(isNewGame).length ? games.filter(isNewGame) : (games.filter(isVerifiedGame).length ? games.filter(isVerifiedGame) : games);
+            const day = Math.floor(Date.now() / 864e5);
+            const game = pool[day % pool.length];
+            if (host.dataset.title === game.title) return;
+            host.dataset.title = game.title;
+            const backdrop = document.createElement('img'); backdrop.className = 'featured-backdrop'; backdrop.src = game.thumb; backdrop.alt = ''; backdrop.setAttribute('aria-hidden', 'true');
+            const art = document.createElement('img'); art.className = 'featured-art'; art.src = game.thumb; art.alt = (game.title || 'Game') + ' cover art';
+            art.onerror = () => { host.hidden = true; };
+            const body = document.createElement('div'); body.className = 'featured-body';
+            const eyebrow = document.createElement('span'); eyebrow.className = 'featured-eyebrow'; eyebrow.textContent = isNewGame(game) ? 'New on Powerhouse' : 'Featured';
+            const title = document.createElement('h2'); title.textContent = game.title;
+            const desc = document.createElement('p'); desc.textContent = game.desc || '';
+            const meta = document.createElement('span'); meta.className = 'featured-meta'; meta.textContent = gameCategory(game) + (isVerifiedGame(game) ? ' · Verified unblocked' : '');
+            const actions = document.createElement('div'); actions.className = 'featured-actions';
+            const play = document.createElement('a'); play.className = 'featured-btn primary'; play.href = game.link; play.target = '_blank'; play.rel = 'noopener noreferrer';
+            play.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg>';
+            play.append('Play now');
+            play.addEventListener('click', event => launchPowerhouseGame(game, event, 'direct'));
+            const details = document.createElement('a'); details.className = 'featured-btn'; details.href = gamePath(game); details.textContent = 'View details';
+            details.addEventListener('click', event => openGameDetails(event, game));
+            actions.append(play, details);
+            body.append(eyebrow, title, desc, meta, actions);
+            host.replaceChildren(backdrop, body, art);
+            host.hidden = false;
         }
 
         // ── Phone navigation: the sidebar slides in as a menu; tabs mirror the route.
@@ -4419,6 +4623,7 @@ button,a{font:inherit}
             return capacity;
         }
         function renderHomeShelves() {
+            renderHomeFeatured();
             renderHomeCategoryChips();
             const available=Array.isArray(window.allGames)?window.allGames:[];
             const favoritesGrid=document.getElementById('favorites-grid');
