@@ -1719,6 +1719,15 @@ body[data-theme="light"] .game-card:hover .game-thumb{box-shadow:0 14px 30px rgb
 #game-detail-content .c823-board td:last-child{color:var(--text-muted);text-align:right}
 #game-detail-content .c823-board tr.mine td{background:var(--brand-soft)}
 #game-detail-content .c823-board .c823-board-player:hover{color:var(--brand)}
+/* Full leaderboard: count + "jump to my rank" in the header, rows scroll with pinned column titles */
+#game-detail-content .c823-board-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+#game-detail-content .c823-board-head h2{margin:0!important}
+#game-detail-content .c823-board-count{font-size:13px;color:var(--text-muted)}
+#game-detail-content .c823-board-jump{margin-left:auto;padding:5px 10px;border-radius:8px;border:1px solid var(--line-strong);background:transparent;color:var(--brand);font:inherit;font-size:13px;font-weight:600;cursor:pointer}
+#game-detail-content .c823-board-jump:hover{background:var(--brand-soft)}
+#game-detail-content .c823-board-scroll{max-height:min(60vh,520px);overflow-y:auto;margin-top:12px;border-radius:10px;scrollbar-width:thin}
+#game-detail-content .c823-board-scroll table{margin-top:0!important}
+#game-detail-content .c823-board thead th{position:sticky;top:0;z-index:1;background:var(--panel)}
 
 /* Game page: cover and info side by side, actions next to the art */
 #game-view .game-breadcrumb{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 16px;font-size:13px;color:var(--text-muted)}
@@ -3208,7 +3217,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                         <div class="picture-grid" id="picture-standard-grid" aria-label="Profile pictures"></div>
                         <div id="picture-admin-group" hidden><div class="picture-group-title">Admin / Founder pictures</div><div class="picture-grid" id="picture-admin-grid"></div></div>
                         <div id="picture-special-group" hidden><div class="picture-group-title">Your special pictures</div><div class="picture-grid" id="picture-special-grid"></div></div>
-                        <!-- Admins / Founders: request a custom picture by image link; the site owner approves it. -->
+                        <!-- Any signed-in account (not guests): request a custom picture by image link; the site owner approves it. -->
                         <div id="picture-custom-group" class="custom-pfp" hidden>
                             <div class="picture-group-title">Custom picture</div>
                             <p class="custom-pfp-note">Paste a link to an image (it must start with https://). It's reviewed before it goes live.</p>
@@ -3386,7 +3395,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
         <!-- Custom picture approvals (only shown to approver accounts; the API enforces it) -->
         <div class="admin-body" id="adminPanePictures" style="display:none">
             <div class="admin-section-title">Custom picture requests</div>
-            <p class="admin-section-note">Admins submit an image link. Approving sets it as their profile picture.</p>
+            <p class="admin-section-note">Players submit an image link. Approving sets it as their profile picture.</p>
             <div id="adminPfpRequests" class="pfp-requests" aria-live="polite"><div class="admin-empty">Loading…</div></div>
             <div class="admin-msg" id="adminPfpMsg" role="status"></div>
         </div>
@@ -3711,13 +3720,15 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             const special = [...new Set((accountSavedData?.limitedEditionPfps || []).map(p => p === 'guest.svg' ? 'guest.jpg' : p))].filter(p=>typeof p==='string' && /^[a-z0-9_-]+\.(?:jpg|jpeg|png|webp|svg)$/i.test(p));
             document.getElementById('picture-special-group').hidden = !special.length;
             document.getElementById('picture-special-grid').replaceChildren(...special.map(pictureButton));
+            // Custom pictures: any signed-in account (not guests).
             const customGroup = document.getElementById('picture-custom-group');
+            const canRequestCustom = Boolean(user.token) && !isGuest();
             if (customGroup) {
-                customGroup.hidden = !canUseAdmin;
-                if (canUseAdmin) { bindCustomPfpForm(); loadCustomPfpStatus(); }
+                customGroup.hidden = !canRequestCustom;
+                if (canRequestCustom) { bindCustomPfpForm(); loadCustomPfpStatus(); }
             }
         }
-        // ── Custom picture requests (admins / Founders). The API checks permission,
+        // ── Custom picture requests (any signed-in account). The API checks the login,
         // validates the link and keeps it pending until the site owner approves it.
         let customPfpState = { request: null, customPfp: '' }, customPfpLoadedFor = '';
         function isHttpsImageLink(value) { try { const u = new URL(String(value).trim()); return u.protocol === 'https:'; } catch { return false; } }
@@ -4742,22 +4753,28 @@ button,a{font:inherit}
         };
         function c823BoardPanel(id) {
             const panel = document.createElement('section'); panel.className = 'game-content-panel c823-board';
+            const head2 = document.createElement('div'); head2.className = 'c823-board-head';
             const h = document.createElement('h2'); h.textContent = 'Leaderboard';
+            const count = document.createElement('span'); count.className = 'c823-board-count';
+            head2.append(h, count);
             const note = document.createElement('p'); note.className = 'c823-board-note'; note.textContent = 'Loading the leaderboard…';
-            panel.append(h, note);
-            const url = id === 'pong' ? C823_HOME + '/api/pong?diff=all' : C823_HOME + '/api/scores?game=' + encodeURIComponent(id);
+            panel.append(head2, note);
+            // all=1 asks the scores server for everyone, not just the top 10.
+            const url = id === 'pong' ? C823_HOME + '/api/pong?diff=all&all=1' : C823_HOME + '/api/scores?game=' + encodeURIComponent(id) + '&all=1';
             fetch(url, { cache: 'no-store' }).then(r => r.ok ? r.json() : Promise.reject(r.status)).then(d => {
                 const rows = (d && d.rows) || [];
                 if (!rows.length) { note.textContent = user.token ? 'No scores yet. Play to get on the board!' : 'No scores yet. Sign in and play to get on the board!'; return; }
                 note.textContent = user.token ? '' : 'Sign in before you play to get your name on the board.';
+                count.textContent = `${rows.length} player${rows.length === 1 ? '' : 's'}`;
                 const table = document.createElement('table');
                 const head = table.createTHead().insertRow();
                 for (const t of ['#', 'Player', 'Best', '']) { const th = document.createElement('th'); th.textContent = t; head.append(th); }
                 const body = table.createTBody();
                 const me = String(user.username || '').toLowerCase();
-                for (const r of rows.slice(0, 50)) {
+                let myRow = null;
+                for (const r of rows) {
                     const tr = body.insertRow();
-                    if (me && String(r.user || '').toLowerCase() === me) tr.className = 'mine';
+                    if (me && String(r.user || '').toLowerCase() === me) { tr.className = 'mine'; myRow = myRow || tr; }
                     const extra = C823_BOARD_EXTRA[id] ? C823_BOARD_EXTRA[id](r) : (r.extra || '');
                     for (const v of [r.rank, r.name, (C823_BOARD_TEXT[id] || (x => x.score))(r), extra]) { const td = tr.insertCell(); td.textContent = v; }
                     // players whose account is on Powerhouse (r.ph, their Powerhouse name) link to their profile
@@ -4769,7 +4786,16 @@ button,a{font:inherit}
                         tr.cells[1].replaceChildren(link);
                     }
                 }
-                panel.append(table);
+                // Long boards scroll inside the panel (header row stays pinned).
+                const scroller = document.createElement('div'); scroller.className = 'c823-board-scroll';
+                scroller.append(table);
+                panel.append(scroller);
+                if (myRow) {
+                    const jump = document.createElement('button'); jump.type = 'button'; jump.className = 'c823-board-jump';
+                    jump.textContent = 'Jump to my rank (#' + myRow.cells[0].textContent + ')';
+                    jump.addEventListener('click', () => { scroller.scrollTo({ top: myRow.offsetTop - scroller.clientHeight / 2, behavior: 'smooth' }); });
+                    head2.append(jump);
+                }
             }).catch(() => { note.textContent = "The leaderboard isn't available right now."; });
             return panel;
         }
@@ -6185,7 +6211,7 @@ button,a{font:inherit}
             if (page !== 'messages' && messagesPoller) {clearInterval(messagesPoller);messagesPoller=null;}
             if (page !== 'messages' && user.token) messageAPI('/social/conversations').then(data=>updateMessagesCount(data.conversations||[])).catch(()=>{});
             if (social && user.token) switchSocialTab(page, false).catch(console.error);
-            if (page === 'settings') {if(!isGuest())switchSettings('account');renderGuestUI();}
+            if (page === 'settings') {if(!isGuest())switchSettings('account');renderGuestUI();renderPicturePicker();}
             if (page === 'admin') {adminTabSwitch('overview'); adminLoadOverview();}
             if (page === 'moderation') {modTabSwitch('action'); document.getElementById('modUserSearch')?.focus();}
         }
