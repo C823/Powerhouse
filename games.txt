@@ -1200,9 +1200,9 @@
     "c823board": "pool"
   },
   {
-    "title": "Dirt & Air",
-    "category": "Arcade",
-    "desc": "A bike game. Ride a BMX or a mountain bike through a skatepark or down a forest trail, and chain tricks together for the high score.",
+    "title": "Dirt & Air Supercross",
+    "category": "Driving",
+    "desc": "A supercross game. Line up on the gate in a packed stadium at night and race nine riders over whoops, rhythm lanes, a triple and tall berms. Lean the bike to match each landing, preload off the lips and grab the holeshot. Pick a 250F or 450F, your team colours and number, or run a time trial to learn the track. Your finishing position and best lap make your race score on the leaderboard.",
     "thumb": "https://raw.githubusercontent.com/C823/assets/refs/heads/main/bike-game-thumbnail.png",
     "link": "https://home.c823.workers.dev/play/dirt-air",
     "verified": false,
