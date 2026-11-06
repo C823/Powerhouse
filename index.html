@@ -1884,6 +1884,40 @@ body[data-theme="light"] .switch .slider{background-color:#cfd5df!important}
     #blog-view .blog-feed-card:first-child{padding:22px!important}
 }
 
+/* Custom picture request (Settings → Account, admins) */
+.custom-pfp{margin-top:18px;padding:16px;border:1px solid var(--line);border-radius:var(--r-md);background:var(--panel-2)}
+.custom-pfp .picture-group-title{margin-top:0!important}
+.custom-pfp-note{margin:4px 0 12px;font-size:13px;color:var(--text-muted)}
+.custom-pfp-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.custom-pfp-preview{width:48px;height:48px;flex:none;border-radius:50%;overflow:hidden;background:var(--field);border:1px dashed var(--line-strong)}
+.custom-pfp-preview img{width:100%;height:100%;object-fit:cover;display:block}
+.custom-pfp-row .settings-input{flex:1 1 240px;min-width:0;height:40px;margin:0!important}
+.custom-pfp-btn{height:40px;padding:0 16px;border-radius:10px;border:1px solid var(--line-strong);background:var(--panel);color:var(--text);font:inherit;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap}
+.custom-pfp-btn.primary{background:var(--text);border-color:var(--text);color:var(--bg-main)}
+.custom-pfp-btn:disabled{opacity:.5;cursor:not-allowed}
+.custom-pfp-btn[hidden]{display:none}
+#custom-pfp-use{margin-top:10px}
+.custom-pfp-status{margin:10px 0 0;font-size:13.5px;color:var(--text-muted)}
+.custom-pfp-status:empty{display:none}
+.custom-pfp-status.pending{color:#e5b33a}
+.custom-pfp-status.approved{color:#4cc38a}
+.custom-pfp-status.denied{color:var(--danger-text)}
+
+/* Admin → Pictures: approval queue */
+.admin-tab-count{display:inline-grid;place-items:center;min-width:18px;height:18px;margin-left:4px;padding:0 5px;border-radius:9px;background:var(--brand);color:#fff;font-size:11px;font-weight:700}
+.admin-tab-count[hidden]{display:none}
+#adminTabPictures[hidden]{display:none!important}
+.pfp-requests{display:grid;gap:10px}
+.pfp-request{display:grid;grid-template-columns:72px minmax(0,1fr) auto;align-items:center;gap:14px;padding:12px;border:1px solid var(--line);border-radius:var(--r-md);background:var(--panel-2)}
+.pfp-request-img{width:72px;height:72px;border-radius:50%;overflow:hidden;background:var(--field);display:grid;place-items:center;font-size:10px;text-align:center;color:var(--text-muted)}
+.pfp-request-img img{width:100%;height:100%;object-fit:cover}
+.pfp-request-img.broken{border:1px dashed var(--danger-text);color:var(--danger-text);padding:6px}
+.pfp-request-info{display:flex;flex-direction:column;gap:3px;min-width:0}
+.pfp-request-info small{color:var(--text-muted);font-size:12.5px}
+.pfp-request-url{font-size:12.5px;color:var(--brand);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pfp-request-actions{display:flex;gap:6px}
+@media (max-width:560px){.pfp-request{grid-template-columns:56px minmax(0,1fr)}.pfp-request-img{width:56px;height:56px}.pfp-request-actions{grid-column:1/-1}.pfp-request-actions .admin-btn{flex:1}}
+
 /* Visually hidden but read by screen readers */
 .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 
@@ -2066,13 +2100,95 @@ async function staffLegacyReadBanner(){await readBannerForEditor();const data=aw
 function adminSetBanner(){return staffLegacySaveBanner();}
 
     function adminTabSwitch(tab) {
-        ['overview','users','allusers','ranks','banner'].forEach(t => {
+        ['overview','users','allusers','ranks','banner','pictures'].forEach(t => {
             document.getElementById('adminPane' + t.charAt(0).toUpperCase() + t.slice(1)).style.display = t === tab ? 'block' : 'none';
             document.getElementById('adminTab'  + t.charAt(0).toUpperCase() + t.slice(1)).classList.toggle('active', t === tab);
         });
         if (tab === 'banner')   staffLegacyReadBanner();
         if (tab === 'allusers') adminLoadAllUsers();
-        if (tab === 'overview') adminLoadOverview();
+        if (tab === 'overview') { adminLoadOverview(); adminRefreshPfpTab(); }
+        if (tab === 'pictures') adminLoadPfpRequests();
+    }
+
+    // ── Custom picture approvals ──────────────────────────────────────────────
+    // The Pictures tab is shown only to approver accounts (the API decides via
+    // GET /auth/custom-pfp → approver). Request data is user-supplied, so every
+    // value below goes into textContent/attributes, never innerHTML.
+    let adminPfpApprover = false;
+    async function adminRefreshPfpTab() {
+        const tabButton = document.getElementById('adminTabPictures');
+        if (!tabButton || !user.token) return;
+        try {
+            const r = await fetch(`${API_BASE}/auth/custom-pfp`, { headers: { Authorization: `Bearer ${user.token}` }, cache: 'no-store' });
+            adminPfpApprover = r.ok && (await r.json()).approver === true;
+        } catch (e) { adminPfpApprover = false; }
+        tabButton.hidden = !adminPfpApprover;
+        if (!adminPfpApprover) return;
+        try {
+            const r = await fetch(`${API_BASE}/admin/pfp-requests`, { headers: { Authorization: `Bearer ${user.token}` }, cache: 'no-store' });
+            const count = r.ok ? ((await r.json()).requests || []).length : 0;
+            const badge = document.getElementById('adminPfpCount');
+            if (badge) { badge.textContent = String(count); badge.hidden = count === 0; }
+        } catch (e) {}
+    }
+    async function adminLoadPfpRequests() {
+        const list = document.getElementById('adminPfpRequests');
+        const msg = document.getElementById('adminPfpMsg');
+        if (!list) return;
+        const empty = text => { const d = document.createElement('div'); d.className = 'admin-empty'; d.textContent = text; list.replaceChildren(d); };
+        empty('Loading…');
+        try {
+            const r = await fetch(`${API_BASE}/admin/pfp-requests`, { headers: { Authorization: `Bearer ${user.token}` }, cache: 'no-store' });
+            if (!r.ok) { empty(r.status === 403 ? 'Only the site owner can review pictures.' : 'Could not load requests.'); return; }
+            const requests = (await r.json()).requests || [];
+            const badge = document.getElementById('adminPfpCount');
+            if (badge) { badge.textContent = String(requests.length); badge.hidden = requests.length === 0; }
+            if (!requests.length) { empty('No pictures waiting for approval.'); return; }
+            list.replaceChildren(...requests.map(req => {
+                const card = document.createElement('div'); card.className = 'pfp-request';
+                const frame = document.createElement('div'); frame.className = 'pfp-request-img';
+                const img = document.createElement('img'); img.alt = 'Requested picture for ' + req.username; img.referrerPolicy = 'no-referrer'; img.src = req.url;
+                img.onerror = () => { frame.classList.add('broken'); frame.textContent = 'Image failed to load'; };
+                frame.append(img);
+                const info = document.createElement('div'); info.className = 'pfp-request-info';
+                const name = document.createElement('strong'); name.textContent = req.username;
+                const when = document.createElement('small'); when.textContent = req.requestedAt ? 'Requested ' + new Date(req.requestedAt).toLocaleString() : '';
+                const link = document.createElement('a'); link.className = 'pfp-request-url'; link.href = req.url; link.target = '_blank'; link.rel = 'noopener noreferrer'; link.textContent = req.url;
+                info.append(name, when, link);
+                const actions = document.createElement('div'); actions.className = 'pfp-request-actions';
+                const approve = document.createElement('button'); approve.type = 'button'; approve.className = 'admin-btn primary'; approve.textContent = 'Approve';
+                const deny = document.createElement('button'); deny.type = 'button'; deny.className = 'admin-btn danger'; deny.textContent = 'Deny';
+                approve.addEventListener('click', () => adminDecidePfp(req.username, true, [approve, deny]));
+                deny.addEventListener('click', () => adminDecidePfp(req.username, false, [approve, deny]));
+                actions.append(approve, deny);
+                card.append(frame, info, actions);
+                return card;
+            }));
+            if (msg) msg.textContent = '';
+        } catch (e) { empty('Could not load requests.'); }
+    }
+    async function adminDecidePfp(username, approve, buttons) {
+        const msg = document.getElementById('adminPfpMsg');
+        let reason = '';
+        if (!approve) {
+            const entered = prompt(`Deny ${username}'s picture? You can add a short reason (optional):`, '');
+            if (entered === null) return;
+            reason = entered;
+        }
+        buttons.forEach(b => b.disabled = true);
+        try {
+            const r = await fetch(`${API_BASE}/admin/pfp-requests/decide`, {
+                method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${user.token}` },
+                body: JSON.stringify({ username, approve, reason })
+            });
+            const data = await r.json().catch(() => ({}));
+            if (!r.ok || data.error) throw new Error(data.error || 'Request failed');
+            if (msg) msg.textContent = approve ? `Approved ${username}'s picture.` : `Denied ${username}'s picture.`;
+            adminLoadPfpRequests();
+        } catch (e) {
+            if (msg) msg.textContent = e.message || 'Could not save the decision.';
+            buttons.forEach(b => b.disabled = false);
+        }
     }
 
 
@@ -2863,7 +2979,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
 
     <main id="main-wrapper">
         <header>
-            <form class="search-container" id="globalSearchForm" role="search" onsubmit="submitGlobalSearch(event)"><svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" id="searchInput" placeholder="Search games and players…" aria-label="Search games and players" autocomplete="off" maxlength="80" role="combobox" aria-autocomplete="list" aria-controls="search-suggest" aria-expanded="false"><kbd class="search-kbd" aria-hidden="true">/</kbd><div id="search-suggest" role="listbox" aria-label="Suggested games" hidden></div></form>
+            <form class="search-container" id="globalSearchForm" role="search" onsubmit="submitGlobalSearch(event)"><svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" id="searchInput" name="site-search" placeholder="Search games and players…" aria-label="Search games and players" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" data-lpignore="true" data-1p-ignore="true" data-bwignore="true" data-form-type="other" maxlength="80" role="combobox" aria-autocomplete="list" aria-controls="search-suggest" aria-expanded="false"><kbd class="search-kbd" aria-hidden="true">/</kbd><div id="search-suggest" role="listbox" aria-label="Suggested games" hidden></div></form>
             <div class="header-right">
                 <div class="user-pill-container">
                     <div class="user-pill" onclick="toggleDropdown(event)">
@@ -2957,7 +3073,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                     <label class="ag-search" for="all-games-text-filter">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
                         <span class="sr-only">Find a game</span>
-                        <input type="search" id="all-games-text-filter" placeholder="Find a game…" autocomplete="off" maxlength="60">
+                        <input type="search" id="all-games-text-filter" name="game-filter" placeholder="Find a game…" maxlength="60" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" data-lpignore="true" data-1p-ignore="true" data-bwignore="true" data-form-type="other">
                     </label>
                     <label class="ag-sort" for="all-games-sort"><span class="sr-only">Sort games</span>
                         <select id="all-games-sort" aria-label="Sort games">
@@ -3092,6 +3208,18 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                         <div class="picture-grid" id="picture-standard-grid" aria-label="Profile pictures"></div>
                         <div id="picture-admin-group" hidden><div class="picture-group-title">Admin / Founder pictures</div><div class="picture-grid" id="picture-admin-grid"></div></div>
                         <div id="picture-special-group" hidden><div class="picture-group-title">Your special pictures</div><div class="picture-grid" id="picture-special-grid"></div></div>
+                        <!-- Admins / Founders: request a custom picture by image link; the site owner approves it. -->
+                        <div id="picture-custom-group" class="custom-pfp" hidden>
+                            <div class="picture-group-title">Custom picture</div>
+                            <p class="custom-pfp-note">Paste a link to an image (it must start with https://). It's reviewed before it goes live.</p>
+                            <div class="custom-pfp-row">
+                                <div class="custom-pfp-preview"><img id="custom-pfp-preview" alt="Preview of your custom picture" referrerpolicy="no-referrer" hidden></div>
+                                <input id="custom-pfp-url" class="settings-input" type="url" inputmode="url" placeholder="https://example.com/picture.png" maxlength="500" autocomplete="off" aria-label="Custom picture image link">
+                                <button id="custom-pfp-submit" type="button" class="custom-pfp-btn primary">Submit for approval</button>
+                            </div>
+                            <p id="custom-pfp-status" class="custom-pfp-status" role="status" aria-live="polite"></p>
+                            <button id="custom-pfp-use" type="button" class="custom-pfp-btn" hidden>Use my approved picture</button>
+                        </div>
                         <div id="picture-save-feedback" role="status" aria-live="polite"></div>
                     </div>
                     <div class="account-about-editor">
@@ -3186,6 +3314,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             <button class="admin-tab"        id="adminTabAllusers"  onclick="adminTabSwitch('allusers')">All Users</button>
             <button class="admin-tab"        id="adminTabRanks"     onclick="adminTabSwitch('ranks')">Ranks</button>
             <button class="admin-tab"        id="adminTabBanner"    onclick="adminTabSwitch('banner')">Banner</button>
+            <button class="admin-tab"        id="adminTabPictures"  onclick="adminTabSwitch('pictures')" hidden>Pictures <span id="adminPfpCount" class="admin-tab-count" hidden></span></button>
         </div>
 
         <!-- Overview -->
@@ -3252,6 +3381,14 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                 <button class="admin-btn primary" onclick="adminSetBanner()" style="align-self:flex-start;padding:6px 16px">Update Banner</button>
                 <div class="admin-msg" id="adminBannerMsg2"></div>
             </div>
+        </div>
+
+        <!-- Custom picture approvals (only shown to approver accounts; the API enforces it) -->
+        <div class="admin-body" id="adminPanePictures" style="display:none">
+            <div class="admin-section-title">Custom picture requests</div>
+            <p class="admin-section-note">Admins submit an image link. Approving sets it as their profile picture.</p>
+            <div id="adminPfpRequests" class="pfp-requests" aria-live="polite"><div class="admin-empty">Loading…</div></div>
+            <div class="admin-msg" id="adminPfpMsg" role="status"></div>
         </div>
 
 </div></section>
@@ -3503,7 +3640,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
         const STANDARD_PICTURES = Array.from({length:25},(_,i)=>`${i+1}.jpg`);
         const ADMIN_PICTURES = ['pwr.jpg','https://avatars.githubusercontent.com/u/225702018?v=4','dog.jpg','hockey.jpg','productions.jpg','tux.jpg','glowing.jpg','wheatley.jpg'];
         let pictureSavePending = false;
-        function pictureURL(filename) { if (filename === 'guest.svg' || filename === 'guest.jpg') return GUEST_PFP_URL; if (isDefaultPicture(filename)) return themeDefaultPfp(); if (filename === 'ski.jpg') return SKI_PFP_URL; return filename === SKI_PFP_URL ? SKI_PFP_URL : PFP_BASE + encodeURIComponent(filename); }
+        function pictureURL(filename) { if (/^https:\/\//i.test(String(filename || ''))) return filename; /* approved custom picture */ if (filename === 'guest.svg' || filename === 'guest.jpg') return GUEST_PFP_URL; if (isDefaultPicture(filename)) return themeDefaultPfp(); if (filename === 'ski.jpg') return SKI_PFP_URL; return filename === SKI_PFP_URL ? SKI_PFP_URL : PFP_BASE + encodeURIComponent(filename); }
         const SKI_PFP_URL = 'https://avatars.githubusercontent.com/u/225702018?v=4';
         const PICTURE_NAMES = {
             'pwr.jpg':'Powerhouse', 'dog.jpg':'Dog', 'hockey.jpg':'Hockey',
@@ -3558,6 +3695,66 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             const special = [...new Set((accountSavedData?.limitedEditionPfps || []).map(p => p === 'guest.svg' ? 'guest.jpg' : p))].filter(p=>typeof p==='string' && /^[a-z0-9_-]+\.(?:jpg|jpeg|png|webp|svg)$/i.test(p));
             document.getElementById('picture-special-group').hidden = !special.length;
             document.getElementById('picture-special-grid').replaceChildren(...special.map(pictureButton));
+            const customGroup = document.getElementById('picture-custom-group');
+            if (customGroup) {
+                customGroup.hidden = !canUseAdmin;
+                if (canUseAdmin) { bindCustomPfpForm(); loadCustomPfpStatus(); }
+            }
+        }
+        // ── Custom picture requests (admins / Founders). The API checks permission,
+        // validates the link and keeps it pending until the site owner approves it.
+        let customPfpState = { request: null, customPfp: '' }, customPfpLoadedFor = '';
+        function isHttpsImageLink(value) { try { const u = new URL(String(value).trim()); return u.protocol === 'https:'; } catch { return false; } }
+        function renderCustomPfpStatus() {
+            const status = document.getElementById('custom-pfp-status');
+            const use = document.getElementById('custom-pfp-use');
+            if (!status || !use) return;
+            const req = customPfpState.request;
+            status.className = 'custom-pfp-status';
+            if (req?.status === 'pending') { status.textContent = 'Waiting for approval — submitted ' + new Date(req.requestedAt).toLocaleDateString() + '. Submitting again replaces it.'; status.classList.add('pending'); }
+            else if (req?.status === 'denied') { status.textContent = 'Your last picture wasn’t approved' + (req.reason ? ': ' + req.reason : '.') + ' You can submit a different one.'; status.classList.add('denied'); }
+            else if (req?.status === 'approved') { status.textContent = 'Your custom picture was approved.'; status.classList.add('approved'); }
+            else status.textContent = '';
+            use.hidden = !customPfpState.customPfp || user.pfp === customPfpState.customPfp;
+        }
+        async function loadCustomPfpStatus(force = false) {
+            if (!user.token || (!force && customPfpLoadedFor === user.username)) { renderCustomPfpStatus(); return; }
+            customPfpLoadedFor = user.username;
+            try {
+                const r = await fetch(`${API_BASE}/auth/custom-pfp`, { headers: { Authorization: `Bearer ${user.token}` }, cache: 'no-store' });
+                if (r.ok) { const d = await r.json(); customPfpState = { request: d.request || null, customPfp: d.customPfp || '' }; }
+            } catch (e) {}
+            renderCustomPfpStatus();
+        }
+        function bindCustomPfpForm() {
+            const input = document.getElementById('custom-pfp-url');
+            if (!input || input.dataset.bound) return;
+            input.dataset.bound = 'true';
+            const preview = document.getElementById('custom-pfp-preview');
+            const status = document.getElementById('custom-pfp-status');
+            const submit = document.getElementById('custom-pfp-submit');
+            preview.onerror = () => { preview.hidden = true; if (input.value.trim()) { status.className = 'custom-pfp-status denied'; status.textContent = 'That link didn’t load as an image.'; } };
+            preview.onload = () => { preview.hidden = false; renderCustomPfpStatus(); };
+            input.addEventListener('input', () => {
+                const value = input.value.trim();
+                if (isHttpsImageLink(value)) preview.src = value; else { preview.hidden = true; preview.removeAttribute('src'); }
+            });
+            submit.addEventListener('click', async () => {
+                const value = input.value.trim();
+                if (!isHttpsImageLink(value)) { status.className = 'custom-pfp-status denied'; status.textContent = 'Enter a full image link that starts with https://'; input.focus(); return; }
+                submit.disabled = true; status.className = 'custom-pfp-status'; status.textContent = 'Submitting…';
+                try {
+                    const r = await fetch(`${API_BASE}/auth/custom-pfp`, { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${user.token}` }, body: JSON.stringify({ url: value }) });
+                    const d = await r.json().catch(() => ({}));
+                    // 404 = the API worker hasn't been updated with custom-picture support yet.
+                    if (r.status === 404) throw new Error('Custom pictures aren’t switched on yet. Try again later.');
+                    if (!r.ok || d.error) throw new Error(d.error || 'Could not submit the picture.');
+                    customPfpState.request = d.request;
+                    renderCustomPfpStatus();
+                } catch (e) { status.className = 'custom-pfp-status denied'; status.textContent = e.message; }
+                finally { submit.disabled = false; }
+            });
+            document.getElementById('custom-pfp-use').addEventListener('click', () => { if (customPfpState.customPfp) saveProfilePicture(customPfpState.customPfp); });
         }
         async function saveProfilePicture(filename) {
             const feedback = document.getElementById('picture-save-feedback');
@@ -3909,6 +4106,21 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                 if (active) tab.setAttribute('aria-current', 'page'); else tab.removeAttribute('aria-current');
             });
         }
+        // Password managers sometimes treat a search box as a "username" field (the sign-in
+        // form lives in the same page) and fill in the saved username. Autofill fires the same
+        // input event as typing, but while the box isn't focused, so only clear it then.
+        function looksAutofilled(input) {
+            if (!input || !input.value || document.activeElement === input) return false;
+            let autofill = false;
+            try { autofill = input.matches(':autofill'); } catch { try { autofill = input.matches(':-webkit-autofill'); } catch {} }
+            const name = String(user.username || '').trim().toLowerCase();
+            return autofill || Boolean(name && input.value.trim().toLowerCase() === name);
+        }
+        function clearIfAutofilled(input) {
+            if (!looksAutofilled(input)) return false;
+            input.value = '';
+            return true;
+        }
         function focusGlobalSearch() {
             setNavOpen(false);
             window.scrollTo({top: 0, behavior: 'smooth'});
@@ -3991,7 +4203,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
         (function bindSearchSuggest() {
             const input = document.getElementById('searchInput'), box = document.getElementById('search-suggest');
             if (!input || !box) return;
-            input.addEventListener('input', updateSearchSuggest);
+            input.addEventListener('input', () => { if (clearIfAutofilled(input)) { hideSearchSuggest(); return; } updateSearchSuggest(); });
             input.addEventListener('focus', () => { if (input.value.trim()) updateSearchSuggest(); });
             input.addEventListener('blur', () => setTimeout(() => { if (document.activeElement !== input) hideSearchSuggest(); }, 120));
             // Keep focus in the input while clicking a suggestion.
@@ -4878,7 +5090,10 @@ button,a{font:inherit}
             const text = document.getElementById('all-games-text-filter');
             if (text && !text.dataset.bound) {
                 text.dataset.bound = 'true';
-                text.addEventListener('input', () => { allGamesTextFilter = text.value; renderAllGamesPage(); });
+                text.addEventListener('input', () => {
+                    if (clearIfAutofilled(text)) { if (allGamesTextFilter) { allGamesTextFilter = ''; renderAllGamesPage(); } return; }
+                    allGamesTextFilter = text.value; renderAllGamesPage();
+                });
             }
             if (text && text.value !== allGamesTextFilter) text.value = allGamesTextFilter;
             const sort = document.getElementById('all-games-sort');
@@ -4922,6 +5137,12 @@ button,a{font:inherit}
             const summary = document.getElementById('all-games-filter-result');
             if (!host) return;
             bindAllGamesFilters();
+            // Autofill can also fill the box silently (no input event). Our filter state is the
+            // source of truth, so restore it shortly after the page shows, unless the user is typing.
+            const filterBox = document.getElementById('all-games-text-filter');
+            for (const delay of [150, 600, 1500]) setTimeout(() => {
+                if (filterBox && document.activeElement !== filterBox && filterBox.value !== allGamesTextFilter) filterBox.value = allGamesTextFilter;
+            }, delay);
             // Only show the loading text on the first load, not on every keystroke.
             if (!Array.isArray(window.allGames)) host.textContent = 'Loading games…';
             try {
@@ -5925,6 +6146,8 @@ button,a{font:inherit}
             document.querySelectorAll('#sidebar .nav-item').forEach(item => item.classList.remove('active'));
             document.getElementById('side-' + view)?.classList.add('active');
             syncMobileTabbar(view); setNavOpen(false); hideSearchSuggest();
+            // Same silent-autofill check for the header search (the Search page fills it on purpose).
+            if (page !== 'search') for (const delay of [150, 1500]) setTimeout(() => clearIfAutofilled(document.getElementById('searchInput')), delay);
             document.getElementById('user-dropdown')?.classList.remove('show');
             document.title = (page === 'not-found' ? '404 — Page not found' : page === 'profile' ? (profileNames.get(route.id) || 'Profile') : social ? 'Social' : (page === 'all-games' ? 'All Games' : page.charAt(0).toUpperCase()+page.slice(1))) + ' | Powerhouse';
             if (page === 'home') requestAnimationFrame(renderHomeShelves);
