@@ -1196,7 +1196,7 @@
     "verified": false,
     "OG": true,
     "new": false,
-    "date_added": "11/4/2026",
+    "date_added": "11/04/2026",
     "c823board": "pool"
   },
   {
@@ -1208,7 +1208,7 @@
     "verified": false,
     "OG": true,
     "new": true,
-    "date_added": "11/4/2026",
+    "date_added": "11/04/2026",
     "c823board": "dirtair"
   },
   {
