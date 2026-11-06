@@ -1193,7 +1193,7 @@
     "desc": "A cue sport played on a table with six pockets, where players aim to pocket balls using a cue stick. ",
     "thumb": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%2Fid%2FOIP.odZ1o4wCKEbVAIzRSO4BuAHaEJ%3Fr%3D0%26pid%3DApi&f=1&ipt=be729e2fcdd2c60dabc5da6fd5dc82aa061a30a5b57ecd61e1dea61840f6fd33&ipo=images",
     "link": "https://home.c823.workers.dev/play/pool",
-    "verified": false,
+    "verified": true,
     "OG": true,
     "new": false,
     "date_added": "11/04/2026",
