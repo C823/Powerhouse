@@ -3463,6 +3463,21 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             try { return localStorage.getItem(key); } catch (error) { return null; }
         }
         let user = { token: safeStorageGet('ph_token'), username: safeStorageGet('ph_username'), pfp: safeStorageGet('ph_pfp') };
+        // Logins expire after 30 days. An expired saved login kept the site looking signed in
+        // while the API quietly treated it as signed out (no Admin/Moderation panels, friends,
+        // saving). Drop it at startup so the user signs in again and gets a fresh login.
+        let sessionExpiredNotice = false;
+        function tokenExpired(token) {
+            try {
+                const payload = JSON.parse(atob(String(token).split('.')[1].replace(/-/g, '+').replace(/_/g, '/')));
+                return typeof payload.exp === 'number' && Date.now() / 1000 >= payload.exp - 60;
+            } catch { return false; } // unreadable: let the server decide
+        }
+        function clearSavedLogin() {
+            for (const key of ['ph_token', 'ph_username', 'ph_pfp']) { try { localStorage.removeItem(key); } catch {} }
+            user = { token: null, username: null, pfp: null };
+        }
+        if (user.token && tokenExpired(user.token)) { clearSavedLogin(); sessionExpiredNotice = true; }
         const GUEST_WEEK_MS = 7 * 24 * 60 * 60 * 1000;
         let guestMode = !user.token && !!safeStorageGet('ph_guest_id') && safeStorageGet('ph_guest_consumed') !== '1';
         let guestVerified = false;
@@ -3594,6 +3609,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             try {
                 if (isGuest() && Date.now() >= guestExpiresAt) expireGuestTrial();
                 routeFromURL(true);renderGuestUI();if(isGuest())validateGuestTrial();
+                if (sessionExpiredNotice) authLoginFeedback('Your login expired. Please sign in again.');
             } catch (error) {
                 showStartupFallback(error);
             }
@@ -3874,7 +3890,15 @@ function adminSetBanner(){return staffLegacySaveBanner();}
         }
         async function fetchUserData() {
             try {
+                const tokenAtStart = user.token;
                 const r = await fetch(`${API_BASE}/auth/load`, { headers: {'Authorization': `Bearer ${user.token}`} });
+                // The server rejected this login (expired or no longer valid): sign out cleanly
+                // instead of staying "signed in" with features silently failing.
+                if (r.status === 401 && tokenAtStart && user.token === tokenAtStart && !isGuest()) {
+                    logout();
+                    authLoginFeedback('Your login expired. Please sign in again.');
+                    return;
+                }
                 if (r.ok) {
                     const { data } = await r.json();
                     if (!data || !user.token) return;
