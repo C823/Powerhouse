@@ -51,7 +51,7 @@
 
         button, input, textarea, select { font-family: inherit; }
 
-        /* --- AUTH PAGE — website v2.21.22 --- */
+        /* --- AUTH PAGE — website v2.21.24 --- */
         #landing-page { position:fixed; inset:0; z-index:5000; display:none; align-items:center; justify-content:center; overflow:auto; padding:32px 22px; color:#eee; background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.6)),url('https://files.enderman.ch/wallpapers/Moonlight.png') center center / cover no-repeat fixed #090b12; }
         #landing-page::before { content:''; position:fixed; inset:0; pointer-events:none; background:rgba(0,0,0,.10); }
         #landing-page::after { content:none; }
@@ -111,7 +111,7 @@
 
         /* --- DASHBOARD UI --- */
 
-        /* v2.21.22 — optional compact sidebar, based on the narrow navigation reference. */
+        /* v2.21.24 — optional compact sidebar, based on the narrow navigation reference. */
         body[data-compact-sidebar="true"] { --sidebar-width: 184px; }
         body[data-compact-sidebar="true"] #sidebar { padding: 15px 10px 12px; }
         body[data-compact-sidebar="true"] #sidebar .logo-area { margin-bottom: 10px; padding: 0 2px; }
@@ -172,7 +172,7 @@
         #sidebar .c823-footer-icon { width: 32px; height: 32px; display: block; object-fit: contain; border: none; outline: none; background: transparent; }
 
 
-        /* v2.21.22 — paired footer shortcuts, usable in normal and compact sidebars. */
+        /* v2.21.24 — paired footer shortcuts, usable in normal and compact sidebars. */
         #sidebar .sidebar-external-links { display:flex; align-items:center; flex-wrap:wrap; gap:8px; }
         #sidebar .classroom-footer-link { color:#c9c9c9; text-decoration:none; }
         #sidebar .classroom-footer-link:hover { color:#00b9ff; }
@@ -184,7 +184,7 @@
         .nav-item:hover { background: var(--accent-light); color: var(--text); }
         .nav-item.active { background: var(--accent); color: white; }
         .nav-item svg { width: 20px; height: 20px; flex: 0 0 20px; display: block; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; fill: none; }
-        /* v2.21.22: solid filled sidebar navigation icons */
+        /* v2.21.24: solid filled sidebar navigation icons */
         #sidebar .nav-item svg.sidebar-solid-icon { fill: currentColor; stroke: none; stroke-width: 0; }
         .badge { position: absolute; right: 12px; background: var(--accent2); padding: 2px 8px; border-radius: 20px; font-size: 10px; color: white; font-weight: 800; }
 
@@ -265,7 +265,7 @@
         .profile-action:hover { transform:translateY(-2px); border-color:var(--accent); }
         .profile-divider { height:1px;background:var(--border);margin:28px 0; }
 
-        /* v2.21.22 — public profile Favorites */
+        /* v2.21.24 — public profile Favorites */
         .profile-favorites-card { margin-top:20px; padding:22px; border:1px solid var(--border); background:var(--surface); border-radius:16px; }
         .profile-favorites-heading { display:flex; justify-content:space-between; gap:12px; align-items:baseline; margin-bottom:17px; }
         .profile-favorites-heading h2 { margin:0; font-size:18px; }
@@ -387,7 +387,7 @@
         .social-card img { width:54px; height:54px; object-fit:cover; flex-shrink:0; background:var(--surface); }
         .social-card-name { font-size:13px; font-weight:700; margin:0 8px 0 12px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; flex:1; }
 
-        /* v2.21.22: banned/deleted accounts retain removable friend entries, never a profile link. */
+        /* v2.21.24: banned/deleted accounts retain removable friend entries, never a profile link. */
         .social-deleted-profile {display:flex;align-items:center;flex:1;min-width:0;pointer-events:none;color:var(--text-muted);}
         .social-deleted-profile img {filter:grayscale(1);opacity:.55;}
         .social-deleted-text {display:flex;flex-direction:column;gap:2px;min-width:0;margin-left:12px;}
@@ -803,7 +803,7 @@
         .account-userid-row button:disabled { opacity:.45; cursor:default; }
         .account-userid-hint, #account-userid-feedback { color:#aaa; font-size:12px; margin:7px 0 0; }
 
-/* v2.21.22 — Messaging */
+/* v2.21.24 — Messaging */
 #messages-view [hidden], #side-messages .message-nav-count[hidden], #profile-message-action[hidden] { display:none !important; }
 #side-messages { position:relative; }
 .message-nav-count { margin-left:auto; min-width:19px; padding:2px 6px; border-radius:30px; background:#393939; color:#fff; font-size:11px; font-weight:700; text-align:center; }
@@ -848,7 +848,7 @@
 .messages-back { border:0; background:#343434; color:white; border-radius:7px; padding:6px 10px; cursor:pointer; }
 
 
-/* v2.21.22 — Friends / Requests */
+/* v2.21.24 — Friends / Requests */
 .requests-count {display:inline-flex;min-width:19px;height:19px;padding:0 5px;align-items:center;justify-content:center;border-radius:9px;background:#383838;color:#fff;font-size:11px;margin-left:5px;}
 .requests-count[hidden] {display:none!important;}
 .social-request-card {height:auto;min-height:78px;padding-right:12px;gap:12px;}
@@ -867,7 +867,7 @@
 #friends-view:has(.social-request-card) .social-grid {grid-template-columns:repeat(auto-fill,minmax(min(100%,470px),470px));}
 @media(max-width:540px){.social-request-card{flex-wrap:wrap;padding:8px;}.social-request-actions{width:100%;justify-content:flex-end}.social-request-card .social-profile-link{width:100%;}}
 
-/* v2.21.22 — Not found page */
+/* v2.21.24 — Not found page */
 #not-found-view .error-layout { min-height:calc(100vh - 190px); display:flex; align-items:center; justify-content:center; text-align:center; padding:64px 16px; }
 #not-found-view .error-content {max-width:520px; width:100%; }
 #not-found-view .error-kicker {color:#9b9b9b; font-weight:700; letter-spacing:.18em; font-size:12px; text-transform:uppercase; margin-bottom:16px;}
@@ -879,7 +879,7 @@
 #not-found-view .error-home-link:focus-visible {outline:2px solid white;outline-offset:3px;}
 
 
-/* v2.21.22 — Game details: image-safe, responsive editorial layout. */
+/* v2.21.24 — Game details: image-safe, responsive editorial layout. */
 #game-view { width:100%; }
 #game-view .game-detail { width:min(1120px,100%); margin:0 auto; min-width:0; }
 #game-view .game-breadcrumb { display:flex; align-items:center; flex-wrap:wrap; gap:10px; margin:4px 0 21px; color:#999; font-size:13px; }
@@ -936,7 +936,7 @@ body[data-theme="light"] #game-detail-content .game-og-badge { background-image:
 @media(prefers-reduced-motion:reduce){#game-detail-content .game-play-button{transition:none;}}
 
 
-        /* Home section layout editor - v2.21.22 */
+        /* Home section layout editor - v2.21.24 */
         .layout-editor{margin-top:30px;padding-top:24px;border-top:1px solid var(--border,#333)}
         .layout-editor-header h3{margin:0 0 7px;font-size:18px}
         .layout-editor-header p{margin:0 0 17px;color:var(--text-muted,#aaa);font-size:13px;line-height:1.5}
@@ -954,7 +954,7 @@ body[data-theme="light"] #game-detail-content .game-og-badge { background-image:
         @media(max-width:560px){.layout-editor-row{padding:10px;gap:8px}.layout-editor-move button{padding:5px 8px}}
 
 
-/* v2.21.22 — Game dates and dual launch choices */
+/* v2.21.24 — Game dates and dual launch choices */
 .game-date-setting{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:21px 0 3px;border-top:1px solid #333;margin-top:24px}
 .game-date-setting strong{font-size:15px;color:#f4f4f4}
 .game-date-setting p{margin:6px 0 0;font-size:12px;line-height:1.55;color:#aaa;max-width:480px}
@@ -965,7 +965,7 @@ body[data-theme="light"] #game-detail-content .game-og-badge { background-image:
 @media(max-width:390px){#game-detail-content .game-launch-actions{grid-template-columns:1fr}}
 
 
-/* v2.21.22 — international game date controls */
+/* v2.21.24 — international game date controls */
 .game-date-format-setting{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 0 20px;border-bottom:1px solid #333}
 .game-date-format-setting label{display:flex;flex-direction:column;gap:6px;min-width:0}
 .game-date-format-setting strong{color:#f4f4f4;font-size:15px}
@@ -973,10 +973,10 @@ body[data-theme="light"] #game-detail-content .game-og-badge { background-image:
 .game-date-format-setting select{width:min(310px,100%);min-width:190px;margin:0;cursor:pointer;background:#222;color:#f4f4f4;border:1px solid #474747}
 @media(max-width:640px){.game-date-format-setting{align-items:stretch;flex-direction:column;gap:12px}.game-date-format-setting select{width:100%}}
 
-/* Powerhouse v2.21.22 — Blog */
+/* Powerhouse v2.21.24 — Blog */
 .blog-shell{max-width:1050px;margin:auto}.blog-heading{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:24px;flex-wrap:wrap}.blog-heading h1{font-size:clamp(1.7rem,3vw,2.2rem);margin:0}.blog-heading p{color:#999;margin:6px 0 0}.blog-toolbar{display:flex;gap:10px;flex-wrap:wrap}.blog-action{background:#292929;color:#fff;border:1px solid #444;border-radius:9px;padding:10px 15px;cursor:pointer;font:inherit}.blog-action:hover{background:#383838}.blog-action.primary{background:#ededed;color:#161616;border-color:#ededed;font-weight:700}.blog-action.primary:hover{background:#cfcfcf}.blog-action.danger{color:#ffb9b9;border-color:#724444}.blog-card-list{display:grid;gap:13px}.blog-feed-card{display:block;text-align:left;width:100%;border:1px solid #363636;background:#202020;color:inherit;border-radius:14px;padding:22px;cursor:pointer;transition:border-color .15s,transform .15s}.blog-feed-card:hover{border-color:#888;transform:translateY(-2px)}.blog-feed-card h2{font-size:1.25rem;margin:8px 0}.blog-feed-card p{color:#adadad;margin:6px 0 0;line-height:1.55;overflow-wrap:anywhere}.blog-meta{color:#949494;font-size:.8rem}.blog-tag{font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#dedede;background:#363636;border:1px solid #4a4a4a;border-radius:5px;padding:4px 7px;display:inline-block}.blog-panel-box{background:#1f1f1f;border:1px solid #353535;padding:clamp(18px,3vw,32px);border-radius:15px}.blog-article-title{font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.15;margin:15px 0}.blog-article-body{line-height:1.8;overflow-wrap:anywhere;font-size:1rem;white-space:normal}.blog-article-body p{margin:0 0 1em}.blog-article-body h1,.blog-article-body h2,.blog-article-body h3{margin:1.5em 0 .5em}.blog-article-body a{color:#ddd;text-decoration:underline}.blog-article-body img{max-width:100%;height:auto}.blog-article-body pre{white-space:pre-wrap;background:#111;padding:12px;border-radius:8px}.blog-article-body blockquote{border-left:3px solid #888;margin:12px 0;padding-left:16px;color:#bbb}.blog-form{display:grid;gap:16px}.blog-form label{display:grid;gap:7px;font-size:.9rem;font-weight:600}.blog-form input,.blog-form textarea,.blog-form select{background:#111;color:#fff;border:1px solid #454545;border-radius:8px;padding:12px;font:inherit;width:100%;box-sizing:border-box}.blog-form textarea{min-height:220px;resize:vertical}.blog-form :is(input,textarea,select):focus{outline:2px solid #aaa;outline-offset:1px}.blog-manage-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 0;border-bottom:1px solid #383838}.blog-manage-row>div:first-child{min-width:0;overflow-wrap:anywhere}.blog-empty{padding:50px 20px;text-align:center;color:#999;border:1px dashed #444;border-radius:12px}.blog-feedback{font-size:.9rem;color:#ccc;min-height:1.2em}.blog-feedback.error{color:#ff9e9e}.blog-hidden{display:none!important}@media(max-width:660px){.blog-manage-row{align-items:flex-start;flex-direction:column}.blog-feed-card{padding:17px}}
 
-/* Guest trial | v2.21.22 */
+/* Guest trial | v2.21.24 */
         .guest-expired-choice { margin-top:18px; padding:18px; background:#242424; border:1px solid #555; border-radius:10px; }
         .guest-expired-choice[hidden] { display:none!important; }
         .guest-expired-choice h3 { margin:0 0 6px; color:#fff; font-size:16px; }
@@ -993,7 +993,7 @@ body[data-theme="light"] #game-detail-content .game-og-badge { background-image:
 .guest-settings-info p{color:#aaa;line-height:1.6}.guest-settings-info button{max-width:275px;margin-top:22px}
 .guest-trial-nav{margin-top:12px;font-size:11px;color:#a7a7a7;line-height:1.6;max-width:220px}
 
-/* v2.21.22 — always-visible category navigation, aligned with category heading. */
+/* v2.21.24 — always-visible category navigation, aligned with category heading. */
 #all-games-categories .category-block{position:relative;min-width:0}
 #all-games-categories .category-heading{display:flex!important;align-items:center!important;justify-content:space-between!important;min-height:42px;padding-right:0;margin-bottom:12px}
 #all-games-categories .category-heading-actions{display:flex!important;visibility:visible!important;opacity:1!important;align-items:center;justify-content:flex-end;gap:9px;flex:0 0 auto;margin-left:auto;position:relative;z-index:5}
@@ -1005,7 +1005,7 @@ body[data-theme="light"] #all-games-categories .category-carousel-control{backgr
 body[data-theme="light"] #all-games-categories .category-carousel-control:hover:not(:disabled){background:#e7eef4!important}
 @media(max-width:600px){#all-games-categories .category-carousel-control{width:32px!important;height:32px!important;min-width:32px!important;min-height:32px!important}#all-games-categories .category-heading-actions{gap:5px}}
 
-/* v2.21.22 — category library and personalized recommendations */
+/* v2.21.24 — category library and personalized recommendations */
 .browse-all-games{margin-left:auto;color:#eee;text-decoration:none;font-size:13px;font-weight:650;background:#303030;border:1px solid #444;border-radius:8px;padding:9px 13px;white-space:nowrap;transition:background .16s}
 .browse-all-games:hover{background:#414141;color:#fff}
 .recommendation-description{color:#999;font-size:13px;margin:0 0 17px}
@@ -1042,7 +1042,7 @@ body[data-game-card-size="compact"] #all-games-view{--all-games-card-width:220px
 #all-games-view .category-carousel-track .game-card{display:block;width:100%;min-width:0}
 #all-games-view .category-carousel-track .game-thumb{display:block;width:100%;height:auto;max-width:100%;box-sizing:border-box}
 #all-games-view .category-carousel-track .game-title-row{min-width:0;overflow-wrap:break-word}
-/* v2.21.22: visible, accessible carousel arrows in the category header */
+/* v2.21.24: visible, accessible carousel arrows in the category header */
 #all-games-view .category-heading-actions{display:flex;align-items:center;gap:10px;margin-left:auto}
 #all-games-view .category-carousel-control{
     position:static;transform:none;flex:0 0 38px;
@@ -1065,7 +1065,7 @@ body[data-game-card-size="compact"] #all-games-view{--all-games-card-width:220px
     #all-games-view .category-heading-actions{gap:6px}
 }
 
-/* v2.21.22 - game collection pages and landing preference */
+/* v2.21.24 - game collection pages and landing preference */
 .shelf-heading-link{color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:10px}
 .shelf-heading-link:hover,.shelf-heading-link:focus-visible{color:var(--text-muted,#bbbbbb)}
 .shelf-heading-link span{font-size:14px;opacity:.6}
@@ -1079,7 +1079,7 @@ body[data-game-card-size="compact"] #all-games-view{--all-games-card-width:220px
 .landing-destination-setting .landing-setting-note{font-size:12px;max-width:530px;color:#999}
 .landing-destination-setting .switch{flex-shrink:0}
 
-        /* v2.21.22 — per-user Home presentation and card proportions. */
+        /* v2.21.24 — per-user Home presentation and card proportions. */
         body[data-hide-home-profile="true"] #home-view > .hero { display:none !important; }
         body[data-game-card-size="square"] .game-thumb,
         body[data-game-card-size="square"] .search-game-item > img { aspect-ratio:1 / 1; }
@@ -1096,7 +1096,7 @@ body[data-game-card-size="compact"] #all-games-view{--all-games-card-width:220px
         .home-presentation-row .settings-input { width:min(230px,45%);margin:0;flex-shrink:0; }
         @media(max-width:520px){.home-presentation-row{align-items:flex-start;flex-direction:column;gap:12px}.home-presentation-row .settings-input{width:100%}}
 
-/* v2.21.22 — Mulish typography and text-only sidebar navigation accents. */
+/* v2.21.24 — Mulish typography and text-only sidebar navigation accents. */
 #sidebar .nav-item,
 #sidebar .nav-item.active,
 #sidebar .nav-item:hover,
@@ -1114,7 +1114,7 @@ body[data-game-card-size="compact"] #all-games-view{--all-games-card-width:220px
 #sidebar .nav-item:focus-visible { outline:2px solid currentColor;outline-offset:1px; }
 
 
-/* Powerhouse v2.21.22 — comprehensive light theme restoration.
+/* Powerhouse v2.21.24 — comprehensive light theme restoration.
    Overrides legacy dark-only styles without changing the dark palette. */
 body[data-theme="light"] #sidebar,
 body[data-theme="light"] #user-dropdown {background:#fff;color:var(--text);}
@@ -1218,7 +1218,7 @@ body[data-theme="light"] .game-info-pill.new-game-pill {background:#263746!impor
 body[data-theme="light"] :is(.auth-guest-button,.guest-expired-choice,.guest-settings-info button) {color:var(--text);}
 
 
-/* v2.21.22 — light-mode foreground contrast, respecting dark action buttons. */
+/* v2.21.24 — light-mode foreground contrast, respecting dark action buttons. */
 body[data-theme="light"] { --light-text:#1c2631; --light-muted:#576574; --light-stroke:#cad3dd; }
 /* Global readable text where older sections hard-coded a dark-theme color. */
 body[data-theme="light"] :is(.view-section,.view-section h1,.view-section h2,.view-section h3,
@@ -1280,7 +1280,7 @@ body[data-theme="light"] .blog-feedback,
 body[data-theme="light"] .blog-article-body blockquote {color:#526476;}
 
 
-/* v2.21.22 — reliable All Games arrows, outside of heading layout. */
+/* v2.21.24 — reliable All Games arrows, outside of heading layout. */
 #all-games-view #all-games-categories .category-block {position:relative!important;isolation:isolate;min-width:0;padding-top:2px;}
 #all-games-view #all-games-categories .category-heading {padding-right:160px!important;min-height:44px;box-sizing:border-box;}
 #all-games-view #all-games-categories .category-heading h2 {overflow-wrap:anywhere;}
@@ -1312,7 +1312,7 @@ body[data-theme="light"] #all-games-view #all-games-categories button.category-c
 }
 
 
-/* v2.21.22 — keep category arrows directly beside each category title. */
+/* v2.21.24 — keep category arrows directly beside each category title. */
 #all-games-view #all-games-categories .category-heading {
     display:flex!important;
     align-items:center!important;
@@ -1350,7 +1350,7 @@ body[data-theme="light"] #all-games-view #all-games-categories button.category-c
     #all-games-view #all-games-categories .category-heading-count {display:none!important;}
 }
 
-/* v2.21.22 — paginate the All Games category cards in full, clickable chunks. */
+/* v2.21.24 — paginate the All Games category cards in full, clickable chunks. */
 #all-games-view, #all-games-categories, #all-games-categories .category-block,
 #all-games-categories .category-carousel {min-width:0;max-width:100%;box-sizing:border-box;}
 #all-games-categories .category-carousel-track {
@@ -1359,7 +1359,7 @@ body[data-theme="light"] #all-games-view #all-games-categories button.category-c
 }
 #all-games-categories .category-carousel-track > .game-card-wrap[hidden] {display:none!important;}
 
-/* v2.21.22 — All Games: multi-row responsive grids and category / unblocked filters. */
+/* v2.21.24 — All Games: multi-row responsive grids and category / unblocked filters. */
 #all-games-view .all-games-filter-bar {
     display:flex;flex-wrap:wrap;align-items:end;gap:12px 16px;
     margin:0 0 30px;padding:17px 18px;background:var(--panel, #252525);
@@ -1423,6 +1423,20 @@ body[data-theme="light"] #all-games-view .all-games-filter-result{color:#576574}
 .suggest-item:hover,.suggest-item[aria-selected="true"]{background:var(--accent-light)}
 .suggest-all{margin-top:4px;border-top:1px solid var(--border);border-radius:0 0 10px 10px;padding:11px 12px}
 body[data-theme="light"] #search-suggest{box-shadow:0 18px 40px rgba(20,30,45,.16)}
+
+
+/* v2.21.24 — Home new-games carousel navigation */
+.home-featured:has(.featured-carousel-controls){padding-bottom:70px}
+.featured-carousel-controls{position:absolute;bottom:16px;right:24px;left:24px;z-index:2;display:flex;align-items:center;justify-content:flex-end;gap:11px;color:#fff}
+.featured-carousel-arrow{width:36px;height:36px;display:grid;place-items:center;flex:none;border:1px solid rgba(255,255,255,.26);border-radius:10px;background:rgba(255,255,255,.12);color:#fff;font-size:29px;line-height:1;cursor:pointer}
+.featured-carousel-arrow:hover{background:rgba(255,255,255,.26)}
+.featured-carousel-arrow:focus-visible,.featured-carousel-dot:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.featured-carousel-dots{display:flex;align-items:center;gap:7px;max-width:min(44vw,240px);overflow-x:auto;scrollbar-width:none;padding:5px}
+.featured-carousel-dots::-webkit-scrollbar{display:none}
+.featured-carousel-dot{width:8px;height:8px;flex:0 0 8px;padding:0;border:0;border-radius:50%;background:rgba(255,255,255,.37);cursor:pointer;transition:width .2s,background .2s}
+.featured-carousel-dot[aria-pressed="true"]{width:22px;flex-basis:22px;border-radius:12px;background:#fff}
+.featured-carousel-count{font-size:12px;color:rgba(255,255,255,.75);white-space:nowrap;font-variant-numeric:tabular-nums}
+@media(max-width:650px){.home-featured:has(.featured-carousel-controls){padding-bottom:65px}.featured-carousel-controls{bottom:12px;right:15px;left:15px;justify-content:center}.featured-carousel-arrow{width:34px;height:34px}}
 
 /* Category chips */
 .category-chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:2px 2px 4px;-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 32px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 32px),transparent)}
@@ -2243,7 +2257,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                     listEl.innerHTML = adminProfiles.map(({ username: u, pfp }) => `
                         <div class="admin-user-row">
                             <div class="admin-user-avatar">
-                                ${pfp ? `<img src="${pictureURL(pfp)}" alt="">` : staffEsc(u).slice(0,2).toUpperCase()}
+                                ${pfp ? `<img src="${pictureURL(pfp)}" style="${defaultAvatarStyle(pfp,u)}" alt="">` : staffEsc(u).slice(0,2).toUpperCase()}
                             </div>
                             <div style="flex:1">
                                 <div class="admin-user-name">${staffEsc(u)}
@@ -2277,7 +2291,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             el.innerHTML = users.map(u => {
                 const isAdm = admins.includes(u.username.toLowerCase());
                 return `<div class="admin-user-row">
-                    <div class="admin-user-avatar">${u.pfp ? `<img src="${pictureURL(u.pfp)}" alt="">` : staffEsc(u.username).slice(0,2).toUpperCase()}</div>
+                    <div class="admin-user-avatar">${u.pfp ? `<img src="${pictureURL(u.pfp)}" style="${defaultAvatarStyle(u.pfp,u.username)}" alt="">` : staffEsc(u.username).slice(0,2).toUpperCase()}</div>
                     <div style="flex:1;min-width:0">
                         <div class="admin-user-name">${staffEsc(u.username)}${staffBadge(u.username, isAdm, 'sm', contributors.includes(u.username.toLowerCase()))}</div>
                         <div class="admin-user-meta">Joined ${new Date(u.createdAt).toLocaleDateString()}</div>
@@ -2324,7 +2338,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                 const isAdm = admins.includes(u.username.toLowerCase());
                 const isProtected = ['c823','powerhouse','toethesis','unclejoe826'].includes(u.username.toLowerCase());
                 return `<div class="admin-user-row">
-                    <div class="admin-user-avatar">${u.pfp ? `<img src="${pictureURL(u.pfp)}" alt="">` : staffEsc(u.username).slice(0,2).toUpperCase()}</div>
+                    <div class="admin-user-avatar">${u.pfp ? `<img src="${pictureURL(u.pfp)}" style="${defaultAvatarStyle(u.pfp,u.username)}" alt="">` : staffEsc(u.username).slice(0,2).toUpperCase()}</div>
                     <div style="flex:1;min-width:0">
                         <div class="admin-user-name">${staffEsc(u.username)}${staffBadge(u.username, isAdm, 'sm', contributors.includes(u.username.toLowerCase()))}</div>
                         <div class="admin-user-meta">Joined ${new Date(u.createdAt).toLocaleDateString()}</div>
@@ -2580,7 +2594,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                 const rank = ranksData[name.toLowerCase()] || '';
                 const safeName = staffEsc(name);
                 return `<div class="admin-user-row">
-                    <div class="admin-user-avatar">${u.pfp ? `<img src="${staffEsc(pictureURL(u.pfp))}" alt="">` : safeName.slice(0,2).toUpperCase()}</div>
+                    <div class="admin-user-avatar">${u.pfp ? `<img src="${staffEsc(pictureURL(u.pfp))}" style="${defaultAvatarStyle(u.pfp,u.username)}" alt="">` : safeName.slice(0,2).toUpperCase()}</div>
                     <div style="flex:1;min-width:0">
                         <div class="admin-user-name">${safeName} ${getRankBadgeHtml(rank, true)}</div>
                         <div class="admin-user-meta">Current rank: ${staffEsc(rank || 'None')}</div>
@@ -2652,7 +2666,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             if (users.length === 0) { el.innerHTML = '<div class="mod-empty">No users found.</div>'; return; }
             el.innerHTML = users.map(u => `
                 <div class="mod-user-row">
-                    <div class="mod-user-avatar">${u.pfp ? `<img src="${pictureURL(u.pfp)}" alt="">` : staffEsc(u.username).slice(0,2).toUpperCase()}</div>
+                    <div class="mod-user-avatar">${u.pfp ? `<img src="${pictureURL(u.pfp)}" style="${defaultAvatarStyle(u.pfp,u.username)}" alt="">` : staffEsc(u.username).slice(0,2).toUpperCase()}</div>
                     <div class="mod-user-info">
                         <div class="mod-user-name">${staffEsc(u.username)}${u.rank ? ` <span style="font-size: 0.7rem; font-weight: 700; background: var(--accent-light); color: var(--accent); padding: 2px 8px; border-radius: 3px; margin-left: 6px;">${staffEsc(u.rank)}</span>` : ''}</div>
                         <div class="mod-user-meta">Joined ${new Date(u.createdAt).toLocaleDateString()}</div>
@@ -2884,7 +2898,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
 
 
 
-    <!-- AUTH PAGE | Powerhouse website v2.21.22 -->
+    <!-- AUTH PAGE | Powerhouse website v2.21.24 -->
     <div id="landing-page">
         <div class="auth-shell">
             <section class="auth-promo" aria-label="Welcome to Powerhouse">
@@ -2931,7 +2945,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                     </form>
                     <p class="auth-bottom">Already have an account? <button type="button" class="auth-switch-link" onclick="switchAuthMode('login')">Sign in</button></p>
                 </div>
-                <span class="auth-release">POWERHOUSE v2.21.22</span>
+                <span class="auth-release">POWERHOUSE v2.21.24</span>
             </section>
         </div>
     </div>
@@ -2982,7 +2996,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                     </svg>
                 </a>
             </div>
-            <div class="sidebar-release" aria-label="Powerhouse version">POWERHOUSE <span>v2.21.22</span></div>
+            <div class="sidebar-release" aria-label="Powerhouse version">POWERHOUSE <span>v2.21.24</span></div>
         </div>
     </aside>
 
@@ -3051,7 +3065,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                     </div>
                 </div>
             </div>
-            <section id="home-featured" class="home-featured" aria-label="Featured game" hidden></section>
+            <section id="home-featured" class="home-featured" aria-label="New on Powerhouse games" hidden></section>
             <nav id="home-categories" class="category-chips" aria-label="Browse games by category"></nav>
             <div id="home-game-sections"><section class="favorites-section" data-home-section="favorites" aria-label="Favorite games">
                 <div class="favorites-heading"><h2><a href="/favorites" onclick="event.preventDefault();navigateTo('favorites')" class="shelf-heading-link">Favorites <span aria-hidden="true">↗</span></a></h2><span id="favorites-count"></span></div>
@@ -3449,21 +3463,50 @@ function adminSetBanner(){return staffLegacySaveBanner();}
 <script>
         const API_BASE = 'https://powerhouse-api.c823.workers.dev';
         const PFP_BASE = 'https://raw.githubusercontent.com/C823/powerhouse/main/profileicons/';
-        // A single saved 'default.jpg' works with both visual themes.
-        const DEFAULT_PFP = 'https://raw.githubusercontent.com/C823/Powerhouse/main/profileicons/default.jpg';
-        const DEFAULT_PFP_DARK = PFP_BASE + 'default_dark.jpg';
-        const DEFAULT_PFP_LIGHT = PFP_BASE + 'default_light.jpg';
-        function themeDefaultPfp() {
-            return document.body.getAttribute('data-theme') === 'light' ? DEFAULT_PFP_LIGHT : DEFAULT_PFP_DARK;
+        // v2.21.24: one transparent avatar template, with a consistent color per account.
+        // Upload profileicons/default_template.png (transparent foreground) to the repository.
+        const DEFAULT_PFP = PFP_BASE + 'default_template.png';
+        const DEFAULT_AVATAR_COLORS = [
+            'rgb(253,41,67)', 'rgb(1,162,255)', 'rgb(2,184,87)', 'rgb(107,50,124)',
+            'rgb(218,133,65)', 'rgb(245,205,48)', 'rgb(232,186,200)', 'rgb(215,197,154)'
+        ];
+        // A stable, well-mixed hash means an account shows the same color on every device,
+        // even without changing the backend/API or depending on each browser's localStorage.
+        function avatarColor(username) {
+            const name = String(username || 'guest').trim().toLowerCase();
+            let h = 2166136261;
+            for (let i = 0; i < name.length; i++) {
+                h = Math.imul(h ^ name.charCodeAt(i), 16777619);
+            }
+            h ^= h >>> 16;
+            h = Math.imul(h, 0x7feb352d);
+            h ^= h >>> 15;
+            return DEFAULT_AVATAR_COLORS[(h >>> 0) % DEFAULT_AVATAR_COLORS.length];
         }
+        function themeDefaultPfp() { return DEFAULT_PFP; }
         function isDefaultPicture(value) {
             if (!value || value === 'default.jpg') return true;
-            return /(?:\/|^)default(?:_dark|_light)?\.jpg(?:[?#].*)?$/i.test(String(value));
+            return /(?:\/|^)default(?:_dark|_light|_template)?\.(?:jpg|jpeg|png|webp)(?:[?#].*)?$/i.test(String(value));
+        }
+        function defaultAvatarStyle(pfp, username) {
+            return isDefaultPicture(pfp) ? `background-color:${avatarColor(username)};` : '';
+        }
+        function setAvatarImage(img, pfp, username) {
+            if (!img) return;
+            img.src = pictureURL(pfp);
+            img.style.backgroundColor = isDefaultPicture(pfp) ? avatarColor(username) : '';
+            img.dataset.avatarUser = String(username || '');
+            img.onerror = function() {
+                this.onerror = null;
+                this.src = DEFAULT_PFP;
+                this.style.backgroundColor = avatarColor(username);
+            };
         }
         function refreshThemeDefaultPfps() {
-            // Only existing default avatar images; never modify game thumbnails or empty images.
+            // Migrate old theme-based default URLs without touching custom profile pictures.
             document.querySelectorAll('img[src*="/profileicons/default"], img[src*="/profileicons%2Fdefault"]').forEach(img => {
-                if (img.getAttribute('src') !== themeDefaultPfp()) img.setAttribute('src', themeDefaultPfp());
+                if (img.getAttribute('src') !== DEFAULT_PFP) img.src = DEFAULT_PFP;
+                img.style.backgroundColor = avatarColor(img.dataset.avatarUser || user?.username);
             });
         }
         const GUEST_PFP_URL = PFP_BASE + 'guest.jpg';
@@ -3665,7 +3708,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
         const STANDARD_PICTURES = Array.from({length:25},(_,i)=>`${i+1}.jpg`);
         const ADMIN_PICTURES = ['pwr.jpg','https://avatars.githubusercontent.com/u/225702018?v=4','dog.jpg','hockey.jpg','productions.jpg','tux.jpg','glowing.jpg','wheatley.jpg'];
         let pictureSavePending = false;
-        function pictureURL(filename) { if (/^https:\/\//i.test(String(filename || ''))) return filename; /* approved custom picture */ if (filename === 'guest.svg' || filename === 'guest.jpg') return GUEST_PFP_URL; if (isDefaultPicture(filename)) return themeDefaultPfp(); if (filename === 'ski.jpg') return SKI_PFP_URL; return filename === SKI_PFP_URL ? SKI_PFP_URL : PFP_BASE + encodeURIComponent(filename); }
+        function pictureURL(filename) { if (isDefaultPicture(filename)) return DEFAULT_PFP; if (/^https:\/\//i.test(String(filename || ''))) return filename; /* approved custom picture */ if (filename === 'guest.svg' || filename === 'guest.jpg') return GUEST_PFP_URL; if (filename === 'ski.jpg') return SKI_PFP_URL; return filename === SKI_PFP_URL ? SKI_PFP_URL : PFP_BASE + encodeURIComponent(filename); }
         const SKI_PFP_URL = 'https://avatars.githubusercontent.com/u/225702018?v=4';
         const PICTURE_NAMES = {
             'pwr.jpg':'Powerhouse', 'dog.jpg':'Dog', 'hockey.jpg':'Hockey',
@@ -3694,7 +3737,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                 const img = document.createElement('img');
                 img.alt = '';
                 img.loading = 'lazy';
-                img.src = pictureURL(filename);
+                setAvatarImage(img, filename, user.username);
                 button.append(img);
             } else button.textContent = 'None';
             button.addEventListener('click', () => saveProfilePicture(filename));
@@ -3710,7 +3753,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             const grid = document.getElementById('picture-standard-grid');
             if (!grid) return;
             const preview = document.getElementById('picture-current-preview');
-            if (preview) { preview.src = pictureURL(user.pfp); preview.onerror = function(){ this.onerror=null; this.src=themeDefaultPfp(); }; }
+            if (preview) setAvatarImage(preview, user.pfp, user.username);
             grid.replaceChildren(...['', ...STANDARD_PICTURES].map(pictureButton));
             const adminGroup = document.getElementById('picture-admin-group');
             // Frontend only determines visibility; the API independently enforces permissions.
@@ -3962,10 +4005,9 @@ function adminSetBanner(){return staffLegacySaveBanner();}
 
         function updateUI() {
             if (!user.username) return;
-            const pfpSource = pictureURL(user.pfp);
-            document.querySelectorAll('img[id*="pfp"], img[id*="avatar"], img[id*="render"]').forEach(img => { 
-                img.src = pfpSource; 
-                img.onerror = function() { this.onerror = null; if (this.src !== themeDefaultPfp()) this.src = themeDefaultPfp(); };
+            document.querySelectorAll('img[id*="pfp"], img[id*="avatar"], img[id*="render"]').forEach(img => {
+                // The viewed profile portrait is managed independently by renderProfile().
+                if (img.id !== 'profile-render') setAvatarImage(img, user.pfp, user.username);
             });
             document.getElementById('welcome-text').textContent = homeGreeting(user.username);
             document.getElementById('nav-username').textContent = user.username;
@@ -4097,38 +4139,106 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             return name ? `${part}, ${name}` : part;
         }
 
-        // ── Home: featured game banner. Picks one of the newest games (stable for the
-        // whole day, so it doesn't change on every visit), else a verified game.
-        function renderHomeFeatured() {
+        // ── Home: New on Powerhouse carousel (v2.21.24).
+        // Only games explicitly marked new: true appear while new games exist.
+        // Reuses the existing game launch and details handlers.
+        let homeFeaturedGames = [];
+        let homeFeaturedIndex = 0;
+        let homeFeaturedSignature = '';
+        let homeFeaturedTimer = null;
+        const HOME_FEATURED_DELAY = 6500;
+        function stopHomeFeaturedTimer() {
+            if (homeFeaturedTimer !== null) clearInterval(homeFeaturedTimer);
+            homeFeaturedTimer = null;
+        }
+        function startHomeFeaturedTimer() {
+            stopHomeFeaturedTimer();
+            if (homeFeaturedGames.length < 2 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            homeFeaturedTimer = setInterval(() => {
+                const host = document.getElementById('home-featured');
+                if (!host || host.hidden || document.hidden || !document.getElementById('home-view')?.classList.contains('active')) return;
+                if (host.matches(':hover') || host.contains(document.activeElement)) return;
+                showHomeFeaturedSlide(homeFeaturedIndex + 1);
+            }, HOME_FEATURED_DELAY);
+        }
+        function showHomeFeaturedSlide(nextIndex) {
             const host = document.getElementById('home-featured');
-            const games = (Array.isArray(window.allGames) ? window.allGames : []).filter(game => game?.title && game.thumb && /^https?:\/\//i.test(String(game.link || '')));
+            const games = homeFeaturedGames;
             if (!host || !games.length) return;
-            const pool = games.filter(isNewGame).length ? games.filter(isNewGame) : (games.filter(isVerifiedGame).length ? games.filter(isVerifiedGame) : games);
-            const day = Math.floor(Date.now() / 864e5);
-            const game = pool[day % pool.length];
-            if (host.dataset.title === game.title) return;
-            host.dataset.title = game.title;
-            const backdrop = document.createElement('img'); backdrop.className = 'featured-backdrop'; backdrop.src = game.thumb; backdrop.alt = ''; backdrop.setAttribute('aria-hidden', 'true');
-            const art = document.createElement('img'); art.className = 'featured-art'; art.src = game.thumb; art.alt = (game.title || 'Game') + ' cover art';
-            art.onerror = () => { host.hidden = true; };
+            homeFeaturedIndex = (nextIndex % games.length + games.length) % games.length;
+            const game = games[homeFeaturedIndex];
+            const backdrop = document.createElement('img');
+            backdrop.className = 'featured-backdrop'; backdrop.src = game.thumb; backdrop.alt = ''; backdrop.setAttribute('aria-hidden', 'true');
+            const art = document.createElement('img');
+            art.className = 'featured-art'; art.src = game.thumb; art.alt = (game.title || 'Game') + ' cover art';
+            // One bad thumbnail should not hide the entire new-games carousel.
+            art.onerror = () => { art.style.visibility = 'hidden'; };
             const body = document.createElement('div'); body.className = 'featured-body';
-            const eyebrow = document.createElement('span'); eyebrow.className = 'featured-eyebrow'; eyebrow.textContent = isNewGame(game) ? 'New on Powerhouse' : 'Featured';
+            const eyebrow = document.createElement('span'); eyebrow.className = 'featured-eyebrow';
+            eyebrow.textContent = isNewGame(game) ? 'New on Powerhouse' : 'Featured';
             const title = document.createElement('h2'); title.textContent = game.title;
             const desc = document.createElement('p'); desc.textContent = game.desc || '';
-            const meta = document.createElement('span'); meta.className = 'featured-meta'; meta.textContent = gameCategory(game) + (isVerifiedGame(game) ? ' · Verified unblocked' : '');
+            const meta = document.createElement('span'); meta.className = 'featured-meta';
+            meta.textContent = gameCategory(game) + (isVerifiedGame(game) ? ' · Verified unblocked' : '');
             const actions = document.createElement('div'); actions.className = 'featured-actions';
-            const play = document.createElement('a'); play.className = 'featured-btn primary'; play.href = game.link; play.target = '_blank'; play.rel = 'noopener noreferrer';
+            const play = document.createElement('a'); play.className = 'featured-btn primary';
+            play.href = game.link; play.target = '_blank'; play.rel = 'noopener noreferrer';
             play.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg>';
             play.append('Play now');
             play.addEventListener('click', event => launchPowerhouseGame(game, event, 'direct'));
-            const details = document.createElement('a'); details.className = 'featured-btn'; details.href = gamePath(game); details.textContent = 'View details';
+            const details = document.createElement('a'); details.className = 'featured-btn';
+            details.href = gamePath(game); details.textContent = 'View details';
             details.addEventListener('click', event => openGameDetails(event, game));
             actions.append(play, details);
             body.append(eyebrow, title, desc, meta, actions);
-            host.replaceChildren(backdrop, body, art);
+            const children = [backdrop, body, art];
+            if (games.length > 1) {
+                const controls = document.createElement('div'); controls.className = 'featured-carousel-controls';
+                const previous = document.createElement('button'); previous.type = 'button';
+                previous.className = 'featured-carousel-arrow'; previous.textContent = '‹';
+                previous.setAttribute('aria-label', 'Previous new game');
+                previous.addEventListener('click', () => { showHomeFeaturedSlide(homeFeaturedIndex - 1); startHomeFeaturedTimer(); });
+                const dots = document.createElement('div'); dots.className = 'featured-carousel-dots';
+                dots.setAttribute('role', 'group'); dots.setAttribute('aria-label', 'Choose a new game');
+                games.forEach((item, i) => {
+                    const dot = document.createElement('button'); dot.type = 'button';
+                    dot.className = 'featured-carousel-dot'; dot.setAttribute('aria-label', `Show ${item.title}`);
+                    dot.setAttribute('aria-pressed', String(i === homeFeaturedIndex));
+                    dot.title = item.title;
+                    dot.addEventListener('click', () => { showHomeFeaturedSlide(i); startHomeFeaturedTimer(); });
+                    dots.append(dot);
+                });
+                const counter = document.createElement('span'); counter.className = 'featured-carousel-count';
+                counter.textContent = `${homeFeaturedIndex + 1} / ${games.length}`;
+                const next = document.createElement('button'); next.type = 'button';
+                next.className = 'featured-carousel-arrow'; next.textContent = '›';
+                next.setAttribute('aria-label', 'Next new game');
+                next.addEventListener('click', () => { showHomeFeaturedSlide(homeFeaturedIndex + 1); startHomeFeaturedTimer(); });
+                controls.append(previous, dots, counter, next);
+                children.push(controls);
+            }
+            host.replaceChildren(...children);
             host.hidden = false;
+            host.setAttribute('aria-label', `New on Powerhouse: ${game.title}, ${homeFeaturedIndex + 1} of ${games.length}`);
         }
-
+        function renderHomeFeatured() {
+            const host = document.getElementById('home-featured');
+            if (!host) return;
+            const games = (Array.isArray(window.allGames) ? window.allGames : [])
+                .filter(game => game?.title && game.thumb && /^https?:\/\//i.test(String(game.link || '')));
+            if (!games.length) {
+                stopHomeFeaturedTimer(); homeFeaturedGames = []; homeFeaturedSignature = '';
+                host.hidden = true; host.replaceChildren(); return;
+            }
+            const newGames = games.filter(isNewGame);
+            homeFeaturedGames = newGames.length ? newGames : (games.filter(isVerifiedGame).length ? games.filter(isVerifiedGame) : games);
+            const signature = homeFeaturedGames.map(game => `${game.title}|${game.thumb}|${game.link}`).join('\n');
+            if (signature === homeFeaturedSignature && !host.hidden) return;
+            homeFeaturedSignature = signature;
+            homeFeaturedIndex = 0;
+            showHomeFeaturedSlide(0);
+            startHomeFeaturedTimer();
+        }
         // ── Phone navigation: the sidebar slides in as a menu; tabs mirror the route.
         function setNavOpen(open) {
             document.body.classList.toggle('nav-open', !!open);
@@ -4870,7 +4980,7 @@ button,a{font:inherit}
                     const name = account.username;
                     const row = document.createElement('div'); row.className = 'search-user-row';
                     const link = document.createElement('a'); link.className = 'search-user-link'; link.href = '/home';
-                    const avatar = document.createElement('img'); avatar.className = 'search-user-avatar'; avatar.src = pictureURL(account.pfp); avatar.alt = `${name} profile picture`; avatar.loading='lazy'; avatar.onerror=()=>{avatar.onerror=null;avatar.src=themeDefaultPfp();};
+                    const avatar = document.createElement('img'); avatar.className = 'search-user-avatar'; setAvatarImage(avatar, account.pfp, name); avatar.alt = `${name} profile picture`; avatar.loading='lazy';
                     const label = document.createElement('span'); label.className = 'search-user-name';
                     label.textContent = name;
                     // Preserve rank badges next to usernames.
@@ -5117,7 +5227,7 @@ button,a{font:inherit}
                 .map(x=>x.game);
         }
         let allGamesRequest = 0;
-        // v2.21.22 — complete category grids with lightweight client-side filters.
+        // v2.21.24 — complete category grids with lightweight client-side filters.
         let allGamesCategoryFilter = '';
         let allGamesUnblockedFilter = 'all';
         let allGamesTextFilter = '';
@@ -5474,7 +5584,7 @@ button,a{font:inherit}
                     rememberProfile(name, request.pfp);
                     const joined = request.sentAt ? new Date(request.sentAt) : null;
                     const date = joined && !Number.isNaN(joined.getTime()) ? `Sent ${joined.toLocaleDateString()}` : 'Incoming friend request';
-                    return `<article class="social-card social-request-card" style="animation-delay:${Math.min(i,12)*35}ms"><a class="social-profile-link" href="${escapeText(profileURL(name))}" data-profile-link="${escapeText(name)}"><img src="${escapeText(avatar)}" alt="" onerror="this.onerror=null;this.src='${themeDefaultPfp()}'"><span class="social-request-person"><strong>${escapeText(name)}${lookupUserBadge(name,true)}</strong><small>${escapeText(date)}</small></span></a><div class="social-request-actions"><button type="button" class="social-request-accept" data-request-action="accept" data-request-index="${i}">Accept</button><button type="button" class="social-request-decline" data-request-action="decline" data-request-index="${i}">Decline</button></div></article>`;
+                    return `<article class="social-card social-request-card" style="animation-delay:${Math.min(i,12)*35}ms"><a class="social-profile-link" href="${escapeText(profileURL(name))}" data-profile-link="${escapeText(name)}"><img src="${escapeText(avatar)}" style="${defaultAvatarStyle(request.pfp,name)}" alt="" onerror="this.onerror=null;this.src='${themeDefaultPfp()}'"><span class="social-request-person"><strong>${escapeText(name)}${lookupUserBadge(name,true)}</strong><small>${escapeText(date)}</small></span></a><div class="social-request-actions"><button type="button" class="social-request-accept" data-request-action="accept" data-request-index="${i}">Accept</button><button type="button" class="social-request-decline" data-request-action="decline" data-request-index="${i}">Decline</button></div></article>`;
                 }).join('');
                 panel.querySelectorAll('[data-profile-link]').forEach(link=>{
                     bindProfileHref(link,link.dataset.profileLink);
@@ -5498,11 +5608,11 @@ button,a{font:inherit}
                 const action = tab === 'friends' ? `<button type="button" class="social-action" data-remove-friend="${i}">Remove Friend</button>` : '';
                 if (deleted) {
                     const former = escapeText(item.formerUsername || name);
-                    return `<div class="social-card social-deleted-card" style="animation-delay:${Math.min(i,12)*35}ms"><div class="social-profile-link social-deleted-profile"><img alt="Default avatar" src="${escapeText(themeDefaultPfp())}"><span class="social-deleted-text"><strong>Account Deleted</strong><small>Formerly &quot;${former}&quot;</small></span></div>${action}</div>`;
+                    return `<div class="social-card social-deleted-card" style="animation-delay:${Math.min(i,12)*35}ms"><div class="social-profile-link social-deleted-profile"><img alt="Default avatar" src="${escapeText(themeDefaultPfp())}" style="background-color:${avatarColor(name)}"><span class="social-deleted-text"><strong>Account Deleted</strong><small>Formerly &quot;${former}&quot;</small></span></div>${action}</div>`;
                 }
                 const href = profileURL(name);
                 rememberProfile(name, pfp);
-                return `<div class="social-card" style="animation-delay:${Math.min(i,12)*35}ms"><a class="social-profile-link" href="${escapeText(href)}" data-profile-link="${escapeText(name)}"><img alt="${escapeText(name)} avatar" src="${escapeText(socialAvatar(pfp))}" onerror="this.onerror=null;this.src='${themeDefaultPfp()}'"><span class="social-card-name">${escapeText(name)}${lookupUserBadge(name,true)}</span></a><span class="social-card-actions">${tab === 'friends' ? `<button type="button" class="social-msg" data-message-friend="${i}" aria-label="Message ${escapeText(name)}" title="Message"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 5.5h15a1.5 1.5 0 0 1 1.5 1.5v9a1.5 1.5 0 0 1-1.5 1.5H9l-4.5 3v-3H4.5A1.5 1.5 0 0 1 3 16V7A1.5 1.5 0 0 1 4.5 5.5Z"/></svg></button>` : ''}${action}</span></div>`;
+                return `<div class="social-card" style="animation-delay:${Math.min(i,12)*35}ms"><a class="social-profile-link" href="${escapeText(href)}" data-profile-link="${escapeText(name)}"><img alt="${escapeText(name)} avatar" src="${escapeText(socialAvatar(pfp))}" style="${defaultAvatarStyle(pfp,name)}" onerror="this.onerror=null;this.src='${themeDefaultPfp()}'"><span class="social-card-name">${escapeText(name)}${lookupUserBadge(name,true)}</span></a><span class="social-card-actions">${tab === 'friends' ? `<button type="button" class="social-msg" data-message-friend="${i}" aria-label="Message ${escapeText(name)}" title="Message"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 5.5h15a1.5 1.5 0 0 1 1.5 1.5v9a1.5 1.5 0 0 1-1.5 1.5H9l-4.5 3v-3H4.5A1.5 1.5 0 0 1 3 16V7A1.5 1.5 0 0 1 4.5 5.5Z"/></svg></button>` : ''}${action}</span></div>`;
             }).join('');
             panel.querySelectorAll('[data-profile-link]').forEach(link => { bindProfileHref(link,link.dataset.profileLink); link.addEventListener('click', event => {
                 if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || event.button !== 0) return;
@@ -5560,10 +5670,9 @@ button,a{font:inherit}
                 card.className = 'home-friend-card';
                 card.style.animationDelay = Math.min(i,12)*35 + 'ms';
                 const img = document.createElement('img');
-                img.src = socialAvatar(avatar);
+                setAvatarImage(img, avatar, name);
                 img.alt = name + ' avatar';
                 img.loading = 'lazy';
-                img.onerror = () => { img.onerror = null; img.src = themeDefaultPfp(); };
                 const label = document.createElement('span');
                 label.className = 'home-friend-name';
                 const nameText=document.createElement('span');
@@ -5763,7 +5872,7 @@ button,a{font:inherit}
         }
 
 
-        // v2.21.22 - KV-backed direct messages (existing /social/* API)
+        // v2.21.24 - KV-backed direct messages (existing /social/* API)
         let messageConversations = [];
         let activeMessagePeer = '';
         let messagesLoadSequence = 0;
@@ -5803,7 +5912,7 @@ button,a{font:inherit}
             for (const row of messageConversations) {
                 const name=String(row.username||row.with);
                 const button=document.createElement('button');button.type='button';button.className='messages-thread-row'+(activeMessagePeer===name.toLowerCase()?' active':'');
-                const pic=document.createElement('img');pic.className='messages-thread-avatar';pic.alt='';pic.src=row.pfp||messageAvatarFallback;pic.onerror=()=>{pic.onerror=null;pic.src=messageAvatarFallback;};
+                const pic=document.createElement('img');pic.className='messages-thread-avatar';pic.alt='';setAvatarImage(pic,row.pfp,row.username||row.from||row.name||'');
                 const middle=document.createElement('div');middle.className='messages-thread-body';
                 const top=document.createElement('div');top.className='messages-thread-top';
                 const label=document.createElement('span');label.className='messages-thread-name';label.textContent=name;
@@ -5841,7 +5950,7 @@ button,a{font:inherit}
             const back=document.createElement('button');back.className='messages-back';back.type='button';back.textContent='←';back.setAttribute('aria-label','Back to conversations');back.onclick=()=>document.getElementById('messages-shell').classList.remove('chat-open');
             const link=document.createElement('a');link.href='/home';bindProfileHref(link,peer);
             link.onclick=e=>{if(e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;e.preventDefault();navigateProfile(peer);};
-            const pic=document.createElement('img');pic.className='messages-header-avatar';pic.src=row?.pfp||messageAvatarFallback;pic.alt='';
+            const pic=document.createElement('img');pic.className='messages-header-avatar';setAvatarImage(pic,row?.pfp,row?.username||row?.from||row?.name||'');pic.alt='';
             const name=document.createElement('strong');name.textContent=row?.username||username;
             link.append(pic,name);header.append(back,link);
             document.getElementById('messages-composer').hidden=false;
@@ -5890,7 +5999,7 @@ button,a{font:inherit}
         });
 
 
-        // Blog v2.21.22 — uses the original /blog/* KV-backed API.
+        // Blog v2.21.24 — uses the original /blog/* KV-backed API.
         let blogPosts=[], blogAdminPosts=[], blogCanManage=false, blogEditingId=null, blogRequest=0;
         const blogEscape = value => String(value??'').replace(/[&<>"']/g, x=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[x]));
         const blogDate = value => {const d=new Date(value);return Number.isNaN(d.getTime())?'':d.toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'});};
@@ -6052,7 +6161,7 @@ button,a{font:inherit}
                 }
             }
         }
-        // v2.21.22: Public favorites come from the profile API; never read the viewer's
+        // v2.21.24: Public favorites come from the profile API; never read the viewer's
         // local Favorites when displaying another account's profile.
         let profileFavoritesSequence = 0;
         // Profile banner mirrors whatever picture the avatar ends up showing (including fallbacks).
@@ -6115,13 +6224,11 @@ button,a{font:inherit}
             const own = Boolean(user.username && username && user.username.toLowerCase() === username.toLowerCase());
             const shownName = username || user.username || 'Unknown user';
             const cached = knownProfiles.get(shownName.toLowerCase());
-            const image = own ? socialAvatar(user.pfp) : socialAvatar(cached?.pfp);
             const nameEl = document.getElementById('profile-name-header');
             nameEl.textContent = shownName;
             nameEl.insertAdjacentHTML('beforeend',lookupUserBadge(shownName));
             const portrait = document.getElementById('profile-render');
-            portrait.src = image;
-            portrait.onerror = () => { portrait.onerror = null; portrait.src = DEFAULT_PFP; };
+            setAvatarImage(portrait, own ? user.pfp : cached?.pfp, shownName);
             document.getElementById('profile-edit-button').style.display = own ? '' : 'none';
             document.getElementById('profile-about-edit').style.display = own ? '' : 'none';
             updateProfileFriendAction(shownName);
@@ -6157,8 +6264,7 @@ button,a{font:inherit}
                     document.getElementById('profile-about').textContent = profile.about || 'No description yet.';
                     renderProfileFavorites(shownName, profile.favoriteGames);
                     if (profile.pfp) {
-                        portrait.src = socialAvatar(profile.pfp);
-                        portrait.onerror = () => { portrait.onerror = null; portrait.src = DEFAULT_PFP; };
+                        setAvatarImage(portrait, profile.pfp, shownName);
                     }
                 })
                 .catch(error => {
@@ -6286,7 +6392,7 @@ button,a{font:inherit}
         window.addEventListener('popstate', routeFromURL);
 
 
-        // v2.21.22 — The root loader reads this account-scoped local preference.
+        // v2.21.24 — The root loader reads this account-scoped local preference.
         function gamesLandingPreferenceKey(name=user.username) {
             return 'powerhouse:defaultGamesLanding:'+(name||'guest').toLowerCase();
         }
@@ -6316,7 +6422,7 @@ button,a{font:inherit}
                 accountSavedData={...(accountSavedData||{}),settings:{...(accountSavedData?.settings||{}),defaultGamesLanding:enabled}};
             }catch(error){console.warn('Default landing preference saved locally; KV sync failed:',error);}
         }
-        // v2.21.22 — Per-user Home section order and visibility.
+        // v2.21.24 — Per-user Home section order and visibility.
         const HOME_LAYOUT_DEFAULT = ['favorites','recent','games','all'];
         const HOME_LAYOUT_LABELS = {favorites:'Favorites',recent:'Recently Played',games:'Recommended',all:'All Games'};
         let homeLayout = {order:[...HOME_LAYOUT_DEFAULT], visible:{favorites:true,recent:true,games:true,all:false}, hideProfile:false, cardSize:'wide', compactSidebar:true, sidebarChoice:false};
