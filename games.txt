@@ -900,7 +900,7 @@
   },
   {
     "title": "LINEUP",
-    "category": "Arcade",
+    "category": "Simulation",
     "desc": "",
     "thumb": "https://simulator.surf/assets/menu/spot-margaret.jpg",
     "link": "https://simulator.surf",
