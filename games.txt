@@ -901,7 +901,7 @@
   {
     "title": "LINEUP",
     "category": "Simulation",
-    "desc": "",
+    "desc": "A first-person WebXR surfing game with breaking barrels and peer-to-peer multiplayer, for PC browsers and Meta Quest.",
     "thumb": "https://simulator.surf/assets/menu/spot-margaret.jpg",
     "link": "https://simulator.surf",
     "verified": true,
