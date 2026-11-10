@@ -896,6 +896,17 @@
     "verified": false,
     "OG": false,
     "new": false,
-    "date_added": "11/04/2025"
+    "date_added": "11/04/2026"
+  },
+  {
+    "title": "LINEUP",
+    "category": "Arcade",
+    "desc": "",
+    "thumb": "https://simulator.surf/assets/menu/spot-margaret.jpg",
+    "link": "https://simulator.surf",
+    "verified": true,
+    "OG": false,
+    "new": true,
+    "date_added": "11/10/2026"
   }
 ]
