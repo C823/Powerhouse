@@ -51,7 +51,7 @@
 
         button, input, textarea, select { font-family: inherit; }
 
-        /* --- AUTH PAGE — website v2.21.29 --- */
+        /* --- AUTH PAGE — website v2.21.31 --- */
         #landing-page { position:fixed; inset:0; z-index:5000; display:none; align-items:center; justify-content:center; overflow:auto; padding:32px 22px; color:#eee; background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.6)),url('https://files.enderman.ch/wallpapers/Moonlight.png') center center / cover no-repeat fixed #090b12; }
         #landing-page::before { content:''; position:fixed; inset:0; pointer-events:none; background:rgba(0,0,0,.10); }
         #landing-page::after { content:none; }
@@ -111,7 +111,7 @@
 
         /* --- DASHBOARD UI --- */
 
-        /* v2.21.29 — optional compact sidebar, based on the narrow navigation reference. */
+        /* v2.21.31 — optional compact sidebar, based on the narrow navigation reference. */
         body[data-compact-sidebar="true"] { --sidebar-width: 184px; }
         body[data-compact-sidebar="true"] #sidebar { padding: 15px 10px 12px; }
         body[data-compact-sidebar="true"] #sidebar .logo-area { margin-bottom: 10px; padding: 0 2px; }
@@ -172,7 +172,7 @@
         #sidebar .c823-footer-icon { width: 32px; height: 32px; display: block; object-fit: contain; border: none; outline: none; background: transparent; }
 
 
-        /* v2.21.29 — paired footer shortcuts, usable in normal and compact sidebars. */
+        /* v2.21.31 — paired footer shortcuts, usable in normal and compact sidebars. */
         #sidebar .sidebar-external-links { display:flex; align-items:center; flex-wrap:wrap; gap:8px; }
         #sidebar .classroom-footer-link { color:#c9c9c9; text-decoration:none; }
         #sidebar .classroom-footer-link:hover { color:#00b9ff; }
@@ -184,7 +184,7 @@
         .nav-item:hover { background: var(--accent-light); color: var(--text); }
         .nav-item.active { background: var(--accent); color: white; }
         .nav-item svg { width: 20px; height: 20px; flex: 0 0 20px; display: block; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; fill: none; }
-        /* v2.21.29: solid filled sidebar navigation icons */
+        /* v2.21.31: solid filled sidebar navigation icons */
         #sidebar .nav-item svg.sidebar-solid-icon { fill: currentColor; stroke: none; stroke-width: 0; }
         .badge { position: absolute; right: 12px; background: var(--accent2); padding: 2px 8px; border-radius: 20px; font-size: 10px; color: white; font-weight: 800; }
 
@@ -265,7 +265,7 @@
         .profile-action:hover { transform:translateY(-2px); border-color:var(--accent); }
         .profile-divider { height:1px;background:var(--border);margin:28px 0; }
 
-        /* v2.21.29 — public profile Favorites */
+        /* v2.21.31 — public profile Favorites */
         .profile-favorites-card { margin-top:20px; padding:22px; border:1px solid var(--border); background:var(--surface); border-radius:16px; }
         .profile-favorites-heading { display:flex; justify-content:space-between; gap:12px; align-items:baseline; margin-bottom:17px; }
         .profile-favorites-heading h2 { margin:0; font-size:18px; }
@@ -387,7 +387,7 @@
         .social-card img { width:54px; height:54px; object-fit:cover; flex-shrink:0; background:var(--surface); }
         .social-card-name { font-size:13px; font-weight:700; margin:0 8px 0 12px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; flex:1; }
 
-        /* v2.21.29: banned/deleted accounts retain removable friend entries, never a profile link. */
+        /* v2.21.31: banned/deleted accounts retain removable friend entries, never a profile link. */
         .social-deleted-profile {display:flex;align-items:center;flex:1;min-width:0;pointer-events:none;color:var(--text-muted);}
         .social-deleted-profile img {filter:grayscale(1);opacity:.55;}
         .social-deleted-text {display:flex;flex-direction:column;gap:2px;min-width:0;margin-left:12px;}
@@ -803,7 +803,7 @@
         .account-userid-row button:disabled { opacity:.45; cursor:default; }
         .account-userid-hint, #account-userid-feedback { color:#aaa; font-size:12px; margin:7px 0 0; }
 
-/* v2.21.29 — Messaging */
+/* v2.21.31 — Messaging */
 #messages-view [hidden], #side-messages .message-nav-count[hidden], #profile-message-action[hidden] { display:none !important; }
 #side-messages { position:relative; }
 .message-nav-count { margin-left:auto; min-width:19px; padding:2px 6px; border-radius:30px; background:#393939; color:#fff; font-size:11px; font-weight:700; text-align:center; }
@@ -848,7 +848,7 @@
 .messages-back { border:0; background:#343434; color:white; border-radius:7px; padding:6px 10px; cursor:pointer; }
 
 
-/* v2.21.29 — Friends / Requests */
+/* v2.21.31 — Friends / Requests */
 .requests-count {display:inline-flex;min-width:19px;height:19px;padding:0 5px;align-items:center;justify-content:center;border-radius:9px;background:#383838;color:#fff;font-size:11px;margin-left:5px;}
 .requests-count[hidden] {display:none!important;}
 .social-request-card {height:auto;min-height:78px;padding-right:12px;gap:12px;}
@@ -867,7 +867,7 @@
 #friends-view:has(.social-request-card) .social-grid {grid-template-columns:repeat(auto-fill,minmax(min(100%,470px),470px));}
 @media(max-width:540px){.social-request-card{flex-wrap:wrap;padding:8px;}.social-request-actions{width:100%;justify-content:flex-end}.social-request-card .social-profile-link{width:100%;}}
 
-/* v2.21.29 — Not found page */
+/* v2.21.31 — Not found page */
 #not-found-view .error-layout { min-height:calc(100vh - 190px); display:flex; align-items:center; justify-content:center; text-align:center; padding:64px 16px; }
 #not-found-view .error-content {max-width:520px; width:100%; }
 #not-found-view .error-kicker {color:#9b9b9b; font-weight:700; letter-spacing:.18em; font-size:12px; text-transform:uppercase; margin-bottom:16px;}
@@ -879,7 +879,7 @@
 #not-found-view .error-home-link:focus-visible {outline:2px solid white;outline-offset:3px;}
 
 
-/* v2.21.29 — Game details: image-safe, responsive editorial layout. */
+/* v2.21.31 — Game details: image-safe, responsive editorial layout. */
 #game-view { width:100%; }
 #game-view .game-detail { width:min(1120px,100%); margin:0 auto; min-width:0; }
 #game-view .game-breadcrumb { display:flex; align-items:center; flex-wrap:wrap; gap:10px; margin:4px 0 21px; color:#999; font-size:13px; }
@@ -936,7 +936,7 @@ body[data-theme="light"] #game-detail-content .game-og-badge { background-image:
 @media(prefers-reduced-motion:reduce){#game-detail-content .game-play-button{transition:none;}}
 
 
-        /* Home section layout editor - v2.21.29 */
+        /* Home section layout editor - v2.21.31 */
         .layout-editor{margin-top:30px;padding-top:24px;border-top:1px solid var(--border,#333)}
         .layout-editor-header h3{margin:0 0 7px;font-size:18px}
         .layout-editor-header p{margin:0 0 17px;color:var(--text-muted,#aaa);font-size:13px;line-height:1.5}
@@ -954,7 +954,7 @@ body[data-theme="light"] #game-detail-content .game-og-badge { background-image:
         @media(max-width:560px){.layout-editor-row{padding:10px;gap:8px}.layout-editor-move button{padding:5px 8px}}
 
 
-/* v2.21.29 — Game dates and dual launch choices */
+/* v2.21.31 — Game dates and dual launch choices */
 .game-date-setting{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:21px 0 3px;border-top:1px solid #333;margin-top:24px}
 .game-date-setting strong{font-size:15px;color:#f4f4f4}
 .game-date-setting p{margin:6px 0 0;font-size:12px;line-height:1.55;color:#aaa;max-width:480px}
@@ -965,7 +965,7 @@ body[data-theme="light"] #game-detail-content .game-og-badge { background-image:
 @media(max-width:390px){#game-detail-content .game-launch-actions{grid-template-columns:1fr}}
 
 
-/* v2.21.29 — international game date controls */
+/* v2.21.31 — international game date controls */
 .game-date-format-setting{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 0 20px;border-bottom:1px solid #333}
 .game-date-format-setting label{display:flex;flex-direction:column;gap:6px;min-width:0}
 .game-date-format-setting strong{color:#f4f4f4;font-size:15px}
@@ -973,10 +973,10 @@ body[data-theme="light"] #game-detail-content .game-og-badge { background-image:
 .game-date-format-setting select{width:min(310px,100%);min-width:190px;margin:0;cursor:pointer;background:#222;color:#f4f4f4;border:1px solid #474747}
 @media(max-width:640px){.game-date-format-setting{align-items:stretch;flex-direction:column;gap:12px}.game-date-format-setting select{width:100%}}
 
-/* Powerhouse v2.21.29 — Blog */
+/* Powerhouse v2.21.31 — Blog */
 .blog-shell{max-width:1050px;margin:auto}.blog-heading{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:24px;flex-wrap:wrap}.blog-heading h1{font-size:clamp(1.7rem,3vw,2.2rem);margin:0}.blog-heading p{color:#999;margin:6px 0 0}.blog-toolbar{display:flex;gap:10px;flex-wrap:wrap}.blog-action{background:#292929;color:#fff;border:1px solid #444;border-radius:9px;padding:10px 15px;cursor:pointer;font:inherit}.blog-action:hover{background:#383838}.blog-action.primary{background:#ededed;color:#161616;border-color:#ededed;font-weight:700}.blog-action.primary:hover{background:#cfcfcf}.blog-action.danger{color:#ffb9b9;border-color:#724444}.blog-card-list{display:grid;gap:13px}.blog-feed-card{display:block;text-align:left;width:100%;border:1px solid #363636;background:#202020;color:inherit;border-radius:14px;padding:22px;cursor:pointer;transition:border-color .15s,transform .15s}.blog-feed-card:hover{border-color:#888;transform:translateY(-2px)}.blog-feed-card h2{font-size:1.25rem;margin:8px 0}.blog-feed-card p{color:#adadad;margin:6px 0 0;line-height:1.55;overflow-wrap:anywhere}.blog-meta{color:#949494;font-size:.8rem}.blog-tag{font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#dedede;background:#363636;border:1px solid #4a4a4a;border-radius:5px;padding:4px 7px;display:inline-block}.blog-panel-box{background:#1f1f1f;border:1px solid #353535;padding:clamp(18px,3vw,32px);border-radius:15px}.blog-article-title{font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.15;margin:15px 0}.blog-article-body{line-height:1.8;overflow-wrap:anywhere;font-size:1rem;white-space:normal}.blog-article-body p{margin:0 0 1em}.blog-article-body h1,.blog-article-body h2,.blog-article-body h3{margin:1.5em 0 .5em}.blog-article-body a{color:#ddd;text-decoration:underline}.blog-article-body img{max-width:100%;height:auto}.blog-article-body pre{white-space:pre-wrap;background:#111;padding:12px;border-radius:8px}.blog-article-body blockquote{border-left:3px solid #888;margin:12px 0;padding-left:16px;color:#bbb}.blog-form{display:grid;gap:16px}.blog-form label{display:grid;gap:7px;font-size:.9rem;font-weight:600}.blog-form input,.blog-form textarea,.blog-form select{background:#111;color:#fff;border:1px solid #454545;border-radius:8px;padding:12px;font:inherit;width:100%;box-sizing:border-box}.blog-form textarea{min-height:220px;resize:vertical}.blog-form :is(input,textarea,select):focus{outline:2px solid #aaa;outline-offset:1px}.blog-manage-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 0;border-bottom:1px solid #383838}.blog-manage-row>div:first-child{min-width:0;overflow-wrap:anywhere}.blog-empty{padding:50px 20px;text-align:center;color:#999;border:1px dashed #444;border-radius:12px}.blog-feedback{font-size:.9rem;color:#ccc;min-height:1.2em}.blog-feedback.error{color:#ff9e9e}.blog-hidden{display:none!important}@media(max-width:660px){.blog-manage-row{align-items:flex-start;flex-direction:column}.blog-feed-card{padding:17px}}
 
-/* Guest trial | v2.21.29 */
+/* Guest trial | v2.21.31 */
         .guest-expired-choice { margin-top:18px; padding:18px; background:#242424; border:1px solid #555; border-radius:10px; }
         .guest-expired-choice[hidden] { display:none!important; }
         .guest-expired-choice h3 { margin:0 0 6px; color:#fff; font-size:16px; }
@@ -993,7 +993,7 @@ body[data-theme="light"] #game-detail-content .game-og-badge { background-image:
 .guest-settings-info p{color:#aaa;line-height:1.6}.guest-settings-info button{max-width:275px;margin-top:22px}
 .guest-trial-nav{margin-top:12px;font-size:11px;color:#a7a7a7;line-height:1.6;max-width:220px}
 
-/* v2.21.29 — always-visible category navigation, aligned with category heading. */
+/* v2.21.31 — always-visible category navigation, aligned with category heading. */
 #all-games-categories .category-block{position:relative;min-width:0}
 #all-games-categories .category-heading{display:flex!important;align-items:center!important;justify-content:space-between!important;min-height:42px;padding-right:0;margin-bottom:12px}
 #all-games-categories .category-heading-actions{display:flex!important;visibility:visible!important;opacity:1!important;align-items:center;justify-content:flex-end;gap:9px;flex:0 0 auto;margin-left:auto;position:relative;z-index:5}
@@ -1005,7 +1005,7 @@ body[data-theme="light"] #all-games-categories .category-carousel-control{backgr
 body[data-theme="light"] #all-games-categories .category-carousel-control:hover:not(:disabled){background:#e7eef4!important}
 @media(max-width:600px){#all-games-categories .category-carousel-control{width:32px!important;height:32px!important;min-width:32px!important;min-height:32px!important}#all-games-categories .category-heading-actions{gap:5px}}
 
-/* v2.21.29 — category library and personalized recommendations */
+/* v2.21.31 — category library and personalized recommendations */
 .browse-all-games{margin-left:auto;color:#eee;text-decoration:none;font-size:13px;font-weight:650;background:#303030;border:1px solid #444;border-radius:8px;padding:9px 13px;white-space:nowrap;transition:background .16s}
 .browse-all-games:hover{background:#414141;color:#fff}
 .recommendation-description{color:#999;font-size:13px;margin:0 0 17px}
@@ -1042,7 +1042,7 @@ body[data-game-card-size="compact"] #all-games-view{--all-games-card-width:220px
 #all-games-view .category-carousel-track .game-card{display:block;width:100%;min-width:0}
 #all-games-view .category-carousel-track .game-thumb{display:block;width:100%;height:auto;max-width:100%;box-sizing:border-box}
 #all-games-view .category-carousel-track .game-title-row{min-width:0;overflow-wrap:break-word}
-/* v2.21.29: visible, accessible carousel arrows in the category header */
+/* v2.21.31: visible, accessible carousel arrows in the category header */
 #all-games-view .category-heading-actions{display:flex;align-items:center;gap:10px;margin-left:auto}
 #all-games-view .category-carousel-control{
     position:static;transform:none;flex:0 0 38px;
@@ -1065,7 +1065,7 @@ body[data-game-card-size="compact"] #all-games-view{--all-games-card-width:220px
     #all-games-view .category-heading-actions{gap:6px}
 }
 
-/* v2.21.29 - game collection pages and landing preference */
+/* v2.21.31 - game collection pages and landing preference */
 .shelf-heading-link{color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:10px}
 .shelf-heading-link:hover,.shelf-heading-link:focus-visible{color:var(--text-muted,#bbbbbb)}
 .shelf-heading-link span{font-size:14px;opacity:.6}
@@ -1079,7 +1079,7 @@ body[data-game-card-size="compact"] #all-games-view{--all-games-card-width:220px
 .landing-destination-setting .landing-setting-note{font-size:12px;max-width:530px;color:#999}
 .landing-destination-setting .switch{flex-shrink:0}
 
-        /* v2.21.29 — per-user Home presentation and card proportions. */
+        /* v2.21.31 — per-user Home presentation and card proportions. */
         body[data-hide-home-profile="true"] #home-view > .hero { display:none !important; }
         body[data-game-card-size="square"] .game-thumb,
         body[data-game-card-size="square"] .search-game-item > img { aspect-ratio:1 / 1; }
@@ -1096,7 +1096,7 @@ body[data-game-card-size="compact"] #all-games-view{--all-games-card-width:220px
         .home-presentation-row .settings-input { width:min(230px,45%);margin:0;flex-shrink:0; }
         @media(max-width:520px){.home-presentation-row{align-items:flex-start;flex-direction:column;gap:12px}.home-presentation-row .settings-input{width:100%}}
 
-/* v2.21.29 — Mulish typography and text-only sidebar navigation accents. */
+/* v2.21.31 — Mulish typography and text-only sidebar navigation accents. */
 #sidebar .nav-item,
 #sidebar .nav-item.active,
 #sidebar .nav-item:hover,
@@ -1114,7 +1114,7 @@ body[data-game-card-size="compact"] #all-games-view{--all-games-card-width:220px
 #sidebar .nav-item:focus-visible { outline:2px solid currentColor;outline-offset:1px; }
 
 
-/* Powerhouse v2.21.29 — comprehensive light theme restoration.
+/* Powerhouse v2.21.31 — comprehensive light theme restoration.
    Overrides legacy dark-only styles without changing the dark palette. */
 body[data-theme="light"] #sidebar,
 body[data-theme="light"] #user-dropdown {background:#fff;color:var(--text);}
@@ -1218,7 +1218,7 @@ body[data-theme="light"] .game-info-pill.new-game-pill {background:#263746!impor
 body[data-theme="light"] :is(.auth-guest-button,.guest-expired-choice,.guest-settings-info button) {color:var(--text);}
 
 
-/* v2.21.29 — light-mode foreground contrast, respecting dark action buttons. */
+/* v2.21.31 — light-mode foreground contrast, respecting dark action buttons. */
 body[data-theme="light"] { --light-text:#1c2631; --light-muted:#576574; --light-stroke:#cad3dd; }
 /* Global readable text where older sections hard-coded a dark-theme color. */
 body[data-theme="light"] :is(.view-section,.view-section h1,.view-section h2,.view-section h3,
@@ -1280,7 +1280,7 @@ body[data-theme="light"] .blog-feedback,
 body[data-theme="light"] .blog-article-body blockquote {color:#526476;}
 
 
-/* v2.21.29 — reliable All Games arrows, outside of heading layout. */
+/* v2.21.31 — reliable All Games arrows, outside of heading layout. */
 #all-games-view #all-games-categories .category-block {position:relative!important;isolation:isolate;min-width:0;padding-top:2px;}
 #all-games-view #all-games-categories .category-heading {padding-right:160px!important;min-height:44px;box-sizing:border-box;}
 #all-games-view #all-games-categories .category-heading h2 {overflow-wrap:anywhere;}
@@ -1312,7 +1312,7 @@ body[data-theme="light"] #all-games-view #all-games-categories button.category-c
 }
 
 
-/* v2.21.29 — keep category arrows directly beside each category title. */
+/* v2.21.31 — keep category arrows directly beside each category title. */
 #all-games-view #all-games-categories .category-heading {
     display:flex!important;
     align-items:center!important;
@@ -1350,7 +1350,7 @@ body[data-theme="light"] #all-games-view #all-games-categories button.category-c
     #all-games-view #all-games-categories .category-heading-count {display:none!important;}
 }
 
-/* v2.21.29 — paginate the All Games category cards in full, clickable chunks. */
+/* v2.21.31 — paginate the All Games category cards in full, clickable chunks. */
 #all-games-view, #all-games-categories, #all-games-categories .category-block,
 #all-games-categories .category-carousel {min-width:0;max-width:100%;box-sizing:border-box;}
 #all-games-categories .category-carousel-track {
@@ -1359,7 +1359,7 @@ body[data-theme="light"] #all-games-view #all-games-categories button.category-c
 }
 #all-games-categories .category-carousel-track > .game-card-wrap[hidden] {display:none!important;}
 
-/* v2.21.29 — All Games: multi-row responsive grids and category / unblocked filters. */
+/* v2.21.31 — All Games: multi-row responsive grids and category / unblocked filters. */
 #all-games-view .all-games-filter-bar {
     display:flex;flex-wrap:wrap;align-items:end;gap:12px 16px;
     margin:0 0 30px;padding:17px 18px;background:var(--panel, #252525);
@@ -1425,7 +1425,7 @@ body[data-theme="light"] #all-games-view .all-games-filter-result{color:#576574}
 body[data-theme="light"] #search-suggest{box-shadow:0 18px 40px rgba(20,30,45,.16)}
 
 
-/* v2.21.29 — Home new-games carousel navigation */
+/* v2.21.31 — Home new-games carousel navigation */
 .home-featured:has(.featured-carousel-controls){padding-bottom:70px}
 .featured-carousel-controls{position:absolute;bottom:16px;right:24px;left:24px;z-index:2;display:flex;align-items:center;justify-content:flex-end;gap:11px;color:#fff}
 .featured-carousel-arrow{width:36px;height:36px;display:grid;place-items:center;flex:none;border:1px solid rgba(255,255,255,.26);border-radius:10px;background:rgba(255,255,255,.12);color:#fff;font-size:29px;line-height:1;cursor:pointer}
@@ -1989,6 +1989,16 @@ body[data-theme="light"] .ag-toggle[aria-pressed="true"]{color:#1a7f4b;backgroun
 #profile-view .profile-render{width:100%;height:100%;object-fit:cover;display:block}
 #profile-view .profile-head-details{min-width:0;padding-bottom:4px}
 #profile-view .profile-username{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:0 0 8px!important;font-size:clamp(24px,2.6vw,32px)!important;font-weight:700!important;letter-spacing:-.025em;line-height:1.15;color:var(--text)!important;overflow-wrap:anywhere}
+/* v2.21.31 — old usernames tooltip in the profile header */
+#profile-view .profile-name-history{position:relative;display:inline-flex;align-items:center;flex:0 0 auto;font-size:14px;font-weight:400;line-height:1;overflow:visible}
+#profile-view .profile-name-history-trigger{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;padding:5px;border:1px solid var(--line);border-radius:50%;background:var(--panel-2);color:var(--text-muted);cursor:help;transition:color .15s,border-color .15s,background .15s}
+#profile-view .profile-name-history-trigger:hover,#profile-view .profile-name-history-trigger:focus-visible{color:var(--text);border-color:var(--accent);background:var(--panel);outline-offset:2px}
+#profile-view .profile-name-history-trigger svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+#profile-view .profile-name-history-tooltip{position:absolute;z-index:90;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(5px);width:max-content;min-width:175px;max-width:min(300px,calc(100vw - 48px));padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--text);box-shadow:0 12px 32px rgba(0,0,0,.25);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .15s,transform .15s,visibility .15s;text-align:left;font-size:13px;font-weight:500;letter-spacing:0;line-height:1.4;overflow-wrap:anywhere}
+#profile-view .profile-name-history-tooltip::after{content:'';position:absolute;top:100%;left:calc(50% - 5px);width:10px;height:10px;transform:translateY(-5px) rotate(45deg);background:var(--panel);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+#profile-view .profile-name-history:hover .profile-name-history-tooltip,#profile-view .profile-name-history:focus-within .profile-name-history-tooltip{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+#profile-view .profile-name-history-tooltip strong{display:block;margin-bottom:7px;font-size:12px;font-weight:700;color:var(--text-muted)}
+#profile-view .profile-name-history-tooltip span{display:block;margin-top:4px}
 #profile-view .pf-stats{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px;color:var(--text-muted)}
 #profile-view .pf-stat strong{color:var(--text);font-weight:600}
 #profile-view .profile-head-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:8px;padding-bottom:4px}
@@ -2042,7 +2052,7 @@ body[data-theme="light"] .ag-toggle[aria-pressed="true"]{color:#1a7f4b;backgroun
     #home-view .hero-avatar-container{width:40px!important;height:40px!important}
 }
 
-/* v2.21.29 — admin account merger */
+/* v2.21.31 — admin account merger */
 #adminPaneMerge .merge-note{color:var(--text-muted);line-height:1.55;max-width:780px;margin:0 0 20px}
 #adminPaneMerge .merge-form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-bottom:16px}
 #adminPaneMerge .merge-field{display:flex;flex-direction:column;gap:8px;font-size:13px;font-weight:600;color:var(--text)}
@@ -2059,7 +2069,7 @@ body[data-theme="light"] .ag-toggle[aria-pressed="true"]{color:#1a7f4b;backgroun
 </style>
 
 <style id="ph-moderation-styles">
-/* v2.21.29 — moderation dialog uses Powerhouse design tokens, in both themes. */
+/* v2.21.31 — moderation dialog uses Powerhouse design tokens, in both themes. */
 #ph-moderation-overlay{position:fixed;inset:0;z-index:2147483646;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.66);-webkit-backdrop-filter:blur(7px);backdrop-filter:blur(7px);overflow-y:auto}
 #ph-moderation-overlay[hidden],#ph-moderation-dialog [hidden]{display:none!important}
 body.ph-moderation-locked{overflow:hidden!important}
@@ -2182,7 +2192,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
         if (tab === 'usernames') adminLoadUsernameRequests();
     }
 
-    // ── Account merger v2.21.29 ────────────────────────────────────────────────
+    // ── Account merger v2.21.31 ────────────────────────────────────────────────
     let _adminMergePreview=null;
     function adminMergeReset(){
         _adminMergePreview=null;
@@ -3114,7 +3124,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
 
 
 
-    <!-- AUTH PAGE | Powerhouse website v2.21.29 -->
+    <!-- AUTH PAGE | Powerhouse website v2.21.31 -->
     <div id="landing-page">
         <div class="auth-shell">
             <section class="auth-promo" aria-label="Welcome to Powerhouse">
@@ -3161,7 +3171,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                     </form>
                     <p class="auth-bottom">Already have an account? <button type="button" class="auth-switch-link" onclick="switchAuthMode('login')">Sign in</button></p>
                 </div>
-                <span class="auth-release">POWERHOUSE v2.21.29</span>
+                <span class="auth-release">POWERHOUSE v2.21.31</span>
             </section>
         </div>
     </div>
@@ -3212,7 +3222,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                     </svg>
                 </a>
             </div>
-            <div class="sidebar-release" aria-label="Powerhouse version">POWERHOUSE <span>v2.21.29</span></div>
+            <div class="sidebar-release" aria-label="Powerhouse version">POWERHOUSE <span>v2.21.31</span></div>
         </div>
     </aside>
 
@@ -3729,7 +3739,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
 <script>
         const API_BASE = 'https://powerhouse-api.c823.workers.dev';
         const PFP_BASE = 'https://raw.githubusercontent.com/C823/powerhouse/main/profileicons/';
-        // v2.21.29: one transparent avatar template, with a consistent color per account.
+        // v2.21.31: one transparent avatar template, with a consistent color per account.
         // Upload profileicons/default_template.png (transparent foreground) to the repository.
         const DEFAULT_PFP = PFP_BASE + 'default_template.png';
         const DEFAULT_AVATAR_COLORS = [
@@ -3781,15 +3791,31 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             try { return localStorage.getItem(key); } catch (error) { return null; }
         }
         let user = { token: safeStorageGet('ph_token'), username: safeStorageGet('ph_username'), pfp: safeStorageGet('ph_pfp') };
-        // v2.21.29 — Mandatory, site-wide ban / warning dialog.
+        // v2.21.31 — Mandatory, site-wide ban / warning dialog.
         let moderationRequestInFlight = false;
         let moderationLastStatus = null;
         let moderationLastToken = null;
+        // Retry transient moderation-check failures silently, without showing a dialog.
+        let moderationRetryTimer = null;
+        let moderationRetryDelay = 2000;
+        function clearModerationRetry(){
+            if(moderationRetryTimer!==null){clearTimeout(moderationRetryTimer);moderationRetryTimer=null;}
+        }
+        function queueModerationRetry(token){
+            if(!token || user.token!==token || moderationRetryTimer!==null)return;
+            const delay=moderationRetryDelay;
+            moderationRetryDelay=Math.min(Math.round(moderationRetryDelay*1.6),30000);
+            moderationRetryTimer=setTimeout(()=>{
+                moderationRetryTimer=null;
+                if(user.token===token)checkModeration();
+            },delay);
+        }
         function moderationElements(){
             let overlay=document.getElementById('ph-moderation-overlay');
             if(overlay)return overlay;
             overlay=document.createElement('div');
             overlay.id='ph-moderation-overlay';
+            overlay.hidden=true;
             overlay.setAttribute('role','presentation');
             overlay.innerHTML=`<section id="ph-moderation-dialog" role="alertdialog" aria-modal="true" aria-labelledby="ph-moderation-title" tabindex="-1">
                 <div id="ph-moderation-top"><div id="ph-moderation-symbol" aria-hidden="true"></div><div id="ph-moderation-heading"><p id="ph-moderation-eyebrow">Account moderation</p><h2 id="ph-moderation-title">Checking account…</h2></div></div>
@@ -3856,40 +3882,31 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             q('ph-moderation-retry').hidden=true;
             q('ph-moderation-error').textContent='';
         }
-        function moderationChecking(){
-            if(!user.token)return;
-            const el=moderationLock(),q=id=>el.querySelector('#'+id);
-            q('ph-moderation-title').textContent='Checking account…';
-            q('ph-moderation-description').textContent='Verifying your account moderation status.';
-            q('ph-moderation-reason-wrap').hidden=true;q('ph-moderation-details').textContent='';
-            q('ph-moderation-confirm').hidden=true;q('ph-moderation-accept').hidden=true;
-            q('ph-moderation-retry').hidden=true;q('ph-moderation-error').textContent='';
-        }
         async function checkModeration(force=false){
-            if(!user.token){hideModeration();return;}
+            if(!user.token){clearModerationRetry();hideModeration();return;}
             if(moderationRequestInFlight===user.token)return;
             const token=user.token;
             moderationRequestInFlight=token;
-            if(force||!moderationLastStatus)moderationChecking();
+            if(force)clearModerationRetry();
+            // Never show a checking or temporary-error popup. Only real bans and
+            // unacknowledged warnings are displayed by moderationRender().
             try{
                 const r=await fetch(API_BASE+'/auth/status',{headers:{Authorization:'Bearer '+token},cache:'no-store'});
                 const data=await r.json().catch(()=>({}));
                 if(user.token!==token)return;
-                if(r.status===401){logout();hideModeration();return;}
+                if(r.status===401){clearModerationRetry();logout();hideModeration();return;}
                 if(!r.ok)throw Error(data.error||'Status check failed ('+r.status+')');
+                clearModerationRetry();
+                moderationRetryDelay=2000;
                 moderationLastToken=token;
                 if(data.username && data.username!==user.username){user.username=data.username;localStorage.setItem('ph_username',data.username);updateUI();}
                 moderationRender(data);
             }catch(e){
                 if(user.token!==token)return;
-                const el=moderationLock();
-                el.querySelector('#ph-moderation-title').textContent='Account status unavailable';
-                el.querySelector('#ph-moderation-description').textContent='We could not verify your account. The site is temporarily locked until the check succeeds.';
-                el.querySelector('#ph-moderation-reason-wrap').hidden=true;
-                el.querySelector('#ph-moderation-confirm').hidden=true;
-                el.querySelector('#ph-moderation-accept').hidden=true;
-                el.querySelector('#ph-moderation-retry').hidden=false;
-                el.querySelector('#ph-moderation-error').textContent=String(e.message||e);
+                // Keep any confirmed ban/warning visible, but never show an error dialog.
+                // The API continues to enforce moderation even if this request fails.
+                console.warn('Powerhouse moderation check unavailable; retrying automatically:',e);
+                queueModerationRetry(token);
             }finally{if(moderationRequestInFlight===token)moderationRequestInFlight=false;}
         }
         async function acknowledgeModeration(){
@@ -4054,7 +4071,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
 
         function initializePowerhouse() {
             try {
-                if (user.token) { moderationChecking(); checkModeration(); }
+                if (user.token) { checkModeration(); }
                 if (isGuest() && Date.now() >= guestExpiresAt) expireGuestTrial();
                 routeFromURL(true);renderGuestUI();if(isGuest())validateGuestTrial();
                 if (sessionExpiredNotice) authLoginFeedback('Your login expired. Please sign in again.');
@@ -4483,7 +4500,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                 user.token = data.token;
                 user.username = data.username; guestMode=false;guestVerified=false;renderGuestUI();claimGuestAvatar();
                 resetStaffUI(); unlockDashboard(); updateUI();
-                moderationChecking(); checkModeration(true);
+                checkModeration(true);
                 navigateTo(startingPage(), true);
                 fetchUserData(); fetchHomeFriends(); loadStaffPermissions().catch(console.warn);
             } catch (err) {
@@ -4525,7 +4542,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
                     user.token = data.token; user.username = data.username; guestMode=false;guestVerified=false;renderGuestUI();claimGuestAvatar();
                     setAccountUserId(data.userId);
                     resetStaffUI(); unlockDashboard(); updateUI();
-                    moderationChecking(); checkModeration(true);
+                    checkModeration(true);
                     let nextPage = startingPage();
                     try { nextPage = (sessionStorage.getItem('ph_return_to') || ('/'+(startingPage()==='all-games'?'games/all':'home'))).slice(1); sessionStorage.removeItem('ph_return_to'); } catch(e) {}
                     if (nextPage.startsWith('user/')) { history.replaceState({},'', '/' + nextPage); routeFromURL(); }
@@ -4543,7 +4560,7 @@ function adminSetBanner(){return staffLegacySaveBanner();}
             return name ? `${part}, ${name}` : part;
         }
 
-        // ── Home: New on Powerhouse carousel (v2.21.29).
+        // ── Home: New on Powerhouse carousel (v2.21.31).
         // Only games explicitly marked new: true appear while new games exist.
         // Reuses the existing game launch and details handlers.
         let homeFeaturedGames = [];
@@ -5631,7 +5648,7 @@ button,a{font:inherit}
                 .map(x=>x.game);
         }
         let allGamesRequest = 0;
-        // v2.21.29 — complete category grids with lightweight client-side filters.
+        // v2.21.31 — complete category grids with lightweight client-side filters.
         let allGamesCategoryFilter = '';
         let allGamesUnblockedFilter = 'all';
         let allGamesTextFilter = '';
@@ -6276,7 +6293,7 @@ button,a{font:inherit}
         }
 
 
-        // v2.21.29 - KV-backed direct messages (existing /social/* API)
+        // v2.21.31 - KV-backed direct messages (existing /social/* API)
         let messageConversations = [];
         let activeMessagePeer = '';
         let messagesLoadSequence = 0;
@@ -6403,7 +6420,7 @@ button,a{font:inherit}
         });
 
 
-        // Blog v2.21.29 — uses the original /blog/* KV-backed API.
+        // Blog v2.21.31 — uses the original /blog/* KV-backed API.
         let blogPosts=[], blogAdminPosts=[], blogCanManage=false, blogEditingId=null, blogRequest=0;
         const blogEscape = value => String(value??'').replace(/[&<>"']/g, x=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[x]));
         const blogDate = value => {const d=new Date(value);return Number.isNaN(d.getTime())?'':d.toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'});};
@@ -6565,7 +6582,7 @@ button,a{font:inherit}
                 }
             }
         }
-        // v2.21.29: Public favorites come from the profile API; never read the viewer's
+        // v2.21.31: Public favorites come from the profile API; never read the viewer's
         // local Favorites when displaying another account's profile.
         let profileFavoritesSequence = 0;
         // Profile banner mirrors whatever picture the avatar ends up showing (including fallbacks).
@@ -6602,6 +6619,26 @@ button,a{font:inherit}
                 if(request===profileFavoritesSequence)message('Unable to load favorite games.');
             }
         }
+        // Previous usernames appear on public profiles only when a real rename was recorded.
+        function renderProfileUsernameHistory(profile) {
+            const header=document.getElementById('profile-name-header');
+            if(!header)return;
+            header.querySelector('.profile-name-history')?.remove();
+            const current=String(profile?.username||'').toLowerCase();
+            const names=[...new Set((Array.isArray(profile?.previousUsernames)?profile.previousUsernames:[])
+                .filter(n=>typeof n==='string'&&/^[a-zA-Z0-9_]{3,24}$/.test(n)&&n.toLowerCase()!==current))];
+            if(!names.length)return;
+            const wrapper=document.createElement('span');wrapper.className='profile-name-history';
+            const trigger=document.createElement('button');trigger.type='button';trigger.className='profile-name-history-trigger';
+            trigger.setAttribute('aria-label','Show previous usernames');
+            trigger.setAttribute('aria-describedby','profile-username-history-tooltip');
+            trigger.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>';
+            const tooltip=document.createElement('span');tooltip.className='profile-name-history-tooltip';
+            tooltip.id='profile-username-history-tooltip';tooltip.setAttribute('role','tooltip');
+            const label=document.createElement('strong');label.textContent=names.length===1?'Previous username':'Previous usernames';tooltip.append(label);
+            names.forEach(name=>{const entry=document.createElement('span');entry.textContent=name;tooltip.append(entry);});
+            wrapper.append(trigger,tooltip);header.append(wrapper);
+        }
         function renderProfile(username) {
             if (typeof username === 'number' || /^\d+$/.test(String(username||''))) {
                 const id=Number(username);
@@ -6631,6 +6668,7 @@ button,a{font:inherit}
             const nameEl = document.getElementById('profile-name-header');
             nameEl.textContent = shownName;
             nameEl.insertAdjacentHTML('beforeend',lookupUserBadge(shownName));
+            renderProfileUsernameHistory(cached);
             const portrait = document.getElementById('profile-render');
             setAvatarImage(portrait, own ? user.pfp : cached?.pfp, shownName);
             document.getElementById('profile-edit-button').style.display = own ? '' : 'none';
@@ -6662,6 +6700,7 @@ button,a{font:inherit}
                     if (requestId !== profileRequestSequence || activeProfileName() !== shownName.toLowerCase()) return;
                     if (!profile) { history.replaceState({}, '', '/home'); navigateTo('home', true); return; }
                     knownProfiles.set(shownName.toLowerCase(), {...(cached || {}), ...profile});
+                    renderProfileUsernameHistory(profile);
                     document.getElementById('profile-friends-number').textContent = Number.isFinite(profile.friendsCount) ? profile.friendsCount : '—';
                     document.getElementById('profile-joined-date').textContent = formatProfileJoinDate(profile.createdAt);
                     // The About box uses API data even when viewing somebody else's profile.
@@ -6796,7 +6835,7 @@ button,a{font:inherit}
         window.addEventListener('popstate', routeFromURL);
 
 
-        // v2.21.29 — The root loader reads this account-scoped local preference.
+        // v2.21.31 — The root loader reads this account-scoped local preference.
         function gamesLandingPreferenceKey(name=user.username) {
             return 'powerhouse:defaultGamesLanding:'+(name||'guest').toLowerCase();
         }
@@ -6826,7 +6865,7 @@ button,a{font:inherit}
                 accountSavedData={...(accountSavedData||{}),settings:{...(accountSavedData?.settings||{}),defaultGamesLanding:enabled}};
             }catch(error){console.warn('Default landing preference saved locally; KV sync failed:',error);}
         }
-        // v2.21.29 — Per-user Home section order and visibility.
+        // v2.21.31 — Per-user Home section order and visibility.
         const HOME_LAYOUT_DEFAULT = ['favorites','recent','games','all'];
         const HOME_LAYOUT_LABELS = {favorites:'Favorites',recent:'Recently Played',games:'Recommended',all:'All Games'};
         let homeLayout = {order:[...HOME_LAYOUT_DEFAULT], visible:{favorites:true,recent:true,games:true,all:false}, hideProfile:false, cardSize:'wide', compactSidebar:true, sidebarChoice:false};
