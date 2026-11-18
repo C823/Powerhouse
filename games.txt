@@ -908,6 +908,7 @@
     "OG": false,
     "new": true,
     "date_added": "11/10/2026",
+  },
   {
     "title": "Grand Theft Auto VI",
     "category": "Arcade",
