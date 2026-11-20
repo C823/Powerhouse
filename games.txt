@@ -910,14 +910,14 @@
     "date_added": "11/10/2026"
   },
   {
-    "title": "Grand Theft Auto VI",
+    "title": "Alpine Valley Decent",
     "category": "Arcade",
-    "desc": "Jason and Lucia have always known the deck is stacked against them. But when an easy score goes wrong, they find themselves on the darkest side of the sunniest place in America, in the middle of a criminal conspiracy stretching across the state of Leonida — forced to rely on each other more than ever if they want to make it out alive.",
-    "thumb": "https://cdn2.steamgriddb.com/hero/c947af88a298f0f0bcb953b10b83f587.png",
-    "link": "https://cdn2.steamgriddb.com/hero/c947af88a298f0f0bcb953b10b83f587.png",
+    "desc": "Go snowboarding down the slopes of Alpine.",
+    "thumb": "https://raw.githubusercontent.com/C823/assets/refs/heads/main/alpine-decent-thumbnail.png",
+    "link": "https://home.c823.workers.dev/play/alpine-decent",
     "verified": true,
-    "OG": false,
+    "OG": true,
     "new": true,
-    "date_added": "11/19/2026"
+    "date_added": "11/20/2026"
   }
 ]
