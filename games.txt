@@ -919,5 +919,16 @@
     "OG": true,
     "new": true,
     "date_added": "11/20/2026"
+  },
+  {
+    "title": "Powerhouse MINI",
+    "category": "Arcade",
+    "desc": "Go snowboarding down the slopes of Alpine.",
+    "thumb": "https://raw.githubusercontent.com/C823/Powerhouse/refs/heads/main/banner.jpg",
+    "link": "https://testt.c823.workers.dev",
+    "verified": false,
+    "OG": true,
+    "new": false,
+    "date_added": "11/23/2026"
   }
 ]
